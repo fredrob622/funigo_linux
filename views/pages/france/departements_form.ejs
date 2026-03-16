@@ -1,0 +1,100 @@
+
+<%- include('../../partials/header', { title: title }) %>
+
+<div class="content content-black"> 
+    
+    <h2>Rechercher un Département</h2>
+
+    <form action="/departements/search" method="POST" id="dep-form">
+        <div class="form-container-double">
+            
+            <!-- Liste déroulante par Nom -->
+            <div>
+                <label for="dep-nom-select" >Par Nom :</label>
+                <!-- On ajoute un 'name' pour que sa valeur soit envoyée -->
+                <select id="dep-nom-select" name="nom_dep" class="dep-select">
+                    <option value="">-- Choisissez un département --</option>
+                    <% listeDepartement.forEach(dep => { %>
+                        <!-- On utilise 'searchTerm' pour pré-sélectionner l'option -->
+                        <option value="<%= dep.nom_dep %>" data-numero="<%= dep.num_dep %>" data-pref="<%= dep.nom_pref %>"  <%= (searchTerm === dep.nom_dep) ? 'selected' : '' %>>
+                            <%= dep.nom_dep %>
+                        </option>
+                    <% }); %>
+                </select>
+            </div>
+
+            <!-- Liste déroulante par Numéro -->
+            <div>
+                <label for="dep-num-select" >Par Numéro :</label>
+                <!-- On ajoute un 'name' pour que sa valeur soit envoyée -->
+                <select id="dep-num-select" name="num_dep" class="dep-select">
+                    <option value="">-- N° --</option>
+                    <% listeDepartement.forEach(dep => { %>
+                         <!-- On utilise 'searchTerm' pour pré-sélectionner l'option -->
+                        <option value="<%= dep.num_dep %>" data-nom="<%= dep.nom_dep %>" data-pref="<%= dep.nom_pref %>" <%= (searchTerm === dep.num_dep) ? 'selected' : '' %>>
+                            <%= dep.num_dep %>
+                        </option>
+                    <% }); %>
+                </select>
+            </div>
+
+             <!-- Liste déroulante par Préfecture -->
+            <div>
+                <label for="dep-pref-select">Par Préfecture :</label>
+                <select id="dep-pref-select" name="nom_pref" class="dep-select">
+                    <option value="">-- Choisissez une préfecture --</option>
+                    <% listeDepartement.forEach(dep => { %>
+                        <!-- On utilise bien searchTerm === dep.nom_pref ici -->
+                        <option value="<%= dep.nom_pref %>" data-nom="<%= dep.nom_dep %>" et data-numero="<%= dep.num_dep %>"  <%= (searchTerm === dep.nom_pref) ? 'selected' : '' %>>
+                            <%= dep.nom_pref %>
+                        </option>
+                    <% }); %>
+                </select>
+            </div>
+        </div>
+    </form>
+
+
+    <!-- L'affichage des résultats reste le même -->
+    <% if (results && results.length > 0) { %>
+        <div class="departement-table-container" >
+            <h3>Résultats pour "<%= searchTerm %>"</h3>
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>N°</th>
+                        <th>Département</th>
+                        <th>Région</th>
+                        <th>Superficie km²</th>
+                        <th>Population</th>
+                        <th>Densité</th>
+                        <th>Préfecture</th>
+                        <th>Pop. Préf.</th>
+                        <th>Sous-Préf.</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% results.forEach(departement => { %>
+                   <tr>
+                        <!-- CORRIGÉ : on utilise la variable 'departement' directement -->
+                        <td data-label="N°"><%= departement.num_dep %></td>
+                        <td data-label="Département"><%= departement.nom_dep %></td>
+                        <td data-label="Région"><%= departement.nom_reg %></td>
+                        <td data-label="Superficie"><%= departement.superficie %></td>
+                        <td data-label="Population"><%= departement.pop_dep %></td> 
+                        <td data-label="Densité"><%= departement.densite %></td> 
+                        <td data-label="Préfecture"><%= departement.nom_pref %></td> 
+                        <td data-label="Pop. Préf."><%= departement.pop_pref %></td>
+                        <td data-label="Sous-Préf."><%= departement.sous_pref %></td> 						 			 
+                    </tr>  
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+    <% } else if (searchTerm) { %>
+        <p>Aucun résultat trouvé pour "<%= searchTerm %>".</p>
+    <% } %>
+</div>
+
+
+<%- include('../../partials/footer') %>

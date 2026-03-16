@@ -1,0 +1,38 @@
+
+
+Je veux créé une route /api/region_carte qui execute la requête SQL SELECT reg_nom FROM reg_fr; et charge lson contenu dans une variable javascript listeRegion.
+
+La variable listeRegion servira de liste déroulante dans le formulaire avec un seul champ avec le label Nom Region.
+
+Une fois selectionné une image contenant la position de la region selectionné. 
+
+L'image qui sera affiché est dans le répertoire  C:\Fichiers_Users\funigo\public\images\cartes\france\reg_position\Normardie.webp exemple 
+C:\Fichiers_Users\funigo\public\images\cartes\france\reg_position\Normardie.webp
+
+##########################################################################################################################################
+
+Maintenant créé une route /api/region_carte qui execute deux requêtes SQL
+
+      SELECT nom_dep FROM dep_fr ORDER BY reg_nom ASC; puis charge le contenu dans une variable listeDepartement
+	  SELECT num_dep FROM dep_fr ORDER BY reg_nom ASC; puis charge le contenu dans une variable listeNumeroDepartement
+	  
+Je veux un formulaire avec deux champs 
+	  
+La variable listeDepartement servira de liste déroulant avec le label "Nom Departement".
+La variable listeNumeroDepartement servira de liste déroulant avec le label "Numéro de Departement".
+
+Il y a 3 répertoires contenant les cartes à afficher 
+
+C:\Fichiers_Users\funigo\public\images\cartes\france\dep_position
+C:\Fichiers_Users\funigo\public\images\cartes\france\dep_carte
+C:\Fichiers_Users\funigo\public\images\cartes\france\dep_aglomeration
+
+les noms des fichiers sont formatés  "Numéro de Departement"-"Nom Departement".webp
+
+exemple avec le département Ain qui a le numéro 01
+
+C:\Fichiers_Users\funigo\public\images\cartes\france\dep_position\01-Ain.webp
+C:\Fichiers_Users\funigo\public\images\cartes\france\dep_carte\01-Ain.webp
+C:\Fichiers_Users\funigo\public\images\cartes\france\dep_aglomeration\01-Ain.webp
+
+On doit retouver les fichiers soit en selectionnant le numéro ou le nom

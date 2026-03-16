@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture de texte</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+     <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        textarea {
+            margin-bottom: 20px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+     </style>
+</head>
+<body>
+    <textarea id="text-to-read" rows="4" cols="50">聴解スクリプト： 
+男の子とお母さんが話しています。お母さんは何を渡しましたか。 
+男の子： お母さん、行って来ます。 
+お母さん： ああ、ちょっと待って。これを被って 行きなさい。 
+男の子： ええ、どうして。 お母さん： まだ風邪引いているでしょう。 
+男の子： はい。 
+</textarea>
+    <button id="read-button">Lire le texte</button>
+
+    <script>
+        document.getElementById('read-button').addEventListener('click', function() {
+        const text = document.getElementById('text-to-read').value;
+        if ('speechSynthesis' in window) {
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'ja-JP'; // Définir la langue (français)
+            window.speechSynthesis.speak(utterance);
+        } else {
+            alert("Désolé, votre navigateur ne supporte pas la lecture de texte à haute voix.");
+        }
+        })
+    </script>
+</body>
+</html>

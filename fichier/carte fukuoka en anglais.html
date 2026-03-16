@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte de inari - Google Maps</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        #map {
+            height: 100vh;
+            width: 100%;
+        }
+        .header {
+            background: #4285f4;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🗺️ Carte de inari, Japon</h1>
+        <p>Cliquez sur la carte pour des infos détaillées</p>
+    </div>
+    
+    <div id="map"></div>
+
+    <!-- Google Maps API - Remplacez YOUR_API_KEY par votre clé gratuite -->
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBI8JfKoDbOkxbu-vrPTA63j3eeQw31ivc&callback=initMap&libraries=places">
+    </script>
+
+    <script>
+        let map;
+
+        function initMap() {
+            // Coordonnées précises du centre de inari
+            const inari = { lat: 34.96, lng: 135.77 }
+
+            // Initialisation de la carte Google Maps
+            map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 13,
+                center: inari,
+                mapTypeControl: true,
+                mapTypeControlOptions: {
+                    style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+                    position: google.maps.ControlPosition.TOP_RIGHT
+                },
+                fullscreenControl: true,
+                streetViewControl: true,
+                zoomControl: true
+            });
+
+            // Marqueur principal inari avec info bulle
+            const marker = new google.maps.Marker({
+                position: inari,
+                map: map,
+                title: "inari-shi, Japon",
+                icon: {
+                    url: "https://maps.google.com/mapfiles/ms/icons/red-dot.png"
+                }
+            });
+
+            // Info bulle personnalisée
+            const infowindow = new google.maps.InfoWindow({
+                content: `
+                    <div style="max-width: 200px;">
+                        <h3>🏙️ inari</h3>
+                        <p><strong>Préfecture:</strong> inari-ken</p>
+                        <p><strong>Population:</strong> ~1.6 million</p>
+                        <p><strong>Points forts:</strong> Hakata Ramen, Canal City</p>
+                    </div>
+                `
+            });
+
+            marker.addListener("click", () => {
+                infowindow.open(map, marker);
+            });
+
+            // Recherche automatique des lieux proches (Hakata Station, etc.)
+            const service = new google.maps.places.PlacesService(map);
+            const request = {
+                location: inari,
+                radius: '5000',
+                type: ['train_station']
+            };
+
+            service.nearbySearch(request, (results, status) => {
+                if (status === google.maps.places.PlacesServiceStatus.OK) {
+                    results.forEach((place) => {
+                        const placeMarker = new google.maps.Marker({
+                            position: place.geometry.location,
+                            map: map,
+                            title: place.name,
+                            icon: {
+                                url: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+                            }
+                        });
+                    });
+                }
+            });
+        }
+    </script>
+</body>
+</html>

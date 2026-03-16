@@ -1,0 +1,8 @@
+body {
+    background-color: red;
+}
+
+.quiz-options-container { 
+    display: block;
+    max-width: 300px;
+}

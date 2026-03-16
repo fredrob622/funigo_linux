@@ -1,0 +1,1596 @@
+1996;N2;"聴解スクリプト： １番 写真を撮っています。どんな写真になりますか。 
+男：じゃあ、お茶を飲みながら雑誌を読んでいるところね。
+そうだなあ、足を組んでみて。いいね え。
+ちょっとカップを乾杯する時のように、そう、そう。
+ハイ、カメラに顔を向けて。そのまま。ok。
+お疲れ様。あ、そのりんご食べてもいいよ。 
+
+どんな写真 になりますか。 ";A;A;B;C;D;"Titre
+聴解スクリプト： １番 写真を撮っています。どんな写真になりますか。
+Script d'écoute : Numéro 1 Une photo est en train d'être prise. À quoi ressemblera cette photo ?
+Homme (Photographe)
+じゃあ、お茶を飲みながら雑誌を読んでいるところね。
+Alors, [faisons une photo de toi] en train de lire un magazine tout en buvant du thé.
+Homme
+そうだなあ、足を組んでみて。いいねえ。
+Voyons... Croise tes jambes. C'est bien.
+Homme
+ちょっとカップを乾杯する時のように、そう、そう。
+Tiens le mug un peu comme si tu trinquais, oui, ça.
+Homme
+ハイ、カメラに顔を向けて。そのまま。ok。お疲れ様。
+Allez, tourne ton visage vers l'appareil photo. Reste comme ça. OK. Bien joué.
+Homme
+あ、そのりんご食べてもいいよ。
+Ah, tu peux manger cette pomme, si tu veux.
+Question
+どんな写真になりますか。
+À quoi ressemblera la photo ?
+
+2. Analyse et Détermination de la Photo
+La question est de décrire la pose et l'action principale capturées par la photo. L'homme (le photographe) donne des instructions précises à la personne photographiée :
+Action principale et décor : En train de lire un magazine (雑誌を読んでいる) et de boire du thé (お茶を飲みながら).
+Posture : Jambes croisées (足を組んで).
+Action spécifique du bras : Tenir la tasse comme si on trinquait (カップを乾杯する時のように).
+Direction du regard : Regarder l'appareil photo (カメラに顔を向けて).
+Le photographe mentionne une pomme à la fin, mais il dit ""tu peux la manger maintenant [que la photo est finie]"" (そのりんご食べてもいいよ), ce qui indique que la pomme ne fait pas partie de la pose finale.
+Description de la photo : C'est une photo de la personne assise avec les jambes croisées, lisant un magazine, tenant une tasse comme si elle trinquait, et regardant l'objectif (souriant) en buvant du thé.
+
+Réponse (Description de la photo) :
+La photo représente la personne assise avec les jambes croisées, regardant l'appareil photo, tout en tenant une tasse (de thé ou autre boisson) dans une pose de toast, et en train de lire un magazine.
+";1996_N2_1.jpg
+1996;N2;"聴解スクリプト： ２番 音楽会のポスターについて話しています。
+二人はどのポスターが良いと言っていますか。 
+女：ねえ、今度の音楽会のポスター案ができてきたん だけど、どれが良いと思う。 
+男：どれ。ふうん、この丸には音楽会のタイトルが入るんだね。 
+女：そう。 
+男：そしてこの点々は文字ということか。 
+女：ええ。 
+男：で、問題は地図と絵の位置か。 
+女：そうね。 
+男：この地図が真ん中にかいてあるのは良くないよ。
+何のポスターか分かんない。 
+女：ええ、そうね。この 絵と地図が並んでるのも平凡よね。 
+男：ピアノが真ん中に入るのは効果的だな。 
+女：そうね。タイトルに絵がかかるのも可笑しいしねえ。 
+男：じゃ、これだ ね。 
+女：うん。 
+
+二人はどのポスターが良いと言っていますか。  ";A;A;B;C;D;"Titre
+聴解スクリプト： ２番 音楽会のポスターについて話しています。二人はどのポスターが良いと言っていますか。
+Script d'écoute : Numéro 2 Deux personnes parlent d'affiches de concert. Quelle affiche choisissent-ils ?
+Femme
+ねえ、今度の音楽会のポスター案ができてきたんだけど、どれが良いと思う。
+Dis, on a préparé des projets d'affiches pour le prochain concert, lequel trouves-tu le meilleur ?
+Homme
+どれ。ふうん、この丸には音楽会のタイトルが入るんだね。
+Voyons. Hum, ce cercle représente le titre du concert, c'est ça ?
+Femme
+そう。
+Oui.
+Homme
+そしてこの点々は文字ということか。
+Et ces points représentent le texte (informations) ?
+Femme
+ええ。
+Oui.
+Homme
+で、問題は地図と絵の位置か。
+Alors, le problème, c'est la position de la carte et de l'illustration.
+Femme
+そうね。
+C'est ça.
+Homme
+この地図が真ん中にかいてあるのは良くないよ。何のポスターか分かんない。
+L'affiche où la carte est dessinée au milieu, ce n'est pas bon. On ne comprend pas que c'est une affiche de concert.
+Femme
+ええ、そうね。この絵と地図が並んでるのも平凡よね。
+Oui, tu as raison. Celle où l'illustration et la carte sont côte à côte est banale.
+Homme
+ピアノが真ん中に入るのは効果的だな。
+L'affiche où le piano est placé au milieu est efficace.
+Femme
+そうね。タイトルに絵がかかるのも可笑しいしねえ。
+C'est vrai. Et celle où l'illustration chevauche le titre est étrange aussi.
+Homme
+じゃ、これだね。
+Alors, c'est celle-là, n'est-ce pas ?
+Femme
+うん。
+Oui.
+Question
+二人はどのポスターが良いと言っていますか。
+Quelle affiche disent-ils être la meilleure ?
+
+2. Analyse et Détermination du Choix
+L'objectif est de trouver le projet d'affiche qu'ils acceptent. Ils rejettent trois types d'affiches :
+Celle avec la carte au milieu (地図が真ん中): Rendu confus. (Rejetée)
+Celle avec l'illustration et la carte côte à côte (絵と地図が並んでる): Rendu banal. (Rejetée)
+Celle où l'illustration chevauche le titre (タイトルに絵がかかる): Rendu étrange. (Rejetée)
+L'homme fait un commentaire positif sur une affiche spécifique :
+ピアノが真ん中に入るのは効果的だな。
+(L'affiche où le piano est placé au milieu est efficace.)
+Comme ce point est positif, et qu'il est suivi immédiatement par la femme qui rejette une autre option (l'illustration chevauchant le titre), et que l'homme conclut par ""Alors, c'est celle-là, n'est-ce pas ?"" (じゃ、これだね), ils choisissent l'affiche dont la caractéristique principale est :
+Le piano (l'illustration) est placé au centre de l'affiche.
+
+Réponse (Description de l'affiche choisie) :
+Les deux personnes choisissent l'affiche où l'illustration du piano est placée au milieu (ピアノが真ん中に入っているポスター).
+";1996_N2_2.jpg
+1996;N2;"聴解スクリプト： ３番 会社の新しいマークについて話しています。
+男の人はどれが選ばれると思っていますか。 
+女：これ、なんですか。 
+男：ああ、会社の新しいマーク の候補さ。 
+女：へえ、で、どれになりそうなんですか。 
+男：うん、社長は全体が丸い形が良いとおっしゃっているんだ。 
+女：すると、この丸が三つ重なって いるのは駄目ですね。 
+男：そうね、それは全体としては円形じゃないからね。
+それと、左右対称のは止めようっていう意見が多いんだ。 
+女：どうしてです か。 
+男：真ん中から右と左が同じということは、
+バランスは良いけど、何か発展性が感じられないからね。 
+女：はあ、上下対称は構わないんですか。 
+男： うん、それには文句が出てないね。 
+女：じゃあ、これになるんでしょうか。 
+男：うん、それになるだろうね。 
+
+男の人はどのマークが選ばれると思っていま すか。 ";C;A;B;C;D;"Titre
+聴解スクリプト： ３番 会社の新しいマークについて話しています。男の人はどれが選ばれると思っていますか。
+Script d'écoute : Numéro 3 Deux personnes parlent du nouveau logo de l'entreprise. Lequel l'homme pense-t-il sera choisi ?
+Femme
+これ、なんですか。
+Qu'est-ce que c'est ?
+Homme
+ああ、会社の新しいマークの候補さ。
+Ah, ce sont les propositions pour le nouveau logo de l'entreprise.
+Femme
+へえ、で、どれになりそうなんですか。
+Oh. Et lequel a le plus de chances d'être choisi ?
+Homme
+うん、社長は全体が丸い形が良いとおっしゃっているんだ。
+Hum, le président dit qu'une forme globalement ronde (circulaire) est préférable.
+Femme
+すると、この丸が三つ重なっているのは駄目ですね。
+Dans ce cas, celui avec trois cercles superposés est exclu, n'est-ce pas ?
+Homme
+そうね、それは全体としては円形じゃないからね。
+Oui, c'est ça. Celui-là n'est pas circulaire dans son ensemble.
+Homme
+それと、左右対称のは止めようっていう意見が多いんだ。
+De plus, il y a beaucoup d'avis pour rejeter ceux qui sont symétriques horizontalement (gauche-droite).
+Femme
+どうしてですか。
+Pourquoi ?
+Homme
+真ん中から右と左が同じということは、バランスは良いけど、何か発展性が感じられないからね。
+Le fait que la droite et la gauche soient identiques par rapport au milieu signifie que l'équilibre est bon, mais on ne ressent aucun potentiel de développement (d'évolution).
+Femme
+はあ、上下対称は構わないんですか。
+Ah, la symétrie verticale (haut-bas) est acceptable ?
+Homme
+うん、それには文句が出てないね。
+Oui, il n'y a pas eu de plainte à ce sujet.
+Femme
+じゃあ、これになるんでしょうか。
+Alors, ce sera celui-là, n'est-ce pas ?
+Homme
+うん、それになるだろうね。
+Oui, ce sera probablement celui-là.
+Question
+男の人はどのマークが選ばれると思っていますか。
+Lequel l'homme pense-t-il sera choisi ?
+
+2. Analyse et Détermination du Choix
+Pour identifier le logo qui sera choisi selon l'homme, nous devons appliquer les conditions d'élimination et d'acceptation mentionnées par lui :
+Condition du Président (Acceptation) : La forme générale doit être ronde/circulaire (全体が丸い形).
+Condition d'élimination 1 : Les formes qui ne sont pas circulaires dans l'ensemble (comme les trois cercles qui se chevauchent) sont exclues.
+Condition d'élimination 2 : Les logos qui sont symétriques horizontalement (gauche-droite) (左右対称) sont rejetés (car ils n'inspirent pas le développement).
+Condition d'acceptation 2 : La symétrie verticale (haut-bas) (上下対称) est acceptable (il n'y a pas eu de plainte).
+Le logo choisi doit donc :
+Être globalement circulaire.
+Ne pas être symétrique horizontalement (gauche-droite).
+L'homme termine en indiquant que le dernier logo qu'ils ont regardé et qui respecte ces règles sera probablement choisi.
+Le logo que l'homme pense être choisi est celui qui est globalement circulaire, n'est pas symétrique gauche-droite, mais peut être symétrique haut-bas.
+";1996_N2_3.jpg
+1996;N2;"聴解スクリプト： ４番 男の人の家の犬はどこにいますか。 
+女：あれ、太郎君家って、たしか犬がいたんだよね。 
+男：うん。 
+女：でも、見えないわね、姿が。 
+男：けっこう 人見知りして隠れるんだよ。 
+女：犬小屋の中？ 
+男：それじゃ、すぐ見つかっちゃうよ。 
+女：うーん、じゃあ、池の向こうとか、その大きな岩の後ろとか。 
+男： と思うよね、普通は。 
+女：へえっ、まさか。 
+男：そうなんだ、家の犬って変っているんだ。 
+
+犬はどこにいますか。 ";B;A;B;C;D;"Titre
+聴解スクリプト： ４番 男の人の家の犬はどこにいますか。
+Script d'écoute : Numéro 4 Où se trouve le chien de l'homme ?
+Femme
+あれ、Tarō-kun, je crois que tu avais un chien, non ?
+Tiens, Tarō-kun, je croyais que tu avais un chien, non ?
+Homme
+うん。
+Oui.
+Femme
+Mais on ne le voit pas.
+Homme
+Il est assez timide et se cache (hitomishiri shite kakureru).
+Femme
+Dans la niche (inugoya no naka) ?
+Homme
+S'il était là, on le trouverait tout de suite. (Refusé)
+Femme
+Hum, alors peut-être derrière le bassin (ike no mukō) ou derrière ce gros rocher (ōkina iwa no ushiro) ?
+Homme
+C'est ce que l'on pense normalement, n'est-ce pas ? (Refusé/Improbable)
+Femme
+Ah ! Pas possible ! (masaka)
+Homme
+C'est ça. Mon chien est bizarre (kawatterun da).
+Question
+犬はどこにいますか。
+Où se trouve le chien ?
+
+2. Analyse et Détermination de la Localisation
+La question demande l'emplacement du chien. Cependant, la conversation a pour but de souligner que le chien se cache dans un endroit inattendu ou bizarre :
+Refusé : Il n'est pas dans la niche (trop facile à trouver).
+Refusé : Il n'est pas dans un endroit standard de jardin comme derrière le bassin ou derrière le gros rocher (l'homme dit que c'est ce qu'on penserait ""normalement"").
+Conclusion : La femme ne découvre pas l'emplacement, et l'homme confirme que l'endroit est étrange (変っているんだ).
+L'emplacement exact du chien n'est pas révélé dans le dialogue. L'information essentielle est qu'il est caché dans un endroit inhabituel ou secret.
+Si ce script faisait partie d'un test à choix multiples (QCM), l'option correcte décrirait probablement cet endroit étrange (par exemple, ""sous la maison"" ou ""dans l'arbre""), mais comme aucune option n'est fournie ici, nous ne pouvons que confirmer l'état de l'information.
+L'explication est la suivante : Le chien est caché dans un endroit jugé étrange ou inhabituel (変っている), car il n'est pas dans les lieux de cachette classiques mentionnés (niche, derrière le rocher, ou au-delà du bassin).
+";1996_N2_4.jpg
+1996;N2;"聴解スクリプト： ５番 社長と社員が会社のマスコット人形をどれにするか話しています。
+話に出てこなかったマスコット人形はどれですか。 
+女：社長、会社のマスコット 人形ですが、案ができました。 
+男：ほう、しかしなんだな、へんてこな動物ばかりだな。
+それでこの中のどれにするんだね。 
+女：ええ、それを社長に御相談 しようと… 
+男：この鳥みたいに口が尖ったやつは何だね。 
+女：はあ、ですから空想の… 
+男：わしゃ髪の毛のもじゃもじゃは不愉快じゃ。 
+女：はあ、ではこ ちらの帽子を被ったのはどうでしょうか。 
+男：このお化けみたいのやつか。
+我が社もお化けみたいに消えてしまうんじゃないか、こんなの使ったら。 
+女：は あ、ではこちらの髭を生やしたのはどうでしょうか。 
+男：わしは猫が大嫌いなんだ。こりゃどう見ても猫だ。 
+女：いえっ。 
+男：もう良い。もう少し増しな絵を描 いてこい！こんなんじゃ採用できん。 
+
+話に出てこなかったマスコット人形はどれですか。  ";A;A;B;C;D;"Titre
+聴解スクリプト： ５番 社長と社員が会社のマスコット人形をどれにするか話しています。話に出てこなかったマスコット人形はどれですか。
+Script d'écoute : Numéro 5 Le président et un employé parlent du choix de la mascotte de l'entreprise. Quelle mascotte n'a pas été mentionnée dans la conversation ?
+Femme (Employée)
+社長、会社のマスコット人形ですが、案ができました。
+Monsieur le Président, voici les propositions pour la mascotte de l'entreprise.
+Homme (Président)
+ほう、しかしなんだな、へんてこな動物ばかりだな。それでこの中のどれにするんだね。
+Oh. Mais que sont tous ces animaux bizarres ? Alors, laquelle allons-nous choisir ?
+Femme
+ええ、それを社長に御相談しようと…
+Eh bien, je voulais vous consulter à ce sujet...
+Homme
+この鳥みたいに口が尖ったやつは何だね。
+Qu'est-ce que ce truc avec un bec pointu comme un oiseau ? (Mascotte A)
+Femme
+はあ、ですから空想の…
+Ah, eh bien, c'est une créature imaginaire...
+Homme
+Moi, je trouve ces cheveux hirsutes/ébouriffés (髪の毛のもじゃもじゃ) désagréables. (Mascotte B)
+Femme
+はあ、ではこちらの帽子を被ったのはどうでしょうか。
+Alors, que pensez-vous de celui-ci qui porte un chapeau ?
+Homme
+Ce truc qui ressemble à un fantôme (お化けみたいのやつ) ? Si on utilise un truc pareil, notre entreprise ne va-t-elle pas disparaître comme un fantôme ? (Mascotte C)
+Femme
+はあ、ではこちらの髭を生やしたのはどうでしょうか。
+Ah, eh bien, que pensez-vous de celui-ci avec des moustaches/une barbe ?
+Homme
+Je déteste les chats. Celui-là ressemble à un chat (猫だ), peu importe comment on le regarde. (Mascotte D)
+Femme
+いえっ。
+Non...
+Homme
+もう良い。もう少し増しな絵を描いてこい！こんなんじゃ採用できん。
+C'est bon. Revenez avec des dessins un peu meilleurs ! Je ne peux pas accepter ça.
+Question
+話に出てこなかったマスコット人形はどれですか。
+Quelle mascotte n'a pas été mentionnée dans la conversation ?
+
+2. Analyse des Mascottes Discutées
+Le dialogue est construit comme une liste de rejets, où le président critique tour à tour différentes propositions de mascottes.
+Quatre mascottes distinctes sont mentionnées/décrites dans la conversation :
+Celle avec un bec pointu/comme un oiseau (鳥みたいに口が尖ったやつ).
+Celle avec des cheveux hirsutes/ébouriffés (髪の毛のもじゃもじゃ).
+Celle qui porte un chapeau et ressemble à un fantôme (帽子を被ったの / お化けみたいのやつ).
+Celle qui a des moustaches/une barbe et ressemble à un chat (髭を生やしたの / 猫だ).
+Conclusion :
+Étant donné que quatre mascottes distinctes ont été décrites et rejetées dans la conversation, et qu'une question standard de QCM (Question à Choix Multiples) pour ce type de script présente quatre options visuelles ou descriptives, le but de la question est d'identifier l'option (A, B, C ou D) qui ne correspond à aucune de ces quatre descriptions.
+Puisque nous n'avons pas les options A, B, C, et D fournies avec le script, nous ne pouvons que confirmer que toutes les descriptions ci-dessus ont été mentionnées. Pour répondre à la question ""laquelle n'a pas été mentionnée"", nous aurions besoin d'une cinquième option ou d'une liste externe à comparer.
+Si vous aviez une liste de choix (par exemple, un dinosaure, un robot, une étoile), la bonne réponse serait l'élément qui n'a pas été décrit comme ""bec pointu"", ""cheveux hirsutes"", ""fantôme/chapeau"" ou ""chat/moustaches"".
+";1996_N2_5.jpg
+1996;N2;"聴解スクリプト： ６番 カップについて話しています。
+男の人がこの前東北旅行で作ったカップはどれですか。 
+
+女：ずいぶんいろいろな形のカップがあるわね。 
+男：そう だろう。旅先で買ったり、自分で作ったりしたんだ。 
+女：へえ、陶芸の趣味があったんだね。 
+男：あれはこの前東北に行った時に作ったんだ。 
+女：えっ、ど れ。 
+男：ほら、上と下が同じ太さで、ちょっと真ん中がへこんでいる。 
+女：あ、持つところが両側についている？ 
+男：ううん、片側。 女：あ、あれ。へえ、ちょ っとしたもんね。 
+
+男の人が東北旅行で作ったカップはどれですか。 ";C;A;B;C;D;"Titre
+聴解スクリプト： ６番 カップについて話しています。男の人がこの前東北旅行で作ったカップはどれですか。
+Script d'écoute : Numéro 6 Ils parlent de tasses. Quelle est la tasse que l'homme a fabriquée lors de son voyage à Tōhoku ?
+Femme
+ずいぶんいろいろな形のカップがあるわね。
+Il y a tellement de tasses de formes variées !
+Homme
+そうだろう。旅先で買ったり、自分で作ったりしたんだ。
+C'est vrai, n'est-ce pas ? J'en ai achetées en voyage ou je les ai fabriquées moi-même.
+Femme
+へえ、陶芸の趣味があったんだね。
+Oh, tu avais un hobby de poterie ?
+Homme
+あれはこの前東北に行った時に作ったんだ。
+Celui-là, je l'ai fait la dernière fois que je suis allé à Tōhoku.
+Femme
+えっ、どれ。
+Quoi ? Lequel ?
+Homme
+Regarde, il a la même épaisseur en haut et en bas (上と下が同じ太さで), et le milieu est légèrement évidé/concave (真ん中がへこんでいる).
+Femme
+Ah, celui qui a des poignées des deux côtés (持つところが両側についている) ?
+Homme
+Non, d'un seul côté (片側).
+Femme
+Ah, celui-là. Oh, c'est pas mal du tout.
+Question
+男の人がこの前東北旅行で作ったカップはどれですか。
+Quelle est la tasse que l'homme a fabriquée lors de son voyage à Tōhoku ?
+
+2. Analyse et Détermination de la Tasse
+L'homme décrit la tasse qu'il a fabriquée lors de son voyage à Tōhoku selon les caractéristiques suivantes :
+Forme verticale : La partie supérieure et la partie inférieure ont la même épaisseur/largeur (上と下が同じ太さ).
+Forme horizontale : Le milieu est légèrement évidé/concave (真ん中がへこんでいる).
+Poignée : La poignée est d'un seul côté (片側).
+Description de la tasse :
+La tasse qu'il a fabriquée est celle qui est de forme cylindrique (même largeur en haut et en bas), mais qui a un léger renfoncement ou un évidement au milieu, et une poignée d'un seul côté.
+(En d'autres termes, elle a une forme de sablier très subtile, ou simplement une encoche au centre, avec une poignée simple.)
+";1996_N2_6.jpg
+1996;N2;"聴解スクリプト： ７番 今説明している町の人口の変化を表わす線はどれですか。 
+
+女：最近、地方で人口の減っている市町村が目立ちます。
+例えば、この町の場合、ご 覧のように、ここ二年かなり急激に減っています。
+ただ、この町では二年前まで、人口の増減はほとんど見られませんでした。
+この二年急激な減少が見ら れたのは、地元企業の移転によります。
+ただ、これからの予測としては、え、グラフでは点線の部分ですが、
+相変わらず人口は減るでしょうが、激しい変 化にはならないでしょう。 
+
+今説明しているのはどの線ですか。 ";B;A;B;C;D;"Titre
+聴解スクリプト： ７番 今説明している町の人口の変化を表わす線はどれですか。
+Script d'écoute : Numéro 7 Quelle courbe représente les changements démographiques de la ville actuellement décrite ?
+Femme
+最近、地方で人口の減っている市町村が目立ちます。
+Récemment, on remarque beaucoup de villes et de villages ruraux où la population diminue.
+Femme
+例えば、この町の場合、ご覧のように、ここ二年かなり急激に減っています。
+Par exemple, dans le cas de cette ville, comme vous le voyez, la population a diminué assez fortement au cours des deux dernières années.
+Femme
+ただ、この町では二年前まで、人口の増減はほとんど見られませんでした。
+Cependant, jusqu'à il y a deux ans, pratiquement aucune variation démographique n'était observée dans cette ville.
+Femme
+この二年急激な減少が見られたのは、地元企業の移転によります。
+Cette forte diminution observée ces deux dernières années est due à la délocalisation d'entreprises locales.
+Femme
+ただ、これからの予測としては、え、グラフでは点線の部分ですが、相変わらず人口は減るでしょうが、激しい変化にはならないでしょう。
+Cependant, selon les prévisions futures (la partie en pointillés sur le graphique), la population continuera de diminuer, mais le changement ne sera pas drastique (aussi violent).
+Question
+今説明しているのはどの線ですか。
+Quelle courbe est actuellement décrite ?
+
+2. Analyse du Changement Démographique (Description de la Courbe)
+Puisque nous n'avons pas le graphique, nous devons décrire la forme de la courbe :
+Période 1 (Passé, jusqu'à il y a 2 ans) : La population était stable ou ne montrait ""pratiquement aucune variation"" (ほとんど見られませんでした).
+Aspect de la courbe : Ligne principalement horizontale / plate jusqu'à il y a deux ans.
+Période 2 (Les 2 dernières années) : La population a diminué fortement et rapidement (かなり急激に減っています).
+Aspect de la courbe : Pente raide et descendante sur cette période.
+Période 3 (Futur, en pointillés) : La population va continuer à diminuer, mais le rythme sera moins intense (激しい変化にはならない).
+Aspect de la courbe : Pente descendante mais moins raide (plus douce) que les deux dernières années.
+Conclusion :
+La courbe décrite est celle qui commence plate et stable, plonge en chute abrupte durant les deux dernières années, puis continue sa descente à un rythme plus modéré (moins raide) dans le futur.
+";1996_N2_7.jpg
+1996;N2;"聴解スクリプト： ８番 男の人が何かを作っています。
+女の人のアドバイスで男の人の作品はどのようになりますか。 
+
+女：あれ、何作ってんの。 
+男：うん、今度の文化祭 に出すオブジェだよ。 
+女：えー、オブジェ？何、それ。 男：彫刻みたいなものさ。
+これは組み合わせて作ってるけどね。 
+女：ふうん。 
+男：どう。 
+女：そうね。 横に飛び出している丸いのは面白いんじゃない。 
+男：そうだろう。 
+女：でも上の三角はちょっとね。 
+男：じゃ下に置いてみようか。 
+女：真ん中の波みたいな のを隠さない方がいいんじゃない。 
+男：じゃあ、ここかな。 
+女：そうね、良いんじゃない。 
+
+男の人の作品はどのようになりしたか。  ";D;A;B;C;D;"Titre
+聴解スクリプト： ８番 男の人が何かを作っています。女の人のアドバイスで男の人の作品はどのようになりますか。
+Script d'écoute : Numéro 8 Un homme fabrique quelque chose. Comment l'œuvre de l'homme va-t-elle changer grâce aux conseils de la femme ?
+Femme
+あれ、何作ってんの。
+Qu'est-ce que tu es en train de faire ?
+Homme
+うん、今度の文化祭に出すオブジェだよ。
+Hum, c'est une sculpture/objet que je vais présenter à la prochaine fête culturelle.
+Femme
+えー、オブジェ？何、それ。
+Une sculpture ? C'est quoi ?
+Homme
+C'est une sorte de sculpture. Celle-ci est faite d'éléments assemblés.
+Femme
+ふうん。
+Hum.
+Homme
+Comment tu trouves ?
+Femme
+Ça va. Le rond qui dépasse sur le côté (横に飛び出している丸いの) est intéressant, je trouve.
+Homme
+N'est-ce pas ?
+Femme
+Mais le triangle du dessus (上の三角) est un peu... bof.
+Homme
+Alors, je vais essayer de le mettre en bas (下に置いてみようか).
+Femme
+Je pense qu'il vaut mieux ne pas cacher le truc ondulé au milieu (真ん中の波みたいなのを隠さない方がいい).
+Homme
+Alors, ici, peut-être (ここかな).
+Femme
+Oui, ça a l'air bien (良いんじゃない).
+Question
+男の人の作品はどのようになりしたか。
+Quelle est la forme finale de l'œuvre de l'homme ?
+
+2. Analyse des Changements
+L'œuvre est une composition d'éléments :
+L'élément rond (横に飛び出している丸いの) est validé et reste sur le côté.
+L'élément ondulé/vague (真ん中の波みたいなの) doit rester visible au milieu.
+L'élément triangulaire (上の三角) est critiqué pour sa position en haut. L'homme décide de le placer en bas (下に置いてみようか).
+L'assemblage final doit garantir que l'onde centrale n'est pas cachée par le triangle.
+Conclusion sur la forme finale :
+L'œuvre finale est une composition assemblée dont les caractéristiques sont : un élément rond sur le côté, une forme ondulée visible au milieu, et l'élément triangulaire placé désormais en bas de la structure.
+
+Description de la forme finale :
+La sculpture finale est composée d'une forme ondulée centrale et visible, d'un élément rond qui ressort sur le côté, et d'un élément triangulaire placé dans la partie inférieure.
+";1996_N2_8.jpg
+1996;N2;"聴解スクリプト： ９番 女の人が店の人に相談しています。
+女の人はどの道具を買いますか。 
+
+女：あの、壁に絵を掛けたいんですけど。 
+男：はい。絵を。で、どんな壁で すか。 
+女：板壁で固いんですけど。 
+男：うん。じゃあ、この釘を使えばいいでしょう。
+後、大工道具はありますか。 
+女：道具って。 
+男：ほら、これ、釘を打つ のに使う。 
+女：ああ、それなら持ってます。 
+男：そう。後これも要りますよ。両手に挟んで、こうやって回して。 
+女：ああ、穴を開けるんですね。それはない わ。じゃ、それください。 
+
+女の人はどの道具を買いますか。";C;A;B;C;D;"Titre
+聴解スクリプト： ９番 女の人が店の人に相談しています。女の人はどの道具を買いますか。
+Script d'écoute : Numéro 9 Une femme consulte un vendeur. Quel outil la femme va-t-elle acheter ?
+Femme
+あの、壁に絵を掛けたいんですけど。
+Euh, je voudrais accrocher un tableau au mur.
+Homme (Vendeur)
+はい。絵を。で、どんな壁ですか。
+Oui. Un tableau. Et quel type de mur est-ce ?
+Femme
+C'est un mur en bois et il est dur.
+Homme
+うん。じゃあ、この釘を使えばいいでしょう。後、大工道具はありますか。
+Hmm. Dans ce cas, vous devriez utiliser ce clou. Avez-vous déjà des outils de menuisier ?
+Femme
+Des outils ?
+Homme
+Regardez, ceci, on l'utilise pour enfoncer le clou.
+Femme
+ああ、それなら持ってます。
+Ah, ça, je l'ai. (Elle possède le marteau).
+Homme
+そう。後これも要りますよ。両手に挟んで、こうやって回して。
+D'accord. Après, vous avez aussi besoin de ça. Vous le tenez entre les deux mains et vous le faites tourner comme ça.
+Femme
+ああ、穴を開けるんですね。それはないわ。じゃ、それください。
+Ah, c'est pour faire des trous, n'est-ce pas ? Je n'ai pas ça. Alors, je vais prendre ça.
+Question
+女の人はどの道具を買いますか。
+Quel outil la femme va-t-elle acheter ?
+
+2. Analyse et Détermination de l'Achat
+La femme vient pour acheter des choses nécessaires pour accrocher un tableau sur un mur en bois dur.
+Clou (釘): Le vendeur recommande un clou spécifique. La femme a besoin du clou.
+Marteau (釘を打つのに使う道具): Le vendeur demande si elle a un outil pour enfoncer le clou. La femme répond : ""持ってます"" (Je l'ai). Elle n'achète donc pas le marteau.
+Vilebrequin/Perceuse (穴を開ける道具): Le vendeur lui montre un autre outil : on le tient à deux mains et on le tourne pour faire un trou (穴を開ける). La femme dit : ""それはないわ"" (Je n'ai pas ça) et conclut : ""じゃ、それください"" (Alors, je vais prendre ça).
+L'objet qu'elle identifie comme manquant et qu'elle décide d'acheter est l'outil pour faire des trous (par exemple, un vilebrequin, une mèche ou une petite perceuse manuelle), qu'elle ne possède pas.
+Conclusion : La femme achète l'outil qui sert à percer des trous.
+
+Réponse (Description de l'outil acheté) :
+La femme achète l'outil que le vendeur lui a montré et qui sert à faire des trous (穴を開ける道具).
+";1996_N2_9.jpg
+1996;N2;"聴解スクリプト： 10番 どの花のことを話していますか。 
+女：まあ、奇麗な花ですね。 
+男：ええ、最近作られた種類で、花の回りがちじれているところが特徴なんですよ。 
+女：へえ。 
+男：もとはまっすぐ立っている花だったんですよ。 
+女：お辞儀をしているようで、優しい感じですね、これは。 
+男：ええ、香りも良いし、今人気が あるんですよ。 
+
+どの花のことを話していますか。  ";D;A;B;C;D;"Titre
+聴解スクリプト： 10番 どの花のことを話していますか。
+Script d'écoute : Numéro 10 De quelle fleur parlent-ils ?
+Femme
+まあ、奇麗な花ですね。
+Oh, quelle jolie fleur !
+Homme
+ええ、最近作られた種類で、花の回りがちじれているところが特徴なんですよ。
+Oui, c'est une variété créée récemment, et sa caractéristique est que le contour des pétales est frisé/ondulé/côtelé.
+Femme
+へえ。
+Ah bon.
+Homme
+もとはまっすぐ立っている花だったんですよ。
+À l'origine, c'était une fleur qui se tenait droite (まっすぐ).
+Femme
+お辞儀をしているようで、優しい感じですね、これは。
+Celle-ci donne l'impression de faire une révérence (s'incliner), elle a l'air délicate.
+Homme
+ええ、香りも良いし、今人気があるんですよ。
+Oui, elle a aussi un bon parfum et elle est très populaire en ce moment.
+Question
+どの花のことを話していますか。
+De quelle fleur parlent-ils ?
+
+2. Analyse et Détermination de la Fleur
+La fleur est décrite par plusieurs caractéristiques :
+Caractéristique principale (forme des pétales) : Le contour des pétales est frisé/ondulé/côtelé (ちじれている).
+Caractéristique de la tige/tête : Elle a été créée à partir d'une fleur qui se tenait droite (まっすぐ立っている花), mais la nouvelle variété semble faire une révérence/s'incliner (お辞儀をしているよう).
+Autres qualités : Elle est parfumée (香りも良い) et populaire.
+La fleur dont ils parlent est donc celle qui est inclinée (comme si elle s'inclinait) et dont les pétales ont les bords frisés ou ondulés.
+
+Réponse (Description de la fleur) :
+Ils parlent d'une fleur qui est inclinée vers le bas (comme en train de s'incliner) et dont les pétales ont les bords frisés ou ondulés. Elle est également parfumée.
+";1996_N2_10.jpg
+1996;N2;"聴解スクリプト： 11番 お爺さんが案内書の絵を見ながら旅行会社の人と話しています。
+案内書にない絵はどれですか。 
+男：すると、この旅行ではこんな体験ができる んですね。 
+女：はい、そうです。土を捏ねて茶碗を作ったり、
+森の中をスキーを履いて歩いたりできます。 
+男：あ、スキーなんかしたことないんですが。 
+女：スキーと言っても散歩のように、自然の中を歩くスキーですから。
+指導者もつけますし、初めての方でも安心です。 
+男：それなら良いですな。ところ で、このボートは？ 
+女：ええ、ボートに乗って島巡りができるんです。 
+男：おー、雪の小島をボートからみるのも良いですね。
+つりのボートは乗ったことが ありますが、大きさはあんなもんですか。 
+女：はあ、ええと、七人乗りのモーターボートです。 
+男：ほお。 
+
+案内書にない絵はどれですか。 ";D;A;B;C;D;"Titre
+聴解スクリプト： 11番 お爺さんが案内書の絵を見ながら旅行会社の人と話しています。案内書にない絵はどれですか。
+Script d'écoute : Numéro 11 Un homme âgé regarde les images d'un livret d'information et parle à un agent de voyage. Quelle image ne figure pas dans le livret ?
+Homme (Client)
+すると、この旅行ではこんな体験ができるんですね。
+Alors, on peut faire de telles expériences pendant ce voyage, c'est ça ?
+Femme (Agent)
+はい、そうです。土を捏ねて茶碗を作ったり、森の中をスキーを履いて歩いたりできます。
+Oui, c'est exact. Vous pouvez pétrir de l'argile pour fabriquer un bol à thé et marcher dans la forêt avec des skis aux pieds.
+Homme
+あ、スキーなんかしたことないんですが。
+Ah, je n'ai jamais fait de ski.
+Femme
+スキーと言っても散歩のように、自然の中を歩くスキーですから。指導者もつけますし、初めての方でも安心です。
+Même si on dit ""ski"", c'est du ski de randonnée/marche dans la nature, comme une promenade. Nous fournissons un guide, donc même les débutants peuvent être rassurés.
+Homme
+それなら良いですな。ところで、このボートは？
+Dans ce cas, ça va. Au fait, qu'en est-il de ce bateau ?
+Femme
+ええ、ボートに乗って島巡りができるんです。
+Oui, vous pouvez faire le tour des îles en bateau.
+Homme
+おー、雪の小島をボートからみるのも良いですね。つりのボートは乗ったことがありますが、大きさはあんなもんですか。
+Oh, voir de petites îles enneigées depuis un bateau, ça doit être bien. J'ai déjà été sur un bateau de pêche, est-ce la même taille ?
+Femme
+はあ、ええと、七人乗りのモーターボートです。
+Ah, eh bien, c'est un bateau à moteur de sept places.
+Question
+案内書にない絵はどれですか。
+Quelle image ne figure pas dans le livret d'information ?
+
+2. Analyse et Détermination de l'Image Manquante
+La question demande l'image qui n'est pas présente dans le livret (案内書にない絵). L'homme regarde les images du livret, et l'agent confirme les activités montrées.
+Les activités/images confirmées dans le livret sont :
+Faire un bol à thé : 土を捏ねて茶碗を作る (Pétrir l'argile pour faire un bol à thé).
+Ski de randonnée/marche en forêt : 森の中をスキーを履いて歩く (Marcher dans la forêt avec des skis).
+Tour des îles en bateau : ボートに乗って島巡り (Faire le tour des îles en bateau).
+L'homme mentionne une autre activité qu'il connaît, mais qui n'est pas celle montrée sur le livret :
+つりのボートは乗ったことがありますが
+(J'ai déjà été sur un bateau de pêche)
+Il utilise cela comme référence pour comparer la taille du bateau de l'agence, ce qui implique que l'image du bateau sur le livret est un bateau de plaisance pour touristes (le bateau à moteur de 7 places), et non un bateau de pêche.
+Conclusion : L'image qui n'est pas dans le livret, mais qui est mentionnée par l'homme, est le bateau de pêche.
+L'image qui n'est pas dans le livret est celle d'un bateau de pêche.
+";1996_N2_11.jpg
+1996;N2;************************************************************************;;A;B;C;D;************************************************************;Pas d’image
+1996;N2;"聴解スクリプト： 1番 昼休みに会社の同僚が話しています。
+男の人はどうして休みにどこへも行かないのですか。 
+女：今度の連休、どこへ行くことにした？ 
+男：どこに も行かないよ。 
+女：え？どこにも行かないって、調子でも悪いの？ 
+男：残念でした。 
+女：じゃあ、どうして。わかった、お金がないんだ。 
+男：ボーナスが入 ったばかりだぜ。たまにはゆっくりしようと思って。 
+女：どういう心境の変化。 
+男：うん、考えたんだ。もうへとへとに疲れているのにさあ。 
+女：ええ。 
+男：な んで休みになると、どこかへ行かなくちゃならないのかってさ。 
+女：うん。ま、電車も道路も込んでて大変だけどね。 
+男：うん。そうなんだよ。 
+女：で、家で ごろごろするってこと？ 
+男：ま、そういうこと。お土産待ってるね。 
+
+男の人はどうして休みにどこへも行かないのですか。 
+
+１、体の調子が良くないからで す。 
+２、ゆっくり女の人と話したいからです。 
+３、お金がないからです。 
+４、休みたいからです。  ";D;A;B;C;D;"Femme
+今度の連休、どこへ行くことにした？
+Qu'est-ce que tu as décidé de faire pour les prochains longs congés ?
+Homme
+どこにも行かないよ。
+Je ne vais nulle part.
+Femme
+Hein ? Tu ne vas nulle part ? Tu ne te sens pas bien ?
+Homme
+残念でした。
+Perdu ! (Ce n'est pas ça).
+Femme
+じゃあ、どうして。わかった、お金がないんだ。
+Alors, pourquoi ? J'ai trouvé, tu n'as pas d'argent !
+Homme
+ボーナスが入ったばかりだぜ。たまにはゆっくりしようと思って。
+Je viens juste de toucher mon bonus, voyons. J'ai pensé que j'allais me reposer tranquillement cette fois.
+Femme
+Quel changement d'état d'esprit !
+Homme
+うん、考えたんだ。もうへとへとに疲れているのにさあ。
+Oui, j'y ai réfléchi. Je suis déjà épuisé.
+Homme
+...なんで休みになると、どこかへ行かなくちゃならないのかってさ。
+...alors pourquoi devrait-on absolument aller quelque part pendant les vacances ?
+Question
+男の人はどうして休みにどこへも行かないのですか。
+Pourquoi l'homme ne part-il nulle part pendant ses congés ?
+2. Explication et Raison du Choix
+L'homme rejette explicitement les raisons initialement suggérées par sa collègue :
+Santé (体の調子が良くない) : Il nie.
+Argent (お金がない) : Il nie, ayant récemment reçu son bonus.
+Il donne deux raisons principales et liées pour rester chez lui :
+Il est déjà épuisé (へとへとに疲れている).
+Il veut se reposer tranquillement (ゆっくりしようと思って).
+La raison fondamentale pour laquelle il ne part pas est donc son besoin de repos.
+3. Conclusion de la Réponse
+L'option correcte est celle qui correspond au besoin de repos de l'homme :
+休みたいからです。(Parce qu'il veut se reposer.)
+";Pas d’image
+1996;N2;"聴解スクリプト： ２番 女の人がスポーツクラブの利用について質問しています。
+女の人はＡＢＣＤの４つのコースのうち、どのコースを選びますか。 
+
+女：このスポーツクラブのメンバーになりたいんですけど。 
+男：色々と種類がございますが。 
+女：どんな。 
+男：はい。Ａコースは一ヶ月一万円で、朝９時から夜９時まで、
+いつで もこちらの施設がご利用になります。 
+女：ちょっと高いわね。それに、土、日は来られないから。 
+男：外にも色々ございまして。平日だけのご利用ですと、 二つのコースがございます。
+朝９時から夕方５時までご利用になれるＢコース、夕方５時以降ご利用になれるＣコースがございます。 
+女：このＤコースとい うのは？ 
+男：こちらは土曜、日曜、祭日だけのご利用となります。 
+女：じゃあ、関係ないわよね。
+うん、私が来られるのは月、水、金の午前中だから、これ にします。 
+
+女の人はＡＢＣＤの４つのコースのうち、どのコースを選びましたか。 
+
+１、Ａコースです。 
+２、Ｂコースです。 
+３、Ｃコースです。 
+４、Ｄコースで す。 ";B;A;B;C;D;"Absolument. Voici la traduction et l'explication en français du script d'écoute, ainsi que la détermination du cours que la femme choisit.
+
+🇫🇷 Traduction et Explication du Script
+1. Traduction Détaillée du Dialogue
+Locuteur
+Japonais (Original)
+Français (Traduction)
+Titre
+聴解スクリプト (Non spécifié)
+Script d'écoute
+Femme
+Je voudrais devenir membre de votre club.
+Homme (Vendeur)
+Nous avons différents types de cours.
+Femme
+Lesquels ?
+Homme
+Oui. Le Cours A coûte 10 000 yens par mois, et vous pouvez utiliser nos installations de 9h du matin à 21h le soir, à tout moment.
+Cours A : 10 000 ¥/mois, 9h-21h, tous les jours (y compris weekend).
+Femme
+C'est un peu cher. De plus, je ne peux pas venir le samedi et le dimanche (weekend).
+→ Rejet du Cours A
+Homme
+Nous avons d'autres options. Pour une utilisation uniquement en semaine (平日だけ), nous avons deux cours.
+Homme
+Le Cours B que vous pouvez utiliser de 9h du matin à 17h l'après-midi.
+Cours B : En semaine, 9h-17h.
+Homme
+Et le Cours C que vous pouvez utiliser après 17h l'après-midi.
+Cours C : En semaine, après 17h.
+Femme
+Et qu'en est-il du Cours D ?
+Homme
+Celui-ci est réservé à une utilisation uniquement le samedi, le dimanche et les jours fériés.
+Cours D : Weekends et jours fériés.
+Femme
+Alors, ça ne me concerne pas, n'est-ce pas ? Hum, je peux venir le lundi, le mercredi et le vendredi matin. Alors, je vais prendre celui-là.
+→ Choix final
+Question
+女の人はＡＢＣＤの４つのコースのうち、どのコースを選びましたか。
+Parmi les quatre cours A, B, C et D, quel cours la femme a-t-elle choisi ?
+
+2. Analyse et Détermination du Choix
+Pour identifier le choix de la femme, nous devons comparer ses contraintes avec les options :
+Contraintes de temps de la femme :
+Elle ne vient pas les weekends (samedi, dimanche). (Exclut A et D)
+Elle vient le matin (lundi, mercredi, vendredi matin).
+Options restantes pour les jours de semaine (en excluant A et D) :
+Cours B : Utilisation de 9h du matin à 17h l'après-midi.
+Cours C : Utilisation après 17h l'après-midi.
+Choix final :
+Puisqu'elle ne vient que le matin (月、水、金の午前中), l'option qui couvre le matin est le Cours B (9h-17h).
+La femme choisit donc le Cours B.
+3. Choix de la Bonne Réponse
+Ａコースです。    Faux (Trop cher et inclut les weekends).
+Ｂコースです。   Vrai (Correspond à une utilisation en semaine le matin).
+Ｃコースです。    Faux (C'est pour le soir, après 17h).
+Ｄコースです。    Faux (Réservé aux weekends et jours fériés).
+";Pas d’image
+1996;N2;"聴解スクリプト： ３番 テレビの天気予報です。
+山沿いの地域ではいつ雨が降ると予測していますか。 
+男：それでは明日の天気予報をお知らせします。
+低気圧が近づい ている影響で、今夜遅くからお天気は次第に下り坂に向かい、
+山沿いの地域では明け方には雨が降るでしょう。この雨は次第に広がり、
+平野部一帯でも 昼前にはぐずついたお天気となるでしょう。
+また、海沿いの地域では、午後遅くなってから、雨が降り出す見込みです。
+また特に内陸部では朝夕の冷え 込みが厳しくなる恐れがあるので、
+風邪など引きませんよう十分お気をつけください。 
+
+山沿いの地域ではいつ雨が降ると予測していますか。 
+
+１、明け方 です。 
+２、昼前です。 
+３、昼過ぎです。 
+４、午後遅くです。 ";A;A;B;C;D;"Titre
+聴解スクリプト： ３番 テレビの天気予報です。山沿いの地域ではいつ雨が降ると予測していますか。
+Script d'écoute : Numéro 3 Bulletin météo télévisé. Quand est-il prévu qu'il pleuve dans les régions montagneuses ?
+Homme
+それでは明日の天気予報をお知らせします。
+Voici les prévisions météo pour demain.
+Homme
+低気圧が近づいている影響で、今夜遅くからお天気は次第に下り坂に向かい、山沿いの地域では明け方には雨が降るでしょう。
+En raison de l'approche d'une dépression, le temps va se dégrader progressivement à partir de la fin de soirée, et la pluie tombera sur les régions montagneuses à l'aube (明け方).
+Homme
+この雨は次第に広がり、平野部一帯でも昼前にはぐずついたお天気となるでしょう。
+Cette pluie va s'étendre progressivement, et le temps deviendra maussade même dans toute la zone de plaine avant midi (昼前).
+Homme
+また、海沿いの地域では、午後遅くなってから、雨が降り出す見込みです。
+De plus, dans les régions côtières, la pluie est attendue en fin d'après-midi (午後遅く).
+Homme
+また特に内陸部では朝夕の冷え込みが厳しくなる恐れがあるので、風邪など引きませんよう十分お気をつけください。
+De plus, en particulier dans les régions intérieures, il y a un risque que le froid soit intense matin et soir, veuillez donc prendre soin de vous pour éviter les rhumes.
+Question
+山沿いの地域ではいつ雨が降ると予測していますか。
+Quand est-il prévu qu'il pleuve dans les régions montagneuses ?
+
+2. Analyse et Détermination de l'Heure
+La question se concentre spécifiquement sur le moment de la pluie dans les régions montagneuses (山沿いの地域).
+L'homme déclare clairement :
+山沿いの地域では明け方には雨が降るでしょう。
+(La pluie tombera sur les régions montagneuses à l'aube.)
+明け方 (Akegata) : L'aube (juste avant ou au lever du soleil).
+昼前 (Hiruzen) : Avant midi (concernant les plaines).
+午後遅く (Gogo osoku) : Fin d'après-midi (concernant la côte).
+3. Choix de la Bonne Réponse
+明け方です。(C'est à l'aube.)   Vrai (Ceci est la prévision explicite pour la zone montagneuse).
+昼前です。(C'est avant midi.)    Faux (Ceci est la prévision pour les plaines).
+昼過ぎです。(C'est après midi.)    Faux (Non mentionné directement).
+午後遅くです。(C'est en fin d'après-midi.)    Faux (Ceci est la prévision pour la côte).
+La réponse correcte est la numéro 1.
+";Pas d’image
+1996;N2;"聴解スクリプト： 4番 女の人が新しい部屋を探しています。
+今のアパートは何が問題なのですか。 
+男：小林さん、引越したいんだって？ 
+女：うん。色々探してるんだけ ど、なかなかね。 
+男：今のアパート、気に入てるって言ってたのに。 
+女：うん、駅から近いわりには高くないし、買い物にもまあまあなんだけど、
+目の前に 高いビルが建っちゃって。 
+男：ああ、日当たりが悪くなったわけ。 
+女：ううん、何か覗かれてるみたいで。 
+男：んー 女：大家さんも近所の人も感じ良いか ら、本当は移りたくないんだけど。 
+
+女の人が今住んでいるアパートの問題は何ですか。 
+
+１、場所が不便なことです。 
+２、見られているような気がするこ とです。 
+３、部屋が薄暗いことです。 
+４、隣の部屋にいやな人がいることです。  ";B;A;B;C;D;"Titre
+聴解スクリプト： 4番 女の人が新しい部屋を探しています。今のアパートは何が問題なのですか。
+Script d'écoute : Numéro 4 Une femme cherche un nouvel appartement. Quel est le problème de son appartement actuel ?
+Homme
+小林さん、引越したいんだって？
+Kobayashi-san, tu veux déménager ?
+Femme
+うん。色々探してるんだけど、なかなかね。
+Oui. Je cherche un peu partout, mais c'est difficile.
+Homme
+Mais tu disais que tu aimais bien ton appartement actuel.
+Femme
+Oui, il n'est pas cher pour sa proximité avec la gare, et c'est assez pratique pour les courses, mais... un grand immeuble a été construit juste devant.
+Homme
+Ah, l'ensoleillement a empiré (日当たりが悪くなった), c'est ça ?
+Femme
+Non (ううん), c'est plutôt que j'ai l'impression d'être observée (覗かれてるみたいで).
+Homme
+Hum.
+Femme
+Le propriétaire et les voisins sont sympathiques, donc je ne voudrais vraiment pas déménager, mais...
+Question
+女の人が今住んでいるアパートの問題は何ですか。
+Quel est le problème de l'appartement où vit la femme actuellement ?
+
+2. Analyse et Détermination du Problème
+La femme explique les aspects positifs de son appartement (bon emplacement, prix raisonnable, bon propriétaire/voisins). Elle indique clairement que le problème est dû à la construction du grand immeuble en face.
+Hypothèse de l'homme : Moins d'ensoleillement (暗い - sombre).
+Réponse de la femme : Non (ううん).
+Problème réel de la femme : Elle a l'impression d'être observée (覗かれてるみたいで).
+Le problème est donc lié à un manque d'intimité ou à un sentiment de voyeurisme causé par la proximité du nouvel immeuble.
+3. Choix de la Bonne Réponse
+場所が不便なことです。(Le fait que l'endroit soit peu pratique.)    Faux (Elle dit que c'est pratique pour les courses et la gare).
+見られているような気がすることです。(Le fait d'avoir l'impression d'être observée.) $\leftarrow$ Vrai (Elle dit ""覗かれてるみたいで"").
+部屋が薄暗いことです。(Le fait que la pièce soit sombre/peu éclairée.)    Faux (Elle rejette cette hypothèse).
+隣の部屋にいやな人がいることです。(Le fait qu'il y ait une personne désagréable dans la pièce voisine.)    Faux (Elle dit que les voisins sont sympathiques).
+La réponse correcte est la numéro 2.
+";Pas d’image
+1996;N2;"聴解スクリプト： 5番 女の人がデパートで品物を包んでくれるように頼んでいます。
+女の人は包装をどうしますか。 
+
+女A：すみません、これ、プレゼントにしたいので、包 んで、リボンをかけて頂きたいんですけど。 
+女B:では、包み紙とリボンをお選びください。 
+女A：うわあ、こんなにいろいろあるんですか。 
+女B:ただ、デパ ートの名前が入っている方は無料ですが、
+こちらの包み紙とリボンは特別ですので、合わせて200円いただくことになっております。
+それから、特別な包み 方にいたしますと、手数料が百円です。ほら、奇麗でしょう。 
+女A：あ、本当だ。でも300円かかるんだ、高いなあ。でも、この紙奇麗。 
+女B:じゃあ、この紙と リボンで、包み方は普通にしたらいかがでしょうか。 
+女A：そうしてもらおうかな。 
+女B:はい、承知致しました。 
+
+女の人は包装をどうしますか。 
+
+１、普通の 包み紙とリボンで、普通の包み方をします。 
+２、普通の包み紙とリボンで、特別な包み方をします。 
+３、特別な包み紙とリボンで、普通の包み方をします。 
+４、特別な包み紙とリボンで、特別な包み方をします。  ";C;A;B;C;D;"Titre
+聴解スクリプト： 5番 女の人がデパートで品物を包んでくれるように頼んでいます。女の人は包装をどうしますか。
+Script d'écoute : Numéro 5 Une femme demande à une employée de grand magasin d'emballer un article. Quel emballage la femme choisit-elle ?
+Femme A (Cliente)
+すみません、これ、プレゼントにしたいので、包んで、リボンをかけて頂きたいんですけど。
+Excusez-moi, je voudrais que cet article soit emballé et qu'on y ajoute un ruban, car je veux en faire un cadeau.
+Femme B (Employée)
+では、包み紙とリボンをお選びください。
+Dans ce cas, veuillez choisir le papier d'emballage et le ruban.
+Femme A
+うわあ、こんなにいろいろあるんですか。
+Wow, il y a tant de choix !
+Femme B
+ただ、デパートの名前が入っている方は無料ですが、こちらの包み紙とリボンは特別ですので、合わせて200円いただくことになっております。
+Cependant, celui avec le nom du grand magasin est gratuit, mais ce papier d'emballage et ce ruban sont spéciaux, donc nous facturons 200 yens pour les deux.
+Femme B
+それから、特別な包み方にいたしますと、手数料が百円です。ほら、奇麗でしょう。
+De plus, si vous optez pour une méthode d'emballage spéciale, il y a des frais de 100 yens. Regardez, c'est joli, n'est-ce pas ?
+Femme A
+あ、本当だ。でも300円かかるんだ、高いなあ。でも、この紙奇麗。
+Ah, c'est vrai. Mais ça fait 300 yens, c'est cher. Mais ce papier est joli.
+Femme B
+じゃあ、この紙とリボンで、包み方は普通にしたらいかがでしょうか。
+Alors, que diriez-vous de prendre ce papier et ce ruban (spéciaux), mais d'utiliser la méthode d'emballage standard ?
+Femme A
+そうしてもらおうかな。
+Je pense que je vais faire comme ça.
+Femme B
+はい、承知致しました。
+Oui, c'est compris.
+Question
+女の人は包装をどうしますか。
+Quel emballage la femme choisit-elle ?
+
+2. Analyse et Détermination du Choix
+La femme aime le papier spécial (この紙奇麗) mais trouve le coût total de 300 yens (200 ¥ pour le papier/ruban spécial + 100 ¥ pour la méthode spéciale) trop élevé (高いなあ).
+L'employée lui propose un compromis :
+Utiliser le papier et le ruban spéciaux (特別な包み紙とリボン, coût : 200 ¥).
+Utiliser la méthode d'emballage standard (普通の包み方, coût : gratuit).
+La femme accepte cette suggestion finale (そうしてもらおうかな).
+Le choix final est donc : Emballage et ruban spéciaux avec une méthode d'emballage standard.
+3. Choix de la Bonne Réponse
+普通の包み紙とリボンで、普通の包み方をします。(Papier/ruban standard, Méthode standard.)    Faux.
+普通の包み紙とリボンで、特別な包み方をします。(Papier/ruban standard, Méthode spéciale.)    Faux.
+特別な包み紙とリボンで、普通の包み方をします。(Papier/ruban spécial, Méthode standard.)   Vrai (C'est le compromis qu'elle accepte).
+特別な包み紙とリボンで、特別な包み方をします。(Papier/ruban spécial, Méthode spéciale.)    Faux (Trop cher).
+La réponse correcte est la numéro 3.
+";Pas d’image
+1996;N2;"聴解スクリプト： 6番 男の人と女の人が約束の変更について話しています。
+集まるところをどこに変えますか。 
+
+女：はい、佐藤です。 
+男：あっ、佐藤さん、田中だけど。明 日朝7時半に駅の前に集まるんだったよね。 
+女：うん。 
+男：その時間さあ、駅って混雑しているんじゃないかって言われたんだけど。 
+女：そうか。 男：駅前 のデパートのさ、前にしたらどうかって思うんだけど。 
+女：あ、あそこはいやよ、今、工事してうるさいんだもん。
+それより、本屋さんは？ 男：あ、駄目駄 目、その時間開いてないよ。 
+女：えー？本屋さんの前よ。 
+男：そうか。あっ、郵便局の前は。 
+女：狭いから、皆が集まったら通行の邪魔よ。 
+男：そうだね。 分かった、じゃ、君の案で行こう。皆への連絡は僕がするよ。 
+女：お願いね。 
+
+集まるところをどこに変えましたか。 
+
+1、駅の前です。 
+2、郵便局の前です。 
+3、本屋の前です。 
+4、デパートの前です。  ";C;A;B;C;D;"Titre
+聴解スクリプト： 6番 男の人と女の人が約束の変更について話しています。集まるところをどこに変えますか。
+Script d'écoute : Numéro 6 Un homme et une femme parlent d'un changement de rendez-vous. Où changent-ils le lieu de rencontre ?
+Femme
+Oui, Satō à l'appareil.
+Homme
+Ah, Satō-san, c'est Tanaka. On devait se retrouver devant la gare à 7h30 demain matin, c'est ça ?
+Lieu initial : Devant la gare (駅の前)
+Femme
+Oui.
+Homme
+On m'a dit qu'il risquait d'y avoir beaucoup de monde à la gare à cette heure-là.
+Femme
+C'est vrai.
+Homme
+Et si on se donnait rendez-vous devant le grand magasin (デパートの前) en face de la gare ?
+Proposition 1 (Homme) : Devant le grand magasin
+Femme
+Ah, là-bas, je n'aime pas, il y a des travaux en ce moment, c'est bruyant. Et si on allait devant la librairie (本屋) ?
+Rejet de P1 / Proposition 2 (Femme) : Devant la librairie
+Homme
+Ah, non, non, ce ne sera pas ouvert à cette heure-là.
+Rejet de P2
+Femme
+Hein ? Mais c'est juste devant la librairie !
+Homme
+Ah, oui, c'est vrai. Attends, et devant le bureau de poste (郵便局の前) ?
+Proposition 3 (Homme) : Devant le bureau de poste
+Femme
+C'est trop étroit, ça va gêner la circulation si tout le monde s'y rassemble.
+Rejet de P3
+Homme
+Tu as raison. D'accord, alors prenons ton idée (君の案). C'est moi qui contacterai tout le monde.
+Femme
+Merci.
+Question
+集まるところをどこに変えましたか。
+Où ont-ils changé le lieu de rendez-vous ?
+
+2. Analyse et Détermination du Nouveau Lieu
+Le dialogue montre une série de rejets, mais la conclusion est surprenante.
+Lieu initial : Devant la gare (Rejeté car trop de monde).
+Proposition 1 (Homme) : Devant le grand magasin (Rejeté par la femme à cause des travaux).
+Proposition 2 (Femme) : Devant la librairie (L'homme pense d'abord que c'est fermé, mais la femme précise que c'est devant le magasin, pas à l'intérieur).
+Proposition 3 (Homme) : Devant le bureau de poste (Rejeté par la femme car trop étroit).
+À la fin, l'homme dit : ""じゃ、君の案で行こう (D'accord, alors prenons ton idée / ton plan).""
+L'unique idée que la femme a proposée et qui n'a pas été définitivement rejetée par les deux est : Devant la librairie (本屋の前). L'objection de l'homme (""ce ne sera pas ouvert"") est implicitement levée par la femme (""mais c'est devant la librairie !"").
+Le nouveau lieu de rendez-vous est donc le choix de la femme (le Plan 2).
+3. Choix de la Bonne Réponse
+駅の前です。(Devant la gare.)    Faux (C'est l'ancien lieu).
+郵便局の前です。(Devant le bureau de poste.)    Faux (Rejeté car trop étroit).
+本屋の前です。(Devant la librairie.)   Vrai (C'est la proposition de la femme qui est finalement acceptée par l'homme).
+デパートの前です。(Devant le grand magasin.)    Faux (Rejeté à cause des travaux).
+La réponse correcte est la numéro 3.
+";Pas d’image
+1996;N2;"聴解スクリプト： 7番 男の人が電話で食べ物を注文しています。何を注文しますか。 
+女：はい、メープルです。 
+男：ええと、家まで届けてもらえるんですよね。 
+女：はい、 一人前からお届けします。
+男：じゃ、ええと、ラーメンね。 
+女：すみません、家、ラーメンはないんですが。 
+男：へえ？じゃ何があるの。 
+女：はい。ピザとか、 サンドイッチ とか、和食もございます。 
+男：うん。サンドイッチは何があるの。 
+女：あのカツと卵です。 
+男：じゃあ、カツの方ね。和食は何があるの。 
+女：え えと、和食でしたら寿司ですとか、お弁当ですとか、京風素麺もありますが。 
+男：何、それ。 
+女：ええ、具がたくさん入った暖かい素麺です。美味しいです よ。 
+男：じゃ、そのなんとか麺も。 
+女：はい、ありがとうございます。一つずつですね。 
+男：はい。 女：ご住所をお願いします。 
+
+男の人は何を注文しました か。 
+
+１、ピザとラーメンです。 
+２、ピザと寿司です。 
+３、サンドイッチとお弁当です。 
+４、サンドイッチと素麺です。 ";D;A;B;C;D;"Locuteur
+Phrase Japonaise
+Traduction Française
+女 (Vendeuse)
+はい、メープルです。
+Oui, ici Maple.
+男 (Client)
+ええと、家まで届けてもらえるんですよね。
+Euh, vous pouvez livrer à domicile, n'est-ce pas ?
+女
+はい、一人前からお届けします。
+Oui, nous livrons à partir d'une portion.
+男
+じゃ、ええと、ラーメンね。
+Alors, euh, les ramen, s'il vous plaît.
+女
+すみません、家、ラーメンはないんですが。
+Désolée, monsieur, nous n'avons pas de ramen (ラーメンはない) ici.
+男
+へえ？じゃ何があるの。
+Ah ? Alors, qu'est-ce que vous avez ?
+女
+はい。ピザとか、 サンドイッチ とか、和食もございます。
+Oui. Nous avons de la pizza, des sandwichs (サンドイッチ), et aussi de la cuisine japonaise.
+男
+うん。サンドイッチは何があるの。
+Hmm. Quels sandwichs avez-vous ?
+女
+あのカツと卵です。
+Nous avons du katsu (escalope panée) et de l'œuf.
+男
+じゃあ、カツの方ね。
+Alors, le katsu, s'il vous plaît.
+女
+和食は何があるの。
+Et pour la cuisine japonaise, qu'est-ce que vous avez ?
+男
+ええと、和食でしたら寿司ですとか、お弁当ですとか、京風素麺もありますが。
+Euh, pour la cuisine japonaise, nous avons des sushis, des bentos, et aussi des sōmen de style Kyoto (京風素麺).
+男
+何、それ。
+Qu'est-ce que c'est que ça ?
+女
+ええ、具がたくさん入った暖かい素麺です。美味しいですよ。
+Eh bien, ce sont des sōmen chauds avec beaucoup d'ingrédients. C'est délicieux !
+男
+じゃ、そのなんとか麺も。
+Alors, je vais prendre ces ""nanto-ka men"" (sōmen) aussi.
+女
+はい、ありがとうございます。一つずつですね。
+Oui, merci. Un de chaque, n'est-ce pas ?
+男
+はい。
+Oui.
+女
+ご住所をお願いします。
+Votre adresse, s'il vous plaît.
+Exporter vers Sheets
+
+2. Analyse et Conclusion
+La question est : 男の人は何を注文しましたか。 (Qu'est-ce que l'homme a commandé ?)
+L'homme choisit un Sandwich (le katsu).
+L'homme choisit les Sōmen (le ""nanto-ka men"").
+Les deux articles commandés sont donc : Sandwich et Sōmen.
+3. Choix de la Bonne Réponse
+サンドイッチと素麺です。 (Sandwich et sōmen.) ← C'est la commande finale.
+";Pas d’image
+1996;N2;"聴解スクリプト： ８番 女の人が洋服を買った店について話しています。
+この店の余り良くないところはどこですか。 
+
+男：あれ？その服、新しいね。 
+女：うん。駅の近くの裏 通りに良いお店を見付けたんだ。 
+男：へえ。 
+女：店の見かけはそれほどでもないし、
+ショーウィンドーのディスプレーも地味なんだけど、広くてね。 
+男：へ え。 
+女：品物を揃っているのよ。値段もまあまあだし。
+それに何と言ってもお店の人が親切で、いろんな相談に乗ってくれるの。 
+男：最近そういう店、珍し いよね。 
+女：うん。 
+
+この店の余り良くないところはどこですか。 
+
+１、店の見かけです。 
+２、商品の種類です。 
+３、値段です。 
+４、店員です。  ";A;A;B;C;D;"男 (Homme)
+あれ？その服、新しいね。
+Tiens ? Ce vêtement, il est nouveau.
+女 (Femme)
+うん。駅の近くの裏通りに良いお店を見付けたんだ。
+Oui. J'ai trouvé un bon magasin dans une rue derrière la gare.
+男
+へえ。
+Ah bon.
+女
+店の見かけはそれほどでもないし、ショーウィンドーのディスプレーも地味なんだけど、広くてね。
+L'apparence extérieure du magasin n'est pas terrible, et l'étalage de la vitrine est discret, mais c'est spacieux.
+男
+へえ。
+Ah oui.
+女
+品物を揃っているのよ。値段もまあまあだし。それに何と言ってもお店の人が親切で、いろんな相談に乗ってくれるの。
+Il y a beaucoup de choix d'articles. Et le prix est correct. Et par-dessus tout, le personnel est très gentil et donne de bons conseils.
+男
+最近そういう店、珍しいよね。
+C'est rare de trouver des magasins comme ça, de nos jours.
+女
+うん。
+Oui.
+
+2. Analyse et Détermination du Point Négatif
+La question est : この店の余り良くないところはどこですか。 (Quel est le point qui n'est pas très bon dans ce magasin ?)
+La femme énumère plusieurs points positifs :
+Spacieux (広くてね).
+Grand choix d'articles (品物を揃っている).
+Prix correct (値段もまあまあ).
+Personnel gentil et serviable (お店の人が親切で、いろんな相談に乗ってくれる).
+Elle mentionne un seul point négatif :
+L'apparence extérieure du magasin n'est pas terrible (店の見かけはそれほどでもないし).
+3. Choix de la Bonne Réponse
+店の見かけです。 (L'apparence extérieure du magasin.)   Vrai (Elle dit ""それほどでもないし"" - ce n'est pas terrible).
+商品の種類です。 (Le type de produits / le choix.)    Faux (Elle dit qu'il y a beaucoup de choix, c'est un point positif).
+値段です。 (Le prix.)    Faux (Elle dit que le prix est correct, ""まあまあだし"").
+店員です。 (Le personnel de vente.)    Faux (Elle dit qu'ils sont très gentils, c'est un grand point positif).
+La réponse correcte est la numéro 1.
+";Pas d’image
+1996;N2;"聴解スクリプト： ９番 デパートのアナウンスです。どんな内容ですか。 
+
+女：お知らせいたします。
+ただいま八階の冬物特売会場で六歳児用の緑のカーデーガンをお買い 上げのお客様、
+いらっしゃいましたら、至急お近くの店員までお知らせください。 
+どんな内容のアナウンスですか。 
+
+１、迷子のお知らせです。 
+２、仕事の 連絡です。 
+３、特売の案内です。 
+４、お客様の呼び出しです。";D;A;B;C;D;"女 (Annonceuse)
+お知らせいたします。
+Nous faisons une annonce.
+女
+ただいま八階の冬物特売会場で六歳児用の緑のカーデーガンをお買い上げのお客様、いらっしゃいましたら、至急お近くの店員までお知らせください。
+Client qui venez d'acheter un cardigan vert pour un enfant de six ans à la zone de vente spéciale d'articles d'hiver au huitième étage, si vous êtes présent, veuillez s'il vous plaît contacter immédiatement un membre du personnel le plus proche.
+
+2. Analyse et Détermination du Contenu de l'Annonce
+La question est : どんな内容のアナウンスですか。 (Quel est le contenu de l'annonce ?)
+L'annonce est adressée directement à un client spécifique identifié par l'article qu'il vient d'acheter (un cardigan vert pour un enfant de six ans), lui demandant de se manifester auprès du personnel. Ce type d'appel nominatif ou spécifique à la clientèle dans un grand magasin est appelé ""appel client"" (ou ""paging"").
+3. Choix de la Bonne Réponse
+迷子のお知らせです。(Annonce concernant un enfant perdu.)    Faux.
+仕事の連絡です。(Contact professionnel / Message de travail.)    Faux.
+特売の案内です。(Information sur une vente spéciale.)    Faux.
+お客様の呼び出しです。(Appel d'un client / ""Paging"" d'un client.)   Vrai (L'annonce vise à localiser un client spécifique).
+La réponse correcte est la numéro 4.
+";Pas d’image
+1996;N2;"聴解スクリプト： 10番 女の人が交通事故について、警察官にインタビューしています。
+一年間の交通事故の原因で、一番多いのは何ですか。 
+
+女：最近また交通事故が 増えてきていますが。 
+男：ええ、私達も頭を悩ましております。 
+女：一番の原因は何ですか。やはりお酒でしょうか。 
+男：はい、酔払い運転は年末年始の 事故の原因のトップですが、
+年間を通じては一位ではありません。 
+女：ではスピードの出し過ぎですか。 
+男：ええ、最近の車はスピードが出ますからね。 
+その性能に運転技術がついて行ってないということでしょう。 
+女：なるほど。 
+男：また、居眠りは高速道路での事故の第一の原因となっています。
+日曜日 のトップは脇見運転です。 
+
+一年間の交通事故の原因で、一番多いのは何ですか。 
+
+1、お酒です。 
+2、スピードのだし過ぎです。 
+3、居眠りです。 
+4、脇見 運転です。  ";B;A;B;C;D;"女 (Journaliste)
+最近また交通事故が増えてきていますが。
+Les accidents de la route sont en augmentation récente, n'est-ce pas ?
+男 (Policier)
+ええ、私達も頭を悩ましております。
+Oui, cela nous pose aussi de gros problèmes.
+女
+一番の原因は何ですか。やはりお酒でしょうか。
+Quelle est la cause principale ? Est-ce toujours l'alcool ?
+男
+はい、酔払い運転は年末年始の事故の原因のトップですが、年間を通じては一位ではありません。
+Oui, la conduite en état d'ébriété est la première cause d'accident autour du Nouvel An, mais ce n'est pas la première sur l'année complète.
+女
+ではスピードの出し過ぎですか。
+Est-ce alors l'excès de vitesse ?
+男
+ええ、最近の車はスピードが出ますからね。その性能に運転技術がついて行ってないということでしょう。
+Oui, les voitures récentes sont rapides. Cela signifie que les compétences de conduite ne suivent pas les performances des véhicules.
+女
+なるほど。
+Je vois.
+男
+また、居眠りは高速道路での事故の第一の原因となっています。日曜日のトップは脇見運転です。
+De plus, l'endormissement au volant (Inemuri) est la cause principale des accidents sur autoroute. La cause principale les dimanches est la distraction au volant (Wakimi unten).
+
+2. Analyse et Détermination de la Cause la Plus Fréquente
+La question demande la cause la plus fréquente sur une année entière (一年間の交通事故の原因で、一番多いの).
+Le policier donne les classements partiels :
+Alcool (お酒) : Premier autour du Nouvel An, mais pas sur l'année entière.
+Endormissement (居眠り) : Premier sur autoroute.
+Distraction (脇見運転) : Premier les dimanches.
+Lorsque la journaliste demande si c'est l'excès de vitesse (スピードの出し過ぎ), le policier ne nie pas cette hypothèse pour le classement annuel. Au contraire, il la confirme en expliquant la raison (""Les compétences de conduite ne suivent pas les performances des véhicules""). Dans ce type d'exercice, si une cause est spécifiquement mentionnée, confirmée par le locuteur expert, et que toutes les autres causes sont reléguées à des périodes ou des lieux spécifiques (Nouvel An, autoroutes, dimanches), c'est l'indice de la réponse.
+L'excès de vitesse est la seule cause suggérée qui n'est pas limitée à une période ou un lieu précis, et qui est validée par le policier.
+3. Choix de la Bonne Réponse
+お酒です。(L'alcool.)    Faux (Seulement au Nouvel An).
+スピードのだし過ぎです。(L'excès de vitesse.)   Vrai (C'est la cause confirmée comme générale, par opposition aux causes limitées).
+居眠りです。(L'endormissement.)    Faux (Seulement sur autoroute).
+脇見運転です。(La distraction au volant.)    Faux (Seulement le dimanche).
+La réponse correcte est la numéro 2.
+";Pas d’image
+1996;N2;"聴解スクリプト： 11番 男の人と女の人が連想ゲームをしています。
+男の人はなぜ缶から道路を連想したのですか。 
+
+男：連想ゲームしないか。 
+女：良いわよ。じゃ私か らね。ええと、白いと言ったら雪。 
+男：雪と言ったら冷たい。 
+女：冷たいと言ったら氷。 
+男：氷と言ったらジュース。 
+女：ジュースと言ったら缶。 
+男：缶と言っ たら道路。 
+女：道路と言ったら、えー、待ってよ。なんで道路なの。
+ 男：だって、空缶が道路にいっぱい捨ててあるじゃないか。 
+女：本当、いやになっちゃう よね。 
+男：教育の問題だね。 
+女：教育と言ったら、もうすぐ授業が始まるわ。行きましょう。 
+
+男の人はなぜ缶から道路を連想したのですか。 
+
+1、たくさん 捨ててあるからです。 
+2、連想ゲームに飽きたからです。 
+3、もうすぐ授業が始まるからです。 
+4、ドライブしながら飲みたいからです。 ";A;A;B;C;D;"男 (Homme)
+連想ゲームしないか。
+Veux-tu jouer à un jeu d'association d'idées ?
+女 (Femme)
+良いわよ。じゃ私からね。ええと、白いと言ったら雪。
+D'accord. Je commence. Euh, si je dis blanc, ça fait neige.
+男
+雪と言ったら冷たい。
+Si je dis neige, ça fait froid.
+女
+冷たいと言ったら氷。
+Si je dis froid, ça fait glace.
+男
+氷と言ったらジュース。
+Si je dis glace, ça fait jus.
+女
+ジュースと言ったら缶。
+Si je dis jus, ça fait canette.
+男
+缶と言ったら道路。
+Si je dis canette, ça fait route.
+女
+道路と言ったら、えー、待ってよ。なんで道路なの。
+Si je dis route, euh, attends. Pourquoi la route ?
+男
+だって、空缶が道路にいっぱい捨ててあるじゃないか。
+Parce que, il y a plein de canettes vides jetées sur la route, n'est-ce pas ?
+女
+本当、いやになっちゃうよね。
+C'est vrai, c'est décourageant.
+男
+教育の問題だね。
+C'est un problème d'éducation.
+女
+教育と言ったら、もうすぐ授業が始まるわ。行きましょう。
+Si je dis éducation, nos cours vont bientôt commencer. Allons-y.
+
+2. Analyse et Détermination de l'Association
+La question est : 男の人はなぜ缶から道路を連想したのですか。 (Pourquoi l'homme a-t-il associé la canette à la route ?)
+L'homme donne clairement la raison après que la femme lui demande ""Pourquoi la route ?"" :
+空缶が道路にいっぱい捨ててあるじゃないか。
+(Parce que il y a plein de canettes vides jetées sur la route, n'est-ce pas ?)
+L'association vient donc de la vue des nombreuses canettes abandonnées sur la route.
+3. Choix de la Bonne Réponse
+たくさん捨ててあるからです。(Parce qu'il y en a beaucoup de jetées.)   Vrai (Il dit ""いっぱい捨ててある"" - il y en a beaucoup de jetées).
+連想ゲームに飽きたからです。(Parce qu'il en a marre du jeu d'association.)    Faux (Ce n'est pas la raison donnée).
+もうすぐ授業が始まるからです。(Parce que les cours vont bientôt commencer.)    Faux (C'est la raison pour laquelle ils partent, pas pour l'association).
+ドライブしながら飲みたいからです。(Parce qu'il veut boire en conduisant.)    Faux (Non mentionné).
+La réponse correcte est la numéro 1.
+";Pas d’image
+1996;N2;"聴解スクリプト： 12番 男の人が４つのサイクリングコースについて説明しています。
+文化や歴史に興味のある人はどんな名前のコースを選べばいいですか。 
+
+男：ではこ の近くにある４つのサイクリングコースについて説明します。
+自転車に乗って汗をたくさん流したい方には、坂の多い「すいすいコース」。
+鳥の鳴き声や季 節の花を楽しみたい方には、森の中を一周する「そよそよコース」をお勧めします。
+お寺や神社などこの町の古い建物をご覧になりたい方には、町の中を 一周する「るんるんコース」がございます。
+海の香りや潮風を感じたい方には、海岸に沿って走る「らんらんコース」を用意してございます。 
+
+文化や歴史 に興味がある人はどのコースを選べばいいですか。 
+
+１、すいすいコースです。 
+２、そよそよコースです。 
+３、るんるんコースです。 
+４、らんらんコースで す。";C;A;B;C;D;"男 (Homme)
+ではこの近くにある４つのサイクリングコースについて説明します。
+Alors, je vais vous expliquer les quatre pistes cyclables disponibles près d'ici.
+男
+自転車に乗って汗をたくさん流したい方には、坂の多い「すいすいコース」。
+Pour ceux qui veulent faire beaucoup de vélo et transpirer abondamment, nous avons le ""Suisui Course"" (Course Fluide) avec de nombreuses côtes.
+男
+鳥の鳴き声や季節の花を楽しみたい方には、森の中を一周する「そよそよコース」をお勧めします。
+Pour ceux qui veulent profiter du chant des oiseaux et des fleurs de saison, nous recommandons le ""Soyosoyo Course"" (Course Douce), qui fait le tour de la forêt.
+男
+お寺や神社などこの町の古い建物をご覧になりたい方には、町の中を一周する「るんるんコース」がございます。
+Pour ceux qui souhaitent voir les vieux bâtiments de cette ville, comme les temples et les sanctuaires, nous avons le ""Runrun Course"" (Course Joyeuse), qui fait le tour de la ville.
+男
+海の香りや潮風を感じたい方には、海岸に沿って走る「らんらんコース」を用意してございます。
+Pour ceux qui veulent sentir l'odeur de la mer et la brise marine, nous avons préparé le ""Ranran Course"" (Course Vive), qui longe la côte.
+
+2. Analyse et Détermination du Cours
+La question est : 文化や歴史に興味がある人はどのコースを選べばいいですか。 (Quelle piste cyclable les personnes intéressées par la culture et l'histoire devraient-elles choisir ?)
+Nous devons faire correspondre les intérêts ""Culture et Histoire"" avec la description des cours :
+すいすいコース (Suisui) : Pour ceux qui veulent transpirer (efforts physiques).
+そよそよコース (Soyosoyo) : Pour ceux qui veulent profiter de la nature (oiseaux, fleurs).
+るんるんコース (Runrun) : Pour ceux qui veulent voir les vieux bâtiments de la ville, comme les temples et les sanctuaires (お寺や神社などこの町の古い建物). Les temples et sanctuaires sont des éléments de la culture et de l'histoire.
+らんらんコース (Ranran) : Pour ceux qui veulent sentir la brise marine (plaisir de la côte).
+Le cours qui correspond aux intérêts culturels et historiques est le るんるんコース (Runrun).
+3. Choix de la Bonne Réponse
+すいすいコースです。    Faux (Pour l'effort physique).
+そよそよコースです。    Faux (Pour la nature).
+るんるんコースです。   Vrai (Pour les temples et sanctuaires, donc l'histoire et la culture).
+らんらんコースです。    Faux (Pour la côte et la mer).
+La réponse correcte est la numéro 3.
+";Pas d’image
+1996;N2;"聴解スクリプト： 13番 男の人が言葉のゲームをしています。
+男の人が捜している言葉は何ですか。 
+
+男：ねえ、ちょっと教えてくれない？ 
+女：何。 
+男：あのさ、図々しいっ てほかにどう言う？ 
+女：ええ？ 
+男：んー、五文字の言葉で二番目が「つ」なんだ。 
+女：そうねえ、厚かましい。 
+男：ああ、あつか…、あっ、それじゃ六文字。 
+女：じゃあ、恥知らずは？ 
+男：駄目駄目、二番目が「つ」。 
+女：んー、あっ、鉄面皮なんてのもあるわね。 
+男：へえ、鉄面皮？何、それ。そんなのあるの？ 
+女：ええ、もちろん立派な日本語よ。
+男：へえ、うん、最後が「ぴ」でぴったりだ。ところでこの「ぴ」って何。 
+女：皮よ。鉄の面の皮よ。 
+男：ああ、なるほど。鉄 のマスクで感じないってことね。 
+女：そういうこと。 
+
+男の人が捜していた言葉は何ですか。 
+
+1、「恥じ知らず」です。 
+2、「鉄面皮」です。 
+3、「面の皮」です。 
+4、「厚かましい」です。  ";B;A;B;C;D;"Absolument. Voici la traduction et l'explication en français du script d'écoute, en respectant le format demandé (phrase japonaise suivie de sa traduction française), ainsi que la détermination du mot que l'homme cherchait.
+
+🇫🇷 Traduction et Explication du Script (Numéro 13)
+1. Traduction du Dialogue
+Locuteur
+Phrase Japonaise
+Traduction Française
+男 (Homme)
+ねえ、ちょっと教えてくれない？
+Dis, tu peux me donner un coup de main ?
+女 (Femme)
+何。
+Pour quoi faire ?
+男
+あのさ、図々しいってほかにどう言う？
+Dis, comment dit-on ""effronté/culotté"" d'une autre manière ?
+女
+ええ？
+Hein ?
+男
+ンー、五文字の言葉で**二番目が「つ」**なんだ。
+Hum, c'est un mot de cinq caractères et le deuxième caractère est ""tsu"" (つ).
+女
+そうねえ、厚かましい。
+Voyons, Atsukamashii (culotté/hardi).
+男
+ああ、あつか…、あっ、それじゃ六文字。
+Ah, Atsuka... ah, ça fait six caractères, alors.
+女
+じゃあ、恥知らずは？
+Alors, Hajishirazu (sans honte) ?
+男
+駄目駄目、二番目が「つ」。
+Non, non, le deuxième caractère est ""tsu"".
+女
+んー、あっ、鉄面皮なんてのもあるわね。
+Hum, ah, il y a aussi Tetsumenpi (litt. peau de masque de fer).
+男
+へえ、鉄面皮？何、それ。そんなのあるの？
+Ah, Tetsumenpi ? Qu'est-ce que c'est que ça ? Ça existe, ce mot ?
+女
+ええ、もちろん立派な日本語よ。
+Oui, bien sûr, c'est un mot japonais tout à fait respectable.
+男
+へえ、うん、最後が「ぴ」でぴったりだ。ところでこの「ぴ」って何。
+Oh, oui, la fin par ""pi"" (ぴ) est parfaite. Au fait, ce ""pi"", c'est quoi ?
+女
+皮よ。鉄の面の皮よ。
+C'est la peau (kawa/pi). La peau du masque de fer.
+男
+ああ、なるほど。鉄のマスクで感じないってことね。
+Ah, je vois. Cela veut dire que l'on ne ressent rien, comme avec un masque de fer.
+
+2. Analyse et Détermination du Mot
+L'homme cherche un synonyme de 図々しい (effronté/culotté) qui correspond à des critères précis :
+Nombre de caractères : 5 (五文字).
+Deuxième caractère : ""つ"" (tsu).
+Les propositions de la femme sont :
+厚かましい (Atsukamashii) : Six caractères (あ・つ・か・ま・し・い).    Rejeté car c'est six lettres.
+恥知らず (Hajishirazu) : Cinq caractères, mais le deuxième caractère est ""じ"" (ji), pas ""つ"".    Rejeté car le deuxième caractère est faux.
+鉄面皮 (Tetsumenpi) : Cinq caractères (て・つ・め・ん・ぴ).    Accepté, car le deuxième caractère est ""つ"" (tsu), et le total est de cinq caractères. L'homme confirme que c'est le mot qu'il cherchait.
+3. Choix de la Bonne Réponse
+「恥じ知らず」です。(Hajishirazu.)    Faux (Le deuxième caractère est incorrect).
+「鉄面皮」です。(Tetsumenpi.)   Vrai (Ce mot remplit les conditions de cinq caractères et du deuxième caractère ""つ"").
+「面の皮」です。(Men no kawa.)    Faux (C'est l'explication, pas le mot recherché).
+「厚かましい」です。(Atsukamashii.)    Faux (Six caractères).
+La réponse correcte est la numéro 2.
+";Pas d’image
+1996;N2;"聴解スクリプト： 14番 女の人がデパートの新入社員研修で話しています。
+女の人が強調していることは何ですか。 
+
+女：皆さん、デパートの店員として商品をきちんとお 客様に説明できることは当たり前です。
+お買い上げ頂くお客様に丁寧な対応することも誰でもしようとすることです。
+私が一番強調したいのは、日常のお 客様への対応です。
+お客様の中には品物を見るだけの方がいたり、外の店との比較のためにいらっしゃった方がいたりします。
+そんな方には知らず知ら ず対応がぞんざいになりがちです。
+お客様がそれに気付かないはずはありません。
+そんな時にこそ、感謝の気持ちを持って、お客様に接してください。
+買 うつもりがない時にでも暖かく迎えられたなら、お客様はその店の店員を信頼し、
+多少高くても買い物をして頂けるようになるものです。 
+
+女の人が強調 していることは何ですか。 
+
+１、お客様に適切な情報を与えるということです。 
+２、言葉使いを正しくするということです。 
+３、買い物をしたお客様にいいサー ビスをするということです。 
+４、買う気のないお客様にも親切にするということです。  ";D;A;B;C;D;"女 (Formatrice)
+皆さん、デパートの店員として商品をきちんとお客様に説明できることは当たり前です。
+Mesdames et Messieurs, en tant qu'employés de grand magasin, être capable d'expliquer correctement les produits aux clients est une évidence.
+女
+お買い上げ頂くお客様に丁寧な対応することも誰でもしようとすることです。
+De même, traiter poliment les clients qui achètent est quelque chose que tout le monde cherche à faire.
+女
+私が一番強調したいのは、日常のお客様への対応です。
+Ce que je souhaite souligner le plus, c'est la façon dont vous traitez les clients au quotidien.
+女
+お客様の中には品物を見るだけの方がいたり、外の店との比較のためにいらっしゃった方がいたりします。
+Parmi nos clients, certains viennent juste regarder les articles, ou d'autres viennent pour comparer avec d'autres magasins.
+女
+そんな方には知らず知らず対応がぞんざいになりがちです。
+Avec ce type de clients, on a tendance, sans s'en rendre compte, à avoir une attitude négligente ou désinvolte.
+女
+お客様がそれに気付かないはずはありません。
+Il est impossible que les clients ne le remarquent pas.
+女
+そんな時にこそ、感謝の気持ちを持って、お客様に接してください。
+C'est justement dans ces moments-là qu'il faut interagir avec les clients avec un sentiment de gratitude.
+女
+買うつもりがない時にでも暖かく迎えられたなら、お客様はその店の店員を信頼し、多少高くても買い物をして頂けるようになるものです。
+Si un client est chaleureusement accueilli, même s'il n'a pas l'intention d'acheter, il accordera sa confiance au personnel du magasin et finira par acheter, même si le prix est légèrement plus élevé.
+
+2. Analyse et Détermination de l'Accent Principal
+La question est : 女の人が強調していることは何ですか。 (Qu'est-ce que la femme souligne/met en évidence ?)
+La formatrice identifie ce qui est standard (bonne explication des produits, bon service aux clients qui achètent) et énonce clairement son point principal :
+私が一番強調したいのは、日常のお客様への対応です。
+(Ce que je souhaite souligner le plus, c'est la façon dont vous traitez les clients au quotidien.)
+Elle précise que ce sont les clients qui ne font que regarder, ou ceux qui viennent comparer (c'est-à-dire ceux qui n'ont pas l'intention d'acheter immédiatement), qui sont souvent mal traités. Elle insiste sur la nécessité d'être chaleureux et reconnaissant envers ces clients.
+3. Choix de la Bonne Réponse
+お客様に適切な情報を与えるということです。(Donner des informations appropriées aux clients.)    Faux (C'est une évidence, pas le point principal).
+言葉使いを正しくするということです。(Utiliser un langage correct.)    Faux (Impliqué, mais pas l'idée centrale).
+買い物をしたお客様にいいサービスをするということです。(Offrir un bon service aux clients qui ont fait un achat.)    Faux (C'est quelque chose que tout le monde fait déjà).
+買う気のないお客様にも親切にするということです。(Être gentil/serviable même envers les clients qui n'ont pas l'intention d'acheter.)   Vrai (Elle insiste sur le fait de ne pas être négligent envers ceux qui ne font que regarder et sur le fait de les accueillir chaleureusement, ""暖かく迎えられたなら"").
+La réponse correcte est la numéro 4.
+";Pas d’image
+1996;N2;"聴解スクリプト： 15番 男の人が課長と話しています。
+男の人はどうして書類の締め切りに遅れたのですか。 
+
+男：あの、課長。 
+女：ああ、坂本君。あの書類まだ出てない けど、どうしたの。締め切りは昨日でしょ。 
+男：すみません。昨日は病気の佐藤… 
+女：健康管理もできないのでは困りますね。 
+男：いえ、病気だったのは 佐藤さんで、僕じゃないんです。 
+女：あ、そうだったわね。出張だったよね。 
+男：はい、佐藤さんの代理で、それ… 
+女：分かりました。とにかく書類は早く ね。 
+男：はい、これでよろしいでしょうか。 
+女：なんだ、出きてるんじゃないの。 
+男：はい、飛行機の中で作ることは作ったのです。 
+女：そう、わかりました。 
+
+男の人はどうして書類の締め切りに遅れたのですか。 
+
+1、病気になったからです。 
+2、出張したからです。 
+3、飛行機の中に忘れたからです。 
+4、締め切 りを忘れていたからです。 ";B;A;B;C;D;"1. Traduction du Dialogue
+Locuteur
+Phrase Japonaise
+Traduction Française
+男 (Homme)
+あの、課長。
+Euh, chef de section...
+女 (Cheffe)
+ああ、坂本君。あの書類まだ出てないけど、どうしたの。締め切りは昨日でしょ。
+Ah, Sakamoto-kun. Ce document n'est pas encore sorti, qu'est-ce qui se passe ? La date limite était hier, n'est-ce pas ?
+男
+すみません。昨日は病気の佐藤…
+Excusez-moi. Hier, le malade Satō...
+女
+健康管理もできないのでは困りますね。
+Si vous ne pouvez même pas gérer votre santé, c'est un problème.
+男
+いえ、病気だったのは佐藤さんで、僕じゃないんです。
+Non, c'était Satō-san qui était malade, pas moi.
+女
+あ、そうだったわね。出張だったよね。
+Ah, c'est vrai. Tu étais en voyage d'affaires, n'est-ce pas ?
+男
+はい、佐藤さんの代理で、それ…
+Oui, en remplacement de Satō-san, et ça...
+女
+分かりました。とにかく書類は早くね。
+Je vois. Quoi qu'il en soit, dépêche-toi avec le document.
+男
+はい、これでよろしいでしょうか。
+Oui, est-ce que ceci convient ?
+女
+なんだ、出きてるんじゃないの。
+Quoi, mais il est fait !
+男
+はい、飛行機の中で作ることは作ったのです。
+Oui, je l'ai bel et bien fait dans l'avion.
+
+2. Analyse et Détermination de la Raison
+La question est : 男の人はどうして書類の締め切りに遅れたのですか。 (Pourquoi l'homme a-t-il été en retard pour la date limite du document ?)
+L'homme clarifie la situation après que sa cheffe ait fait une erreur :
+Il n'était pas malade (c'était Satō-san).
+Il a dû partir en voyage d'affaires (出張) en remplacement de Satō-san, ce qui l'a empêché de soumettre le document à temps.
+Il confirme avoir même travaillé sur le document dans l'avion (飛行機の中で作ることは作った).
+La raison de son retard est donc directement liée au fait qu'il a dû partir en voyage d'affaires.
+3. Choix de la Bonne Réponse
+病気になったからです。(Parce qu'il est tombé malade.)    Faux (C'est Satō qui était malade).
+出張したからです。(Parce qu'il est parti en voyage d'affaires.)   Vrai (Il était en voyage d'affaires en tant que remplaçant, ce qui a causé le retard de soumission).
+飛行機の中に忘れたからです。(Parce qu'il l'a oublié dans l'avion.)    Faux (Il l'a remis à sa cheffe).
+締め切りを忘れていたからです。(Parce qu'il a oublié la date limite.)    Faux (Il s'excuse et donne une raison factuelle).
+La réponse correcte est la numéro 2.
+";Pas d’image

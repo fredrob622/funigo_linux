@@ -1,0 +1,67 @@
+<%- include('../../partials/header_blog') %>
+<div  class="content content-black">
+    <h2 class="blog_h2" ><%- title %></h2>
+
+    <p class="texte-clignotant">
+      <br>Cliquer sur une ligne pour avoir des détails<br>
+    </p>
+    <br>
+
+<% if ( listeArticles && listeArticles.length > 0 ) { %> 
+    
+    <% listeArticles.forEach((article, index) => { %>
+    <div class="blog_article"> 
+
+
+            <!-- Déterminer la classe à ajouter en fonction de l'index -->
+            <%  const alternateClass = (index % 2 === 0) ? 'blog_article_entete_even' : 'blog_article_entete_odd';     %>
+            <div class="blog_article_entete article-tech-toggle <%= alternateClass %> "data-target-id="content-<%= index %>"> 
+
+            <h3 class="blog_h3" data-target-id="content-<%= index %>" ><%= article.titre %></h3>
+            <div class="blog_date ">
+                <% 
+                    // Options de formatage pour la date
+                    const options = { 
+                        year: 'numeric', 
+                        month: '2-digit', 
+                        day: '2-digit', 
+
+                    };
+                    
+                    // Création d'un objet Date à partir de la valeur reçue
+                    // Assurez-vous que article.date_creat est une chaîne valide pour new Date()
+                    const dateCreat = article.date_creat ? new Date(article.date_creat) : null;
+                    const dateModif = article.date_modif ? new Date(article.date_modif) : null;
+                %>
+
+                <% if (dateCreat) { %>
+                    <p>Créer : <%= dateCreat.toLocaleString('fr-FR', options).replace(',', '') %></p>
+                <% } %>
+                
+                <% if (dateModif) { %>
+                    <p>Modifier : <%= dateModif.toLocaleString('fr-FR', options).replace(',', '') %></p>
+                <% } %>
+
+                <div><p><br></p></div>
+            </div>
+        </div>
+                    
+        <div class="blog_contenus_container bloc_tech_hidden" id="content-<%= index %>">           
+
+            <div class="blog_contenu">
+                <p> <%= article.contenu %> </p>
+            </div>
+
+            <div class="blog_url">
+                <a href="<%= article.blog_url %>">Cliquer ici pour voir l'article </a>
+            </div>
+        </div>
+        <% }); %>
+    </div>    
+</div>
+<% } else { %>
+    <p>Aucun article trouvé.</p>
+<% } %>
+
+<%- include('../../partials/footer') %>
+

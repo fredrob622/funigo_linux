@@ -1,0 +1,326 @@
+Demande gemini
+
+je voudrais un script power ou bash qui prend en argument un répertoire contenant des photo jepg et les transforme 
+en fichier webp en les compressant à 70% avec une taille de 500px en gardant le même ratio
+
+Pour transformer vos images JPEG en WebP avec les spécifications que vous avez données, vous aurez besoin de l'outil en ligne 
+de commande cwebp, qui fait partie de la suite libwebp de Google. Assurez-vous de l'avoir installé sur votre système avant d'utiliser 
+les scripts.
+
+########################### Permettre l'exécution du script #############################################################################
+Dans la fenêtre PowerShell, tapez la commande suivante et appuyez sur Entrée :
+
+PowerShell
+
+Get-ExecutionPolicy
+Si la sortie est Restricted, vous devrez la modifier pour permettre l'exécution de scripts. Tapez la commande suivante et appuyez sur Entrée :
+
+PowerShell
+
+Set-ExecutionPolicy AllSigned
+ou, pour une utilisation plus simple (mais moins sécurisée pour des scripts non signés) :
+
+PowerShell
+
+Set-ExecutionPolicy Bypass -Scope Process
+Si vous êtes invité à confirmer, tapez O (pour Oui) et appuyez sur Entrée.
+
+PS C:\WINDOWS\system32> Get-ExecutionPolicy                                                                             Restricted                                                                                                              PS C:\WINDOWS\system32> Set-ExecutionPolicy AllSigned                                                                   
+Modification de la stratégie d'exécution
+La stratégie d’exécution permet de vous prémunir contre les scripts que vous jugez non fiables. En modifiant la
+stratégie d’exécution, vous vous exposez aux risques de sécurité décrits dans la rubrique d’aide
+about_Execution_Policies à l’adresse https://go.microsoft.com/fwlink/?LinkID=135170. Voulez-vous modifier la stratégie
+d’exécution ?
+[O] Oui  [T] Oui pour tout  [N] Non  [U] Non pour tout  [S] Suspendre  [?] Aide (la valeur par défaut est « N ») : T
+
+PS C:\WINDOWS\system32> Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+Forcing web requests to allow TLS v1.2 (Required for requests to Chocolatey.org)
+Getting latest version of the Chocolatey package for download.
+Not using proxy.
+Getting Chocolatey from https://community.chocolatey.org/api/v2/package/chocolatey/2.4.3.
+Downloading https://community.chocolatey.org/api/v2/package/chocolatey/2.4.3 to C:\Users\fredr\AppData\Local\Temp\chocolatey\chocoInstall\chocolatey.zip
+Not using proxy.
+Extracting C:\Users\fredr\AppData\Local\Temp\chocolatey\chocoInstall\chocolatey.zip to C:\Users\fredr\AppData\Local\Temp\chocolatey\chocoInstall
+Installing Chocolatey on the local machine
+Creating ChocolateyInstall as an environment variable (targeting 'Machine')
+  Setting ChocolateyInstall to 'C:\ProgramData\chocolatey'
+WARNING: It's very likely you will need to close and reopen your shell
+  before you can use choco.
+Restricting write permissions to Administrators
+We are setting up the Chocolatey package repository.
+The packages themselves go to 'C:\ProgramData\chocolatey\lib'
+  (i.e. C:\ProgramData\chocolatey\lib\yourPackageName).
+A shim file for the command line goes to 'C:\ProgramData\chocolatey\bin'
+  and points to an executable in 'C:\ProgramData\chocolatey\lib\yourPackageName'.
+
+Creating Chocolatey CLI folders if they do not already exist.
+
+chocolatey.nupkg file not installed in lib.
+ Attempting to locate it from bootstrapper.
+PATH environment variable does not have C:\ProgramData\chocolatey\bin in it. Adding...
+AVERTISSEMENT : Not setting tab completion: Profile file does not exist at
+'C:\Users\fredr\OneDrive\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1'.
+Chocolatey CLI (choco.exe) is now ready.
+You can call choco from anywhere, command line or powershell by typing choco.
+Run choco /? for a list of functions.
+You may need to shut down and restart powershell and/or consoles
+ first prior to using choco.
+Ensuring Chocolatey commands are on the path
+Ensuring chocolatey.nupkg is in the lib folder
+
+################################# Installer webp #####################################################################################
+
+PS C:\WINDOWS\system32> choco install webp
+Chocolatey v2.4.3
+Installing the following packages:
+webp
+By installing, you accept licenses for the packages.
+Downloading package from source 'https://community.chocolatey.org/api/v2/'
+Progress: Downloading chocolatey-compatibility.extension 1.0.0... 100%
+
+chocolatey-compatibility.extension v1.0.0 [Approved]
+chocolatey-compatibility.extension package files install completed. Performing other installation steps.
+ Installed/updated chocolatey-compatibility extensions.
+ The install of chocolatey-compatibility.extension was successful.
+  Deployed to 'C:\ProgramData\chocolatey\extensions\chocolatey-compatibility'
+Downloading package from source 'https://community.chocolatey.org/api/v2/'
+Progress: Downloading chocolatey-core.extension 1.4.0... 100%
+
+chocolatey-core.extension v1.4.0 [Approved]
+chocolatey-core.extension package files install completed. Performing other installation steps.
+ Installed/updated chocolatey-core extensions.
+ The install of chocolatey-core.extension was successful.
+  Deployed to 'C:\ProgramData\chocolatey\extensions\chocolatey-core'
+Downloading package from source 'https://community.chocolatey.org/api/v2/'
+Progress: Downloading webp 1.0.0... 100%
+
+webp v1.0.0 [Approved]
+webp package files install completed. Performing other installation steps.
+The package webp wants to run 'chocolateyInstall.ps1'.
+Note: If you don't run this script, the installation will fail.
+Note: To confirm automatically next time, use '-y' or consider:
+choco feature enable -n allowGlobalConfirmation
+Do you want to run the script?([Y]es/[A]ll - yes to all/[N]o/[P]rint): A
+
+Installing 64 bit version
+Extracting C:\ProgramData\chocolatey\lib\webp\tools\webp_x64.zip to C:\ProgramData\chocolatey\lib\webp\tools...
+C:\ProgramData\chocolatey\lib\webp\tools
+ ShimGen has successfully created a shim for anim_diff.exe
+ ShimGen has successfully created a shim for cwebp.exe
+ ShimGen has successfully created a shim for dwebp.exe
+ ShimGen has successfully created a shim for get_disto.exe
+ ShimGen has successfully created a shim for gif2webp.exe
+ ShimGen has successfully created a shim for img2webp.exe
+ ShimGen has successfully created a shim for vwebp.exe
+ ShimGen has successfully created a shim for vwebp_sdl.exe
+ ShimGen has successfully created a shim for webpinfo.exe
+ ShimGen has successfully created a shim for webpmux.exe
+ ShimGen has successfully created a shim for webp_quality.exe
+ The install of webp was successful.
+  Deployed to 'C:\ProgramData\chocolatey\lib\webp\tools'
+
+Chocolatey installed 3/3 packages.
+ See the log for details (C:\ProgramData\chocolatey\logs\chocolatey.log).
+#####################################################################################################################################
+Installation de cwebp
+Sur Windows (PowerShell):
+Si vous avez Chocolatey (gestionnaire de paquets), ouvrez PowerShell en tant qu'administrateur et exécutez :
+
+PowerShell
+
+choco install webp
+Sinon, vous pouvez télécharger les binaires de libwebp depuis le site officiel de Google et ajouter le dossier des exécutables 
+(contenant cwebp.exe) à votre variable d'environnement Path.
+
+Sur Linux (Bash):
+Ouvrez votre terminal et utilisez le gestionnaire de paquets de votre distribution :
+
+Bash
+
+# Pour Debian/Ubuntu
+sudo apt-get update
+sudo apt-get install webp
+
+# Pour Fedora
+sudo dnf install libwebp-tools
+
+# Pour Arch Linux
+sudo pacman -S libwebp
+Script PowerShell
+Ce script prend un répertoire source et un nom de répertoire de sortie comme arguments. Il créera un nouveau dossier 
+avec le nom spécifié et le suffixe _webp dans le même dossier parent que votre répertoire source.
+#####################################################################################################################################
+#PowerShell
+
+param (
+    [Parameter(Mandatory=$true)]
+    [string]$SourceDirectory,
+
+    [Parameter(Mandatory=$true)]
+    [string]$OutputDirectoryName
+)
+
+# Résoudre le chemin absolu du répertoire source
+$SourceDirectory = (Get-Item $SourceDirectory).FullName
+
+# Définir le chemin complet du répertoire de sortie
+$OutputDirectory = Join-Path (Get-Item $SourceDirectory).Parent.FullName "${OutputDirectoryName}_webp"
+
+# Vérifier si le répertoire source existe
+if (-not (Test-Path $SourceDirectory -PathType Container)) {
+    Write-Error "Erreur : Le répertoire source spécifié n'existe pas ou n'est pas un répertoire valide : $SourceDirectory"
+    exit 1
+}
+
+# Créer le répertoire de sortie s'il n'existe pas
+if (-not (Test-Path $OutputDirectory -PathType Container)) {
+    New-Item -Path $OutputDirectory -ItemType Directory -Force | Out-Null
+    Write-Host "Répertoire de sortie créé : $OutputDirectory" -ForegroundColor Cyan
+} else {
+    Write-Host "Répertoire de sortie déjà existant : $OutputDirectory" -ForegroundColor Yellow
+}
+
+Write-Host "Début de la conversion des images de $SourceDirectory..."
+
+# Parcourir les fichiers JPEG
+Get-ChildItem -Path $SourceDirectory -Filter "*.jpg", "*.jpeg" -File | ForEach-Object {
+    $inputFile = $_.FullName
+    $outputFileName = ($_.BaseName) + ".webp"
+    $outputFile = Join-Path $OutputDirectory $outputFileName
+
+    Write-Host "  Traitement de $($_.Name)..."
+
+    # Commande cwebp :
+    # -q 70 : Qualité de compression de 70%
+    # -resize 500 0 : Redimensionne l'image à 500px de large, la hauteur est calculée automatiquement pour garder le ratio.
+    $cwebpCommand = "cwebp `"$inputFile`" -o `"$outputFile`" -q 70 -resize 500 0"
+
+    try {
+        # Exécuter la commande cwebp. Out-Null pour supprimer la sortie de cwebp si succès.
+        Invoke-Expression $cwebpCommand | Out-Null
+        Write-Host "    Converti avec succès : $($_.Name) -> $($outputFileName)" -ForegroundColor Green
+    } catch {
+        Write-Error "    Erreur lors de la conversion de $($_.Name) : $($_.Exception.Message)"
+    }
+}
+
+Write-Host "`nConversion terminée." -ForegroundColor Green
+Comment utiliser le script PowerShell :
+Enregistrez le code ci-dessus dans un fichier nommé, par exemple, convert_to_webp.ps1.
+
+Ouvrez PowerShell.
+
+Naviguez jusqu'à l'emplacement où vous avez enregistré le script.
+
+Exécutez le script en lui passant le chemin du répertoire source (celui qui contient vos photos JPEG) et le nom désiré pour 
+le répertoire de sortie :
+
+PowerShell
+
+.\convert_to_webp.ps1 -SourceDirectory "C:\Users\VotreNom\Images\MesPhotosJPEG" -OutputDirectoryName "PhotosOptimisees"
+Ceci créera un répertoire PhotosOptimisees_webp dans le dossier Images et y placera toutes les images converties.
+
+#####################################################################################################################################################
+Script Bash
+Ce script fonctionne de manière similaire au script PowerShell, en prenant deux arguments et en créant le répertoire de sortie 
+avec le suffixe _webp.
+
+Bash
+
+#!/bin/bash
+
+# Vérifier si cwebp est installé
+if ! command -v cwebp &> /dev/null
+then
+    echo "Erreur : 'cwebp' n'est pas installé. Veuillez l'installer pour utiliser ce script."
+    echo "  Sur Debian/Ubuntu: sudo apt-get install webp"
+    echo "  Sur Fedora: sudo dnf install libwebp-tools"
+    exit 1
+fi
+
+# Vérifier le nombre d'arguments
+if [ -z "$1" ] || [ -z "$2" ]; then
+    echo "Usage: $0 <repertoire_source> <nom_repertoire_sortie>"
+    echo "Exemple: $0 ./mes_photos photos_optimisees"
+    exit 1
+fi
+
+SOURCE_DIRECTORY="$1"
+OUTPUT_DIR_NAME="$2"
+
+# Résoudre le chemin absolu du répertoire source pour obtenir son parent
+SOURCE_ABS_PATH=$(readlink -f "$SOURCE_DIRECTORY")
+if [ ! -d "$SOURCE_ABS_PATH" ]; then
+    echo "Erreur : Le répertoire source '$SOURCE_DIRECTORY' n'existe pas ou n'est pas un répertoire valide."
+    exit 1
+fi
+PARENT_DIR=$(dirname "$SOURCE_ABS_PATH")
+
+# Définir le chemin complet du répertoire de sortie
+OUTPUT_DIRECTORY="${PARENT_DIR}/${OUTPUT_DIR_NAME}_webp"
+
+# Créer le répertoire de sortie s'il n'existe pas
+if [ ! -d "$OUTPUT_DIRECTORY" ]; then
+    mkdir -p "$OUTPUT_DIRECTORY"
+    echo "Répertoire de sortie créé: $OUTPUT_DIRECTORY"
+else
+    echo "Répertoire de sortie déjà existant: $OUTPUT_DIRECTORY"
+fi
+
+echo "Début de la conversion des images de $SOURCE_DIRECTORY..."
+
+# Parcourir les fichiers JPEG (insensible à la casse)
+find "$SOURCE_DIRECTORY" -type f \( -iname "*.jpg" -o -iname "*.jpeg" \) | while read -r input_file; do
+    # Extraire le nom de base du fichier (sans l'extension)
+    filename=$(basename "$input_file")
+    basename_no_ext="${filename%.*}"
+
+    output_file="${OUTPUT_DIRECTORY}/${basename_no_ext}.webp"
+
+    echo "  Traitement de ${filename}..."
+
+    # Commande cwebp :
+    # -q 70 : Qualité de compression de 70%
+    # -resize 500 0 : Redimensionne l'image à 500px de large, la hauteur est calculée automatiquement pour garder le ratio.
+    cwebp "$input_file" -o "$output_file" -q 70 -resize 500 0 &> /dev/null
+
+    if [ $? -eq 0 ]; then
+        echo "    Converti avec succès: ${filename} -> ${basename_no_ext}.webp"
+    else
+        echo "    Erreur lors de la conversion de ${filename}" >&2
+    fi
+done
+
+echo ""
+echo "Conversion terminée."
+Comment utiliser le script Bash :
+Enregistrez le code ci-dessus dans un fichier nommé, par exemple, convert_to_webp.sh.
+
+Rendez le script exécutable :
+
+Bash
+
+chmod +x convert_to_webp.sh
+Exécutez le script en lui passant le chemin du répertoire source et le nom désiré pour le répertoire de sortie :
+
+Bash
+
+./convert_to_webp.sh /home/votreutilisateur/photos/source_jpeg photos_optimisees
+Ceci créera un répertoire photos_optimisees_webp dans le dossier /home/votreutilisateur/photos/ et y placera les images converties.
+
+Ces scripts sont conçus pour être robustes et incluent des vérifications d'erreurs pour s'assurer que les répertoires 
+existent et que cwebp est disponible.
+
+############### power shell example #############################################################
+
+
+.\convert_to_webp.ps1 -SourceDirectory "C:\Fichiers_Users\funigo\public\images\cartes\france\reg_departement" -OutputDirectoryName "PhotosOptimisees"
+
+script-png-to-webp.ps1 -SourceDirectory "C:\Fichiers_Users\funigo\public\images\cartes\france\reg_position" -OutputDirectoryName "PhotosOptimisees"
+
+
+.\script-png-to-webp.ps1 -SourceDirectory "C:\Fichiers_Users\funigo\public\images\cartes\france\dep_aglomeration" -OutputDirectoryName "PhotosOptimisees"
+
+.\script-png-to-webp.ps1 -SourceDirectory "C:\Fichiers_Users\funigo\public\images\cartes\france\dep_carte" -OutputDirectoryName "PhotosOptimisees"
+
+.\script-png-to-webp.ps1 -SourceDirectory "C:\Fichiers_Users\funigo\public\images\cartes\france\dep_pos" -OutputDirectoryName "PhotosOptimisees"

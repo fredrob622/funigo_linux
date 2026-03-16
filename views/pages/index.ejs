@@ -1,0 +1,119 @@
+<%- include('../partials/header') %>
+
+<div class="content">
+  <video autoplay muted loop class="background-video">
+    
+    <!-- MODIFICATION ICI : On remplace le nom en dur par la variable EJS -->
+    <% if (videoFile) { %>
+      <source src="/video/<%= videoFile %>" type="video/mp4">
+    <% } else { %>
+      <!-- Fallback si jamais la variable n'est pas passée -->
+      <source src="/video/Funari.mp4" type="video/mp4">
+    <% } %>
+    
+    Ton navigateur ne supporte pas la vidéo.
+  </video>
+  <div class="text-overlay">
+    <h2>Bienvenue sur Funigo !</h2>
+    <p>Votre portail pour explorer la langue japonaise et la culture française.</p>
+    <p>Utilisez le menu ci-dessus pour naviguer et découvrez nos dernières sélections ci-dessous.</p>
+  </div>
+</div>
+
+
+<!-- 2. Le carrousel, positionné en dessous -->
+<div class="swiper my-swiper">
+    <div class="swiper-wrapper">
+        <!-- Les slides n'ont pas changé -->
+        <div class="swiper-slide"><img src="/images/accueil/P01.jpg" alt="Temple Kiyomizu"></div>
+        <div class="swiper-slide"><img src="/images/accueil/P02.jpg" alt="Château de Himeji"></div>
+        <div class="swiper-slide"><img src="/images/accueil/P03.jpg" alt="Fête Mifune"></div>
+        <div class="swiper-slide"><img src="/images/accueil/P04.jpg" alt="Ginza la nuit"></div>
+        <div class="swiper-slide"><img src="/images/accueil/P05.jpg" alt="Sumo"></div>
+        <div class="swiper-slide"><img src="/images/accueil/P06.jpg" alt="Pont Takayama"></div>
+        <div class="swiper-slide"><img src="/images/accueil/P07.jpg" alt="Temple Asakusa La Nuit"></div>
+        <div class="swiper-slide"><img src="/images/accueil/P08.jpg" alt="Tokyo Sky Tree Tower"></div>
+        <div class="swiper-slide"><img src="/images/accueil/P09.jpg" alt="Couple En Kimono"></div>
+        <div class="swiper-slide"><img src="/images/accueil/P10.jpg" alt="Cocoon Tower"></div>
+        <div class="swiper-slide"><img src="/images/accueil/P11.jpg" alt="Hakata Dontaku Tambour"></div>
+    </div>
+    <!-- Les contrôles ne changent pas -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+</div>
+
+
+    
+
+<div  class="content content-black">
+    <h2 class="blog_h2" ><%- title %></h2>
+
+    <p class="texte-clignotant">
+      <br>Cliquer sur une ligne pour avoir des détails<br>
+    </p>
+    <br>
+
+<% if ( listeArticles && listeArticles.length > 0 ) { %> 
+    
+    <% listeArticles.forEach((article, index) => { %>
+    <div class="blog_article"> 
+
+
+            <!-- Déterminer la classe à ajouter en fonction de l'index -->
+            <%  const alternateClass = (index % 2 === 0) ? 'blog_article_entete_even' : 'blog_article_entete_odd';     %>
+            <div class="blog_article_entete article-tech-toggle <%= alternateClass %> "data-target-id="content-<%= index %>"> 
+
+            <h3 class="blog_h3" data-target-id="content-<%= index %>" ><%= article.titre %></h3>
+            <div class="blog_date ">
+                <% 
+                    // Options de formatage pour la date
+                    const options = { 
+                        year: 'numeric', 
+                        month: '2-digit', 
+                        day: '2-digit', 
+
+                    };
+                    
+                    // Création d'un objet Date à partir de la valeur reçue
+                    // Assurez-vous que article.date_creat est une chaîne valide pour new Date()
+                    const dateCreat = article.date_creat ? new Date(article.date_creat) : null;
+                    const dateModif = article.date_modif ? new Date(article.date_modif) : null;
+                %>
+
+                <% if (dateCreat) { %>
+                    <p>Créer : <%= dateCreat.toLocaleString('fr-FR', options).replace(',', '') %></p>
+                <% } %>
+                
+                <% if (dateModif) { %>
+                    <p>Modifier : <%= dateModif.toLocaleString('fr-FR', options).replace(',', '') %></p>
+                <% } %>
+
+                <div><p><br></p></div>
+            </div>
+        </div>
+                    
+        <div class="blog_contenus_container bloc_tech_hidden" id="content-<%= index %>">           
+
+            <div class="blog_contenu">
+                <p> <%= article.contenu %> </p>
+            </div>
+
+            <% if (article.blog_url) { %>
+                <div class="blog_url">
+                    <a href="<%= article.blog_url %>" class=vocab_href>Cliquer ici pour voir l'article </a>
+                </div>
+            <% } %>
+
+        </div>
+        <% }); %>
+    </div>    
+</div>
+<% } else { %>
+    <p>Aucun article trouvé.</p>
+<% } %>
+
+
+
+<%- include('../partials/footer') %>
+

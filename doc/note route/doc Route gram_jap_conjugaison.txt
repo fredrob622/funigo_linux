@@ -1,0 +1,102 @@
+
+
+
+
+
+
+app.get('/gram_jap_conjugaison', async (req, res) => {
+  try {
+    const encodedPart = encodeURIComponent('働く');
+
+    const url = `https://fr.wiktionary.org/wiki/Conjugaison:japonais/${encodedPart}`;
+    const response = await axios.get(url);
+    const $ = cheerio.load(response.data);
+
+    // Récupère le contenu HTML de la div contenant les tableaux de conjugaison
+    const content = $('section').html();
+
+    res.send(content); // Envoie uniquement la partie utile
+  } catch (error) {
+    res.status(500).send('Erreur : ' + error.message);
+  }
+});
+
+
+
+Explication encodeURIComponent('働く');
+**************************************
+
+encodeURIComponent est une fonction JavaScript qui permet d’encoder une partie d’une URL (appelée composant URI), 
+comme un paramètre ou un segment de chemin, afin qu’elle puisse être transmise en toute sécurité sur Internet.
+
+À quoi sert encodeURIComponent ?
+Elle remplace les caractères spéciaux (par exemple, espaces, &, =, ?, /, etc.) par leur représentation encodée en UTF-8, 
+sous forme de séquences commençant par % suivies de chiffres hexadécimaux.
+
+Cela évite que ces caractères soient interprétés de façon incorrecte dans l’URL, ce qui est essentiel lors de la construction 
+dynamique d’URL ou lors de l’envoi de données via GET/POST
+
+
+
+Explication axios
+*****************
+Axios est une bibliothèque JavaScript qui sert à effectuer des requêtes HTTP (comme GET, POST, PUT, DELETE) depuis le navigateur ou Node.js. 
+Elle simplifie la communication entre une application web et un serveur, ce qui permet par exemple de récupérer des données d’une API, 
+d’envoyer des formulaires, ou de mettre à jour des informations sur un serveur.
+
+Voici les principales caractéristiques d’Axios :
+
+Basée sur les promesses : Axios utilise les Promises, ce qui rend le code asynchrone plus simple et lisible, 
+notamment avec async/await ou .then().catch().
+
+Compatible navigateur et Node.js : Axios fonctionne aussi bien côté client (navigateur) que côté serveur (Node.js).
+
+Gestion simplifiée des erreurs : Axios facilite la détection et la gestion des erreurs lors des requêtes HTTP.
+
+Support natif du format JSON : Les données envoyées et reçues en JSON sont automatiquement transformées.
+
+Fonctionnalités avancées : Possibilité d’ajouter des en-têtes personnalisés, d’annuler des requêtes, d’intercepter et de transformer les requêtes/réponses, 
+
+
+
+Explication cheerio
+*******************
+
+Cheerio est une bibliothèque JavaScript pour Node.js qui sert à analyser, parcourir et manipuler du code HTML de façon très rapide 
+et efficace, principalement pour le web scraping.
+
+À quoi sert Cheerio ?
+Extraire des données d’une page web : Cheerio permet de charger le code HTML d’un site (récupéré par exemple avec axios), 
+puis d’utiliser une syntaxe proche de jQuery pour sélectionner des éléments, lire leur contenu, leurs attributs, etc.
+
+Manipuler le DOM côté serveur : Contrairement à jQuery qui fonctionne dans le navigateur, Cheerio fonctionne côté serveur, 
+ce qui le rend idéal pour traiter des pages web sans interface graphique.
+
+Automatiser le traitement de données : Cheerio est utilisé pour automatiser l’extraction de données structurées (titres, liens, 
+tableaux, etc.) depuis des pages web, ce qui est utile pour la veille, la recherche, ou l’analyse de contenu.
+
+Fonctionnement
+Récupération du HTML (avec axios ou une autre bibliothèque HTTP)
+
+Chargement du HTML dans Cheerio :
+
+javascript
+const $ = cheerio.load(html);
+Sélection et extraction des éléments souhaités avec une syntaxe jQuery :
+
+javascript
+const titre = $('h1').text();
+const liens = [];
+$('a').each((i, elem) => {
+  liens.push($(elem).attr('href'));
+});
+Points forts
+Syntaxe jQuery : très facile à prendre en main si tu connais déjà jQuery.
+
+Rapide et léger : Cheerio ne charge pas de navigateur, il ne fait qu’analyser le HTML brut.
+
+Idéal pour le scraping de pages statiques : il ne gère pas le JavaScript dynamique, mais il est parfait pour les pages dont le contenu est déjà dans le HTML.
+
+En résumé, Cheerio est l’outil de référence pour extraire et manipuler rapidement des données HTML en Node.js, notamment dans le cadre du web scraping.
+
+

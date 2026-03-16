@@ -1,0 +1,45 @@
+<%- include('../../partials/header_vocab', { title: title }) %> 
+<div class="content content-black">
+
+    <div id="haut"></div>
+
+    <div class="vocab_titre" >   
+        <h2><%= title %></h2>
+        <a href="/vocab_adjectif" class="vocab_href">Retour</a>
+    </div>
+        <p style="animation: blink 2s infinite;"><br>Cliquer sur une ligne pour avoir des détails<br></p>
+        <br>
+        <% if (results && results.length > 0) { %>
+    <table class="ono-results-table">
+        <tbody>
+            <% results.forEach((result, index) => { %>
+            <tr class="<%= index % 2 === 0 ? 'main-row' : 'main-row alternate' %>">
+                <td><%= result.TITRE %></td>
+            </tr>
+            <tr class="detail-row hidden"
+                data-detail-brut="<%- result.REGLE_ADJ %>"
+                data-exemple-brut="<%- result.REGL_ADJ_EXEMPLE %>">
+                <td>
+                <div class="detail-content">
+                    <div class="detail-title">Règle d'utilisation :</div>
+                    <p><br></p>
+                    <p class="pre-wrap detail-text"></p>
+                    <div class="detail-title">Exemple :</div>
+                    <p><br></p>
+                    <p class="pre-wrap exemple-text"></p>
+                </div>
+                </td>
+            </tr>
+            <% }); %>
+        </tbody>
+    </table>
+        <% } else { %>
+            <p>Aucune régle trouvée.</p>
+        <% } %>
+    </div>
+
+    <%- include('../../partials/footer') %>
+
+</body>
+
+</html>

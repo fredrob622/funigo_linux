@@ -1,0 +1,905 @@
+********************************************************************************
+	 le ? 
+********************************************************************************
+SELECT ANNEE, NIVEAU, TEXTE, REP_OK, QUESTION, REP1, REP2, REP3, REP4
+      FROM quiz
+      WHERE NIVEAU LIKE ? **** ? ne fonctionne pas dans une commande en ligne
+      ORDER BY RAND()
+      LIMIT 1000;
+	  
+	  
+SELECT ANNEE, NIVEAU, TEXTE, REP_OK, QUESTION, REP1, REP2, REP3, REP4
+      FROM quiz
+      WHERE NIVEAU LIKE 'N4'
+      ORDER BY RAND()
+      LIMIT 1000;
+	  
+********************************************************************************
+	Créer une vue (table temporaire
+********************************************************************************
+	
+CREATE VIEW vue_quiz_N4 AS
+	SELECT ANNEE, NIVEAU, TEXTE, REP_OK, QUESTION, REP1, REP2, REP3, REP4
+		FROM quiz
+		WHERE NIVEAU LIKE 'N4'
+		ORDER BY RAND()
+		LIMIT 1000;
+
+********************************************************************************
+ Solution recommandée
+✅ Crée ta vue avec les 1000 lignes aléatoires
+
+✅ Lors de l’utilisation, ajoute la colonne d’index avec @i := @i + 1
+*********************************************************************************		
+
+-- Puis lorsqu'on exploite la vue :
+SET @i := 0;
+
+SELECT @i := @i + 1 AS index_quiz, v.*
+FROM vue_quiz_N4 v;
+
+Explication
+-----------
+------------------
+SET @i := 0;  
+------------------
+Cette commande initialise une variable utilisateur en MySQL.
+
+SET @i := 0;:
+
+SET est utilisé pour assigner une valeur à une variable.
+
+@i est le nom de la variable utilisateur. En MySQL, les variables utilisateur commencent par @.
+
+:= est l'opérateur d'assignation en MySQL (équivalent à = dans d'autres contextes SQL).
+
+0 est la valeur initiale que vous donnez à la variable @i.
+
+------------------------------------------
+SELECT @i := @i + 1 AS index_quiz, v.*
+FROM vue_quiz_N4 v;
+--------------------------------------
+
+SELECT @i := @i + 1 AS index_quiz:
+
+@i := @i + 1 : Pour chaque ligne traitée par la requête, la valeur de la variable @i est incrémentée de 1.
+
+AS index_quiz : Le résultat de cette incrémentation est affiché dans une nouvelle colonne nommée index_quiz. 
+C'est ainsi que vous obtenez un numéro séquentiel pour chaque question de votre quiz.
+
+v.*: Sélectionne toutes les colonnes (*) de la vue vue_quiz_N4. L'alias v est utilisé pour rendre la requête plus concise.
+
+FROM vue_quiz_N4 v: Indique que les données sont extraites de la vue vue_quiz_N4, à laquelle un alias v est attribué.
+
+********************************************************************************
+	Utiliser l'alias de l'index d'une vue (table temporaire)
+********************************************************************************
+SELECT * from vue_quiz_N4
+		WHERE index_quiz LIKE '10'; <=============== ne fonctionne pas 
+		
+		
+Explication du problème :
+-------------------------
+Lorsque vous écrivez SELECT @i := @i + 1 AS index_quiz, v.* FROM vue_quiz_N4 v;, la colonne index_quiz 
+est un alias de colonne qui est créé au moment où les résultats sont générés.
+
+Le problème est que la clause WHERE est évaluée avant que les alias de colonnes ne soient disponibles. 
+Par conséquent, lorsque MySQL tente d'évaluer WHERE index_quiz LIKE '10', il ne "connaît" pas encore de colonne nommée 
+index_quiz à ce stade de l'exécution de la requête.
+
+Comment résoudre ce problème :
+-------------------------------
+
+Pour pouvoir filtrer ou utiliser index_quiz dans une clause WHERE, vous devez envelopper votre SELECT 
+dans une sous-requête ou une Common Table Expression (CTE). Cela force MySQL à évaluer d'abord la partie 
+qui crée index_quiz, puis à rendre cette colonne disponible pour les clauses suivantes.
+
+Voici les deux méthodes principales pour y parvenir :
+
+Méthode 1 : Utiliser une Sous-Requête (Subquery)
+---------
+C'est la méthode la plus courante et la plus simple.
+
+SQL
+
+SET @i := 0;
+SELECT *
+FROM (
+    SELECT @i := @i + 1 AS index_quiz, v.*
+    FROM vue_quiz_N4 v
+) AS subquery_alias
+WHERE index_quiz = 10; -- Ou LIKE '10%' 
+
+
+********************************************************************************
+	Compter le nombre de ligne d'une vue (table temporaire)
+********************************************************************************
+
+SELECT COUNT(*) FROM vue_quiz_N4;
+
+mysql> SELECT COUNT(*) FROM vue_quiz_N4;
++----------+
+| COUNT(*) |
++----------+
+|      167 |
++----------+
+1 row in set (0.00 sec)
+
+********************************************************************************
+	Obtenir la liste de l'index
+********************************************************************************
+
+SET @i := 0;
+SELECT subquery_alias.index_quiz -- Sélectionnez uniquement la colonne index_quiz
+FROM (
+    SELECT @i := @i + 1 AS index_quiz, v.*
+    FROM vue_quiz_N4 v
+) AS subquery_alias;
+
+********************************************************************************
+	Avoir UTF8 dans Mysql 8.0 Command Line CLI
+********************************************************************************
+
+mysql> SHOW VARIABLES LIKE 'char%';
++--------------------------+---------------------------------------------------------+
+| Variable_name            | Value                                                   |
++--------------------------+---------------------------------------------------------+
+| character_set_client     | cp850                                                   |
+| character_set_connection | cp850                                                   |
+| character_set_database   | utf8mb4                                                 |
+| character_set_filesystem | binary                                                  |
+| character_set_results    | cp850                                                   |
+| character_set_server     | utf8mb4                                                 |
+| character_set_system     | utf8mb3                                                 |
+| character_sets_dir       | C:\Program Files\MySQL\MySQL Server 8.0\share\charsets\ |
++--------------------------+---------------------------------------------------------+
+8 rows in set, 1 warning (0.01 sec)
+
+Se logger avec powershell
+
+mysql -u root -p --default-character-set=utf8mb4
+
+
+mysql> SELECT *
+    -> FROM (
+    ->     SELECT @i := @i + 1 AS index_quiz, v.*
+    ->     FROM vue_quiz_N4 v
+    -> ) AS subquery_alias
+    -> WHERE index_quiz = 10;
++------------+-------+--------+--------------------------------------------------------------+--------+---------------+------------+------------+------------+--------+
+| index_quiz | ANNEE | NIVEAU | TEXTE                                                        | REP_OK | QUESTION      | REP1       | REP2       | REP3       | REP4   |
++------------+-------+--------+--------------------------------------------------------------+--------+---------------+------------+------------+------------+--------+
+|         10 |  1993 | N4     | いいてんきですから、そとでたべましょう。                     | 天気   | てんき        | 矢気       | 大気       | 夫気       | 天気   |
++------------+-------+--------+--------------------------------------------------------------+--------+---------------+------------+------------+------------+--------+
+1 row in set, 1 warning (0.00 sec)
+
+Pour avoir le formatage verticale
+
+SELECT *
+FROM (
+    SELECT @i := @i + 1 AS index_quiz, v.*
+    FROM vue_quiz_N4 v, (SELECT @i := 0) AS init_i -- Initialize @i here
+) AS subquery_alias
+WHERE index_quiz = 10\G
+
+*************************** 1. row ***************************
+index_quiz: 10
+     ANNEE: 1993
+    NIVEAU: N4
+     TEXTE: あにはこうじょうにつとめています。
+    REP_OK: あにはこうじょうではたらいています。
+  QUESTION:
+      REP1: あにはこうじょうでれんしゅうしています。
+      REP2: あにはこうじょうではたらいています。
+      REP3: あにはこうじょうでべんきょうしています。
+      REP4: あにはこうじょうでならっています。
+1 row in set, 2 warnings (0.00 sec)
+
+********************************************************************************
+	Supprimer une vue
+********************************************************************************
+
+DROP VIEW vue_quiz_N4;
+
+********************************************************************************
+	Supprimer une vue si elle existe
+********************************************************************************
+
+
+        const viewName = `vue_quiz_${searchTerm}`;
+        const searchPattern = `%${searchTerm}%`;
+
+        console.log("--- Recherche dans Quiz ---");
+
+        // 1. Supprimer la vue si elle existe déjà
+        const dropViewQuery = `DROP VIEW IF EXISTS ${viewName};`;
+        console.log("Exécution de la requête SQL :", dropViewQuery);
+        await dbPool.query(dropViewQuery);
+        console.log(`Vue '${viewName}' supprimée si elle existait.`);
+		
+		
+SET @i := 0;
+SELECT *
+FROM (
+    SELECT @i := @i + 1 AS index_quiz, v.*
+    FROM vue_quiz_N4 v
+) AS subquery_alias
+WHERE index_quiz = 24;		
+		
+		
+SET @i := 0;
+SELECT *
+FROM (
+    SELECT @i := @i + 1 AS index_quiz, v.*
+    FROM ${viewName} v
+) AS subquery_alias
+WHERE index_quiz = ${numeroQuestionRecu} ;
+
+
+********************************************************************************
+	Voir le répertoire autorisé à charger
+********************************************************************************
+
+
+mysql> SHOW VARIABLES LIKE 'secure_file_priv';
++------------------+------------------------------------------------+
+| Variable_name    | Value                                          |
++------------------+------------------------------------------------+
+| secure_file_priv | C:\ProgramData\MySQL\MySQL Server 8.0\Uploads\ |
++------------------+------------------------------------------------+
+1 row in set, 1 warning (0.00 sec)
+
+********************************************************************************
+	Extraire les données d'une table dans un fichier csv
+********************************************************************************
+
+
+
+SELECT * FROM quiz
+INTO OUTFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/quiz_20250907.csv'
+FIELDS TERMINATED BY ',' ENCLOSED BY '"'
+LINES TERMINATED BY '\n';
+
+********************************************************************************
+	effacer les données d'une table 
+********************************************************************************
+
+DELETE FROM quiz; : Supprime toutes les lignes, mais ne réinitialise pas le compteur AUTO_INCREMENT.
+
+TRUNCATE TABLE quiz; : Supprime toutes les lignes et réinitialise le compteur AUTO_INCREMENT à sa 
+valeur de départ (généralement 1). C'est beaucoup plus rapide pour vider une table.
+
+********************************************************************************
+	Importer les données d'un fichier csv dans une table 
+********************************************************************************
+
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/quiz.csv'
+INTO TABLE quiz
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"' 
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+********************************************************************************
+	Modifier une colonne en TEXT
+********************************************************************************
+
+
+ALTER TABLE quiz MODIFY question TEXT;
+
+Cette erreur se produit parce que la colonne id de votre table quiz est définie comme INT NOT NULL AUTO_INCREMENT. Cela signifie que MySQL s'attend à ce 
+que vous ne fournissiez pas de valeur pour id (il la générera automatiquement) ou que vous lui passiez NULL. Cependant, votre fichier quiz.csv commence 
+par une virgule (,), ce qui indique une valeur vide ('') pour la première colonne, qui est id. MySQL ne peut pas convertir une chaîne vide en un entier 
+pour une colonne NOT NULL.
+
+@dummy_id: J'ai ajouté @dummy_id comme premier élément dans la liste des colonnes entre parenthèses. Cela indique à MySQL de lire le premier champ de 
+chaque ligne du CSV et de le stocker dans une variable utilisateur temporaire nommée @dummy_id. Puisque cette variable n'est pas utilisée ailleurs, 
+le contenu du premier champ du CSV est effectivement ignoré pour l'insertion dans la table.
+
+********************************************************************************
+	Intégrer un fichier csv dans une table 
+********************************************************************************
+
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/quiz.csv'
+INTO TABLE quiz
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"' -- Conservez ceci si les champs de votre CSV sont réellement entourés de guillemets doubles. Si non, supprimez cette ligne.
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS -- Conservez ceci si la première ligne de quiz.csv est un en-tête. Si non, supprimez cette ligne.
+(
+    @dummy_id, -- Lit le premier champ du CSV (qui est vide) dans une variable temporaire non utilisée
+    ANNEE,
+    NIVEAU,
+    TEXTE,
+    REP_OK,
+    QUESTION,
+    REP1,
+    REP2,
+    REP3,
+    REP4
+);
+
+********************************************************************************
+	Intégrer un fichier csv dans une table après TRUNCATE
+********************************************************************************
+
+-- 1. Vider la table et réinitialiser l'AUTO_INCREMENT
+TRUNCATE TABLE quiz;
+
+-- 2. Ensuite, chargez vos données
+TRUNCATE TABLE quiz; -- Pour vider la table et réinitialiser l'AUTO_INCREMENT à 1
+
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/quiz.csv'
+INTO TABLE quiz
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+(
+    ANNEE,
+    NIVEAU,
+    TEXTE,
+    REP_OK,
+    QUESTION,
+    REP1,
+    REP2,
+    REP3,
+    REP4
+);
+
+********************************************************************************
+	Intégrer un fichier csv dans une table après DELETE 
+********************************************************************************
+Méthode 2 : Réinitialiser le compteur sans vider la table (uniquement si la table est déjà vide mais le compteur est élevé)
+
+Si vous avez déjà vidé la table avec DELETE FROM mais que le compteur n'a pas été réinitialisé :
+
+SQL
+
+-- 1. Vérifiez que la table est bien vide :
+SELECT COUNT(*) FROM quiz; -- Doit retourner 0
+
+-- 2. Réinitialiser le compteur AUTO_INCREMENT à 1
+ALTER TABLE quiz AUTO_INCREMENT = 1;
+
+-- 3. Ensuite, chargez vos données
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/quiz.csv'
+INTO TABLE quiz
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"' -- Ajustez cette ligne si vos champs ne sont pas entourés de guillemets
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS -- Ajustez cette ligne si votre CSV n'a pas d'en-tête
+(
+    @dummy_id, -- Lit le premier champ du CSV dans une variable temporaire non utilisée
+    ANNEE,
+    NIVEAU,
+    TEXTE,
+    REP_OK,
+    QUESTION,
+    REP1,
+    REP2,
+    REP3,
+    REP4
+);
+
+
+****************************************************************************************
+
+
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/1995-N3jplt.csv'
+INTO TABLE quiz
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY '\n'
+(
+    ANNEE,
+    NIVEAU,
+    TEXTE,
+    REP_OK,
+    QUESTION,
+    REP1,
+    REP2,
+    REP3,
+    REP4
+);
+
+
+AVANT faire la SAUVEGARDE
+
+SELECT * FROM quiz
+INTO OUTFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/quiz_202510242330.csv'
+FIELDS TERMINATED BY ',' ENCLOSED BY '"'
+LINES TERMINATED BY '\n';
+
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/1997-N3jplt.csv'
+INTO TABLE quiz
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY '\n'
+(ANNEE,NIVEAU,TEXTE,REP_OK,QUESTION,REP1,REP2,REP3,REP4);
+
+********************************************************************************
+	Renuméroter l'index
+********************************************************************************
+
+Créer une nouvelle table temporaire avec la même structure (sauf l'ID) :
+Nous allons créer une table temporaire pour y stocker les données avec les nouveaux IDs.
+
+
+CREATE TABLE quiz_new (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    ANNEE INT,
+    NIVEAU VARCHAR(2),
+    TEXTE TEXT,
+    REP_OK TEXT,
+    QUESTION TEXT,
+    REP1 TEXT,
+    REP2 TEXT,
+    REP3 TEXT,
+    REP4 TEXT
+);
+
+Insérer toutes les données de l'ancienne table dans la nouvelle, en générant de nouveaux IDs consécutifs :
+C'est ici que nous utilisons une variable utilisateur pour assigner un id consécutif à chaque ligne lors de l'insertion.
+
+SQL
+
+SET @row_number = 0; -- Initialiser le compteur
+
+INSERT INTO quiz_new (ANNEE, NIVEAU, TEXTE, REP_OK, QUESTION, REP1, REP2, REP3, REP4)
+SELECT
+    ANNEE,
+    NIVEAU,
+    TEXTE,
+    REP_OK,
+    QUESTION,
+    REP1,
+    REP2,
+    REP3,
+    REP4
+FROM quiz
+ORDER BY id; -- Il est important de trier pour que les nouveaux IDs reflètent un ordre logique si désiré
+Note : Nous ne spécifions pas la colonne id dans l'INSERT de quiz_new, car elle est AUTO_INCREMENT et générera automatiquement les IDs à partir de 1.
+
+ORDER BY id est important ici pour s'assurer que si vous aviez des IDs non consécutifs dans l'ancienne table, les nouvelles IDs suivent l'ordre des anciennes IDs.
+
+Supprimer l'ancienne table quiz :
+
+SQL
+
+DROP TABLE quiz;
+Renommer la nouvelle table quiz_new en quiz :
+
+SQL
+
+ALTER TABLE quiz_new RENAME TO quiz;
+
+********************************************************************************
+	Dévalider secure-file-priv
+********************************************************************************
+
+SHOW VARIABLES LIKE 'secure_file_priv';
+
++------------------+------------------------------------------------+
+| Variable_name    | Value                                          |
++------------------+------------------------------------------------+
+| secure_file_priv | C:\ProgramData\MySQL\MySQL Server 8.0\Uploads\ |
++------------------+------------------------------------------------+
+1 row in set, 1 warning (0.01 sec)
+Désactiver cette protection pour tester (ex : dans un environnement local) :
+
+Ouvre le fichier de config MySQL (my.ini ou my.cnf)
+
+Trouve (ou ajoute) cette ligne :
+
+********************************************************************************
+	Avoir les caractères japonais
+********************************************************************************
+PS C:\WINDOWS\system32> mysql --default-character-set=utf8mb4 -u root -p
+Enter password: **********
+
+********************************************************************************
+	Insérer des valeurs dans une table
+********************************************************************************
+INSERT INTO vocab_char (niveau, kana, kanji, francais)
+VALUES ('N5', 'つかう', '使う', 'employer, utiliser');
+
+N5 つかう 使う employer, utiliser
+
+select * from vocab_char where kanji = '使う';
+
+mysql> select * from vocab_char where kanji = '使う';
++------------+--------+-----------+--------+--------------------+
+| voca_index | niveau | kana      | kanji  | francais           |
++------------+--------+-----------+--------+--------------------+
+|      26312 | N5     | つかう    | 使う   | employer, utiliser |
++------------+--------+-----------+--------+--------------------+
+1 row in set (0.00 sec)
+
+
+********************************************************************************
+	grammaire Insérer des valeurs dans une table
+********************************************************************************
+
+-- 1. Vider la table et réinitialiser l'AUTO_INCREMENT
+TRUNCATE TABLE gram_char;
+
+ desc gram_char;
++--------------+-------------+------+-----+---------+----------------+
+| Field        | Type        | Null | Key | Default | Extra          |
++--------------+-------------+------+-----+---------+----------------+
+| gram_index   | int         | NO   | PRI | NULL    | auto_increment |
+| niveau       | varchar(10) | YES  |     | NULL    |                |
+| titre        | text        | YES  |     | NULL    |                |
+| nom          | text        | YES  |     | NULL    |                |
+| description  | text        | YES  |     | NULL    |                |
+| construction | text        | YES  |     | NULL    |                |
+| exemple      | text        | YES  |     | NULL    |                |
++--------------+-------------+------+-----+---------+----------------+
+
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/Grammaire_JLPT_N5_Copilote_CLEAN.csv'
+INTO TABLE gram_char
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY '\n'
+(
+    NIVEAU,
+    TITRE,
+    NOM,
+    DESCRIPTION,
+    CONSTRUCTION,
+    EXEMPLE
+);
+
+
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/Grammaire_JLPT_N2_Copilote_CLEAN.csv'
+INTO TABLE quiz
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY '\n'
+(
+    NIVEAU,
+    TITRE,
+    NOM,
+    DESCRIPTION,
+    CONSTRUCTION,
+    EXEMPLE
+);
+N5 ,
+N4 ;
+N3 ,
+N2 ;
+
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/Grammaire_JLPT_N2.csv'
+INTO TABLE gram_char
+CHARACTER SET utf8mb4
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(niveau, titre, nom, description, construction, exemple);
+
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/Grammaire_JLPT_N3_Copilote_CLEAN.csv'
+INTO TABLE gram_char
+CHARACTER SET utf8mb4
+FIELDS TERMINATED BY ';' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(niveau, titre, nom, description, construction, exemple);
+
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/Grammaire_JLPT_N4_Copilote_CLEAN.csv'
+INTO TABLE gram_char
+CHARACTER SET utf8mb4
+FIELDS TERMINATED BY ';' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(niveau, titre, nom, description, construction, exemple);
+
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/Grammaire_JLPT_N5_Copilote_CLEAN.csv'
+INTO TABLE gram_char
+CHARACTER SET utf8mb4
+FIELDS TERMINATED BY ';' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(niveau, titre, nom, description, construction, exemple);
+
+
+SELECT * FROM gram_char
+INTO OUTFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/gram_20250806.csv'
+FIELDS TERMINATED BY ',' ENCLOSED BY '"'
+LINES TERMINATED BY '\n';
+
+
+
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/Grammaire_JLPT_N2.csv'
+INTO TABLE gram_char
+CHARACTER SET utf8mb4
+FIELDS TERMINATED BY ',' 
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(niveau, titre, nom, description, construction, exemple);
+
+********************************************************************************
+	Voir l'année et le niveau intégré dans la table quiz
+********************************************************************************
+
+mysql> SELECT DISTINCT annee, niveau FROM quiz;
++-------+--------+
+| annee | niveau |
++-------+--------+
+|  1991 | N3     |
+|  1991 | N4     |
+|  1993 | N4     |
+|  1992 | N3     |
+|  1992 | N4     |
+|  1991 | N2     |
+|  1993 | N3     |
+|  1994 | N4     |
+|  1992 | N2     |
++-------+--------+
+9 rows in set (0.00 sec)
+
+mysql> SELECT DISTINCT annee, niveau
+    -> FROM quiz
+    -> ORDER BY annee ASC;
++-------+--------+
+| annee | niveau |
++-------+--------+
+|  1991 | N2     |
+|  1991 | N3     |
+|  1991 | N4     |
+|  1992 | N2     |
+|  1992 | N3     |
+|  1992 | N4     |
+|  1993 | N3     |
+|  1993 | N4     |
+|  1994 | N4     |
++-------+--------+
+9 rows in set (0.00 sec)
+
+SELECT DISTINCT annee, niveau FROM quiz ORDER BY annee ASC;
+
+mysql>
+
+********************************************************************************
+	Inserer des données avec un retour à la ligne dans un champ
+********************************************************************************
+
+Pour insérer des retours à la ligne dans une colonne texte (comme ARTICLE ou CONTENU) dans MySQL, tu peux utiliser la séquence d’échappement \n qui 
+représente un saut de ligne. Par exemple :
+
+sql
+INSERT INTO funigo_blog (TITRE, ARTICLE, DATE_CREAT, DATE_MODIF)
+VALUES ('Titre de l\'article', 'Première ligne\nDeuxième ligne\nTroisième ligne', '2025-09-10', '2025-09-10');
+Autre méthode avec la fonction CHAR() pour insérer un saut de ligne (code ASCII 10) :
+
+sql
+INSERT INTO funigo_blog (TITRE, ARTICLE, DATE_CREAT, DATE_MODIF)
+VALUES ('Titre', CONCAT('Première ligne', CHAR(10), 'Deuxième ligne', CHAR(10), 'Troisième ligne'), '2025-09-10', '2025-09-10');
+
+********************************************************************************
+	Création table blog
+********************************************************************************
+
+CREATE TABLE blog (
+	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+		titre VARCHAR(200),
+		contenu TEXT,
+		date_creat DATE,
+		date_modif DATE
+);
+
+INSERT INTO blog (titre, contenu, date_creat, date_modif )
+VALUES ('Liste des fichiers PDF insérer dans la table QUIZ', ' 1991 N2
+1991 N3
+1991 N4
+1992 N2
+1992 N3
+1992 N4
+1993 N3
+1993 N4
+1993 N3
+1994 N2
+1994 N3
+1994 N4
+1995 N2
+1995 N3
+1995 N4
+1995 N3
+1995 N4
+ ', '2025-09-10', '2025-09-10');
+ 
+INSERT INTO blog (titre, contenu, date_creat, date_modif )
+VALUES ('Commit pour sauvegarder la documentation', '  doc funigo', '2025-09-11', '2025-09-12');
+
+********************************************************************************
+	Création et chargement de la table adjectif
+********************************************************************************
+
+Français;Kanji;Kana;Rōmaji;Type
+CREATE TABLE adj_jp (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    FRANCAIS VARCHAR(100),
+    KANJI VARCHAR(100),
+	KANA VARCHAR(100),
+	ROMAJI VARCHAR(100),
+	TYPE VARCHAR(20)
+);
+
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/donnees_table_adj_jp.csv'
+INTO TABLE adj_jp 
+FIELDS TERMINATED BY ';' 
+ENCLOSED BY '"' 
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(FRANCAIS, KANJI, KANA, ROMAJI, TYPE);
+
+
+
+********************************************************************************
+	Création et chargement de la table adverbe
+********************************************************************************
+
+Français;Kanji;Kana;Rōmaji
+CREATE TABLE adv_jp (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    FRANCAIS VARCHAR(100),
+    KANJI VARCHAR(100),
+	KANA VARCHAR(100),
+	ROMAJI VARCHAR(100)
+);
+
+
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/donnees_table_adv_jp.csv'
+INTO TABLE adv_jp 
+FIELDS TERMINATED BY ';' 
+ENCLOSED BY '"' 
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(FRANCAIS, KANJI, KANA, ROMAJI);
+
+
+********************************************************************************
+	Création et chargement de la table verbe transitifs intransitifs
+********************************************************************************
+
+
+CREATE TABLE verbe_trans_intrans (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    trans_kanji VARCHAR(100),
+    trans_hiragana VARCHAR(100),
+	trans_francais VARCHAR(100),
+	trans_romanji VARCHAR(100),
+	intrans_kanji VARCHAR(100),
+    intrans_hiragana VARCHAR(100),
+	intrans_francais VARCHAR(100),
+	intrans_romanji VARCHAR(100)
+);
+
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/donnees_verbes_jp.csv'
+INTO TABLE verbe_trans_intrans 
+FIELDS TERMINATED BY ';' 
+ENCLOSED BY '"' 
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(trans_kanji, trans_hiragana, trans_francais, trans_romanji, intrans_kanji, intrans_hiragana, intrans_francais, intrans_romanji );
+
+********************************************************************************
+	Création et chargement de la table verbe transitifs intransitifs
+********************************************************************************
+
+
+CREATE TABLE onomatopees_jp (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    type VARCHAR(100),
+    signification VARCHAR(100),
+	katakana VARCHAR(100),
+	romanji VARCHAR(100),
+	detail TEXT,
+    exemple TEXT
+);
+
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/onomatopees.csv'
+INTO TABLE onomatopees_jp 
+FIELDS TERMINATED BY ';' 
+ENCLOSED BY '"' 
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS
+(type,signification,katakana,romanji,detail,exemple );
+
+
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/onomatopees.csv'
+INTO TABLE onomatopees_jp 
+CHARACTER SET utf8
+FIELDS TERMINATED BY ';' 
+ENCLOSED BY '"' 
+LINES TERMINATED BY '\r\n' 
+IGNORE 1 ROWS
+(type,signification,katakana,romanji,detail,exemple );
+
+
+Type	Signification	katakana	romanji	detail	exemple
+
+********************************************************************************
+	Création et chargement de la table quiz_ora
+********************************************************************************
+
+CREATE TABLE quiz_ora (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    ANNEE INT,
+    NIVEAU VARCHAR(2),
+    TEXTE TEXT,
+    REP_OK TEXT,
+    REP1 TEXT,
+    REP2 TEXT,
+    REP3 TEXT,
+    REP4 TEXT,
+	TRADUCTION TEXT,
+	IMAGE VARCHAR(100)
+);
+
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/quiz_orale3.csv'
+INTO TABLE quiz_ora 
+CHARACTER SET utf8mb4
+FIELDS TERMINATED BY ';' 
+ENCLOSED BY '"' 
+LINES TERMINATED BY '\r\n' 
+IGNORE 1 ROWS
+(ANNEE,NIVEAU,TEXTE,REP_OK,REP1,REP2,REP3,REP4,TRADUCTION,IMAGE);
+
+
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/quiz_orale4.csv'
+INTO TABLE quiz_ora 
+CHARACTER SET utf8mb4
+FIELDS TERMINATED BY ';' 
+ENCLOSED BY '"' 
+LINES TERMINATED BY '\r\n' 
+IGNORE 1 ROWS
+(ANNEE,NIVEAU,TEXTE,REP_OK,REP1,REP2,REP3,REP4,TRADUCTION,IMAGE);
+
+ANNEE,NIVEAU,TEXTE,REP_OK,REP1,REP2,REP3,REP4,TRADUCTION,IMAGE
+
+CREATE VIEW v_quiz_ora  AS
+            SELECT ANNEE, NIVEAU, TEXTE, REP_OK, REP1, REP2, REP3, REP4, TRADUCTION, IMAGE
+            FROM quiz_ora WHERE NIVEAU LIKE '%N3%' LIMIT 1000;
+
+DROP VIEW IF EXISTS `vue_quiz_?3`;
+
+SELECT table_name
+FROM information_schema.views
+WHERE table_schema = `jap`;
+
+ AND table_name LIKE 'vue_quiz_%3';
+ 
+ j'ai une table quiz_ora mysql> desc quiz_ora;
++------------+--------------+------+-----+---------+----------------+
+| Field      | Type         | Null | Key | Default | Extra          |
++------------+--------------+------+-----+---------+----------------+
+| id         | int          | NO   | PRI | NULL    | auto_increment |
+| ANNEE      | int          | YES  |     | NULL    |                |
+| NIVEAU     | varchar(2)   | YES  |     | NULL    |                |
+| TEXTE      | text         | YES  |     | NULL    |                |
+| REP_OK     | text         | YES  |     | NULL    |                |
+| REP1       | text         | YES  |     | NULL    |                |
+| REP2       | text         | YES  |     | NULL    |                |
+| REP3       | text         | YES  |     | NULL    |                |
+| REP4       | text         | YES  |     | NULL    |                |
+| TRADUCTION | text         | YES  |     | NULL    |                |
+| IMAGE      | varchar(100) | YES  |     | NULL    |                |
++------------+--------------+------+-----+---------+----------------+
+11 rows in set (0.00 sec) je voudrais créé une table contenant tous les lignes ayant le niveau  N3 puis dans cette table le résultat celles qui contiennent l'année 1991
+
+
+
+extraire 
+
+SELECT * FROM quiz_ora
+INTO OUTFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/quiz_20251111.csv'
+FIELDS TERMINATED BY ',' ENCLOSED BY '"'
+LINES TERMINATED BY '\n';
+
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/quiz_20251111.csv'
+INTO TABLE quiz_ora 
+CHARACTER SET utf8mb4
+FIELDS TERMINATED BY ';' 
+ENCLOSED BY '"' 
+LINES TERMINATED BY '\r\n' 
+IGNORE 1 ROWS
+(ANNEE,NIVEAU,TEXTE,REP_OK,REP1,REP2,REP3,REP4,TRADUCTION,IMAGE);

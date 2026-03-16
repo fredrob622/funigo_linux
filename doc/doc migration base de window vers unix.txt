@@ -1,0 +1,274 @@
+
+####################################################################################################################################################
+# Mise à jour du système
+
+sudo apt update
+
+####################################################################################################################################################
+# Installation de MySQL Server
+
+sudo apt install -y mariadb-server
+
+-y : répond automatiquement “yes” à toutes les questions posées par apt pendant l’installation (confirmation d’installation, taille à télécharger, etc
+
+sudo apt install -y  mariadb-client
+
+####################################################################################################################################################
+# Démarrage du service MySQL
+
+sudo systemctl start mariadb
+sudo systemctl status mariadb
+sudo systemctl enable mariadb
+
+####################################################################################################################################################
+# Vérification du statut
+ sudo systemctl status mariadb
+ 
+mysql       6229       1  1 16:58 ?        00:00:03 /usr/sbin/mariadbd
+fred        6870    3474  0 17:01 pts/2    00:00:00 grep --color=auto mariadb
+
+fred@funigo:~ $ ls -la /etc/mysql/
+total 40
+drwxr-xr-x   4 root root  4096 Jan 22 16:58 .
+drwxr-xr-x 134 root root 12288 Jan 22 16:58 ..
+drwxr-xr-x   2 root root  4096 Jan 22 16:58 conf.d
+-rw-------   1 root root   544 Jan 22 16:58 debian.cnf
+-rwxr-xr-x   1 root root  1770 Aug 26 18:05 debian-start
+-rw-r--r--   1 root root  1126 May 27  2025 mariadb.cnf
+drwxr-xr-x   2 root root  4096 Jan 22 16:58 mariadb.conf.d
+lrwxrwxrwx   1 root root    24 Oct 20  2020 my.cnf -> /etc/alternatives/my.cnf
+-rw-r--r--   1 root root   839 Oct 20  2020 my.cnf.fallback
+
+####################################################################################################################################################
+# Vérification 
+
+fred@funigo:~ $ mysql --version
+mysql from 11.8.3-MariaDB, client 15.2 for debian-linux-gnu (aarch64) using  EditLine wrapper
+
+####################################################################################################################################################
+# Connection
+
+fred@funigo:~ $ sudo mysql -u root
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 31
+Server version: 11.8.3-MariaDB-0+deb13u1 from Debian -- Please help get to 10k stars at https://github.com/MariaDB/Server
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]>
+
+####################################################################################################################################################
+# Fichier de configuration
+
+# Config serveur (important !)
+cat /etc/mysql/mariadb.conf.d/50-server.cnf
+
+# Config client
+cat /etc/mysql/mariadb.conf.d/50-client.cnf
+
+####################################################################################################################################################
+# Sécurisation de MySQL
+sudo mysql_secure_installation
+
+Lors de mysql_secure_installation, répondez :
+
+Enter current password for root (enter for none): 
+Switch to unix_socket authentication [Y/n] n
+Set root password? [Y/n] y
+New password: tonmotdepasse123
+Re-enter new password: tonmotdepasse123
+Remove anonymous users? [Y/n] y
+Disallow root login remotely? [Y/n] y
+Remove test database? [Y/n] y
+Reload privilege tables? [Y/n] y
+All done!
+
+####################################################################################################################################################
+2. Configuration pour les caractères japonais (UTF-8)
+bash# Édition de la configuration MySQL
+sudo nano /etc/mysql/mariadb.conf.d/50-server.cnf
+
+Ajoutez ces lignes dans la section [mysqld] :
+[mariabd]
+character-set-server=utf8mb4
+collation-server=utf8mb4_unicode_ci
+
+sudo vim /etc/mysql/mariadb.conf.d/50-client.cnf
+
+[client-mariadb]
+default-character-set=utf8mb4
+
+### Vérification 
+
+fred@funigo:~ $ sudo systemctl restart mariadb
+fred@funigo:~ $ sudo systemctl status mariadb
+
+fred@funigo:~ $ sudo mariadb -u root -p
+
+MariaDB [(none)]> SHOW VARIABLES LIKE 'character_set%';
+MariaDB [(none)]> SHOW VARIABLES LIKE 'collation%';
+
+####################################################################################################################################################
+# Création du compte japadmin 
+# Connexion à MySQL en tant que root
+
+fred@funigo:~ $ sudo mariadb -u root -p
+
+:
+sql-- Création de l'utilisateur japadmin
+CREATE USER 'japadmin'@'localhost' IDENTIFIED BY 'Jap_admin';
+
+-- Création de la base jap avec UTF8MB4
+CREATE DATABASE jap CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+-- Attribution des privilèges
+GRANT ALL PRIVILEGES ON jap.* TO 'japadmin'@'localhost';
+FLUSH PRIVILEGES;
+
+-- Vérification
+SHOW DATABASES;
+EXIT;
+
+
+
+####################################################################################################################################################
+# Préparation de japadmin pour faire l'esport 
+
+mysql> SELECT User, Host FROM mysql.user WHERE User='japadmin';
++----------+------+
+| User     | Host |
++----------+------+
+| japadmin | %    |
++----------+------+
+1 row in set (0.01 sec)
+
+mysql> GRANT ALL PRIVILEGES ON jap.* TO 'japadmin'@'localhost';
+ERROR 1410 (42000): You are not allowed to create a user with GRANT
+mysql> CREATE USER 'japadmin'@'localhost' IDENTIFIED BY 'TON_MOT_DE_PASSE';
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> GRANT ALL PRIVILEGES ON jap.* TO 'japadmin'@'localhost';
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> FLUSH PRIVILEGES;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> SELECT User, Host FROM mysql.user WHERE User='japadmin';
++----------+-----------+
+| User     | Host      |
++----------+-----------+
+| japadmin | %         |
+| japadmin | localhost |
++----------+-----------+
+2 rows in set (0.00 sec)
+jap_2010
+
+####################################################################################################################################################
+4. Export de la base depuis Windows 11
+Sur votre Windows 11, ouvrez PowerShell ou CMD :
+
+Export avec mysqldump (en spécifiant UTF-8)
+mysqldump -u japadmin -p --default-character-set=utf8mb4 --databases jap > jap_export.sql
+
+
+PS C:\Users\fredr> mysqldump -u japadmin -p --default-character-set=utf8mb4 --databases jap > jap_export.sql
+Enter password: ********
+mysqldump: Got error: 1045: Access denied for user 'japadmin'@'localhost' (using password: YES) when trying to connect
+
+*********** Modifier japadmin'@'localhost
+
+ALTER USER 'japadmin'@'localhost' IDENTIFIED BY 'jap_2010';
+FLUSH PRIVILEGES;
+
+GRANT PROCESS, SELECT, LOCK TABLES, RELOAD ON *.* TO 'japadmin'@'localhost';
+GRANT ALL PRIVILEGES ON jap.* TO 'japadmin'@'localhost';
+FLUSH PRIVILEGES;
+EXIT;
+
+***** Sous powershell pb encodage *******************************
+
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+mysqldump -u japadmin -p --default-character-set=utf8mb4 --set-charset jap > C:\export\jap_complet.sql
+
+
+####################################################################################################################################################
+
+6. Import de la base sur le Raspberry Pi
+**************************************************************************************
+Convertir UTF-16LE en UTF-8
+
+fred@funigo:~/Documents $ mysql -u japadmin -p jap < jap_complet.sql
+Enter password:
+
+ERROR: ASCII '\0' appeared in the statement, but this is not allowed unless option --binary-mode is enabled and mysql is run in non-interactive mode. 
+Set --binary-mode to 1 if ASCII '\0' is expected. Query: '��-'.
+
+fred@funigo:~/Documents $ file jap_complet.sql
+jap_complet.sql: Unicode text, UTF-16, little-endian text, with very long lines (10043), with CRLF line terminators
+
+fred@funigo:~/Documents $ sudo apt install -y libc-bin
+libc-bin is already the newest version (2.41-12+rpt1).
+Summary:
+  Upgrading: 0, Installing: 0, Removing: 0, Not Upgrading: 90
+  
+  
+fred@funigo:~/Documents $ iconv -f UTF-16LE -t UTF-8 jap_complet.sql > jap_utf8.sql
+
+fred@funigo:~/Documents $ file jap_utf8.sql
+jap_utf8.sql: affix definition for MySpell/Hunspell, with BOM, 1st line "-- MySQL dump 10.13  Distrib 8.0.41, for Win64 (x86_64)"
+
+**************************************************************************************************************************************
+pb ERROR jap_utf8.sql: affix definition for MySpell/Hunspell, with BOM, 1st line "-- MySQL dump 10.13  Distrib 8.0.41, for Win64 (x86_64)"
+Le fichier a toujours un problème - le BOM (Byte Order Mark) interfère. Supprimons-le :
+
+# Supprimer le BOM UTF-8
+sed '1s/^\xEF\xBB\xBF//' jap_utf8.sql > jap_clean.sql
+
+# Vérification
+file jap_clean.sql
+
+jap_clean.sql: Unicode text, UTF-8 text, with very long lines (23175), with CRLF line terminators
+
+**************************************************************************************************************************************
+Pb ERROR 1273 (HY000) at line 25: Unknown collation: 'utf8mb4_ja_0900_as_cs'
+
+Le problème est que votre MySQL sur Raspberry Pi ne reconnaît pas la collation utf8mb4_ja_0900_as_cs (spécifique à MySQL 8.0 sur Windows). 
+Il faut la remplacer par une collation compatible.
+
+fred@funigo:~/Documents $ sed -i 's/utf8mb4_ja_0900_as_cs/utf8mb4_unicode_ci/g' jap_clean.sql
+
+fred@funigo:~/Documents $ grep -n "COLLATE" jap_clean.sql | head -5
+27:  `FRANCAIS` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+28:  `KANJI` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+29:  `KANA` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+30:  `ROMAJI` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+31:  `TYPE` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+
+***************************************************************************************
+
+Pour supprimer tous les DEFINER
+
+fred@funigo:~/Documents $ sed -i 's/DEFINER=[^ ]*//g' jap_clean.sql
+fred@funigo:~/Documents $ grep -n "DEFINER" jap_clean.sql
+670:/*!50013  SQL SECURITY DEFINER */
+688:/*!50013  SQL SECURITY DEFINER */
+706:/*!50013  SQL SECURITY DEFINER */
+724:/*!50013  SQL SECURITY DEFINER */
+742:/*!50013  SQL SECURITY DEFINER */
+760:/*!50013  SQL SECURITY DEFINER */
+fred@funigo:~/Documents $ sed -i '/DEFINER/d' jap_clean.sql
+fred@funigo:~/Documents $ sed -i 's/SQL SECURITY DEFINER/SQL SECURITY INVOKER/g' jap_clean.sql
+fred@funigo:~/Documents $ mysql -u japadmin -p --default-character-set=utf8mb4 jap < jap_clean.sql
+
+
+
+
+
+
+
+
+
+
+

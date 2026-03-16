@@ -1,0 +1,21 @@
+<%- include('../../partials/header_vocab', { title: title }) %> 
+<div class="content content-black">
+
+    <div id="haut"></div>
+
+    <div class="vocab_titre" >   
+        <h2><%= title %></h2>
+        <a href="/vocab" class="vocab_href">Retour</a>
+    </div>
+
+    <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
+        <a href="/vocab_giseigo" class="vocab_href">Giseigo<br>擬声語</a>
+        <a href="/vocab_gitaigo" class="vocab_href">Gitaigo<br>擬態語</a>
+        <a href="/vocab_onomatopee_detail" class="vocab_href">Détails onomatopées<br>オノマトペの詳細</a>
+    </div>
+
+     <p><br>&emsp;&emsp;Giseigo 擬声語 C'est un son fait pour imiter un bruit.</p>
+     <p><br>&emsp;&emsp;Gitaigo 擬態語 C'est un son fait pour exprimer une action, un état, une émotion.</p>
+
+</div>
+<%- include('../../partials/footer') %>

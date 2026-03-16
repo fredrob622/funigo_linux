@@ -1,0 +1,50 @@
+<!-- Fichier : views/pages/vocab_form.ejs -->
+
+<%- include('../../partials/header', { title: title }) %>
+<!-- <link rel="stylesheet" href="/css/quiz.css"> -->
+
+
+<div class="content content-black"> 
+    
+  <h2>Créer le QUIZ de niveau</h2>
+  <form action="/quiz/search" method="POST" class="search-form">
+      <input type="text" name="searchTerm" value="<%= searchTerm %>" placeholder="Entrer un niveau N4 N3 N2 N1">
+      <button type="submit">Rechercher</button>
+  </form>
+
+  <!-- data-nbquestion c'est le nombre ligne qui est envoyé à quiz.js-->
+  <!-- data-nbquestion: C'est un attribut de données HTML5 (ou "data attribute"). 
+
+  Les attributs data-* sont un moyen standard de stocker des données personnalisées, privées, sur des éléments HTML.
+  Ces données peuvent ensuite être accédées et manipulées facilement avec JavaScript. Le nom nbquestion ici est 
+  arbitraire et choisi par le développeur pour sa signification. -->
+  <div data-nbquestion="<%= results.length %>"> </div>
+ 
+  <!--  On affiche le tableau décomposé créer par quiz.js-->
+  <div id="affichage"  style="margin: 15px;"></div>
+       
+    <!-- NOUVEAU : Conteneur pour les boutons de contrôle -->
+    <div id="quiz-controls">
+        <button id="continue-btn" style="display: none;">CONTINUE</button>
+        <button id="end-btn" style="display: none;">FIN</button>
+    </div>
+
+  <!-- NOUVELLE MÉTHODE : On stocke les données ici, de manière sûre -->
+  <!-- type="application/json" indique que le contenu n'est pas du code JavaScript, mais des données au format JSON (texte brut, structure de données). -->
+  <!-- <script type="text/javascript">, le code à l'intérieur n'est pas exécuté, il est juste stocké en texte dans la page -->
+  <!-- la variable results (typiquement ton tableau de questions pour le quiz) est sérialisée en texte JSON grâce à JSON.stringify(results). -->
+
+  <!-- Quand la page HTML arrive dans le navigateur, le JavaScript côté client peut décoder ces données pour les utiliser dynamiquement : 
+   pas d'injection de données lourdes en variables globales, pas de soucis d'échappement dangereux sur les quotes. -->
+
+  <!-- Très pratique pour passer UN TABLEAU D’OBJETS du serveur vers le JS de la page sans refaire une requête AJAX. -->
+  <script id="questions-data" type="application/json">
+    <%- JSON.stringify(results) %>
+  </script>
+
+</div>
+
+
+<script src="/js/quiz.js"></script>
+
+<%- include('../../partials/footer') %>

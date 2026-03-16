@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+// Méthode 1 : Utilisation d'une boucle for traditionnelle
+
+// Déclaration d'un tableau vide pour stocker les nombres
+const nombresAvecBoucle = [];
+
+// Boucle de 1 à 50 (inclus)
+for (let i = 1; i <= 50; i++) {
+  // Ajoute chaque nombre au tableau
+  nombresAvecBoucle.push(i);
+}
+
+// Retire le nombre 25 du tableau
+// La méthode filter() crée un nouveau tableau avec tous les éléments qui passent le test implémenté par la fonction fournie.
+const nombresAvecBoucleSans25 = nombresAvecBoucle.filter(num => num !== 25);
+
+// Affiche le tableau résultant dans la console
+console.log("Tableau créé avec une boucle for (sans 25) :");
+console.log(nombresAvecBoucleSans25);
+// Résultat attendu: [1, 2, 3, ..., 24, 26, ..., 50]
+
+
+// Méthode 2 : Utilisation de Array.from() (approche plus moderne et concise)
+
+// Array.from() permet de créer un nouveau tableau à partir d'un objet itérable ou de la longueur d'un tableau.
+// Le premier argument est un objet avec une propriété 'length' (ici, 50).
+// Le second argument est une fonction de mappage qui est appelée pour chaque élément du nouveau tableau.
+// L'index 'i' commence à 0, donc nous ajoutons 1 pour obtenir les nombres de 1 à 50.
+const nombresAvecArrayFrom = Array.from({ length: 50 }, (v, i) => i + 1);
+
+// Retire le nombre 25 du tableau
+nombresAvecArrayFrom = nombresAvecArrayFrom.filter(num => num !== 25);
+
+// Affiche le tableau résultant dans la console
+console.log("\nTableau créé avec Array.from() (sans 25) :");
+console.log(nombresAvecArrayFrom);
+// Résultat attendu: [1, 2, 3, ..., 24, 26, ..., 50]
+
+    </script>
+
+</body>
+</html>

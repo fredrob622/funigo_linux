@@ -1,0 +1,1009 @@
+2001;N3;"聴解スクリプト： 1番：男の人と女の人が店で話しています。男の人は全部でいくら出しましたか。 
+－はい、2200円。 
+－あのう、すみません。もう100円です。 
+－あ、すみま せん。じゃ、これ、100円。 
+－はい、ありがとうございました。 
+男の人は全部でいくら出しましたか";C;A;B;C;D;"聴解スクリプト： 1番：男の人と女の人が店で話しています。男の人は全部でいくら出しましたか。Script d'écoute : Question 1 : Un homme et une femme parlent dans un magasin. Combien l'homme a-t-il payé au total ? (C'est la question à laquelle vous devez répondre).
+－はい、2200円。
+(Homme) : Tenez, 2200 yens.
+－あのう、すみません。もう100円です。
+(Femme/Vendeuse) : Euh, excusez-moi. Il manque 100 yens de plus. (Ceci indique que le prix total est 2300 yens).
+－あ、すみません。じゃ、これ、100円。
+(Homme) : Ah, excusez-moi. Alors, voici ces 100 yens.
+－はい、ありがとうございました。
+(Femme/Vendeuse) : Oui, merci beaucoup.
+
+男の人は全部でいくら出しましたか
+Combien l'homme a-t-il payé au total ?
+
+Explication (Calcul de la Réponse)
+La question finale est de savoir le montant total que l'homme a donné (出しました) à la vendeuse, et non le prix final de l'article.
+Premier paiement : L'homme donne initialement 2200 yens.
+Paiement additionnel : La vendeuse lui signale qu'il manque 100 yens (もう100円です), et l'homme donne alors 100 yens supplémentaires.
+Pour trouver le montant total que l'homme a donné, vous devez additionner les deux montants :
+$$2200 \text{ yens} + 100 \text{ yens} = \mathbf{2300 \text{ yens}}$$
+Réponse : L'homme a payé un total de 2300 yens. (C'était aussi le prix total de l'article).
+
+
+";2001_N3_1.jpg
+2001;N3;"聴解スクリプト： 2番：男の人と女の人が話しています。明日の天気はどうなりますか。 
+－明日の天気はどうですか。 
+－天気予報では午前中はいい天気だそうですよ。 
+－午後は？ 
+－午後は雨だけと、夕方にはやむといっていましたよ。 
+
+明日の天気はどうなりますか";D;A;B;C;D;"聴解スクリプト： 2番：男の人と女の人が話しています。明日の天気はどうなりますか。
+Script d'écoute : Question 2 : Un homme et une femme parlent. Quel temps fera-t-il demain ? (C'est l'objectif de la conversation).
+－明日の天気はどうですか。
+(Homme) : Quel temps fera-t-il demain ?
+－天気予報では午前中はいい天気だそうですよ。
+(Femme) : D'après les prévisions météo, il paraît qu'il fera beau temps le matin.
+－午後は？
+(Homme) : Et l'après-midi ?
+－午後は雨だけと、夕方にはやむといっていましたよ。
+(Femme) : Il pleuvra l'après-midi, mais ils ont dit que la pluie s'arrêterait en début de soirée (ou fin d'après-midi).
+明日の天気はどうなりますか
+Quel temps fera-t-il demain ?
+
+Explication (Résumé de la Météo)
+Le dialogue détaille l'évolution de la météo pour la journée de demain :
+Matin (午前中 - gozenchū) : Il fera beau temps (いい天気).
+Après-midi (午後 - gogo) : Il y aura de la pluie (雨).
+Soirée (夕方 - yūgata) : La pluie s'arrêtera (elle cessera - やむ).
+Résumé de la météo de demain : Il fera beau le matin, il pleuvra l'après-midi, et la pluie cessera en début de soirée.
+";2001_N3_2.jpg
+2001;N3;"聴解スクリプト： 3番：女の人が話しています。女の人はどんな写真をとりますか。 
+－じゃあ、とるよ。オートバイヲ降りなくていいよ。
+眼鏡もかけていたほうが格好いいし、 いい、いくよ。 
+
+女の人はどんな写真をとりますか。  ";C;A;B;C;D;"  
+
+聴解スクリプト： 3番：女の人が話しています。女の人はどんな写真をとりますか。
+Script d'écoute : Question 3 : Une femme est en train de parler. Quelle sorte de photo la femme va-t-elle prendre ? (C'est la question à laquelle vous devez répondre).
+－じゃあ、とるよ。
+(Femme) : Bon, je prends la photo.
+－オートバイヲ降りなくていいよ。
+(Femme) : Tu n'as pas besoin de descendre de la moto.
+－眼鏡もかけていたほうが格好いいし、
+(Femme) : C'est plus cool si tu portes aussi tes lunettes,
+－いい、いくよ。
+(Femme) : D'accord, j'y vais (je prends la photo).
+女の人はどんな写真をとりますか。
+Quelle sorte de photo la femme va-t-elle prendre ?
+Explication (Description de la Photo)
+La femme (la photographe) donne des instructions à la personne qu'elle photographie. Ces instructions définissent l'image finale :
+Lieu/Action : Elle indique à la personne de ne pas descendre de la moto (オートバイヲ降りなくていいよ), ce qui signifie que la personne doit rester assise sur sa moto.
+Accessoire : Elle lui dit que c'est « plus cool » (格好いい) de porter ses lunettes (眼鏡もかけていたほうが).
+Réponse : La femme va prendre une photo de la personne assise sur sa moto et portant ses lunettes.
+";2001_N3_3.jpg
+2001;N3;"聴解スクリプト： 4番：喫茶店でお店の人と女の人が話しています。女の人が頼んだものはどれですか。 
+－お待たせしました。 －これ、私のじゃありませんよ。
+アイスクリ ームと紅茶を頼みましたけど、ケーキは頼んでいませんよ。 
+－ああ、すみません。 
+
+女の人が頼んだものはどれですか。  ";D;A;B;C;D;"聴解スクリプト： 4番：喫茶店でお店の人と女の人が話しています。女の人が頼んだものはどれですか。
+Script d'écoute : Question 4 : Une employée et une femme parlent dans un café. Quels sont les articles que la femme a commandés ? (C'est la question à laquelle vous devez répondre).
+－お待たせしました。
+(Employée) : Je vous ai fait attendre. (Phrase standard pour servir)
+－これ、私のじゃありませんよ。
+(Femme/Cliente) : Ceci n'est pas ce que j'ai commandé (ou : Ce n'est pas à moi).
+－アイスクリームと紅茶を頼みましたけど、ケーキは頼んでいませんよ。
+(Femme/Cliente) : J'ai commandé de la glace (ice cream) et du thé noir (kōcha), mais je n'ai pas commandé de gâteau.
+－ああ、すみません。
+(Employée) : Ah, excusez-moi.
+女の人が頼んだものはどれですか。
+Quels sont les articles que la femme a commandés ?
+Explication (Articles Commandés)
+La question demande d'identifier les articles que la cliente a effectivement commandés, en se basant sur sa réclamation.
+La cliente indique clairement :
+Ce qu'elle a commandé :
+アイスクリーム (Aisu Kurīmu) : Glace (Ice Cream)
+紅茶 (Kōcha) : Thé noir
+Ce qu'elle n'a pas commandé :
+ケーキ (Kēki) : Gâteau
+Réponse : La femme a commandé de la glace (ice cream) et du thé noir.
+";2001_N3_4.jpg
+2001;N3;"聴解スクリプト： 5番：男の人と女の人が写真を見ながら、話しています。小島さんは昔どうでしたか。 
+－あれ？この写真、小島さん？ずいぶん痩せていのね。 
+－そう。病 気になっていてから、太ったからね。 
+－ええ？病気になった太ったの？ 
+－うん。そうなんだよ。 
+－ううん。昔は髪、黒かったのねえ。 
+
+小島さんは昔どうで したか。";D;A;B;C;D;"聴解スクリプト： 5番：男の人と女の人が写真を見ながら、話しています。小島さんは昔どうでしたか。
+Script d'écoute : Question 5 : Un homme et une femme regardent une photo et parlent. Comment était M. Kojima autrefois ? (C'est la question à laquelle vous devez répondre).
+－あれ？この写真、小島さん？ずいぶん痩せていのね。
+(Femme) : Oh ? C'est M. Kojima sur cette photo ? Il est vraiment mince, n'est-ce pas ?
+－そう。病気になっていてから、太ったからね。
+(Homme) : Oui. C'est parce qu'il a grossi après être tombé malade.
+－ええ？病気になった太ったの？
+(Femme) : Quoi ? Il a grossi après être tombé malade ?
+－うん。そうなんだよ。
+(Homme) : Oui, c'est ça.
+－ううん。昔は髪、黒かったのねえ。
+(Femme) : Hmm. Ses cheveux étaient noirs autrefois (昔), n'est-ce pas ?
+小島さんは昔どうでしたか。
+Comment était M. Kojima autrefois ?
+Explication (Description de M. Kojima dans le Passé)
+La question demande de décrire M. Kojima dans le passé (昔). Le dialogue donne deux indices principaux sur son état à cette époque (qui est l'état visible sur la photo, avant qu'il ne tombe malade et ne grossisse) :
+Le poids : La femme remarque qu'il est très mince (ずいぶん痩せていのね). L'homme confirme qu'il n'a grossi qu'après la maladie, ce qui implique qu'il était mince auparavant.
+Les cheveux : La femme observe que ses cheveux étaient noirs (髪、黒かった).
+Réponse : Autrefois, M. Kojima était mince et avait les cheveux noirs.
+";2001_N3_5.jpg
+2001;N3;"聴解スクリプト： 6番：先生が生徒に説明しています。明日はどんな服を着て行ってはいけませんか。
+着てはいけない服です。 
+－皆さん、明日は山に行きますね。だから、 長いズボンとシャツにしてください。
+でも、暑いのでシャツは短くしてもいいのです。
+女の子も必ずズボンにしてくださいね。 
+
+明日はどんな服を着て行って はいけませんか。 ";A;A;B;C;D;"聴解スクリプト： 6番：先生が生徒に説明しています。明日はどんな服を着て行ってはいけませんか。
+Script d'écoute : Question 6 : Un professeur s'adresse à ses élèves. Quel genre de vêtements ne faut-il pas porter demain ? (La question vise l'interdit).
+着てはいけない服です。
+(C'est sur) Les vêtements qu'il ne faut pas porter.
+－皆さん、明日は山に行きますね。
+(Professeur) : Tout le monde, nous allons à la montagne demain, n'est-ce pas ?
+－だから、長いズボンとシャツにしてください。
+(Professeur) : Par conséquent, veuillez porter des pantalons longs et un t-shirt/une chemise.
+－でも、暑いのでシャツは短くしてもいいのです。
+(Professeur) : Cependant, comme il fera chaud, vous pouvez porter un t-shirt à manches courtes (littéralement : ""il est permis de rendre le t-shirt court"").
+－女の子も必ずズボンにしてくださいね。
+(Professeur) : Les filles aussi, assurez-vous absolument de porter un pantalon.
+明日はどんな服を着て行ってはいけませんか。
+Quel genre de vêtements ne faut-il pas porter demain ?
+Explication (Vêtements Interdits)
+La question cherche les vêtements qui sont explicitement ou implicitement interdits (着てはいけない服) selon les instructions du professeur.
+Les consignes obligatoires sont :
+Pantalons longs (長いズボン).
+Pantalon obligatoire pour les filles (女の子も必ずズボン).
+Par conséquent, les vêtements qui sont interdits sont ceux qui contredisent ces consignes de sécurité pour la randonnée :
+Une jupe ou une robe (スカート ou ワンピース) : C'est l'interdiction la plus claire, car le professeur insiste pour que les filles mettent obligatoirement un pantalon.
+Un short ou un pantalon court : Bien que les manches courtes soient autorisées pour le haut (le t-shirt), les instructions demandent des pantalons longs pour le bas.
+Réponse : Les vêtements qu'il ne faut pas porter sont les jupes (ou robes) et, par déduction de la consigne de sécurité, les shorts (ou pantalons courts). L'interdiction la plus forte est celle de ne pas porter de jupe pour les filles.
+";2001_N3_6.jpg
+2001;N3;"聴解スクリプト： 7番：男の人が話しています。部屋はどうなりますか。 
+－はい、お疲れ様でした。今日はこれで終わります。
+すみません、明日のために椅子とテープルを 運んでください。
+テープルは３つだけにして、ほかは片付けてください。
+椅子は１つのテーブルに２つお願いします。
+はい、そうです。どうもありがとうござい ます。 
+
+部屋はどうなりますか。 ";B;A;B;C;D;"聴解スクリプト： 7番：男の人が話しています。部屋はどうなりますか。
+Script d'écoute : Question 7 : Un homme parle. Comment sera la salle (ou la pièce) ? (C'est la question à laquelle vous devez répondre).
+－はい、お疲れ様でした。今日はこれで終わります。
+(Homme) : Bien, merci pour votre travail. Nous arrêtons pour aujourd'hui.
+－すみません、明日のために椅子とテープルを 運んでください。
+(Homme) : Excusez-moi, veuillez déplacer les chaises et les tables pour demain.
+－テープルは３つだけにして、ほかは片付けてください。
+(Homme) : Ne laissez que trois tables (3つだけにして), et rangez (ou : débarrassez) les autres.
+－椅子は１つのテーブルに２つお願いします。
+(Homme) : Veuillez mettre deux chaises par table.
+－はい、そうです。どうもありがとうございます。
+(Homme) : Oui, c'est ça. Merci beaucoup.
+部屋はどうなりますか。
+Comment sera la salle ?
+Explication (Arrangement de la Salle)
+L'homme donne des instructions pour préparer la salle pour le lendemain. L'aménagement final doit être le suivant :
+Tables : Seules trois tables (テープルは３つだけ) doivent rester dans la pièce. Toutes les autres tables doivent être rangées.
+Chaises : Il faut disposer deux chaises (椅子は２つ) pour chaque table restante.
+Réponse : La salle sera aménagée avec trois tables, et chaque table aura deux chaises. Les autres tables et chaises auront été rangées.
+";2001_N3_7.jpg
+2001;N3;"聴解スクリプト： 8番：女の人が話しています。女の人はどれを見ながら話していますか。 
+－ええ、では、こちらを見てください。
+昨日、この町の皆さんに食べ物では何が好 きですかと聞きました。
+ええ、皆さんは魚をよく食べていますね。魚が一番になりました。
+肉が好きな人が少しでした。魚の次は野菜です。
+それから果物で す。 
+
+女の人はどれを見ながら話していますか。 ";A;A;B;C;D;"聴解スクリプト： 8番：女の人が話しています。女の人はどれを見ながら話していますか。
+Script d'écoute : Question 8 : Une femme parle. Que regarde-t-elle en parlant ?
+－ええ、では、こちらを見てください。
+(女性) : Oui, alors, regardez par ici (Regardez ceci).
+昨日、この町の皆さんに食べ物では何が好きですかと聞きました。
+(女性) : Hier, nous avons demandé à tout le monde dans cette ville quelle était leur nourriture préférée.
+ええ、皆さんは魚をよく食べていますね。魚が一番になりました。
+(女性) : Oui, tout le monde mange souvent du poisson, n'est-ce pas ? Le poisson est arrivé en première position.
+肉が好きな人が少しでした。魚の次は野菜です。それから果物です。
+(女性) : Il y avait peu de gens qui aimaient la viande. Après le poisson, ce sont les légumes. Et ensuite, les fruits.
+女の人はどれを見ながら話していますか。
+何を見ながら話していますか。
+Explication (Déduction de l'objet)
+La question demande quel type de document visuel la femme utilise pour parler.
+La femme commence par dire : « Regardez par ici » (こちらを見てください), ce qui indique qu'elle montre un support visuel à son audience.
+Elle décrit les résultats d'un sondage sur les aliments préférés, en listant les préférences par ordre décroissant (premier : poisson, deuxième : légumes, troisième : fruits).
+Pour présenter de manière claire des rangs ou des pourcentages issus d'un sondage, l'outil visuel le plus approprié est :
+Réponse : La femme est en train de regarder et de commenter un graphique (comme un diagramme en barres ou circulaire) ou un tableau qui résume les résultats de l'enquête sur les aliments préférés.
+";2001_N3_8.jpg
+2001;N3;"聴解スクリプト： 9番：男の人と女の人が話しています。どれにしますか。 
+－あのう、４つ作りましたけど。どれがいいでしょう。 
+－うん、漢字のはちょっとねえ。 
+－もう1つ の、番号のほうはどうですか。 
+－それもあんまり好きじゃないですね。 
+－うん、それよりこちらのにしませんか。 
+－はい、わかりました。
+そうしましょう。 
+
+ど れにしましたか。  ";C;A;B;C;D;"聴解スクリプト： 9番：男の人と女の人が話しています。どれにしますか。
+Script d'écoute : Question 9 : Un homme et une femme parlent. Lequel choisissent-ils ? (C'est la question à laquelle il faut répondre).
+－あのう、４つ作りましたけど。どれがいいでしょう。
+(Homme) : Euh, j'en ai fait quatre. Lequel serait le meilleur ?
+－うん、漢字のはちょっとねえ。
+(Femme) : Hmm, celui avec des Kanji est un peu... (Sous-entendu : pas très bien). (Option 1 Rejetée)
+－もう1つの、番号のほうはどうですか。
+(Homme) : Et l'autre, celui avec des numéros ? (Option 2 Proposée)
+－それもあんまり好きじゃないですね。
+(Femme) : Je n'aime pas trop celui-là non plus. (Option 2 Rejetée)
+－うん、それより こちらの にしませんか。
+(Homme) : Hmm, et si nous prenions celui-ci (こちら), plutôt que celui-là ? (Option 3 Proposée)
+－はい、わかりました。そうしましょう。
+(Femme) : Oui, j'ai compris. Faisons cela (Choisisons celui-là). (Option 3 Acceptée)
+どれにしましたか。
+Lequel ont-ils choisi ?
+Explication (Déduction du Choix)
+La conversation est une séquence d'élimination et de choix :
+L'homme présente quatre options.
+La femme rejette l'option ""avec des Kanji"".
+L'homme propose l'option ""avec des numéros"".
+La femme rejette également l'option ""avec des numéros"".
+L'homme propose alors ""celui-ci"" (こちらの), qui est la troisième option discutée (et par conséquent une des deux restantes, l'autre étant la quatrième option non mentionnée).
+La femme accepte immédiatement cette troisième suggestion (そうしましょう).
+Réponse : Ils ont choisi la troisième option que l'homme a proposée, celle qu'il a désignée par こちら (celui-ci), après avoir rejeté les options avec des Kanji et des numéros.
+";2001_N3_9.jpg
+2001;N3;"聴解スクリプト： 10番：男の人と女の人がレストランでお店の人と話しています。男の人は何を食べますか。
+男の人です。 
+－どちらになさいますか。 
+－私は魚にしようか な。 
+－僕は肉がいいな。 
+－パンになさいますか。ご飯になさいますか。 
+－うん、ご飯にします。 
+－僕もご飯。 
+－お飲み物は？ 
+－コーヒー。 
+－私はジュ ースにします。 
+－肉でご飯、ゴーひーがお1つ、魚でご飯、ジュースがお1つでございますね。 
+
+男の人は何を食べますか。  ";C;A;B;C;D;"聴解スクリプト： 10番：男の人と女の人がレストランでお店の人と話しています。男の人は何を食べますか。男の人です。
+Script d'écoute : Question 10 : Un homme et une femme parlent avec le serveur dans un restaurant. Qu'est-ce que l'homme va manger ? (C'est la question)
+－どちらになさいますか。
+(Serveur) : Que prendrez-vous ? (Polie)
+Serveur
+－私は魚にしようかな。
+(Femme) : Je crois que je vais prendre le poisson.
+Femme
+－僕は肉がいいな。
+(Homme) : Moi, je voudrais de la viande.
+Homme
+－パンになさいますか。ご飯になさいますか。
+(Serveur) : Voulez-vous du pain, ou voulez-vous du riz ? (Polie)
+Serveur
+－うん、ご飯にします。
+(Femme) : Hmm, je vais prendre du riz.
+Femme
+－僕もご飯。
+(Homme) : Moi aussi, du riz.
+Homme
+－お飲み物は？
+(Serveur) : Et les boissons ? (Polie)
+Serveur
+－コーヒー。
+(Homme) : Du café.
+Homme
+－私はジュースにします。
+(Femme) : Moi, je vais prendre du jus.
+Femme
+－肉でご飯、コーヒーがお1つ、魚でご飯、ジュースがお1つでございますね。
+(Serveur) : Donc, une portion de viande avec du riz et un café, et une portion de poisson avec du riz et un jus, c'est cela ? (Récapitulatif)
+Serveur
+男の人は何を食べますか。
+Qu'est-ce que l'homme va manger ?
+Explication (Le Choix de l'Homme)
+La question porte uniquement sur ce que l'homme (男の人) a commandé. Il faut suivre ses choix tout au long de la conversation :
+Plat principal : L'homme déclare : 僕は肉がいいな (Moi, je voudrais de la viande).
+Accompagnement : Après que la femme a choisi le riz, l'homme ajoute : 僕もご飯 (Moi aussi, du riz).
+Boisson : L'homme demande : コーヒー (Du café).
+Réponse : L'homme va manger de la viande avec du riz, et il boira du café.
+";2001_N3_10.jpg
+2001;N3;"聴解スクリプト： 11番：道で二人の女の人が話しています。女の人はどこへ行きますか。 
+－おはようございます。お出かけですか。 
+－ええ。子供の先生が呼ばれたんで す。 
+
+女の人はどこへ行きますか。";B;A;B;C;D;"聴解スクリプト： 11番：道で二人の女の人が話しています。女の人はどこへ行きますか。
+Script d'écoute : Question 11 : Deux femmes parlent dans la rue. Où va la femme (qui est interrogée) ? (C'est la question à laquelle il faut répondre).
+－おはようございます。お出かけですか。
+(Femme 1) : Bonjour. Vous sortez ?
+－ええ。子供の先生が呼ばれたんです。
+(Femme 2) : Oui. C'est parce que le professeur de mon enfant m'a appelée (ou : m'a convoquée).
+女の人はどこへ行きますか。
+Où va la femme ?
+Explication (Déduction de la Destination)
+La question demande où se rend la femme qui sort (お出かけですか).
+La réponse de la femme est : 子供の先生が呼ばれたんです (C'est parce que le professeur de mon enfant m'a appelée/convoquée).
+Une personne est convoquée par le professeur de son enfant dans le lieu où travaille ce professeur.
+Réponse : La femme se rend à l'école (ou à l'établissement scolaire) de son enfant, car elle a été convoquée par l'enseignant.
+";2001_N3_11.jpg
+2001;N3;"聴解スクリプト： 12番：男の人が話しています。体のためにはどんな順番がいいですか。 
+－体のためには、寝る5･6時間前に晩御飯を食べましょう。
+晩御飯を食べた後 で、テレビを見たり、新聞を読んだり、ゆっくりしてください。
+そして、お風呂に入って寝るとよく眠れます。
+
+ 体のためにはどんな順番がいいですか。 ";B;A;B;C;D;"聴解スクリプト： 12番：男の人が話しています。体のためにはどんな順番がいいですか。
+Script d'écoute : Question 12 : Un homme parle. Quel est le meilleur ordre pour le corps ? (C'est la question à laquelle il faut répondre).
+－体のためには、寝る5･6時間前に晩御飯を食べましょう。
+(Homme) : Pour le bien de votre corps, mangeons le dîner 5 à 6 heures avant de dormir.
+－晩御飯を食べた後で、テレビを見たり、新聞を読んだり、ゆっくりしてください。
+(Homme) : Après avoir mangé le dîner, regardez la télévision, lisez le journal, et détendez-vous (prenez votre temps).
+－そして、お風呂に入って寝るとよく眠れます。
+(Homme) : Ensuite, prenez un bain et allez vous coucher ; cela vous permettra de bien dormir.
+体のためにはどんな順番がいいですか。
+Quel est le meilleur ordre pour le corps ?
+Explication (L'Ordre des Actions)
+La question demande la séquence d'actions recommandée pour favoriser un bon sommeil et le bien-être général. Il faut identifier l'ordre chronologique des activités :
+Manger : 晩御飯を食べましょう (Dîner). Précisé : 5-6 heures avant de dormir.
+Détente : ゆっくりしてください (Détente/Loisirs comme regarder la télévision ou lire le journal). C'est après le dîner.
+Se laver : お風呂に入って (Prendre un bain). C'est après la détente.
+Dormir : 寝ると (Dormir). C'est après le bain.
+Réponse : L'ordre des actions pour le bien du corps est : Dîner → Se détendre (regarder la télé/lire) → Prendre un bain → Dormir.
+";2001_N3_12.jpg
+2001;N3;"聴解スクリプト： 13番：女の人がラジオで話しています。映画に行きたい人が書くのはどの葉書ですか。 
+－今日は映画「ジュゲーム」のご招待について、お知らせします。 
+この番組を聞いている皆さんに切符をプレゼントします。
+ご招待の日は25日です。
+時間は午前10時からと午後6時からです。
+映画を見たい方は葉書に映 画の名前、「ジュゲーム」と住所、お名前をお書きください。
+また、午前か午後のどちらかも忘れないでください。 
+
+映画に行きたい人が書くのはどの葉書で すか。 ";A;A;B;C;D;" 聴解スクリプト： 13番：女の人がラジオで話しています。映画に行きたい人が書くのはどの葉書ですか。
+Script d'écoute : Question 13 : Une femme parle à la radio. Quelle carte postale (fiche) doit écrire la personne qui veut aller au cinéma ? (La question cherche à identifier les informations requises sur la carte).
+－今日は映画「ジュゲーム」のご招待について、お知らせします。
+(Femme/Annonciatrice) : Aujourd'hui, je vais vous informer à propos des invitations pour le film « Ju-Game ».
+この番組を聞いている皆さんに切符をプレゼントします。
+(Femme) : Nous allons offrir des billets à tous ceux qui écoutent cette émission.
+ご招待の日は25日です。
+(Femme) : Le jour de l'invitation est le 25 (du mois).
+時間は午前10時からと午後6時からです。
+(Femme) : Les heures sont de 10h00 du matin et de 18h00 (6h00 de l'après-midi).
+映画を見たい方は葉書に 映画の名前、「ジュゲーム」 と 住所、お名前 をお書きください。
+(Femme) : Les personnes qui souhaitent voir le film doivent écrire le titre du film, « Ju-Game », ainsi que leur adresse et leur nom sur la carte postale.
+また、 午前か午後のどちらか も忘れないでください。
+(Femme) : De plus, n'oubliez pas d'indiquer si vous préférez la séance du matin ou de l'après-midi.
+映画に行きたい人が書くのはどの葉書ですか。
+Quelle carte postale doit écrire la personne qui veut aller au cinéma ?
+Explication (Informations Requises)
+La question demande quels sont les éléments que le participant doit écrire sur sa carte postale pour participer au tirage au sort.
+Les informations requises sont mentionnées explicitement :
+Le titre du film : 映画の名前、「ジュゲーム」 (Le nom du film, « Ju-Game »).
+L'adresse : 住所 (Adresse).
+Le nom : お名前 (Nom).
+L'heure de la séance préférée : 午前か午後のどちらか (Matin ou Après-midi).
+Réponse : La carte postale doit contenir le titre du film (« Ju-Game »), l'adresse du participant, son nom, et le choix de la séance (matin ou après-midi).
+";2001_N3_13.jpg
+2001;N3;"聴解スクリプト： 14番：男の人と女の人が話しています。封筒の中に何がありますか。 
+－斉藤さん、この封筒の中にあるもの、何だと思う？ 
+－なにかなあ、そんなに大き くないね。 
+－写真を撮るときに使うものよ。 
+－カメラか、ずいぶん小さいねえ。 
+－そうじゃなくて。 
+－あっ、そうか。 
+
+封筒の中に何がありますか";B;A;B;C;D;"聴解スクリプト： 14番：男の人と女の人が話しています。封筒の中に何がありますか。
+Script d'écoute : Question 14 : Un homme et une femme parlent. Qu'y a-t-il dans l'enveloppe ? (C'est la question).
+－斉藤さん、この封筒の中にあるもの、何だと思う？
+(Homme) : M. Saitō (ou Mme Saitō), qu'est-ce que tu penses qu'il y a dans cette enveloppe ?
+Homme
+－なにかなあ、そんなに大きくないね。
+(Femme) : Qu'est-ce que ça peut être... Ce n'est pas très grand, hein.
+Femme
+－写真を撮るときに使うものよ。
+(Homme) : C'est quelque chose que l'on utilise quand on prend des photos.
+Homme
+－カメラか、ずいぶん小さいねえ。
+(Femme) : Un appareil photo (Caméra) ? C'est vraiment petit, alors.
+Femme
+－そうじゃなくて。
+(Homme) : Non, ce n'est pas ça.
+Homme
+－あっ、そうか。
+(Femme) : Ah, je vois.
+Femme
+封筒の中に何がありますか
+Qu'y a-t-il dans l'enveloppe ?
+Explication (Déduction du Contenu)
+La réponse doit être un objet qui satisfait toutes les conditions du dialogue :
+Il doit tenir dans une enveloppe (封筒).
+Il doit être utilisé en relation avec la prise de photos (写真を撮るときに使うもの).
+Ce n'est pas un appareil photo (カメラじゃなくて).
+La femme réalise finalement la réponse (あっ、そうか。).
+L'objet le plus logique, petit, plat, et lié à la photographie, qui peut être envoyé ou remis dans une enveloppe, est une photographie imprimée ou une planche contact.
+Réponse : Dans l'enveloppe, il y a probablement une photo (imprimée). (Ou plus largement : le résultat de la prise de vue).
+";2001_N3_14.jpg
+2001;N3;"聴解スクリプト： 1番：男の人と女の人が話しています。男の人はどうして風邪を引きましたか。 
+－風邪？暑いからクーラーをつけて寝たんじゃない？ 
+－家、クーラーない んだ。 
+－じゃあ、窓を開けて寝たとか。
+ －ううん、あんまり暑いから、外で寝たんだ。 
+
+男の人はどうして風邪を引きましたか。 
+
+① 窓が開いていたからで す。 
+② クーラーがついていたからです。 
+③ 外で寝たからです。 
+④ 何も着ないで寝たからです。
+ ";C;A;B;C;D;"聴解スクリプト： 1番：男の人と女の人が話しています。男の人はどうして風邪を引きましたか。
+Script d'écoute : Question 1 : Un homme et une femme parlent. Pourquoi l'homme a-t-il attrapé un rhume ?
+－風邪？暑いからクーラーをつけて寝たんじゃない？
+(Femme) : Un rhume ? N'as-tu pas dormi avec la climatisation allumée parce qu'il faisait chaud ?
+－家、クーラーないんだ。
+(Homme) : Non, je n'ai pas de climatiseur à la maison.
+－じゃあ、窓を開けて寝たとか。
+(Femme) : Alors, tu as dormi avec la fenêtre ouverte ?
+－ううん、あんまり暑いから、 外で寝たんだ。
+(Homme) : Non. Comme il faisait trop chaud, j'ai dormi dehors.
+男の人はどうして風邪を引きましたか。
+Pourquoi l'homme a-t-il attrapé un rhume ?
+① 窓が開いていたからです。
+① Parce que la fenêtre était ouverte.
+② クーラーがついていたからです。
+② Parce que la climatisation était allumée.
+③ 外で寝たからです。
+③ Parce qu'il a dormi dehors.
+④ 何も着ないで寝たからです。
+④ Parce qu'il a dormi sans rien porter.
+Justification de la Réponse
+La question demande la cause réelle du rhume.
+La femme propose d'abord la climatisation (Option ②), que l'homme rejette (クーラーないんだ).
+La femme propose ensuite la fenêtre ouverte (Option ①), que l'homme rejette (ううん).
+L'homme donne finalement la vraie raison : あんまり暑いから、**外で寝たんだ** (Comme il faisait trop chaud, j'ai dormi dehors).
+La cause directe de son rhume, d'après le dialogue, est d'avoir dormi à l'extérieur.
+La bonne réponse est : ③ 外で寝たからです。 (Parce qu'il a dormi dehors.)
+";Pas d’image
+2001;N3;"聴解スクリプト： 2番：車の運転手と女の人が話しています。運転手はこれから何をしますか。 
+－それじゃ、2時間後にもう
+一度ここに来てください。 
+－いいえ、ここで待っ ています。 
+－いいですよ。会社に帰ってもいいし、家に帰ってもいいですよ。
+あっ、お昼ご飯は？ 
+－あ、それじゃ、
+何か食べてきます。 
+
+運転手はこれから 何をしますか。 
+
+① ここにいます。 
+② 会社に帰ります。
+③ 家に帰ります。 
+④ 食事をします。  ";D;A;B;C;D;"聴解スクリプト： 2番：車の運転手と女の人が話しています。運転手はこれから何をしますか。
+Script d'écoute : Question 2 : Un chauffeur de voiture et une femme parlent. Que va faire le chauffeur maintenant ?
+－それじゃ、2時間後にもう一度ここに来てください。
+(Femme) : Alors, revenez ici dans deux heures.
+Femme
+－いいえ、ここで待っています。
+(Chauffeur) : Non, je vais attendre ici.
+Chauffeur
+－いいですよ。会社に帰ってもいいし、家に帰ってもいいですよ。
+(Femme) : C'est bon. Vous pouvez rentrer à l'entreprise, ou vous pouvez rentrer à la maison.
+Femme
+－あっ、お昼ご飯は？
+(Femme) : Ah, et pour le déjeuner ?
+Femme
+－あ、それじゃ、 何か食べてきます。
+(Chauffeur) : Ah, dans ce cas, je vais aller manger quelque chose.
+Chauffeur
+運転手はこれから何をしますか。
+Que va faire le chauffeur maintenant ?
+① ここにいます。
+① Rester ici.
+② 会社に帰ります。
+② Rentrer à l'entreprise.
+③ 家に帰ります。
+③ Rentrer à la maison.
+④ 食事をします。
+④ Manger un repas.
+
+
+Justification de la Réponse
+La question demande l'action que le chauffeur va effectivement entreprendre maintenant (これから何をしますか).
+Initialement, le chauffeur dit qu'il va attendre sur place (ここで待っています), mais la femme lui donne la permission de partir.
+La femme lui demande alors ce qu'il va faire pour le déjeuner (お昼ご飯は？).
+Le chauffeur change d'avis et répond : あ、それじゃ、**何か食べてきます** (Ah, dans ce cas, je vais aller manger quelque chose).
+L'action finale et immédiate choisie par le chauffeur est d'aller prendre un repas.
+La bonne réponse est : ④ 食事をします。 (Manger un repas.)
+
+
+  ";Pas d’image
+2001;N3;"聴解スクリプト： 3番：男の人と女の人が話しています。お花見に持って行かないものはどれですか。
+もって行かないものです。 
+－ビール・お弁当・お菓子・カメラ･･･ 
+－何 してるの。 
+－お花見に持って行くものを用意してるの。 
+－カメラはやめようよ。重いし。 
+－わかった。じゃ、ビールも？ 
+－それは要るよ。 
+
+お花見に持って 行かないものはどれですか。 
+
+① ビールです。 
+② お弁当です。 
+③ お菓子です。 
+④ カメラです。  ";D;A;B;C;D;"聴解スクリプト： 3番：男の人と女の人が話しています。お花見に持って行かないものはどれですか。
+Script d'écoute : Question 3 : Un homme et une femme parlent. Quel est l'article qu'ils ne vont pas emporter pour l'Ohanami ?
+もって行かないものです。
+(C'est) L'article qu'ils ne vont pas emporter.
+－ビール・お弁当・お菓子・カメラ･･･
+(Homme, énumérant) : Bière, boîte-repas (bento), gâteaux/snacks, appareil photo...
+Homme
+－何してるの。
+(Femme) : Qu'est-ce que tu fais ?
+Femme
+－お花見に持って行くものを用意してるの。
+(Homme) : Je suis en train de préparer les choses à emporter pour l'Ohanami.
+Homme
+－ カメラはやめようよ。 重いし。
+(Femme) : Arrêtons pour l'appareil photo. Il est lourd, en plus.
+Femme
+－わかった。じゃ、ビールも？
+(Homme) : D'accord. Alors, la bière aussi ?
+Homme
+－それは要るよ。
+(Femme) : Ça, on en a besoin !
+Femme
+お花見に持って行かないものはどれですか。
+Quel est l'article qu'ils ne vont pas emporter pour l'Ohanami ?
+① ビールです。
+① C'est la bière.
+② お弁当です。
+② C'est la boîte-repas.
+③ お菓子です。
+③ C'est les gâteaux/snacks.
+④ カメラです。
+④ C'est l'appareil photo.
+Justification de la Réponse
+La question cherche l'objet qu'ils décident de ne pas prendre.
+La femme suggère de ne pas prendre l'appareil photo : カメラはやめようよ (Arrêtons/N'emportons pas l'appareil photo).
+L'homme acquiesce à cette suggestion : わかった (J'ai compris/D'accord).
+Ensuite, l'homme demande s'il faut aussi laisser la bière (ビールも？), mais la femme répond qu'elle est nécessaire (それは要るよ).
+L'article qui est explicitement et mutuellement exclu de la liste est l'appareil photo.
+La bonne réponse est : ④ カメラです。 (C'est l'appareil photo.)
+";Pas d’image
+2001;N3;"聴解スクリプト： 4番：男の人と女の人が話しています。女の人はどんな気持ちですか。 
+－おめでとう。来年からアメリカにある会社に行くそうですねえ。 
+－どうなんです か。 
+－えっ？君が行くんでしょう？ 
+－ええ、でも、母が病気なので。 
+
+女の人はどんな気持ちですか。 
+
+① 困っています。 
+② 喜んでいます。 
+③ 楽しみにし ています。 
+④ びっくりしています。  ";A;A;B;C;D;"聴解スクリプト： 4番：男の人と女の人が話しています。女の人はどんな気持ちですか。
+Script d'écoute : Question 4 : Un homme et une femme parlent. Quel est le sentiment de la femme ?
+－おめでとう。来年からアメリカにある会社に行くそうですねえ。
+(Homme) : Félicitations ! J'ai entendu dire que vous partiez travailler dans une entreprise aux États-Unis à partir de l'année prochaine.
+Homme
+－ どうなんですか。
+(Femme) : Comment ça va se passer... (Ton hésitant, signifiant ""Je ne sais pas"", ""C'est compliqué"").
+Femme
+－えっ？君が行くんでしょう？
+(Homme) : Hein ? C'est vous qui partez, n'est-ce pas ?
+Homme
+－ええ、でも、 母が病気なので。
+(Femme) : Oui, mais, parce que ma mère est malade. (La raison de son inquiétude).
+Femme
+女の人はどんな気持ちですか。
+Quel est le sentiment de la femme ?
+① 困っています。
+① Elle est embarrassée/ennuyée/dans l'embarras (face à une difficulté).
+② 喜んでいます。
+② Elle est heureuse.
+③ 楽しみにしています。
+③ Elle est impatiente (d'y aller).
+④ びっくりしています。
+④ Elle est surprise.
+Justification de la Réponse
+La question vise à identifier le sentiment de la femme.
+L'homme la félicite (ce qui est une source de joie ou d'impatience), mais la réaction de la femme n'est pas positive.
+Sa réponse évasive, どうなんですか (Comment ça va se passer...), suivie de l'explication 母が病気なので (parce que ma mère est malade), indique qu'elle est confrontée à un dilemme ou une difficulté. Elle doit choisir entre sa carrière (partir aux États-Unis) et l'état de sa mère.
+Le sentiment qui correspond le mieux au fait d'être confrontée à un problème ou à une situation délicate est 困っています (être dans l'embarras/ennuyée/gênée par la situation).
+La bonne réponse est : ① 困っています。 (Elle est embarrassée/ennuyée [par la situation].)
+";Pas d’image
+2001;N3;"聴解スクリプト： 5番：店で男の人と女の人が話しています。男の人はどんなペンがいいですか。 
+－どんなペンがいいですか。 
+－太くないの。細いのがいいな。 
+－色はど うしますか。 
+－青、いや、やっぱり赤だな。 
+
+男の人はどんなペンがいいですか。 
+
+① 太くて青いのです。 
+② 細くて青いのです。 
+③ 太くて赤いのです。 
+④ 細くて赤いのです。 ";D;A;B;C;D;"聴解スクリプト： 5番：店で男の人と女の人が話しています。男の人はどんなペンがいいですか。
+Script d'écoute : Question 5 : Un homme et une femme parlent dans un magasin. Quel genre de stylo l'homme veut-il ?
+－どんなペンがいいですか。
+(Femme/Vendeuse) : Quel genre de stylo voudriez-vous ?
+Femme
+－太くないの。細いのがいいな。
+(Homme) : Je ne veux pas un épais. Je voudrais un fin.
+Homme
+－色はどうしますか。
+(Femme/Vendeuse) : Quelle couleur souhaitez-vous ?
+Femme
+－青、いや、やっぱり赤だな。
+(Homme) : Bleu... Non, finalement, ce sera du rouge.
+Homme
+
+男の人はどんなペンがいいですか。
+Quel genre de stylo l'homme veut-il ?
+
+① 太くて青いのです。
+① Un épais et bleu.
+② 細くて青いのです。
+② Un fin et bleu.
+
+
+
+
+③ 太くて赤いのです。
+
+③ Un épais et rouge.
+④ 細くて赤いのです。
+④ Un fin et rouge.
+ 
+
+Justification de la Réponse
+La question demande les caractéristiques finales du stylo souhaité par l'homme.
+Épaisseur : L'homme rejette l'épais (太くないの) et choisit le fin (細いのがいいな).
+Couleur : L'homme hésite (青), puis se décide : やっぱり**赤**だな (rouge).
+Le stylo doit donc être fin et de couleur rouge.
+La bonne réponse est : ④ 細くて赤いのです。 (Un fin et rouge.)
+";Pas d’image
+2001;N3;"聴解スクリプト： 6番：娘が両親と話しています。お父さんとお母さんはこれからお茶を飲みますか。 
+－お父さん、お茶飲まない？ 
+－ああ、いいねえ。 
+－お母さんは？ 
+－ 私はいいわ。 
+
+お父さんとお母さんはこれからお茶を飲みますか。 
+
+① お父さんもお母さんも飲みます。 
+② お父さんもお母さんも飲みません。 
+③ お父さん は飲みますが、お母さんは飲みません。 
+④ お父さんは飲みませんが、お母さんは飲みます。 ";C;A;B;C;D;"聴解スクリプト： 6番：娘が両親と話しています。お父さんとお母さんはこれからお茶を飲みますか。
+Script d'écoute : Question 6 : La fille parle à ses parents. Le père et la mère vont-ils boire du thé maintenant ?
+－お父さん、お茶飲まない？
+(Fille) : Papa, tu ne veux pas boire du thé ?
+Fille
+－ ああ、いいねえ。
+(Père) : Ah, oui, bonne idée.
+Père
+－お母さんは？
+(Fille) : Et Maman ?
+Fille
+－ 私はいいわ。
+(Mère) : Moi, ça va (Je n'en veux pas).
+Mère
+お父さんとお母さんはこれからお茶を飲みますか。
+Le père et la mère vont-ils boire du thé maintenant ?
+① お父さんもお母さんも飲みます。
+① Le père et la mère boiront tous les deux.
+② お父さんもお母さんも飲みません。
+② Ni le père ni la mère ne boiront.
+③ お父さんは飲みますが、お母さんは飲みません。
+③ Le père boira, mais la mère ne boira pas.
+④ お父さんは飲みませんが、お母さんは飲みます。
+④ Le père ne boira pas, mais la mère boira.
+
+Justification de la Réponse
+Il faut analyser la réponse de chaque parent à la proposition de la fille :
+Le Père : Il répond ああ、いいねえ (Ah, oui, bonne idée), ce qui est une acceptation. Il boira du thé.
+La Mère : Elle répond 私はいいわ (Moi, ça va / Je passe / Je n'en veux pas), ce qui est un refus poli. Elle ne boira pas de thé.
+Conclusion : Le père boit du thé, mais la mère ne boit pas.
+La bonne réponse est : ③ お父さんは飲みますが、お母さんは飲みません。 (Le père boira, mais la mère ne boira pas.)
+
+
+
+";Pas d’image
+2001;N3;"聴解スクリプト： 7番：男の人と女の人が話しています。男の人はみんなが並んでいる理由は何だといっていますか。 
+－ねえ、見て、またあの店の前にたくさんの人が並 んでいるわ。そんなに美味しいかしら。 
+－美味しいとか安いとかじゃないと思うよ。 
+－暇なのかしら。 
+－いや、友達と話したりしながら待つのがいいんじ ゃないのかな。 
+
+男の人はみんなが並んでいる理由は何だといっていますか。 
+
+① 美味しいからです。 
+② 安いからです。 
+③ 暇だからです。 
+④ 楽しいから です。 ";D;A;B;C;D;"聴解スクリプト： 7番：男の人と女の人が話しています。男の人はみんなが並んでいる理由は何だといっていますか。
+Script d'écoute : Question 7 : Un homme et une femme parlent. Quelle raison l'homme donne-t-il pour expliquer pourquoi tout le monde fait la queue ?
+－ねえ、見て、またあの店の前にたくさんの人が並んでいるわ。そんなに美味しいかしら。
+(Femme) : Dis, regarde, il y a encore beaucoup de monde qui fait la queue devant ce magasin. Est-ce que c'est si délicieux que ça ?
+Femme
+－ 美味しいとか安いとかじゃないと思うよ。
+(Homme) : Je ne pense pas que ce soit parce que c'est délicieux ou que c'est bon marché.
+Homme
+－暇なのかしら。
+(Femme) : Est-ce qu'ils s'ennuient/ont du temps libre ?
+Femme
+－いや、 友達と話したりしながら待つのがいいんじゃないのかな。
+(Homme) : Non. Je pense que ce qui leur plaît, c'est d'attendre tout en discutant avec leurs amis.
+Homme
+男の人はみんなが並んでいる理由は何だといっていますか。
+Quelle raison l'homme donne-t-il pour expliquer pourquoi tout le monde fait la queue ?
+① 美味しいからです。
+① Parce que c'est délicieux.
+② 安いからです。
+② Parce que c'est bon marché.
+③ 暇だからです。
+③ Parce qu'ils ont du temps libre / s'ennuient.
+④ 楽しいからです。
+④ Parce que c'est amusant / agréable.
+
+
+Justification de la Réponse
+La question se concentre sur l'opinion de l'homme (男の人は...何だといっていますか).
+L'homme rejette les raisons ""délicieux"" (美味しい) et ""bon marché"" (安い). (Élimine ① et ②).
+L'homme rejette l'idée de la femme qu'ils seraient ""ennuyés/oisifs"" (暇なのかしら). (Élimine ③).
+L'homme propose sa propre théorie : ce qui leur plaît (いいんじゃないのかな), c'est l'acte d'attendre tout en discutant avec des amis (友達と話したりしながら待つ).
+Cette raison implique que l'expérience sociale de l'attente est agréable ou amusante pour eux, ce qui correspond le mieux à l'option ④.
+La bonne réponse est : ④ 楽しいからです。 (Parce que c'est amusant / agréable.)
+";Pas d’image
+2001;N3;"聴解スクリプト： 9番：男の人と女の人が話しています。旅行に買い物は何日にしますか。 
+－お父さん、旅行の買い物は何日にしますか。 
+－そうだね。4日はどう？日曜 日だし。 
+－ちょっと早いですねえ。 
+－じゃ、10日ごろにするか。 
+－お父さん、旅行は9日からですよ。 
+－あ、そうだったね。じゃ、8日。 
+－旅行の前の日は 家出ゆっくりして、早く寝ましょう。買い物はその前の日にしましょうよ。 
+－あ、そうだねえ。 
+
+旅行に買い物は何日にしますか。 
+
+① 4日です。 
+② 7日です。 
+③ 8日です。 
+④ 10日です
+
+。  ";B;A;B;C;D;"
+聴解スクリプト： 9番：男の人と女の人が話しています。旅行に買い物は何日にしますか。
+Script d'écoute : Question 9 : Un homme et une femme parlent. Quel jour feront-ils les courses pour le voyage ?
+－お父さん、旅行の買い物は何日にしますか。
+(Fille) : Papa, quel jour ferons-nous les courses pour le voyage ?
+Fille
+－そうだね。4日はどう？日曜日だし。
+(Père) : Voyons. Que dirais-tu du 4 ? C'est un dimanche.
+Père
+－ちょっと早いですねえ。
+(Fille) : C'est un peu trop tôt.
+Fille
+－じゃ、10日ごろにするか。
+(Père) : Alors, on le fait vers le 10 ?
+Père
+－お父さん、旅行は 9日からですよ。
+(Fille) : Papa, le voyage commence le 9 !
+Fille
+－あ、そうだったね。じゃ、8日。
+(Père) : Ah, c'est vrai. Alors, le 8.
+Père
+－旅行の前の日は家でゆっくりして、早く寝ましょう。買い物は その前の日にしましょうよ。
+(Fille) : Le jour avant le voyage (le 8), reposons-nous à la maison et couchons-nous tôt. Faisons les courses le jour d'avant (le 7).
+Fille
+－あ、そうだねえ。
+(Père) : Ah, oui, c'est vrai.
+Père
+旅行に買い物は何日にしますか。
+Quel jour feront-ils les courses pour le voyage ?
+① 4日です。
+① C'est le 4.
+② 7日です。
+② C'est le 7.
+③ 8日です。
+③ C'est le 8.
+④ 10日です。
+④ C'est le 10.
+
+Justification de la Réponse
+Il faut suivre l'élimination et l'acceptation des dates :
+Le 4 : La fille trouve que c'est trop tôt. (Rejeté)
+Le 10 : La fille rappelle que le voyage commence le 9, donc le 10 est trop tard. (Rejeté)
+Le 8 : Le père propose le 8 (la veille du voyage).
+Date finale : La fille réplique que le 8 doit être réservé au repos, et suggère de faire les courses le jour d'avant (その前の日), c'est-à-dire le 7.
+Le père accepte cette dernière proposition (あ、そうだねえ).
+La bonne réponse est : ② 7日です。 (C'est le 7.)
+";Pas d’image
+2001;N3;"10番：男の人と女の人が話しています。女の人は何人ぐらいの人が来ると考えていますか。 
+－この会場には何人ぐらい入れるの？ 
+－大体60人ぐらいで す。 
+－で、資料は何枚作ったの？ 
+－50枚です。もっと作りましょうか。 
+－いいですよ。50人も来ませんよ。40人ぐらいは来ると思いますが。 
+
+女の人は何 人ぐらいの人が来ると考えていますか。 
+
+① 40人ぐらいです。 
+② 50人ぐらいです。 
+③ 50人以上です。 
+④ 60人以上です
+";A;A;B;C;D;"
+聴解スクリプト： 10番：男の人と女の人が話しています。女の人は何人ぐらいの人が来ると考えていますか。
+Script d'écoute : Question 10 : Un homme et une femme parlent. Combien de personnes la femme pense-t-elle qu'il va venir ?
+－この会場には何人ぐらい入れるの？
+(Homme) : Combien de personnes peut-on faire entrer dans cette salle ?
+Homme
+－大体60人ぐらいです。
+(Femme) : Environ 60 personnes. (Capacité de la salle)
+Femme
+－で、資料は何枚作ったの？
+(Homme) : Et, combien de documents as-tu préparé ?
+Homme
+－50枚です。 もっと作りましょうか。
+(Femme) : 50 exemplaires. Devrais-je en faire plus ?
+Femme
+－いいですよ。 50人も来ませんよ。 40人ぐらいは来ると思いますが。
+(Homme) : Non, c'est bon. Il ne viendra pas jusqu'à 50 personnes. Je pense que 40 personnes environ viendront.
+Homme
+女の人は何人ぐらいの人が来ると考えていますか。
+Combien de personnes la femme pense-t-elle qu'il va venir ?
+① 40人ぐらいです。
+① Environ 40 personnes.
+② 50人ぐらいです。
+② Environ 50 personnes.
+③ 50人以上です。
+③ Plus de 50 personnes.
+④ 60人以上です。
+④ Plus de 60 personnes.
+
+
+Justification de la Réponse
+La question demande l'estimation de la femme (女の人は...と考えていますか).
+La femme a préparé 50 documents (資料は何枚作ったの？ －50枚です。).
+Immédiatement après, elle demande : もっと作りましょうか (Devrais-je en faire plus ?).
+Le fait qu'elle ait préparé 50 documents et qu'elle demande si elle doit en préparer plus (もっと) implique qu'elle s'attend à ce que le nombre de participants soit au moins 50, voire plus que 50, sinon elle n'aurait pas posé la question.
+Réponse : La femme s'attend à ce qu'il vienne au moins 50 personnes (ou plus).
+Toutefois, en regardant les options et le dialogue :
+L'homme pense que 40 personnes viendront (Option ①), et que 50 personnes ne viendront pas.
+La femme, ayant préparé 50 documents et demandant s'il faut en faire plus, avait au moins 50 personnes en tête, ou une estimation entre 50 et 60 (la capacité de la salle).
+Dans le contexte des quiz d'écoute où les chiffres sont souvent précis :
+Le fait qu'elle ait fait 50 documents et qu'elle demande s'il faut en faire plus suggère que son estimation initiale est 50 personnes. C'est le chiffre le plus sûr qu'elle a agi.
+La réponse la plus exacte basée sur son action et sa question est : ② 50人ぐらいです。 (Environ 50 personnes.) (Elle a préparé 50 documents et envisageait d'en faire plus, suggérant une attente d'environ 50).
+Note : Si l'option ③ (50人以上) était considérée comme plus précise étant donné qu'elle demande d'en faire plus, l'option ② est souvent la réponse attendue dans ce type de test, car 50 est le chiffre sur lequel elle a basé son action. Choisissons l'estimation directe qu'elle a préparée.
+
+";Pas d’image
+2001;N3;"聴解スクリプト： 11番：男の人と女の人が話しています。男の人は今テーブルに何を置きますか。 
+－手伝うよ。 
+－ありがとう。じゃ、テープルにお箸をおいて。 
+－お箸だ ね。スプーンは？ －スプーンは後で出すから、今はいいわ。 
+－ほかには。 
+－台所に花があるから、それもお願い。 
+
+男の人は今テーブルに何を置きま すか。 
+
+① スプーンと花です。 
+② お箸とスプーンです。 
+③ お箸と花です。 
+④ お箸とスプーンと花です。
+";C;A;B;C;D;"
+聴解スクリプト： 11番：男の人と女の人が話しています。男の人は今テーブルに何を置きますか。
+Script d'écoute : Question 11 : Un homme et une femme parlent. Que va placer l'homme sur la table maintenant ?
+－手伝うよ。
+(Homme) : Je vais t'aider.
+Homme
+－ありがとう。じゃ、テープルに お箸をおいて。
+(Femme) : Merci. Alors, mets les baguettes (お箸) sur la table.
+Femme
+－お箸だ ね。スプーンは？
+(Homme) : Les baguettes, d'accord. Et les cuillères (スプーン) ?
+Homme
+－スプーンは後で出すから、 今はいいわ。
+(Femme) : Je sortirai les cuillères plus tard, alors pas pour l'instant.
+Femme
+－ほかには。
+(Homme) : Autre chose ?
+Homme
+－台所に 花があるから、それもお願い。
+(Femme) : Il y a une fleur (花) dans la cuisine, occupe-toi de ça aussi, s'il te plaît.
+Femme
+男の人は今テーブルに何を置きますか。
+Que va placer l'homme sur la table maintenant ?
+① スプーンと花です。
+① Des cuillères et une fleur.
+② お箸とスプーンです。
+② Des baguettes et des cuillères.
+③ お箸と花です。
+③ Des baguettes et une fleur.
+④ お箸とスプーンと花です。
+④ Des baguettes, des cuillères et une fleur.
+
+
+Justification de la Réponse
+La question précise ce que l'homme doit faire maintenant (今).
+Baguettes (お箸) : La femme lui demande de les mettre sur la table (お箸をおいて). → OUI
+Cuillères (スプーン) : La femme lui dit : 今はいいわ (pas pour l'instant). → NON
+Fleur (花) : Après avoir rejeté les cuillères, la femme ajoute une autre tâche : prendre la fleur dans la cuisine et s'en occuper (それもお願い). → OUI
+L'homme doit mettre les baguettes et la fleur sur la table maintenant.
+La bonne réponse est : ③ お箸と花です。 (Des baguettes et une fleur.)
+";Pas d’image
+2001;N3;"聴解スクリプト： 12番：男の人が話しています。男の人はどうして引っ越しましたか。 
+－先週引っ越したんですよ。
+今度のアパートは新しいし、会社にも近いんですよ。
+う ん、前のアパートも近いし、静かでよかったんですが、子供が生まれて、ちょっと狭くなったんです。 
+
+男の人はどうして引っ越しましたか。 
+
+① 静かなとこと に住みたかったからです。 
+② 家族が増えたからです。 
+③ 前のアパートが嫌いだからです。 
+④ 前のアパートが会社から遠かったからです。 
+";B;A;B;C;D;"
+聴解スクリプト： 12番：男の人が話しています。男の人はどうして引っ越しましたか。
+Script d'écoute : Question 12 : Un homme parle. Pourquoi l'homme a-t-il déménagé ?
+－先週引っ越したんですよ。
+(Homme) : J'ai déménagé la semaine dernière.
+Homme
+－今度のアパートは新しいし、会社にも近いんですよ。
+(Homme) : Mon nouvel appartement est neuf, et il est proche de mon travail. (Avantages du nouveau logement)
+Homme
+－うん、前のアパートも近いし、静かでよかったんですが、 子供が生まれて、ちょっと狭くなったんです。
+(Homme) : Oui, l'ancien appartement était aussi proche et calme, ce qui était bien, mais un enfant est né, et il est devenu un peu trop étroit. (Raison du déménagement)
+Homme
+男の人はどうして引っ越しましたか。
+Pourquoi l'homme a-t-il déménagé ?
+① 静かなとことに住みたかったからです。
+① Parce qu'il voulait vivre dans un endroit calme.
+② 家族が増えたからです。
+② Parce que sa famille s'est agrandie.
+③ 前のアパートが嫌いだからです。
+③ Parce qu'il n'aimait pas l'ancien appartement.
+④ 前のアパートが会社から遠かったからです。
+④ Parce que l'ancien appartement était loin de son travail.
+Justification de la Réponse
+La question cherche la raison pour laquelle l'homme a dû déménager, et non les avantages de son nouveau logement.
+L'homme précise que l'ancien appartement était bien (proche du travail et calme), ce qui élimine les options ①, ③ et ④.
+La raison principale qu'il donne est : 子供が生まれて、ちょっと狭くなったんです (un enfant est né, et il est devenu un peu étroit). La naissance de l'enfant est la cause de l'exiguïté, et donc la raison du déménagement. La naissance d'un enfant signifie que la famille s'est agrandie.
+La bonne réponse est : ② 家族が増えたからです。 (Parce que sa famille s'est agrandie.)
+";Pas d’image
+2001;N3;"聴解スクリプト： 13番：お母さんが女の子に話しています。女の子はなんと言っていますか。
+女の子です。 
+－みかちゃん、洗濯するから、その黄色いシャツ脱いで。 
+－い や、これ、まだ着ていたい。 －こっちの白シャツ、可愛いよ。
+これ着て、公園に遊びに行きましょう。 
+－いや、みか、この黄色いの、好き。 
+
+女の子はなんと 言っていますか。 
+
+① 公園に行きたいといっています。 
+② 公園に行きたくないといっています。 
+③ 黄色いシャツを着ていたいといっています。 
+④ 黄色い シャツは着たくないといっています。 ";C;A;B;C;D;"
+聴解スクリプト： 13番：お母さんが女の子に話しています。女の子はなんと言っていますか。
+Script d'écoute : Question 13 : La mère parle à la fille. Qu'est-ce que la fille est en train de dire ?
+－みかちゃん、洗濯するから、その黄色いシャツ脱いで。
+(Mère) : Mika-chan, je vais faire la lessive, enlève ce tee-shirt jaune.
+Mère
+－ いや、これ、まだ着ていたい。
+(Fille) : Non, je veux encore porter celui-ci.
+Fille
+－こっちの白シャツ、可愛いよ。これ着て、公園に遊びに行きましょう。
+(Mère) : Ce tee-shirt blanc est mignon. Mets-le, et allons jouer au parc.
+Mère
+－ いや、みか、この黄色いの、好き。
+(Fille) : Non, Mika aime ce jaune.
+Fille
+女の子はなんと言っていますか。
+Qu'est-ce que la fille est en train de dire ?
+① 公園に行きたいといっています。
+① Elle dit qu'elle veut aller au parc.
+② 公園に行きたくないといっています。
+② Elle dit qu'elle ne veut pas aller au parc.
+③ 黄色いシャツを着ていたいといっています。
+③ Elle dit qu'elle veut continuer à porter le tee-shirt jaune.
+④ 黄色いシャツは着たくないといっています。
+④ Elle dit qu'elle ne veut pas porter le tee-shirt jaune.
+Justification de la Réponse
+La question demande l'affirmation de la fille.
+La mère demande à la fille d'enlever le tee-shirt jaune.
+La fille répond clairement deux fois qu'elle veut le garder :
+Première fois : いや、これ、まだ着ていたい (Non, je veux encore le porter).
+Deuxième fois (répétition de l'idée) : いや、みか、この黄色いの、好き (Non, Mika aime ce jaune).
+Bien que la mère mentionne le parc, la fille n'exprime ni l'envie d'y aller ni le refus. Son point central est qu'elle veut garder le tee-shirt jaune.
+La bonne réponse est : ③ 黄色いシャツを着ていたいといっています。 (Elle dit qu'elle veut continuer à porter le tee-shirt jaune.)
+";Pas d’image

@@ -1,0 +1,50 @@
+<%- include('../../partials/header_gram', { title: title }) %> 
+<div class="content content-black">
+
+    <div id="haut"></div>
+
+    <div class="vocab_titre" >   
+        <h2><%= title %></h2>
+        <a href="/verbe_transitif_intransitif" class="vocab_href">Retour</a>
+    </div>
+
+
+    <% if (results.length > 0) { %>
+        <!-- NOUVEAU : On ajoute le conteneur autour du tableau -->
+        <div class="results-table-container">
+            <h3><%= title %></h3>
+            
+            <!-- NOUVEAU : On ajoute la classe "results-table" au tableau -->
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>Kanji</th>
+                        <th>Hiragana</th>
+                        <th>Français</th>
+                        <th>Romanji</th>                      
+                    </tr>
+                </thead>
+                <tbody>
+                    <% results.forEach(result => { %>
+                        <tr>
+                            <td><span class="jp-char"></span><%= result.intrans_kanji %></span></td>
+                            <td><span class="jp-char"><%= result.intrans_hiragana %></span></td>
+                            <td><%= result.intrans_francais %></td>
+                            <td><%= result.intrans_romanji %></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+    <% } else if (searchTerm) { %>
+        <p>Aucun résultat trouvé pour "<%= searchTerm %>".</p>
+    <% } %>
+
+
+    <div class="vocab_titre" >   
+        <a href="#haut" class="vocab_href">Haut</a>
+    </div>
+
+</div>
+
+<%- include('../../partials/footer') %>

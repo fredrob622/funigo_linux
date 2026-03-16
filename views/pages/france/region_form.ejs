@@ -1,0 +1,61 @@
+<%- include('../../partials/header') %>
+
+<div class="content content-black">
+    
+    <h2>Informations sur les Régions Françaises</h2>
+    
+    <form action="/regions" method="GET" class="search-form" style="justify-content: center; align-items: flex-end; gap: 15px;">
+        
+        <div style="text-align: center;">
+            <label for="region-select" style="display: inline; margin-bottom: 10px; margin-right: 20px;">Choisissez une région :</label>
+            <select id="region-select" name="selection" style="padding: 5px; font-size: 1em; border-radius: 8px; min-width: 300px;margin-right: 20px;">
+                <option value="" disabled <%= !searchTerm ? 'selected' : '' %>>-- Sélectionnez --</option>
+                <% listeRegion.forEach(region => { %>
+                    <option value="<%= region.reg_nom %>" <%= (region.reg_nom === searchTerm) ? 'selected' : '' %>>
+                        <%= region.reg_nom %>
+                    </option>
+                <% }); %>
+            </select>
+            <button type="submit">Afficher</button>
+        </div>
+        
+        
+    </form>
+
+    <% if (results && results.length > 0) { %>
+        <div class="results-table-container">
+            <h3>Détails pour "<%= searchTerm %>"</h3>
+            
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>Nom Région</th>
+                        <th>Chef-lieu</th>
+                        <th>Départements</th>
+                        <th>Superficie (km²)</th>
+                        <th>Population</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% results.forEach(region => { %>
+                        <tr>
+                            <td data-label="Nom Région"><%= region.reg_nom || 'N/A' %></td>
+                            <td data-label="Chef-lieu"><%= region.reg_cheflieu || 'N/A' %></td>
+                            <td data-label="Départements" style="white-space: normal;"><%= region.reg_dep || 'N/A' %></td>
+                            <td data-label="Superficie (km²)" style="text-align: left;"><%= region.reg_superficie ? region.reg_superficie.toLocaleString('fr-FR') : 'N/A' %></td>
+                            <td data-label="Population" style="text-align: left;"><%= region.reg_population ? region.reg_population.toLocaleString('fr-FR') : 'N/A' %></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+    <% } %>
+</div>
+<style>
+
+    
+
+
+</style>
+
+<%- include('../../partials/footer') %>

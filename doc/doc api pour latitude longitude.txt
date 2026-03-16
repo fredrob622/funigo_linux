@@ -1,0 +1,57 @@
+Exemple avec l'API OpenCage (gratuite avec une clé API) :
+🔹 Étapes :
+
+Inscris-toi ici : https://opencagedata.com
+
+Récupère ta clé API
+
+Utilise le code suivant :
+
+const axios = require('axios');
+
+const ville = 'Paris';
+const apiKey = 'VOTRE_CLÉ_API';
+
+async function getCoordonnees(ville) {
+  const url = `https://api.opencagedata.com/geocode/v1/json?q=${encodeURIComponent(ville)}&key=${apiKey}`;
+
+  try {
+    const response = await axios.get(url);
+    const { lat, lng } = response.data.results[0].geometry;
+
+    console.log(`Latitude : ${lat}, Longitude : ${lng}`);
+  } catch (error) {
+    console.error('Erreur lors de la récupération des coordonnées :', error.message);
+  }
+}
+
+getCoordonnees(ville);
+
+📍 3. API gratuite sans clé (Nominatim - OpenStreetMap)
+🔸 Exemple simple avec axios :
+const axios = require('axios');
+
+async function getCoordonnees(ville) {
+  const url = `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(ville)}&format=json&limit=1`;
+
+  try {
+    const response = await axios.get(url, {
+      headers: {
+        'User-Agent': 'NomDeVotreApp/1.0 (email@example.com)' // obligatoire pour l'API Nominatim
+      }
+    });
+
+    const { lat, lon } = response.data[0];
+    console.log(`Latitude : ${lat}, Longitude : ${lon}`);
+  } catch (error) {
+    console.error('Erreur :', error.message);
+  }
+}
+
+getCoordonnees('Lyon');
+
+📋 Résumé des méthodes
+Méthode	Outil	Infos
+Manuelle	Google Maps	Simple, pas de code
+API gratuite	OpenCage, Nominatim	Idéal pour projets web ou Node.js
+API avancée	Google Maps API	Puissante mais nécessite une clé et peut être payante

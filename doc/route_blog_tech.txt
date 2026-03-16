@@ -1,0 +1,147 @@
+// *******************************************************************************************************************************//
+// Menu Blog_tech liste des articles
+// *******************************************************************************************************************************//
+
+app.get('/blog_tech_liste', async (req, res) => {
+    try {
+        const query = 'SELECT id, type, titre, contenu, image, fichier FROM  note_tech ;';
+        console.log("Exécution de la requête :", query);
+
+        const [articles] = await dbPool.query(query);
+
+        // Formatage des dates avant de les passer au template
+
+        console.log(`articles.length} Liste des articles formatés.`);
+        console.log(articles);
+
+        res.render('pages/blog_tech_liste_article_form.ejs', { 
+            title: 'Liste des Articles du Blog',
+            listeArticles: articles 
+        });
+
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la liste des articles :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+// *******************************************************************************************************************************//
+// Blog_tech modification ou suppression d'un article
+// *******************************************************************************************************************************//
+app.get('/blog_tech_modif', async (req, res) => {
+    try {
+        const query = 'SELECT id, type, titre, contenu, image, fichier FROM  note_tech ;';
+        console.log("Exécution de la requête :", query);
+
+        const [articles] = await dbPool.query(query);
+
+        console.log(`articles.length} Liste des articles formatés.`);
+        console.log(articles);
+
+        res.render('pages/blog_tech_modif_article_form.ejs', { 
+            title: 'Modifier ou supprimer un Articles du Blog',
+            listeArticles: articles  
+        });
+
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la liste des articles :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+// *******************************************************************************************************************************//
+// Blog écriture d'un article
+// *******************************************************************************************************************************//
+
+app.get('/blog_tech_ecriture', (req, res) => {
+    try {
+        res.render('pages/blog_tech_ecriture_article_form', { title: 'Ecrirure d\'un article'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Blog_ecriture :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.post('/blog_tech_stockage', async (req, res) => {
+    const artType = req.body.type;
+    const artTitre = req.body.titre;
+    const artContenu = req.body.contenu;
+    const artImage = image;
+    const artFichier = fichier;
+
+    try {
+
+        const queryDetails=`
+            INSERT INTO note_tech (type, titre, contenu, image, fichier )
+            VALUES (?, ?, ?, ?, ?)
+        `;
+
+        // Exécution de la requête avec les valeurs des variables comme paramètres
+        // dbPool.query attend un tableau de valeurs correspondant aux placeholders (?)
+        await dbPool.query(queryDetails, [artType, artTitre, artContenu, artImage, artFichier]);
+        res.redirect('/blog_tech_liste'); // Rediriger vers la liste après modification
+
+        } catch (err) { 
+        console.error("ERREUR lors de l'intégration d'un article:", err);
+        res.status(500).send("ERREUR lors de l'intégration d'un article:"); 
+    }
+});
+
+// *******************************************************************************************************************************//
+// Blog_tech Route pour afficher le formulaire de modification d'un article
+// *******************************************************************************************************************************//
+
+
+app.get('/blog_tech/modifier/:id', async (req, res) => {
+    const articleId = req.params.id;
+    try {
+        const query = 'SELECT id, titre, contenu FROM note_tech WHERE id = ?';
+        const [rows] = await dbPool.query(query, [articleId]);
+
+        if (rows.length === 0) {
+            return res.status(404).send("Article non trouvé.");
+        }
+
+        const article = rows[0];
+        res.render('pages/blog_tech_modifier_article_form.ejs', {
+            title: `Modifier l'article : ${article.titre}`,
+            article: article
+        });
+
+    } catch (err) {
+        console.error(`ERREUR lors du chargement de l'article ${articleId} pour modification :`, err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+// Route pour soumettre la modification (POST)
+
+app.post('/blog_tech/modifier/:id', async (req, res) => {
+    const articleId = req.params.id;
+    const { type, titre, contenu, image, fichier  } = req.body; // Récupérer le titre et le contenu du formulaire
+
+    try {
+        const query = 'UPDATE note_tech SET type = ?, titre = ?, contenu = ?, image = ?, fichier = ? ';
+        await dbPool.query(query, [type, titre, contenu, image, fichier]);
+        res.redirect('/blog_tech_liste'); // Rediriger vers la liste après modification
+    } catch (err) {
+        console.error(`ERREUR lors de la modification de l'article ${articleId} :`, err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+//*******************************************************************************************************************************//
+// Route pour la suppression d'un article (via POST)
+//*******************************************************************************************************************************//
+
+app.post('/blog_tech/supprimer/:id', async (req, res) => {
+    const articleId = req.params.id;
+    try {
+        const query = 'DELETE FROM note_tech WHERE id = ?';
+        await dbPool.query(query, [articleId]);
+        res.redirect('/blog_tech_liste'); // Rediriger vers la liste après suppression
+    } catch (err) {
+        console.error(`ERREUR lors de la suppression de l'article ${articleId} :`, err);
+        res.status(500).send("Erreur serveur.");
+    }
+});

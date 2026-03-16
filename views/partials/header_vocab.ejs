@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funigo - <%= title %></title>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/> -->
+    <link rel="stylesheet" href="/css/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header>
+    <!-- NOUVEAU : Conteneur principal pour le titre et le menu -->
+    <div class="header-main">
+        <div class="title-container">
+            <img src="/images/flag_fr.gif" alt="Drapeau Français" class="flag">
+            <h1>Funigo</h1>
+            <img src="/images/flag_jp.gif" alt="Drapeau Japonais" class="flag">
+        </div>
+
+    </div>
+
+    <!-- Les boîtes API restent ici, en dessous du header principal -->
+    <div class="api-container">
+        <div class="weather-box" id="weather-paris">
+            <h3>Météo Paris</h3>
+            <p>Temp: <span id="paris-temp">-</span> °C</p>
+            <p>Nuages: <span id="paris-clouds">-</span> %</p>
+            <p>Pluie: <span id="paris-rain">-</span> mm</p>
+        </div>
+        <div class="weather-box" id="weather-tokyo">
+            <h3>Météo Tokyo</h3>
+            <p>Temp: <span id="tokyo-temp">-</span> °C</p>
+            <p>Nuages: <span id="tokyo-clouds">-</span> %</p>
+            <p>Pluie: <span id="tokyo-rain">-</span> mm</p>
+        </div>
+        <div class="currency-box" id="currency-eur-jpy">
+            <h3>Taux de Change</h3>
+            <p>1 EUR<br>&nbsp;&nbsp;&nbsp; = <br><span id="eur-jpy-rate">-</span> JPY</p>
+        </div>
+          <!-- ===== NOUVELLES BOÎTES POUR L'HEURE ===== -->
+        <div class="currency-box"  id="time-paris">
+            <h3>Heure Paris</h3>
+            <p><span id="paris-time" class="time-display">--:--</span></p>
+            <h3>Heure Tokyo</h3>
+            <p><span id="tokyo-time" class="time-display">--:--</span></p>
+        </div>
+    </div>
+
+    <!-- La navigation contient maintenant SEULEMENT la liste des liens -->
+
+        <ul id="nav-submenu-links">
+            <li><a href="/">Accueil<br>ホーム</a></li>
+            <li><a href="/vocab_jplt"> Vocabulaire JPLT<br>JPLTの基本語</a></li>
+            <li><a href="/vocab_dico"> Dictionnaire en ligne<br>辞書</a></li>
+        </ul>
+
+</header>
+    <main id="contenu-placeholder">
+
+<script>
+   // script.js
+document.querySelectorAll('#nav-submenu-links a').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault(); // Empêche le comportement par défaut du lien
+        alert(`Vous avez cliqué sur : ${link.textContent}`);
+    });
+}); 
+</script>

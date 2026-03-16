@@ -1,0 +1,43 @@
+<!-- Fichier: views/pages/departement_carte_form.ejs -->
+
+<%- include('../../partials/header') %>
+
+<div class="content content-black">
+    
+    <h2>Carte des Départements de France</h2>
+    
+    <!-- Conteneur pour nos deux formulaires -->
+    <div class="form-container-double" style="display: flex; justify-content: center; gap: 30px; margin-bottom: 20px; flex-wrap: wrap;">
+        <!-- Liste déroulante par Nom -->
+        <div>
+            <label for="dep-nom-select" style="display: block; margin-bottom: 10px;">Par Nom :</label>
+            <select id="dep-nom-select" class="dep-select" style="padding: 5px; font-size: 0.9em; border-radius: 8px; min-width: 250px;">
+                <option value="" disabled selected>-- Choisissez un département --</option>
+                <% listeDepartement.forEach(dep => { %>
+                    <!-- L'attribut 'data-numero' est la clé pour la synchronisation ! -->
+                    <option value="<%= dep.nom_dep %>" data-numero="<%= dep.num_dep %>"><%= dep.nom_dep %></option>
+                <% }); %>
+            </select>
+        </div>
+        <!-- Liste déroulante par Numéro -->
+        <div>
+            <label for="dep-num-select" style="display: block; margin-bottom: 10px;">Par Numéro :</label>
+            <select id="dep-num-select" class="dep-select" style="padding: 5px; font-size: 0.9em; border-radius: 8px; min-width: 150px;">
+                <option value="" disabled selected>-- N° --</option>
+                <% listeDepartement.forEach(dep => { %>
+                    <option value="<%= dep.num_dep %>" data-nom="<%= dep.nom_dep %>"><%= dep.num_dep %></option>
+                <% }); %>
+            </select>
+        </div>
+    </div>
+
+    <!-- Conteneur pour les 3 cartes, utilisant notre style existant -->
+    <div id="cartes-container" class="cartes-flex-container" style="display: none;">
+        <div class="carte-item"><h4 id="carte-titre-1"></h4><img id="dep-position-image" src="" alt="Position du département" width="100" /></div>
+        <div class="carte-item"><h4 id="carte-titre-2"></h4><img id="dep-carte-image" src="" alt="Carte du département" /></div>
+        <div class="carte-item"><h4 id="carte-titre-3"></h4><img id="dep-agglo-image" src="" alt="Agglomérations du département" /></div>
+    </div>
+
+</div>
+
+<%- include('../../partials/footer') %>

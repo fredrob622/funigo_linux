@@ -1,0 +1,97 @@
+
+
+Dans server.js
+**************
+
+app.get('/kanji', (req, res) => {
+    res.render('pages/kanji_form', { title: 'Dictionnaire Kanji', results: [], searchTerm: '' });
+});
+
+	
+Dans pages/kanji_form
+*********************
+	
+		On a le formulaire de recherche 
+		-------------------------------
+		
+		<h2>Rechercher un Kanji</h2>
+		<form action="/kanji/search" method="POST" class="search-form">
+			<input type="text" name="searchTerm" value="<%= searchTerm %>" placeholder="Entrez un kanji, lecture, sens...">
+			<button type="submit">Rechercher</button>
+		</form>
+		
+				Lorsque l'on clique sur le bouton => une requête post est envoyé au fichier server.js appelle /kanji/search
+		
+Dans server.js
+**************
+		
+		Requete dans server.après submit (post)
+		
+		app.post('/kanji/search', async (req, res) => {
+		
+		=> On récupère la donnée du formulaire const searchTerm = req.body.searchTerm;
+		
+		const searchTerm = req.body.searchTerm;   
+		try {
+			// --- MODIFICATION DE LA REQUÊTE ---
+			
+			// au lieu WHERE kanji LIKE '%日%' on met  WHERE kanji LIKE ?
+			
+			const query = `
+				SELECT kanji, onyomi, kunyomi, francais, niveau 
+				FROM kanji_char 
+				WHERE kanji LIKE ? 
+				   OR onyomi LIKE ? 
+				   OR kunyomi LIKE ? 
+				   OR francais LIKE ? 
+				   OR niveau LIKE ?`; // <-- ON AJOUTE CETTE LIGNE
+				   
+		   
+			// searchPattern est la donnée à rechercher dans query  
+			
+			const searchPattern = `%${searchTerm}%`;
+
+			// Log pour voir la requête SQL et les paramètres
+			console.log("--- NOUVELLE RECHERCHE KANJI ---");
+			console.log("Requête SQL exécutée :", query);
+			console.log("Avec le paramètre de recherche :", searchPattern);
+
+			// --- ON AJOUTE LE PARAMÈTRE UNE FOIS DE PLUS ---
+			// Chaque champs dans la requete reçoit la donnée à rechercher searchPattern
+						
+			const [results] = await dbPool.query(query, [searchPattern, searchPattern, searchPattern, searchPattern, searchPattern]); // <-- 5 paramètres maintenant
+
+			// Log pour voir le résultat brut de la base de données
+			console.log("Résultat brut obtenu de la DB :", results);
+			console.log("Nombre de résultats trouvés :", results.length);
+			console.log("--------------------------------------");
+			
+			// on envoie le résultat de la requete à pages/kanji_form le résultat est dans le tableau "results"
+			
+			res.render('pages/kanji_form', { title: 'Résultats Kanji', results: results, searchTerm: searchTerm });
+		} catch (err) { 
+			console.error("ERREUR lors de la recherche Kanji :", err);
+			res.status(500).send("Erreur serveur."); 
+		}
+	
+Dans pages/kanji_form
+*********************	
+
+		<%- include('../partials/header', { title: title }) %> dans ce cas "Résultats Kanji"
+		
+		
+		// Le résultat est dans le tableau "results" qui contient les 4 champs 
+		
+		<tbody>
+            <% results.forEach(result => { %>
+               <tr>
+                     <td><%= result.niveau %></td>
+                     <td><span class="jp-char"><%= result.kanji %></span></td>
+                     <td><%= result.onyomi %></td>
+                     <td><%= result.kunyomi %></td>
+                     <td><%= result.francais %></td>
+                </tr>
+             <% }); %>
+        </tbody>
+	
+	

@@ -1,0 +1,199 @@
+SQL;Utilisation du ? Dans une requête SQL pour un SELECT dans un programme;"Pour passer un paramètre dans une requête SQL dans un programme ( ex nodejs)
+
+SELECT ANNEE, NIVEAU, TEXTE, REP_OK, QUESTION, REP1, REP2, REP3, REP4
+      FROM quiz
+      WHERE NIVEAU LIKE ? **** ? ne fonctionne pas dans une commande en ligne
+      ORDER BY RAND()
+      LIMIT 1000;
+
+  
+	  
+
+	 ";SansImage.jpg;pasDeFichier
+SQL;Créer une vue (table temporaire);"CREATE VIEW vue_quiz_N4 AS
+	SELECT ANNEE, NIVEAU, TEXTE, REP_OK, QUESTION, REP1, REP2, REP3, REP4
+		FROM quiz
+		WHERE NIVEAU LIKE 'N4'
+		ORDER BY RAND()
+		LIMIT 1000;";SansImage.jpg;pasDeFichier
+SQL;Compter le nombre de ligne d'une vue (table temporaire);"SELECT COUNT(*) FROM vue_quiz_N4;
+
+mysql> SELECT COUNT(*) FROM vue_quiz_N4;
++----------+
+| COUNT(*) |
++----------+
+|      167 |
++----------+
+1 row in set (0.00 sec)";SansImage.jpg;pasDeFichier
+MYSQL;Avoir UTF8 dans Mysql 8.0 Command Line CLI;"mysql> SHOW VARIABLES LIKE 'char%';
++--------------------------+---------------------------------------------------------+
+| Variable_name            | Value                                                   |
++--------------------------+---------------------------------------------------------+
+| character_set_client     | cp850                                                   |
+| character_set_connection | cp850                                                   |
+| character_set_database   | utf8mb4                                                 |
+| character_set_filesystem | binary                                                  |
+| character_set_results    | cp850                                                   |
+| character_set_server     | utf8mb4                                                 |
+| character_set_system     | utf8mb3                                                 |
+| character_sets_dir       | C:\Program Files\MySQL\MySQL Server 8.0\share\charsets\ |
++--------------------------+---------------------------------------------------------+
+8 rows in set, 1 warning (0.01 sec)
+
+Se logger avec powershell
+
+Mysql -u root -p --default-character-set=utf8mb4";SansImage.jpg;pasDeFichier
+SQL;Supprimer une vue;"DROP VIEW vue_quiz_N4;";SansImage.jpg;pasDeFichier
+MYSQL;Voir le répertoire autorisé à charger;"mysql> SHOW VARIABLES LIKE 'secure_file_priv';
++------------------+------------------------------------------------+
+| Variable_name    | Value                                          |
++------------------+------------------------------------------------+
+| secure_file_priv | C:\ProgramData\MySQL\MySQL Server 8.0\Uploads\ |
++------------------+------------------------------------------------+
+1 row in set, 1 warning (0.00 sec)";SansImage.jpg;pasDeFichier
+SQL;Extraire les données d'une table dans un fichier csv;"SELECT * FROM quiz
+INTO OUTFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/quiz_20250907.csv'
+FIELDS TERMINATED BY ',' ENCLOSED BY '""'
+LINES TERMINATED BY '\n';";SansImage.jpg;pasDeFichier
+SQL;Effacer les données d'une table ;"DELETE FROM quiz; : Supprime toutes les lignes, mais ne réinitialise pas le compteur AUTO_INCREMENT.
+
+TRUNCATE TABLE quiz; : Supprime toutes les lignes et réinitialise le compteur AUTO_INCREMENT à sa 
+valeur de départ (généralement 1). C'est beaucoup plus rapide pour vider une table.";SansImage.jpg;pasDeFichier
+SQL;Importer les données d'un fichier csv dans une table ;"LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/quiz.csv'
+INTO TABLE quiz
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '""' 
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;";SansImage.jpg;pasDeFichier
+SQL;Modifier une colonne en TEXT;"ALTER TABLE quiz MODIFY question TEXT;";SansImage.jpg;pasDeFichier
+SQL;Intégrer un fichier csv dans une table après DELETE ;"Réinitialiser le compteur sans vider la table (uniquement si la table est déjà vide mais le compteur est élevé)
+
+Si vous avez déjà vidé la table avec DELETE FROM mais que le compteur n'a pas été réinitialisé :
+
+SQL
+
+-- 1. Vérifiez que la table est bien vide :
+SELECT COUNT(*) FROM quiz; -- Doit retourner 0
+
+-- 2. Réinitialiser le compteur AUTO_INCREMENT à 1
+ALTER TABLE quiz AUTO_INCREMENT = 1;
+
+-- 3. Ensuite, chargez vos données
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/quiz.csv'
+INTO TABLE quiz
+FIELDS TERMINATED BY ','
+ENCLOSED BY '""' -- Ajustez cette ligne si vos champs ne sont pas entourés de guillemets
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS -- Ajustez cette ligne si votre CSV n'a pas d'en-tête
+(
+    @dummy_id, -- Lit le premier champ du CSV dans une variable temporaire non utilisée
+    ANNEE,
+    NIVEAU,
+    TEXTE,
+    REP_OK,
+    QUESTION,
+    REP1,
+    REP2,
+    REP3,
+    REP4
+);";SansImage.jpg;pasDeFichier
+SQL;Renuméroter l'index d’une table;"Créer une nouvelle table temporaire avec la même structure (sauf l'ID) :
+Nous allons créer une table temporaire pour y stocker les données avec les nouveaux IDs.
+
+
+CREATE TABLE quiz_new (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    ANNEE INT,
+    NIVEAU VARCHAR(2),
+    TEXTE TEXT,
+    REP_OK TEXT,
+    QUESTION TEXT,
+    REP1 TEXT,
+    REP2 TEXT,
+    REP3 TEXT,
+    REP4 TEXT
+);
+
+Insérer toutes les données de l'ancienne table dans la nouvelle, en générant de nouveaux IDs consécutifs :
+C'est ici que nous utilisons une variable utilisateur pour assigner un id consécutif à chaque ligne lors de l'insertion.
+
+SET @row_number = 0; -- Initialiser le compteur
+
+INSERT INTO quiz_new (ANNEE, NIVEAU, TEXTE, REP_OK, QUESTION, REP1, REP2, REP3, REP4)
+SELECT
+    ANNEE,
+    NIVEAU,
+    TEXTE,
+    REP_OK,
+    QUESTION,
+    REP1,
+    REP2,
+    REP3,
+    REP4
+FROM quiz
+ORDER BY id; -- Il est important de trier pour que les nouveaux IDs reflètent un ordre logique si désiré
+Note : Nous ne spécifions pas la colonne id dans l'INSERT de quiz_new, car elle est AUTO_INCREMENT et générera automatiquement les IDs à partir de 1.
+
+ORDER BY id est important ici pour s'assurer que si vous aviez des IDs non consécutifs dans l'ancienne table, les nouvelles IDs suivent l'ordre des anciennes IDs.
+
+Supprimer l'ancienne table quiz :
+
+DROP TABLE quiz;
+Renommer la nouvelle table quiz_new en quiz :
+
+ALTER TABLE quiz_new RENAME TO quiz;";SansImage.jpg;pasDeFichier
+MYSQL;Avoir les caractères japonais sous POWERSHELL;"PS C:\WINDOWS\system32> mysql --default-character-set=utf8mb4 -u root -p
+Enter password: **********";SansImage.jpg;pasDeFichier
+SQL;Insérer des valeurs dans une table;"INSERT INTO vocab_char (niveau, kana, kanji, francais)
+VALUES ('N5', 'つかう', '使う', 'employer, utiliser');
+
+N5 つかう 使う employer, utiliser
+
+select * from vocab_char where kanji = '使う';
+
+mysql> select * from vocab_char where kanji = '使う';
++------------+--------+-----------+--------+------------------------+
+| voca_index | niveau | kana | kanji  | francais                |
++------------+--------+-----------+--------+------------------------+
+|      26312 | N5     | つかう    | 使う   | employer, utiliser |
++------------+--------+-----------+--------+-------------------------+
+1 row in set (0.00 sec)";SansImage.jpg;pasDeFichier
+SQL;Voir l'année et le niveau intégré dans la table quiz;"mysql> SELECT DISTINCT annee, niveau FROM quiz;
++-------+-----------+
+| annee | niveau |
++-------+--------+
+|  1991 | N3     |
+|  1991 | N4     |
+|  1993 | N4     |
+|  1992 | N3     |
+|  1992 | N4     |
+|  1991 | N2     |
+|  1993 | N3     |
+|  1994 | N4     |
+|  1992 | N2     |
++-------+--------+
+";SansImage.jpg;pasDeFichier
+SQL;Inserer des données avec un retour à la ligne dans un champ;"Pour insérer des retours à la ligne dans une colonne texte (comme ARTICLE ou CONTENU) dans MySQL, tu peux utiliser la séquence d’échappement \n qui 
+représente un saut de ligne. Par exemple :
+
+INSERT INTO funigo_blog (TITRE, ARTICLE, DATE_CREAT, DATE_MODIF)
+VALUES ('Titre de l\'article', 'Première ligne\nDeuxième ligne\nTroisième ligne', '2025-09-10', '2025-09-10');
+Autre méthode avec la fonction CHAR() pour insérer un saut de ligne (code ASCII 10) :
+
+INSERT INTO funigo_blog (TITRE, ARTICLE, DATE_CREAT, DATE_MODIF)
+VALUES ('Titre', CONCAT('Première ligne', CHAR(10), 'Deuxième ligne', CHAR(10), 'Troisième ligne'), '2025-09-10', '2025-09-10');";SansImage.jpg;pasDeFichier
+GIT;Faire un commit ;"git add *
+git commit -m ""202509141800 avec la documentation mise à jour""
+git branch -M main
+git push -u origin main
+git log --oneline
+History";SansImage.jpg;pasDeFichier
+CSS;Faire clignoter un élément (ex paramètre);"Faire clignoter le paragraphe
+
+<p style=""animation: blink 2s infinite;""><br>Cliquer sur une ligne pour avoir des détails<br></p>
+
+Blink est l’identifiant qui permet la définition du keyframe dans le css
+
+Dans le css définition de 
+
+@keyframes blink { 0% { opacity: 1; } 20% { opacity: 0; } 100% { opacity: 1; } } ";;

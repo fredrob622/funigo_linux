@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funigo - Tracé des Kanji</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        /* Un peu de CSS pour centrer le kanji et le rendre plus visible */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f8f8f8; /* Fond clair pour mieux voir le tracé */
+        }
+        #kanji-target {
+            /* Donne une taille au conteneur pour le writer */
+            width: 250px; /* Taille plus grande pour mieux voir l'animation */
+            height: 250px;
+            border: 1px solid #ddd; /* Une petite bordure pour voir la zone de dessin */
+        }
+    </style>
+</head>
+<body>
+    <div id="kanji-target"></div>
+    <script src="https://unpkg.com/hanzi-writer@3.7.2/dist/hanzi-writer.min.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <script>
+        // Caractère à tracer
+        const kanjiChar = '猫'; // Ou tout autre kanji
+
+        const writer = HanziWriter.create('kanji-target', kanjiChar, {
+            width: 250,      // Augmentez la taille pour une meilleure visibilité du tracé
+            height: 250,
+            padding: 5,      // Ajoute un peu d'espace autour du kanji
+            strokeAnimationSpeed: 1, // Vitesse de l'animation des traits (1 est normal)
+            delayBetweenStrokes: 1000, // Délai en ms entre chaque trait
+            delayBetweenLoops: 2000,   // Délai en ms entre les boucles complètes
+
+            // Options d'affichage initiales (avant l'animation)
+            showOutline: true,   // Affiche une ébauche grise claire du kanji
+            showCharacter: false // N'affiche pas le kanji fini par défaut (il sera dessiné)
+        });
+
+        // ------ Méthodes pour démarrer l'animation ------
+
+        // Option 1: Animer un seul trait (utile pour le pas à pas)
+        // writer.animateStroke(1); // Anime le premier trait
+
+        // Option 2: Animer le dessin complet du kanji une fois
+        writer.animateCharacter();
+
+        // Option 3: Animer le dessin complet du kanji en boucle (le plus courant pour l'apprentissage)
+        writer.loopCharacter(); // Anime le dessin du kanji en boucle
+
+        // Option 4: Démarrer l'animation au clic (exemple)
+        // const button = document.createElement('button');
+        // button.textContent = 'Tracer ' + kanjiChar;
+        // document.body.appendChild(button);
+        // button.style.position = 'absolute'; // Ou tout autre style pour le positionner
+        // button.style.top = '10px';
+        // button.style.left = '10px';
+        // button.onclick = () => writer.animateCharacter();
+    </script>
+</body>
+</html>

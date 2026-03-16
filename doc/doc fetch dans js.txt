@@ -1,0 +1,68 @@
+Requête pour appeler une route nodejs
+
+_________________
+
+quiz.json
+_________________
+
+
+fetch('/quiz/search_question', {
+                method: 'POST',  // ou 'GET' selon votre besoin
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ numeroQuestion: randomElement }) // On envoie la valeur de randomElement !
+        })
+        .then(response => response.json())
+        .then(data => {
+                console.log('Réponse du serveur:', data);
+            
+            })
+        .catch(error => console.error('Erreur:', error));
+
+____________________________________________
+
+Dans server.json
+____________________________________________		
+		
+app.post('/quiz/search_question', (req, res) => {
+  
+  // --- MODIFICATION CLÉ ---
+  // Avant (attendait `tabNombreDeQuestion`) :
+  // const tabNombreDeQuestion = req.body.tabNombreDeQuestion;
+  
+  // Après (attend `numeroQuestion`) :
+  const viewName = `vue_quiz_${searchTerm}`;
+  const numeroQuestionRecu = req.body.numeroQuestion; 
+  try {
+        // REQUÊTE SQL CORRIGÉE : on sélectionne toutes les colonnes nécessaires
+        // On cherche dans avec le niveau les autres champs
+        const query = `
+            SET @i := 0;
+			SELECT *
+			FROM (
+				SELECT @i := @i + 1 AS index_quiz, v.*
+				FROM ${viewName} v
+		) AS subquery_alias
+		WHERE index_quiz = ${numeroQuestionRecu}`;
+		
+		const searchQuestion = `%${numeroQuestionRecu}%`;
+
+        console.log("---  Recherche dans Quiz ---");
+        console.log("Requête SQL exécutée :", query.trim().replace(/\s+/g, ' '));
+        console.log("Avec le paramètre de recherche :", searchQuestion);
+		
+		// lancement de la requête
+		const [results] =  dbPool.query(query, [searchQuestion]);
+		
+		    res.render('pages/quiz_form', { 
+            title: 'Les questions du quiz', 
+            results: results, 
+            searchTerm: numeroQuestionRecu 
+        });
+
+    } catch (err) { 
+        console.error("ERREUR lors de la recherche du Quiz :", err);
+        res.status(500).send("Erreur serveur lors de la recherche du Quiz."); 
+    }
+});

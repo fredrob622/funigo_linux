@@ -1,0 +1,58 @@
+<%- include('../../partials/header_vocab') %>
+
+<!-- ON AJOUTE L'ID ICI, SUR LE CONTENEUR PRINCIPAL -->
+<div id="container-wrapper" class="content content-black"> 
+    
+   
+    <div class="vocab_titre" >   
+        <h2>Rechercher un mot dans le dictionnaire en ligne</h2>
+        <a href="/vocab" class="vocab_href">Retour</a>
+    </div>
+
+    <form action="/vocab_dico/search" method="POST" class="search-form">
+        <input type="text" name="searchTerm" value="<%= searchTerm %>" placeholder="Entrez un mot en japonais ou en français">
+        <button type="submit">Rechercher</button>
+    </form>
+
+     <% if (results && results.length > 0) { %>
+        <div class="results-container" style="margin-top: 30px;">
+            <h3>Résultats pour "<%= searchTerm %>"</h3>
+
+            <!-- === CHANGEMENT MAJEUR : On crée un tableau HTML === -->
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>Hiragana/Kana</th>
+                        <th>Kanji</th>
+                        <th>Romaji</th>
+                        <th>Français</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- On boucle sur chaque objet 'entry' dans notre tableau 'results' -->
+                    <% results.forEach(entry => { %>
+                        <tr>
+                            <td><%= entry.hiragana %></td>
+                            <td><%= entry.kanji %></td>
+                            <td><%= entry.romaji %></td>
+                            <td><%= entry.francais %></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+
+        </div>
+    <% } else if (searchTerm) { %>
+        <p>Aucun résultat trouvé pour "<%= searchTerm %>".</p>
+    <% } %>
+
+    <!-- Affiche un message d'erreur s'il y en a un -->
+    <% if (typeof error !== 'undefined' && error) { %>
+        <p style="color: red; margin-top: 20px;"><%= error %></p>
+    <% } %>
+</div>
+
+<!-- On ajoute un peu de style pour que le tableau soit joli -->
+
+
+<%- include('../../partials/footer') %>

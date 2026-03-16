@@ -1,0 +1,52 @@
+AVANT faire la SAUVEGARDE
+
+SELECT * FROM quiz
+INTO OUTFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/quiz_202509092330.csv'
+FIELDS TERMINATED BY ',' ENCLOSED BY '"'
+LINES TERMINATED BY '\n';
+
+
+
+chargement dans quiz
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/1996-N3jplt.csv'
+INTO TABLE quiz
+FIELDS TERMINATED BY ';'
+LINES TERMINATED BY '\n'
+(
+    ANNEE,
+    NIVEAU,
+    TEXTE,
+    REP_OK,
+    QUESTION,
+    REP1,
+    REP2,
+    REP3,
+    REP4
+);
+
+
+
+
+
+mysql> SELECT DISTINCT annee, niveau FROM quiz ORDER BY annee ASC;
++-------+--------+
+| annee | niveau |
++-------+--------+
+|  1991 | N2     |
+|  1991 | N3     |
+|  1991 | N4     |
+|  1992 | N2     |
+|  1992 | N3     |
+|  1992 | N4     |
+|  1993 | N3     |
+|  1993 | N4     |
+|  1994 | N2     |
+|  1994 | N3     |
+|  1994 | N4     |
+|  1995 | N2     |
+|  1995 | N3     |
+|  1995 | N4     |
+|  1996 | N3     |
+|  1996 | N4     |
++-------+--------+
+16 rows in set (0.00 sec)

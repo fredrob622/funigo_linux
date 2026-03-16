@@ -1,0 +1,70 @@
+<!-- Fichier : views/pages/kanji_tracer_form.ejs (Version finale et propre) -->
+
+<%- include('../../partials/header_kanji') %>
+
+<div class="content content-black"> 
+
+    <div class="vocab_titre" >   
+        <h2>Tracer un Kanji</h2>
+        <a href="/kanji" class="vocab_href">Retour</a>
+    </div>
+    
+    
+    <form action="/kanji_tracer/search" method="POST" class="search-form">
+        <input type="text" name="searchTerm" value="<%= searchTerm %>" placeholder="Recherchez un kanji...">
+        <button type="submit">Rechercher</button>
+    </form>
+
+    <% if (results.length > 0) { %>
+        <% const kanjiToTrace = results[0].kanji; %>
+
+        <div class="tracer-container">
+            <h3>Résultats pour "<%= searchTerm %>" - Tracé de : <span class="jp-char"><%= kanjiToTrace %></span></h3>
+            
+            <!-- On passe le kanji via un attribut data-char -->
+            <div id="kanji-target" data-char="<%= kanjiToTrace %>" style="display: flex; justify-content: center; align-items: center; margin: 20px 0;"></div>
+
+            <!-- Les boutons de contrôle -->
+            <div class="tracer-controls" style="text-align: center;">
+                <button id="animate-btn" class="tracer-btn">Animer</button>
+                <button id="quiz-btn" class="tracer-btn">S'entraîner</button>
+            </div>
+        </div>
+
+    <% } else if (searchTerm) { %>
+        <p>Aucun résultat trouvé pour "<%= searchTerm %>".</p>
+    <% } %>
+</div>
+
+<!-- On charge les scripts APRES le footer pour optimiser le chargement -->
+<%- include('../../partials/footer') %>
+
+<!-- 
+    CHARGEMENT DES SCRIPTS EXTERNES
+    On supprime le script inline et on appelle nos fichiers .js
+
+     serveur Node.js/EJS a fait son travail. Il a généré un fichier HTML et l'a envoyé au navigateur. 
+     À la toute fin de ce fichier HTML, juste avant la balise </body>, le navigateur trouve ces deux 
+     lignes cruciale
+
+     Lancement de hanzi-writer.min.js :
+
+        Le navigateur voit la première ligne : <script src="/js/hanzi-writer.min.js"></script>.
+        Il envoie une requête à votre serveur pour obtenir ce fichier.
+        
+        Une fois le fichier téléchargé, le navigateur l'exécute immédiatement.
+        
+        Conséquence : L'exécution de ce script crée un objet global nommé HanziWriter dans la "mémoire" du navigateur. 
+        Cet objet contient toutes les fonctions nécessaires pour dessiner des kanjis 
+        (comme HanziWriter.create, writer.animateCharacter, etc.). À ce stade, rien n'est encore dessiné, mais "l'outil" est maintenant disponible.
+        Lancement de kanji-tracer.js :
+        
+        Une fois le premier script terminé, le navigateur passe à la ligne suivante : <script src="/js/kanji-tracer.js"></script>.
+        Il télécharge et exécute ce deuxième fichier.
+        Conséquence : L'exécution de ce script fait une seule chose pour l'instant : 
+        il dit au navigateur "Hé, quand l'événement DOMContentLoaded se produira, exécute cette fonction que je te donne".
+-->
+
+
+<script src="/js/hanzi-writer.min.js"></script> <!-- La bibliothèque d'abord -->
+<script src="/js/kanji-tracer.js"></script>   <!-- Notre script personnel ensuite -->

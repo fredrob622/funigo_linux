@@ -1,0 +1,60 @@
+<%- include('../../partials/header_blog') %>
+<div  class="content content-black">
+    <h2 class="blog_h2" ><%= title %></h2>
+
+<% if ( listeArticles && listeArticles.length > 0) { %>
+    
+    <% listeArticles.forEach(article => { %>
+    <div class="blog_article"> 
+        <div class="blog_article_entete">  
+            <h3 class="blog_h3"><%= article.titre %></h3>
+            <div class="blog_date">
+                <% 
+                    // Options de formatage pour la date
+                    const options = { 
+                        year: 'numeric', 
+                        month: '2-digit', 
+                        day: '2-digit', 
+
+                    };
+                    // Création d'un objet Date à partir de la valeur reçue
+                    // Assurez-vous que article.date_creat est une chaîne valide pour new Date()
+                    const dateCreat = article.date_creat ? new Date(article.date_creat) : null;
+                    const dateModif = article.date_modif ? new Date(article.date_modif) : null;
+                %>
+
+                <% if (dateCreat) { %>
+                    <p>Créer : <%= dateCreat.toLocaleString('fr-FR', options).replace(',', '') %></p>
+                <% } %>
+                
+                <% if (dateModif) { %>
+                    <p>Modifier : <%= dateModif.toLocaleString('fr-FR', options).replace(',', '') %></p>
+                <% } %>
+
+                <div class="blog_actions">
+                    <a href="/blog/modifier/<%= article.id %>" class="action-icon update-icon" title="Modifier l'article">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                    <form action="/blog/supprimer/<%= article.id %>" method="POST" style="display:inline;" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet article ?');">
+                        <button type="submit" class="action-icon delete-icon" title="Supprimer l'article">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </form>
+                <p><br></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="blog_contenu">
+            <p> <%= article.contenu %> </p>
+        </div>
+
+        <% }); %>
+    </div>    
+</div>
+<% } else { %>
+    <p>Aucun article trouvé.</p>
+<% } %>
+
+<%- include('../../partials/footer') %>
+

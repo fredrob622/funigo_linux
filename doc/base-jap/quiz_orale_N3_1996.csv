@@ -1,0 +1,1227 @@
+1996;N3;"聴解スクリプト： (1) 男の人と女の人が美智子さんの部屋に遊びに行きます。
+美智子さんの部屋はどれですか。 
+男：美智子さんの部屋ってどこ？ 
+女：どこだと思う？ 
+男： 鳥がいるところかな。 
+女：ううん。 
+男：じゃ、星のカーテンの部屋？ 
+女：残念でした。お花のカーテンの部屋なの。あ、窓開いているから、美智子さん、帰 っているわよ、きっと。 
+
+美智子さんの部屋はどれですか。  ";C;A;B;C;D;"聴解スクリプト： (1) 男の人と女の人が美智子さんの部屋に遊びに行きます。美智子さんの部屋はどれですか。
+Script d'écoute : (1) Un homme et une femme vont rendre visite à Michiko. Quelle est la chambre de Michiko ?
+男：美智子さんの部屋ってどこ？
+Homme : Où est la chambre de Michiko ?
+女：どこだと思う？
+Femme : À ton avis, où est-elle ?
+男：鳥がいるところかな。
+Homme : Peut-être celle où il y a un oiseau ?
+女：ううん。
+Femme : Non.
+男：じゃ、星のカーテンの部屋？
+Homme : Alors, la chambre avec les rideaux étoilés ?
+女：残念でした。 お花のカーテンの部屋なの。
+Femme : Dommage, tu as tort. C'est la chambre avec les rideaux à fleurs.
+あ、窓開いているから、美智子さん、帰 っているわよ、きっと。
+Ah, la fenêtre est ouverte, donc Michiko doit être rentrée, c'est sûr.
+
+美智子さんの部屋はどれですか。
+Question finale : Quelle est la chambre de Michiko ?
+
+Analyse et Justification 
+La question demande d'identifier la chambre de Michiko. 
+L'homme fait deux tentatives, et la femme lui donne la réponse correcte.  
+Tentative 1 de l'homme : La chambre avec un oiseau (鳥がいるところ).  
+Réponse de la femme : Non (ううん).  
+Tentative 2 de l'homme : La chambre avec les rideaux étoilés (星のカーテン).  
+Réponse de la femme (Clé) : 「残念でした。お花のカーテンの部屋なの。」 (C'est la chambre avec les rideaux à fleurs.)  
+La chambre de Michiko est donc celle qui a des rideaux à fleurs.  
+
+Conclusion La chambre de Michiko est celle qui a des rideaux à fleurs.";1996_N3_1.jpg
+1996;N3;"聴解スクリプト： (2) 女の人は男の人から何をもらいますか。 
+男：りょうこさん、寮を出て、アパートに引っ越すって、本当ですか。 
+女：ええ。 
+男：実は、僕、急に国へ帰るこ とになって、よかったら、テレビとか、冷蔵庫とかもらってもらえません？ 
+女：ええ？いいですか。 男：ええ。 女：じゃ、テレビを。 
+男：冷蔵庫はどうですか。 
+女：冷蔵庫、もう買っちゃったんです。 
+男：あ、そうですか。ほかに何か要りませんか。 
+女：ええと、自転車ありますか。 
+男：あ、ごめんなさい。自転車、もう あげちゃったんですよ。机はどうですか。 
+女：あ、お願いします。 
+
+女の人は男の人から何をもらいますか。  ";B;A;B;C;D;"聴解スクリプト： (2) 女の人は男の人から何をもらいますか。	
+Script d'écoute : (2) Qu'est-ce que la femme reçoit de l'homme ? 
+男：りょうこさん、寮を出て、アパートに引っ越すって、本当ですか。	
+Homme : Ryōko-san, est-ce vrai que vous quittez le foyer pour emménager dans un appartement ? 
+女：ええ。	
+Femme : Oui. 
+男：実は、僕、急に国へ帰るこ とになって、よかったら、テレビとか、冷蔵庫とかもらってもらえません？	
+Homme : En fait, je dois rentrer dans mon pays subitement. Si ça vous arrange, pourriez-vous prendre ma télévision ou mon réfrigérateur ? 
+女：ええ？いいですか。	
+Femme : Ah ? Vous êtes sérieux ? 
+男：ええ。	
+Homme : Oui. 
+女：じゃ、 テレビを。	
+Femme : Alors, la télévision. 
+男：冷蔵庫はどうですか。	
+Homme : Et le réfrigérateur ? 
+女：冷蔵庫、もう買っちゃったんです。	
+Femme : J'ai déjà acheté un réfrigérateur. 
+男：あ、そうですか。ほかに何か要りませんか。	
+Homme : Ah, d'accord. Y a-t-il autre chose dont vous auriez besoin ? 
+女：ええと、自転車ありますか。	
+Femme : Hum, avez-vous un vélo ? 
+男：あ、ごめんなさい。自転車、もう あげちゃったんですよ。 机はどうですか。	
+Homme : Oh, je suis désolé. J'ai déjà donné le vélo. Et le bureau ? 
+女：あ、 お願いします。	
+Femme : Ah, oui, je le veux bien. 
+
+女の人は男の人から何をもらいますか。	
+Question finale : Qu'est-ce que la femme reçoit de l'homme ?
+
+Analyse et Justification 
+La question demande ce que la femme accepte finalement de prendre. 
+Il faut suivre l'échange et les acceptations finales.  
+Offre initiale (Télévision & Réfrigérateur) :  La femme accepte la télévision (じゃ、テレビを).  
+Elle refuse le réfrigérateur (もう買っちゃった).  
+Deuxième tour d'offres (Vélo & Bureau) :  La femme demande le vélo (自転車ありますか).  
+L'homme n'a plus le vélo (もうあげちゃった), mais offre le bureau (机はどうですか).  
+La femme accepte le bureau : 「あ、お願いします。」 (Oui, je le veux bien.)  
+La femme reçoit donc deux articles : la télévision et le bureau.  
+
+Conclusion La femme reçoit la télévision et le bureau de l'homme.";1996_N3_2.jpg
+1996;N3;"聴解スクリプト： (3) 灰皿はどこにありますか。 
+男：あの、灰皿はどこにありますか。 
+女：あ、タバコですか。 
+男：え。 
+女：窓のところにありませんでしたか。窓の近くの机の 上。 
+男：いや、ありませんでしたよ。あっちの丸い机の上にもなかったし。 
+女：じゃ、テレビの上かな。 
+男：わかりました。 
+女：あ、本棚の一番下に置いた んだ。 
+男：あ、そうですか。 
+
+灰皿はどこにありますか。  ";D;A;B;C;D;"聴解スクリプト： (3) 灰皿はどこにありますか。 
+Script d'écoute : (3) Où se trouve le cendrier ? 
+男：あの、灰皿はどこにありますか。 
+Homme : Euh, où se trouve le cendrier ? 
+女：あ、タバコですか。 
+Femme : Ah, c'est pour fumer ? 
+男：え。 
+Homme : Oui.
+ 女：窓のところにありませんでしたか。窓の近くの机の 上。 
+Femme : N'était-il pas près de la fenêtre ? Sur la table près de la fenêtre. 
+男：いや、ありませんでしたよ。あっちの丸い机の上にもなかったし。 
+Homme : Non, il n'y était pas. Et il n'était pas non plus sur la table ronde là-bas. 
+女：じゃ、テレビの上かな。 
+Femme : Alors, peut-être sur la télévision ? 
+男：わかりました。 
+Homme : D'accord. 
+女：あ、 本棚の一番下に置いた んだ。 
+Femme : Ah, je l'ai mis tout en bas de la bibliothèque. 
+男：あ、そうですか。 
+Homme : Ah, c'est là ? 
+
+灰皿はどこにありますか。 
+Question finale : Où se trouve le cendrier ?
+
+Analyse et Justification 
+La question demande l'emplacement final et correct du cendrier (灰皿). 
+La femme fait plusieurs suggestions avant de se corriger elle-même et de donner la bonne réponse.  
+Suggestion 1 de la femme : Sur la table près de la fenêtre (窓の近くの机の上).  
+Réponse de l'homme : Non (ありませんでしたよ).  Vérification de l'homme : Pas sur la table ronde (丸い机の上にもなかった).  
+Suggestion 2 de la femme : Sur la télévision (テレビの上かな).  
+Correction finale de la femme (Clé) : 「あ、本棚の一番下に置いたんだ。」 (Ah, je l'ai mis tout en bas de la bibliothèque.)  
+Le lieu où se trouve réellement le cendrier est la dernière information donnée par la femme.  
+
+Conclusion Le cendrier se trouve tout en bas de la bibliothèque.";1996_N3_3.jpg
+1996;N3;"聴解スクリプト： (4) 旅行会社の人が旅行のスケジュールについて説明しています。大阪へ行くのはいつですか。大阪です。 
+男：では、旅行の説明をします。ええと、
+出発 は22日火曜日ですが、ここから京都まではバスで行きます。
+その日泊まるのは京都のホテルです。
+京都では二晩泊まります。
+1日目も2日目も同じホテル です。で、次の日、大阪へ行って、
+一晩泊まって、東京に帰ります。 
+
+大阪へ行くのはいつですか。 ";C;A;B;C;D;"聴解スクリプト： (3) 灰皿はどこにありますか。
+Script d'écoute : (3) Où se trouve le cendrier ?
+男：あの、灰皿はどこにありますか。
+Homme : Euh, où se trouve le cendrier ?
+女：あ、タバコですか。
+Femme : Ah, c'est pour fumer ?
+男：え。
+Homme : Oui.
+女：窓のところにありませんでしたか。窓の近くの机の 上。
+Femme : N'était-il pas près de la fenêtre ? Sur la table près de la fenêtre.
+男：いや、ありませんでしたよ。あっちの丸い机の上にもなかったし。
+Homme : Non, il n'y était pas. Et il n'était pas non plus sur la table ronde là-bas.
+女：じゃ、テレビの上かな。
+Femme : Alors, peut-être sur la télévision ?
+男：わかりました。Homme : D'accord.
+女：あ、 本棚の一番下に置いた んだ。
+Femme : Ah, je l'ai mis tout en bas de la bibliothèque.
+男：あ、そうですか。
+Homme : Ah, c'est là 
+
+?灰皿はどこにありますか。
+Question finale : Où se trouve le cendrier ?
+
+Analyse et Justification 
+La question demande l'emplacement final et correct du cendrier (灰皿). 
+La femme fait plusieurs suggestions avant de se corriger elle-même et de donner la bonne réponse.  
+Suggestion 1 de la femme : Sur la table près de la fenêtre (窓の近くの机の上).  
+Réponse de l'homme : Non (ありませんでしたよ).  
+Vérification de l'homme : Pas sur la table ronde (丸い机の上にもなかった).  
+Suggestion 2 de la femme : Sur la télévision (テレビの上かな).  
+Correction finale de la femme (Clé) : 「あ、本棚の一番下に置いたんだ。」 (Ah, je l'ai mis tout en bas de la bibliothèque.)  
+Le lieu où se trouve réellement le cendrier est la dernière information donnée par la femme.  
+
+Conclusion Le cendrier se trouve tout en bas de la bibliothèque.";1996_N3_4.jpg
+1996;N3;"聴解スクリプト： (5) してはいけないと店員が言っていることはどれですか。 
+男：いらっしゃいませ。いかがですか。このテーブルは？ 
+女：ええ、大きさも形もいいんですけ ど。このテーブル丈夫ですか。 
+男：ええ、その点は大丈夫です。丈夫に出来ております。テーブルの上で果物を切ってもだい大丈夫ですよ。ただ熱いもの を置くのはちょっと。 
+女：うちは子どもはまだ小さくて、上にのったり、飲み物をこぼしたりするんですよ。それですぐ汚れるんです。 
+男：ええ、色が変ったり しませんし、大人が乗ったとしても壊れませんよ。 
+女：じゃ、これにしようかしら。 
+
+してはいけないと店員が言っていることはどれですか。 ";D;A;B;C;D;"聴解スクリプト： (5) してはいけないと店員が言っていることはどれですか。	
+Script d'écoute : (5) Qu'est-ce que le vendeur dit qu'il ne faut pas faire ? 
+男：いらっしゃいませ。いかがですか。このテーブルは？	
+Homme (Vendeur) : Bienvenue. Que pensez-vous de cette table ? 
+女：ええ、大きさも形もいいんですけど。 このテーブル丈夫ですか。	
+Femme : Oui, la taille et la forme sont bonnes, mais cette table est-elle solide ? 
+男：ええ、その点は大丈夫です。丈夫に出来ております。テーブルの上で果物を切ってもだい大丈夫ですよ。	
+Homme : Oui, sur ce point, pas de problème. Elle est faite pour être solide. Vous pouvez même couper des fruits directement dessus. 
+ただ 熱いものを置くのはちょっと。	
+Seulement, poser des choses chaudes (dessus) est un peu... (déconseillé/problématique). 
+女：うちは子どもはまだ小さくて、上にのったり、飲み物をこぼしたりするんですよ。それですぐ汚れるんです。	
+Femme : Chez nous, les enfants sont encore petits. Ils montent dessus, renversent des boissons... et ça se salit vite. 
+男：ええ、 色が変ったりしませんし、大人が乗ったとしても壊れませんよ。	
+Homme : Ne vous inquiétez pas, la couleur ne changera pas et elle ne cassera pas même si un adulte monte dessus. 
+女：じゃ、これにしようかしら。	
+Femme : Alors, je vais peut-être prendre celle-ci. 
+
+してはいけないと店員が言っていることはどれですか。	
+Question finale : Qu'est-ce que le vendeur dit qu'il ne faut pas faire ?
+
+Analyse et Justification 
+La question demande l'action que le vendeur déconseille (してはいけない). 
+La femme s'inquiète de la solidité de la table face à plusieurs actions (couper, monter dessus, renverser, salir).  
+Le vendeur confirme que la table résiste à :  Couper des fruits (果物を切ってもだい大丈夫)  
+Monter dessus (大人が乗ったとしても壊れません)  Salir/Renverser des liquides (impliqué par 色が変ったりしません).  
+L'unique restriction mentionnée par le vendeur est :  「ただ 熱いものを置くのはちょっと。」 
+(Seulement, poser des choses chaudes est un peu [problématique].)  C'est la seule action qu'il déconseille ou pour laquelle il émet une réserve.  
+
+Conclusion (Déduction de l'action déconseillée) 
+L'action que le vendeur déconseille est de poser des objets chauds sur la table.";1996_N3_5.jpg
+1996;N3;"聴解スクリプト： (6) 男の人と女の人がお客に出す物について話しています。どの順番で出しますか。 
+女：まず、コーヒーを出してください。 
+男：はい。 
+女：それから、果 物。 
+男：果物の次に、コーヒーのほうがいいんじゃないですか。 
+女：え、でも、まず暖かいものを出したほうがいいでしょう。寒いから。 
+男：ああ、そうです ね。で、手を拭くタオルは最初でいいですね。 
+女：いいえ、果物の後でいいでしょう。果物で汚れた手を拭きたいでしょうから。 
+
+どの順番で出しますか。  ";A;A;B;C;D;"聴解スクリプト： (6) 男の人と女の人がお客に出す物について話しています。どの順番で出しますか。	
+Script d'écoute : (6) Un homme et une femme parlent de l'ordre dans lequel servir des choses aux invités. Dans quel ordre serviront-ils ? 
+女：まず、コーヒーを出してください。	
+Femme : D'abord, veuillez servir le café. 
+男：はい。	
+Homme : Oui.
+ 女：それから、果物。	
+Femme : Ensuite, les fruits. 
+男：果物の次に、コーヒーのほうがいいんじゃないですか。	
+Homme : Ne serait-il pas mieux de servir le café après les fruits ? 
+女：え、でも、まず暖かいものを出したほうがいいでしょう。寒いから。	
+Femme : Hein, mais il vaut mieux servir quelque chose de chaud d'abord, parce qu'il fait froid. 
+男：ああ、そうですね。で、手を拭くタオルは最初でいいですね。	
+Homme : Ah, c'est vrai. Et l'essuie-mains (serviette) est bien au début, n'est-ce pas ? 
+女：いいえ、 果物の後でいいでしょう。 果物で汚れた手を拭きたいでしょうから。	
+Femme : Non, ce serait bien de le donner après les fruits. Ils voudront s'essuyer les mains salies par les fruits.
+
+Analyse et Justification 
+Il faut suivre les instructions finales de la femme pour déterminer l'ordre de service des trois éléments : le café, les fruits et l'essuie-mains (serviette). 
+Café (コーヒー) : La femme insiste pour que le café (quelque chose de chaud) soit servi en premier (まず、コーヒーを出してください / まず暖かいものを出したほうがいいでしょう). 
+Fruits (果物) : La femme place les fruits après le café (それから、果物).  
+Essuie-mains (タオル) : L'homme propose de le servir en premier, mais la femme insiste pour qu'il soit servi après les fruits (果物の後でいいでしょう).  
+L'ordre final est donc :  Café  Fruits  Essuie-mains (Serviette) 
+
+Conclusion L'ordre de service est : Café, Fruits, puis Essuie-mains.";1996_N3_6.jpg
+1996;N3;"聴解スクリプト： (7) 女の子の犬はどれですか。 女：うちの犬すごいんだよ。 
+男：なに？人の言葉が話せるとか？ 
+女：人の言葉は分かるみたいんだけど、話すのはできな い。 
+男：じゃ、買い物に行くとか。 
+女：それはよくあるよね。でも、違うんだ。うちのは本を読むんだ。 
+男：ええ？うそ。 
+女：本当。頭いいんだ、うちのは。 
+男：そう？ううん、あのね、うちの犬は後ろ足だけで歩けるけど。 
+女：それはよくテレビで見るよね。 
+
+女の子の犬はどれですか。 ";B;A;B;C;D;"聴解スクリプト： (7) 女の子の犬はどれですか。	
+Script d'écoute : (7) Quel est le chien de la fille ? 
+女：うちの犬すごいんだよ。	
+Femme (Fille) : Mon chien est incroyable ! 
+男：なに？人の言葉が話せるとか？	
+Homme : Quoi ? Il peut parler la langue des humains ? 
+女：人の言葉は分かるみたいんだけど、話すのはできな い。	
+Femme : Il semble comprendre la langue des humains, mais il ne peut pas parler. 
+男：じゃ、買い物に行くとか。	
+Homme : Alors, il fait les courses, peut-être ? 
+女：それはよくあるよね。でも、違うんだ。 うちのは本を読むんだ。	
+Femme : Ça, c'est assez commun, non ? Mais non, c'est autre chose. Le mien lit des livres. 
+男：ええ？うそ。	
+Homme : Quoi ? C'est pas vrai. 
+女：本当。頭いいんだ、うちのは。	
+Femme : C'est vrai. Le mien est intelligent ! 
+男：そう？ううん、あのね、うちの犬は後ろ足だけで歩けるけど。	
+Homme : Ah oui ? Eh bien, mon chien peut marcher seulement sur ses pattes arrière. 
+女：それはよくテレビで見るよね。	
+Femme : Ça, on le voit souvent à la télévision, non ? 
+
+女の子の犬はどれですか。	
+Question finale : Quel est le chien de la fille ?
+
+Analyse et Justification 
+La question demande la caractéristique unique du chien de la fille (女の子の犬).  
+La fille réfute les suggestions de l'homme (parler, faire les courses) et donne la particularité de son propre chien : 
+「うちのは本を読むんだ。」 (Le mien lit des livres.)  
+L'homme tente de surenchérir en parlant de son chien qui marche sur deux pattes, 
+mais la fille minimise cela en disant que c'est commun (よくテレビで見るよね).  
+L'attribut distinctif du chien de la fille est donc qu'il lit des livres.  
+
+Conclusion (Description de la caractéristique) Le chien de la fille est celui qui lit des livres.  日本語での正解";1996_N3_7.jpg
+1996;N3;"聴解スクリプト： (8) 今年外国に旅行した人の数について話しています。正しいのはどれですか。 
+女：ええ、これは今年の1月から5月までに、外国に旅行に行った人の数 です。
+旅行する人が多いのは毎年3月と5月ですが、今年3月のほうが少し多くなっています。
+旅行する人が一番少ないのは2月で、今年は5月のだいたい 半分でした。 
+
+今年外国に旅行した人の数について正しいのはどれですか。 
+
+";A;A;B;C;D;"聴解スクリプト： (8) 今年外国に旅行した人の数について話しています。正しいのはどれですか。
+Script d'écoute : (8) On parle du nombre de personnes ayant voyagé à l'étranger cette année. Quel est l'énoncé correct ?
+女：ええ、これは今年の1月から5月までに、外国に旅行に行った人の数 です。
+Femme (Présentatrice) : Oui, il s'agit du nombre de personnes qui ont voyagé à l'étranger de janvier à mai cette année
+.旅行する人が多いのは毎年3月と5月ですが、 今年3月のほうが少し多くなっています。
+Les mois où il y a le plus de voyageurs sont habituellement mars et mai, mais cette année, mars a été légèrement supérieur [à mai].
+旅行する人が一番少ないのは2月で、今年は5月のだいたい半分でした。
+Le mois avec le moins de voyageurs est février, et cette année, c'était environ la moitié du mois de mai.
+
+今年外国に旅行した人の数について正しいのはどれですか。
+Question finale : Quel est l'énoncé correct concernant le nombre de personnes ayant voyagé à l'étranger cette année ?
+
+Analyse et Justification
+ La question demande d'identifier l'énoncé correct concernant les statistiques de voyage pour l'année en cours (janvier à mai). 
+Nous avons deux comparaisons clés pour cette année :  Mars vs Mai : 
+« 今年3月のほうが少し多くなっています。» (Mars est légèrement plus élevé que Mai.)  
+Février vs Mai : « 2月で、今年は5月のだいたい半分でした。» (Février est environ la moitié de Mai.)  
+L'énoncé correct doit refléter l'un de ces faits.  
+
+Conclusion (Énoncés corrects basés sur le script) 
+Puisque les options de réponse ne sont pas fournies, l'énoncé correct est l'un des faits suivants :  
+Le nombre de voyageurs en mars était légèrement supérieur à celui de mai. 
+Le nombre de voyageurs en février était environ la moitié de celui de mai";1996_N3_8.jpg
+1996;N3;"聴解スクリプト： (9) 松本さんの新しいアパートはどれですか。 
+男1：松本さん、今度引っ越したんだって？ 
+男2：うん。 
+男1：どうして。今までのは川の前で眺めがよくてすご くよかったのに。 
+男2：うん。大きな公園も近くにあったしね。でも、うち、今度子どもが学校に入るから。学校が近いほうがいいと思って。 
+男1：あ、そうか。 近いの？今度は。 
+男2：うん、歩いても5、6分なんだ。それに駅の上なんだよ、アパート。 
+男1：それは便利だ。 
+
+松本さんの新しいアパートはどれですか。  ";C;A;B;C;D;"聴解スクリプト： (9) 松本さんの新しいアパートはどれですか。
+Script d'écoute : (9) Quel est le nouvel appartement de Matsumoto-san ?
+男1：松本さん、今度引っ越したんだって？
+Homme 1 : Matsumoto-san, on m'a dit que tu as déménagé récemment ?
+男2：うん。
+Homme 2 (Matsumoto) : Oui.
+男1：どうして。今までのは川の前で眺めがよくてすご くよかったのに。
+Homme 1 : Pourquoi ? L'ancien était vraiment bien, juste devant la rivière avec une belle vue.
+男2：うん。大きな公園も近くにあったしね。でも、うち、 今度子どもが学校に入るから。 学校が近いほうがいいと思って。
+Homme 2 : Oui. Il y avait aussi un grand parc à proximité. Mais comme notre enfant va entrer à l'école, j'ai pensé qu'il valait mieux être près de l'école.
+男1：あ、そうか。 近いの？今度は。
+Homme 1 : Ah, d'accord. C'est proche, cette fois ?
+男2：うん、 歩いても5、6分なんだ。 それに 駅の上なんだよ、アパート。
+Homme 2 : Oui, c'est à 5 ou 6 minutes à pied. De plus, l'appartement est au-dessus de la gare.
+男1：それは便利だ。
+Homme 1 : Ça, c'est pratique 
+
+!松本さんの新しいアパートはどれですか。
+Question finale : Quel est le nouvel appartement de Matsumoto-san ?
+
+Analyse et Justification  
+La question demande les caractéristiques du nouvel appartement de Matsumoto.   
+Ancien appartement (Non pertinent) : Devant la rivière (川の前), belle vue, près d'un grand parc.   
+Raison du déménagement : Être proche de l'école (学校が近いほうがいい).   
+Caractéristiques du nouvel appartement (Clés) :  Il est proche de l'école : 5 à 6 minutes à pied (歩いても5、6分).   
+Il est situé au-dessus de la gare (駅の上).  Le nouvel appartement est donc situé à la gare et très proche de l'école.    
+
+Conclusion (Description du nouvel appartement)  
+Le nouvel appartement de Matsumoto-san est celui qui est situé au-dessus de la gare et à seulement 5-6 minutes à pied de l'école.";1996_N3_9.jpg
+1996;N3;"聴解スクリプト： (10) 女の人はどこにお箸を入れますか。
+女：お箸です。お手伝いします。 
+男：あ、ありがとう。じゃ、おそれやコップをしまってください。お箸もね。 
+女：は い、この中ですね。 
+男：そうそう。 
+女：お箸は箱の中ですか。 
+男：いや、その箱は違うんだ。 
+女：じゃ、どこですか。 
+男：一番上なんだ。戸を開けると、箱が 入っているから。それに入れて。 
+女：はい。このスプーンは？ 
+男：引き出しの中、右側ね。 
+
+女の人はどこにお箸を入れますか。 ";A;A;B;C;D;"聴解スクリプト： (10) 女の人はどこにお箸を入れますか。 
+Script d'écoute : (10) Où la femme va-t-elle ranger les baguettes ? 
+女：お箸です。お手伝いします。 
+Femme : Ce sont les baguettes. Je vais vous aider. 
+男：あ、ありがとう。じゃ、おそれやコップをしまってください。お箸もね。 
+Homme : Ah, merci. Rangez les plats et les verres, s'il vous plaît. Et les baguettes aussi. 
+女：はい、この中ですね。 
+Femme : Oui, ici, dans ça ? 
+男：そうそう。 
+Homme : Oui, c'est ça. 
+女：お箸は箱の中ですか。 
+Femme : Les baguettes vont dans la boîte ? 
+男：いや、その箱は違うんだ。 
+Homme : Non, pas cette boîte-là. 
+女：じゃ、どこですか。 
+Femme : Alors, où est-ce ? 
+男： 一番上なんだ。戸を開けると、箱が入っているから。それに入れて。 
+Homme : C'est tout en haut. Quand tu ouvres la porte/l'armoire, il y a une boîte à l'intérieur. Mets-les là-dedans. 
+女：はい。このスプーンは？ 
+Femme : D'accord. Et les cuillères ? 
+男：引き出しの中、右側ね。 
+Homme : Dans le tiroir, côté droit. 
+
+女の人はどこにお箸を入れますか。 
+Question finale : Où la femme va-t-elle ranger les baguettes ?
+
+Analyse et Justification 
+La question demande l'endroit précis où la femme doit ranger les baguettes (お箸).  
+Généralités : Les baguettes doivent être rangées.  
+Hypothèse de la femme : 
+Dans la boîte qu'elle voit (箱の中ですか).  
+Correction de l'homme : Non, pas cette boîte (その箱は違うんだ).  
+Instruction finale (Clé) : 「一番上なんだ。戸を開けると、箱が入っているから。それに入れて。」 
+(C'est tout en haut. Quand tu ouvres l'armoire, il y a une boîte à l'intérieur. Mets-les là-dedans.)  
+L'endroit est donc la boîte qui se trouve tout en haut dans l'armoire.  
+
+Conclusion (Description du lieu) 
+La femme va ranger les baguettes dans la boîte qui se trouve en haut, derrière la porte de l'armoire (ou le placard).";1996_N3_10.jpg
+1996;N3;"聴解スクリプト： (11) 工場の人が説明しています。工場の中ではどんな格好をしますか。 
+男：ええ、皆さん、これから工場に入りますが、注意していただきたいことがあり ますので、よく聞いてください。
+まず、工場の中は階段がたくさんあるので、女性の方で、
+踵の高い靴を履いている方は滑りやすいので、こちらの靴に履 き替えてください。
+それから、工場の入るときに、帽子を渡しますので、工場の中で
+はずっと被っていってください。
+あ、それから、工場の中では写真を撮 ることはできませんので、
+カメラもこの部屋に置いてください。それではよろしくお願いします。 
+
+工場の中ではどんな格好をしますか。  ";C;A;B;C;D;"聴解スクリプト： (11) 工場の人が説明しています。工場の中ではどんな格好をしますか。
+Script d'écoute : (11) Un employé de l'usine donne des explications. Quelle tenue faut-il porter à l'intérieur de l'usine ?
+男：ええ、皆さん、これから工場に入りますが、注意していただきたいことがありますので、よく聞いてください。
+Homme (Employé) : Bien, tout le monde, nous allons maintenant entrer dans l'usine, mais j'aimerais attirer votre attention sur certains points, veuillez écouter attentivement.
+まず、工場の中は階段がたくさんあるので、 女性の方で、踵の高い靴を履いている方は滑りやすいので、こちらの靴に履き替えてください。
+Premièrement, comme il y a beaucoup d'escaliers dans l'usine, les femmes qui portent des chaussures à talons hauts doivent les changer pour ces chaussures-ci car elles pourraient glisser.
+それから、工場の入るときに、帽子を渡しますので、 工場の中ではずっと被っていってください。
+Ensuite, nous vous remettrons un chapeau (une casquette) à l'entrée de l'usine, veuillez le porter tout le temps à l'intérieur
+.あ、それから、工場の中では写真を撮ることはできませんので、カメラもこの部屋に置いてください。
+Ah, de plus, il est interdit de prendre des photos à l'intérieur, veuillez laisser les appareils photo dans cette pièce.
+それではよろしくお願いします。
+Très bien, nous vous remercions.
+
+工場の中ではどんな格好をしますか。
+Question finale : Quelle tenue faut-il porter à l'intérieur de l'usine ?
+
+Analyse et Justification 
+La question porte sur les vêtements ou accessoires obligatoires ou modifiés pour entrer dans l'usine.  
+Chaussures : Les femmes portant des talons hauts (踵の高い靴) doivent changer de chaussures (履き替えてください) pour éviter de glisser dans les escaliers.  
+Couvre-chef : Un chapeau/casquette (帽子) sera remis et doit être porté en permanence (ずっと被っていってください).  
+Autres objets : Les appareils photo (カメラ) doivent être laissés dans la pièce.  
+La tenue obligatoire pour tous (s'applique également aux hommes pour les vêtements non mentionnés, mais les deux points de modification/obligation 
+mentionnés sont la chaussure de rechange (pour les femmes) et le port du chapeau (pour tous les visiteurs)).  
+L'énoncé correct doit mentionner l'obligation du couvre-chef et, pour les femmes, le changement de chaussures. 
+Puisque la question est générale, nous devons inclure les deux éléments clés modifiant la tenue.  
+
+Conclusion 
+(Description de la tenue) Les visiteurs doivent porter le chapeau (ou la casquette) qui leur est remis. 
+De plus, les femmes portant des talons hauts doivent changer leurs chaussures contre une paire plus sûre.";1996_N3_11.jpg
+1996;N3;"聴解スクリプト： (12) 女の人が男の人の家に行きます。女の人は何時ごろ着くと言っていますか。 
+女：もしもし、中田ですが、今、駅なんですけど。
+男：あ、着きましたか。 
+女：ええ、それで、申し訳ないですげ土、駅から15分おっしゃっていましたね。 
+男：ええ。 
+女：今1時45分で、本当はちょうどいいんですけど、ちょっと用事を 済ませておきたいので、2時の約束、少し遅れてしまうんですが。 
+男：あ、はいはい。 
+女：10分ぐらいで済むと思いますので、 
+男：そうですか。 
+女：じゃ、後 30分ぐらいでうかがいます。 
+男：じゃ、お待ちしています。 
+
+女の人は何時ごろ着くと言っていますか。 ";B;A;B;C;D;"聴解スクリプト： (12) 女の人が男の人の家に行きます。女の人は何時ごろ着くと言っていますか。
+Script d'écoute : (12) La femme se rend chez l'homme. À quelle heure dit-elle qu'elle arrivera ?
+女：もしもし、中田ですが、今、駅なんですけど。
+Femme : Allô, c'est Nakata. Je suis à la gare en ce moment.
+男：あ、着きましたか。
+Homme : Ah, vous êtes arrivée ?
+女：ええ、それで、申し訳ないですげ土、駅から15分おっしゃっていましたね。
+Femme : Oui. Alors, je suis désolée, mais vous avez dit que c'était à 15 minutes de la gare, n'est-ce pas ?
+男：ええ。
+Homme : Oui.
+女：今1時45分で、本当はちょうどいいんですけど、ちょっと用事を 済ませておきたいので、2時の約束、少し遅れてしまうんですが。
+Femme : Il est 1h45 en ce moment, et ça serait normalement parfait, mais j'ai une petite chose à faire, donc je vais être un peu en retard pour notre rendez-vous de 2h00.
+男：あ、はいはい。
+Homme : Ah, oui, oui.
+女： 10分ぐらいで済むと思いますので、
+Femme : Je pense que ça ne me prendra qu'environ 10 minutes.
+男：そうですか。
+Homme : D'accord.
+女：じゃ、 後 30分ぐらいでうかがいます。
+Femme : Alors, j'arriverai dans environ 30 minutes.
+男：じゃ、お待ちしています。
+Homme : Bien, je vous attends.
+
+女の人は何時ごろ着くと言っていますか。
+Question finale : À quelle heure dit-elle qu'elle arrivera ?
+
+Analyse et Justification
+La question demande l'heure d'arrivée estimée par la femme, non l'heure calculée.
+Heure actuelle (à la gare) : 1h45 (13h45).
+Heure de rendez-vous : 2h00 (14h00).
+Temps de trajet (Gare à la maison) : 15 minutes.
+Tâche supplémentaire : 10 minutes (10分ぐらいで済む).
+Calcul théorique : 1h45 (maintenant) + 10 min (tâche) + 15 min (trajet) = 2h10 (14h10).
+Cependant, la femme donne une estimation finale simple à la fin : 
+「じゃ、後 30分ぐらいでうかがいます。」 (Alors, j'arriverai dans environ 30 minutes.)
+1h45 (Heure actuelle) + 30 minutes = 2h15 (14h15).
+Bien que le calcul précis soit 14h10, l'heure qu'elle annonce (et qui est la réponse que l'homme accepte) est : dans 30 minutes. 1:45 + 30 { minutes} = 2:15
+
+Conclusion
+La femme dit qu'elle arrivera dans environ 30 minutes, soit vers 2h15 (14h15).";1996_N3_12.jpg
+1996;N3;"聴解スクリプト： (13) お母さんと息子が話しています。息子は今日、何をどの順番でしますか。 
+女：あ、出かけるの？ 
+男：うん、映画を見てくる。1時に友達が駅で待ってい るんだ。 
+女；あら。まだ12時よ。 
+男：うん、今日雑誌が出る日だから、本屋でちょっと見ていくんだ。 
+女：だったら、ちょっと病院によって、お祖母ちゃんの 薬もらっといて。 
+男：病院に行ったら、間に合わないよ。帰りによる。 
+女：帰りじゃ間に合わないでしょう。5時までなんだから。 
+男：ええ？行かなくちゃだ め？ 
+女：だめ。本屋は遅くまで空いているんだから。雑誌なんかいつでもいいでしょう。映画の後だって。 
+男：じゃ、そうする。 息子は今日、
+
+何をどの順番 でしますか。 ";D;A;B;C;D;"聴解スクリプト： (13) お母さんと息子が話しています。息子は今日、何をどの順番でしますか。 
+Script d'écoute : (13) Une mère et son fils parlent. Dans quel ordre le fils va-t-il effectuer ses activités aujourd'hui ? 
+女：あ、出かけるの？ 
+Mère : Ah, tu sors ? 
+男：うん、映画を見てくる。1時に友達が駅で待ってい るんだ。 
+Fils : Oui, je vais voir un film. Mon ami m'attend à la gare à 1h00. 
+女；あら。まだ12時よ。 
+Mère : Oh. Il n'est que 12h00. 
+男：うん、今日雑誌が出る日だから、本屋でちょっと見ていくんだ。 
+Fils : Oui, c'est le jour où le magazine sort, donc je vais d'abord jeter un œil à la librairie. 
+女：だったら、ちょっと病院によって、お祖母ちゃんの 薬もらっといて。 
+Mère : Dans ce cas, passe par l'hôpital et récupère le médicament de ta grand-mère. 
+男：病院に行ったら、間に合わないよ。帰りによる。 
+Fils : Si je vais à l'hôpital, je n'arriverai pas à l'heure. J'irai en rentrant. 
+女：帰りじゃ間に合わないでしょう。5時までなんだから。 
+Mère : Si tu y vas en rentrant, tu n'arriveras pas à temps. Ça ferme à 5h00. 
+男：ええ？行かなくちゃだめ？ 
+Fils : Quoi ? Je dois absolument y aller ? 
+女：だめ。 本屋は遅くまで空いているんだから。 雑誌なんかいつでもいいでしょう。映画の後だって。 
+Mère : Oui. La librairie est ouverte jusqu'à tard. Le magazine, tu peux le regarder n'importe quand. Même après le film. 
+男：じゃ、そうする。 
+Fils : D'accord, je vais faire ça. 
+息子は今日、何をどの順番でしますか。 
+
+Question finale : Dans quel ordre le fils va-t-il effectuer ses activités aujourd'hui ?
+
+La question demande l'ordre final des trois activités mentionnées : 
+aller à l'hôpital pour les médicaments, aller au cinéma (film), et aller à la librairie (magazine).
+Plan initial du fils : 1. Librairie  2. Film.
+Contrainte de la mère : Il doit aller à l'hôpital car il ferme à 17h00. La mère impose que cette tâche soit faite avant le film (ou avant qu'il ne soit trop tard).
+Compromis final : La mère insiste sur l'urgence de l'hôpital et dit que la librairie peut attendre, même après le film.
+Décision du fils : 「じゃ、そうする。」 
+(D'accord, je vais faire ça.)L'ordre des priorités (et donc l'ordre final) est :
+L'hôpital (pour le médicament, car il ferme à 17h00).
+Le film (L'heure du rendez-vous à 13h00 est maintenue comme point central).
+La librairie (L'activité la moins urgente, peut être faite en dernier).
+
+Conclusion 
+(Ordre final)L'ordre des activités du fils est : Hôpital, Film, puis Librairie.
+";1996_N3_13.jpg
+1996;N3;"聴解スクリプト： (14) どんな鳥がいましたか。 
+男：あの鳥、何という鳥か、知っていますか。 
+女；ええ？どこですか。 
+男；あの鳥、あ、飛んでてしまいました。小さくて、顔が 黒いんです。でも、目の周りだけ白いんです。 
+女：うん、体は？ 
+男：体は白いんですけど。足は黒かったですね。 
+
+どんな鳥がいましたか。 ";A;A;B;C;D;"聴解スクリプト： (14) どんな鳥がいましたか。	
+Script d'écoute : (14) Quel genre d'oiseau y avait-il ? 
+男：あの鳥、何という鳥か、知っていますか。	
+Homme : Savez-vous comment s'appelle cet oiseau ? 
+女；ええ？どこですか。	
+Femme : Hein ? Où est-il ? 
+男；あの鳥、あ、飛んでてしまいました。小さくて、 顔が黒いんです。でも、目の周りだけ白いんです。	
+Homme : Cet oiseau, ah, il s'est envolé. Il était petit, et son visage était noir. Mais seulement autour de ses yeux, c'était blanc. 
+女：うん、体は？	
+Femme : Hmm, et son corps ? 
+男： 体は白いんですけど。足は黒かったですね。	
+Homme : Son corps était blanc. Et ses pattes étaient noires. 
+
+どんな鳥がいましたか。	
+Question finale : Quel genre d'oiseau y avait-il ?
+
+L'Oiseau La question est : 
+Quel genre d'oiseau y avait-il ?  
+L'homme décrit l'oiseau à la femme en donnant plusieurs indices visuels :  
+Taille : Il dit qu'il était petit (小さくて).  
+Couleur du visage : Le visage était noir (顔が黒いんです).  
+Détail du visage : Seulement autour des yeux, c'était blanc (目の周りだけ白いんです).  
+Couleur du corps : Le corps était blanc (体は白いんですけど).  
+Couleur des pattes : Les pattes étaient noires (足は黒かったですね).  
+Conclusion Pour décrire l'oiseau, il faut combiner toutes ces caractéristiques.  
+L'oiseau était : petit, avec le corps blanc et les pattes noires, le visage noir, mais seulement le contour des yeux blanc";1996_N3_14.jpg
+1996;N3;"聴解スクリプト： (1) 女の人はどうしてお昼に鶏肉を食べないのですか。 
+男：お昼行きませんか。 
+女：あ、いいですね。 
+男：何にしましょうか。 
+女：そうですね。鶏肉以外な ら何でも。 
+男：鳥は嫌いなんですか。 
+女：そうじゃないんですけど。 
+男：じゃ、昨日も鳥だったとか。 
+女：残念でした。実は今夜なんです。 
+男：ええ？ 女：も う作ってきちゃったんです。 
+男：じゃ、何かほかのものにしましょう。 
+
+女の人はどうしてお昼に鶏肉を食べないのですか。 
+
+1． 昨日鶏肉を食べたからです。 
+2． 今晩鶏肉を食べるからです。 
+3． 鶏肉が食べられないからです。 
+4． 鶏肉が嫌いだからです。 ";B;A;B;C;D;"聴解スクリプト： (1) 女の人はどうしてお昼に鶏肉を食べないのですか。
+Script d'écoute : (1) Pourquoi la femme ne mange-t-elle pas de poulet à midi ?
+男：お昼行きませんか。
+Homme : On va déjeuner ?
+女：あ、いいですね。
+Femme : Ah, oui, bonne idée.
+男：何にしましょうか。
+Homme : Qu'est-ce qu'on prend ?
+女：そうですね。 鶏肉以外なら何でも。
+Femme : Voyons. N'importe quoi sauf du poulet.
+男：鳥は嫌いなんですか。
+Homme : Vous n'aimez pas le poulet ?
+女：そうじゃないんですけど。
+Femme : Ce n'est pas ça.
+男：じゃ、昨日も鳥だったとか。
+Homme : Alors, vous en avez mangé hier aussi ?
+女：残念でした。 実は今夜なんです。
+Femme : Dommage, vous avez tort. En fait, c'est pour ce soir.
+男：ええ？
+Homme : Ah bon ?
+女： もう作ってきちゃったんです。
+Femme : Je l'ai déjà préparé et emporté.
+男：じゃ、何かほかのものにしましょう。
+Homme : D'accord, alors prenons autre chose.
+
+女の人はどうしてお昼に鶏肉を食べないのですか。
+Question finale : Pourquoi la femme ne mange-t-elle pas de poulet à midi ?
+
+Analyse et Justification
+
+La question cherche la raison pour laquelle la femme refuse de manger du poulet à midi.
+Hypothèses refusées :
+Elle n'aime pas ça (嫌い). Ele répond « Ce n'est pas ça ».E
+lle en a mangé hier (昨日も鳥だった). $Elle répond qu'il se trompe (残念でした).V
+raie Raison (Clé) : Elle en mangera ce soir (実は今夜なんです), car elle l'a déjà préparé et emporté (もう作ってきちゃったんです), c
+e qui implique qu'elle ne veut pas en manger deux fois dans la même journée.La raison principale est qu'elle va manger du poulet le soir.✅
+ Choix de la Bonne Réponse昨
+日鶏肉を食べたからです。 (Parce qu'elle a mangé du poulet hier.) $aux今
+晩鶏肉を食べるからです。 (Parce qu'elle va manger du poulet ce soir.) $Vrai鶏
+肉が食べられないからです。 (Parce qu'elle ne peut pas manger de poulet.) $Faux鶏
+肉が嫌いだからです。 (Parce qu'elle n'aime pas le poulet.) $auxL
+
+A réponse correcte est la 2.";Pas d’image
+1996;N3;"聴解スクリプト： (2) みどりさんのお父さんの仕事は何ですか。 
+男：これ、みどりさんの家族の写真？ 
+女：そうです。 
+男：これがお父さん？ 
+女：いえ、おじです。八百屋をや っています。これは兄で、歯医者をしています。 
+男：ううん、似ているね。 
+女：父はその時、会社の仕事で海外に行っていたので、この写真にはいないん です。 
+男：これはお母さん？ 
+女：はい、英語を教えています。 
+
+みどりさんのお父さんの仕事は何ですか。 
+
+1． 八百屋です。 
+2． 歯医者です。 
+3． 会社員 です。 
+4． 英語の先生です。 ";C;A;B;C;D;"聴解スクリプト： (2) みどりさんのお父さんの仕事は何ですか。
+Script d'écoute : (2) Quel est le travail du père de Midori-san ?
+男：これ、みどりさんの家族の写真？
+Homme : C'est une photo de la famille de Midori-san ?
+女：そうです。
+Femme (Midori) : Oui.
+男：これがお父さん？
+Homme : C'est lui votre père ?
+女：いえ、おじです。 八百屋をやっています。 これは兄で、 歯医者をしています。
+Femme : Non, c'est mon oncle. Il est marchand de légumes (yaoya). Ça, c'est mon frère, il est dentiste.
+男：ううん、似ているね。
+Homme : Hmm, vous vous ressemblez.
+女：父はその時、 会社の仕事で海外に行っていた ので、この写真にはいないん です。
+Femme : Mon père n'est pas sur cette photo, car à ce moment-là, il était à l'étranger pour son travail dans une entreprise.
+男：これはお母さん？
+Homme : C'est votre mère ?
+女：はい、 英語を教えています。
+Femme : Oui, elle enseigne l'anglais.
+
+みどりさんのお父さんの仕事は何ですか。
+Question finale : Quel est le travail du père de Midori-san ?
+
+Analyse et Justification
+La question demande la profession du père de Midori-san (お父さん). 
+Il faut faire attention à ne pas confondre les membres de la famille :
+Oncle (おじ) : Marchand de légumes (八百屋).  
+Option 1Frère (兄) : Dentiste (歯医者). 
+Option 2Mère (お母さん) : Professeur d'anglais (英語の先生). 
+*ption 4Père (父) : Il était à l'étranger pour son travail dans une entreprise (会社の仕事).
+Le terme 会社の仕事 (travail d'entreprise) indique qu'il est un employé de bureau ou un cadre, soit un 会社員 (employé d'entreprise).
+
+✅ Choix de la Bonne Réponse
+八百屋です。 (Marchand de légumes.)  Faux (C'est l'oncle.)
+歯医者です。 (Dentiste.)  Faux (C'est le frère.)
+会社員 です。 (Employé d'entreprise.) Vrai (Indiqué par 会社の仕事.)
+英語の先生です。 (Professeur d'anglais.)  Faux (C'est la mère.)
+
+La réponse correcte est la 3.";Pas d’image
+1996;N3;"聴解スクリプト： (3) 女の子が友達を迎えに行きます。友達はどこで待っていますか。 
+女：じゃ、駅に着いたら、電話して。迎えに行くから。駅前の交番の前で待ってて。 
+男：交番の前？交番の前に立っているのはいやだなあ。 
+女：ええ？じゃ、花屋のところは？ 
+男：寒いといやだから、喫茶店の中にいようかな。 
+女：お金 がかかるでしょう。じゃ、本屋は？ 
+男：長くいるのはちょっとね。 
+女：だから、十分もそれで行くから。 
+男：ＯＫ． 
+
+友達はどこで待っていますか。 
+
+1． 交番の 前です。 
+2． 花屋の前です。 
+3． 喫茶店の中です。 
+4． 本屋の中です。 ";D;A;B;C;D;"聴解スクリプト： (3) 女の子が友達を迎えに行きます。友達はどこで待っていますか。	
+Script d'écoute : (3) Une fille va chercher son ami. Où l'ami l'attend-il ? 
+女：じゃ、駅に着いたら、電話して。迎えに行くから。 駅前の交番の前で待ってて。	
+Fille : D'accord, appelle-moi quand tu arrives à la gare. Je viendrai te chercher. Attends devant le poste de police (kōban) devant la gare. 
+男：交番の前？交番の前に立っているのはいやだなあ。	
+Ami : Devant le poste de police ? Je n'ai pas envie de rester debout devant le poste de police. 
+女：ええ？じゃ、花屋のところは？	
+Fille : Ah ? Alors, près du fleuriste (hanaya) ? 
+男：寒いといやだから、喫茶店の中にいようかな。	
+Ami : Je n'ai pas envie s'il fait froid, donc je vais peut-être aller à l'intérieur du café (kissaten). 
+女：お金 がかかるでしょう。じゃ、本屋は？	
+Fille : Ça va coûter de l'argent, non ? Alors, la librairie (honya) ? 
+男：長くいるのはちょっとね。	
+Ami : Rester longtemps, c'est un peu... [difficile]. 
+女：だから、 十分もそれで行くから。	
+Fille : Justement, j'y serai en moins de dix minutes. 
+男：ＯＫ．	
+Ami : OK. 
+
+友達はどこで待っていますか。	
+Question finale : Où l'ami l'attend-il ?
+
+ Analyse et Justification
+La question demande où l'ami (l'homme) va finalement attendre, après avoir négocié avec la fille.
+Suggestion 1
+(Fille) : Devant le poste de police (交番の前). Rejeté (Il n'a pas envie d'y rester debout).
+Suggestion 2 
+(Fille) : Près du fleuriste (花屋のところ). Rejeté (Il veut être au chaud).
+Suggestion 3 
+(Ami) : À l'intérieur du café (喫茶店の中). Rejeté (La fille ne veut pas qu'il dépense de l'argent)
+.Suggestion 4
+ (Fille/Final) : La librairie (本屋) bjection de l'ami : Rester longtemps est difficile.A
+ssurance de la fille : J'arrive dans moins de dix minutes (十分もそれで行くから).A
+cceptation de l'ami (Clé) : 「ＯＫ．」L'ami accepte donc d'attendre à la librairie. L
+'option 4 précise ""à l'intérieur de la librairie"" (本屋の中), ce qui est le sens implicite d'attendre à la librairie, à l'opposé des lieux extérieurs refusés.✅
+
+ Choix de la Bonne Réponse交
+番の前です。 (Devant le poste de police.) $Faux花
+屋の前です。 (Devant le fleuriste.) $Faux喫
+茶店の中です。 (À l'intérieur du café.) $Faux (Refusé pour le coût.)本
+屋の中です。 (À l'intérieur de la librairie.) $VraiL
+
+A réponse correcte est la 4.";Pas d’image
+1996;N3;"聴解スクリプト： (4) 女の人と男の人が話しています。男の人はどうして眠いのですか。 
+女：どうしたの？体の具合が悪いの？ 
+男：ううん、眠くて、眠くて。 
+女：どうして？ 毎晩遅くまで仕事だから？ 
+男：いや、それより。 
+女：ああ、わかった。飲みすぎでしょう。 
+男：いや、そうじゃなくて。先月、子どもが生まれたでしょう。 
+女： ああ、それで。 
+男：よく泣くんだ。それで眠れなくて。 
+
+男の人はどうして眠いのですか。 
+
+1． 体の具合が悪いからです。 
+2． 遅くまで仕事をしているからで す。 
+3． お酒を飲みすぎるからです。 
+4． 夜、子どもに起こされるからです。 ";D;A;B;C;D;"男：ううん、眠くて、眠くて。	
+Homme : Non, je suis juste somnolent, somnolent. 
+女：どうして？毎晩遅くまで仕事だから？	
+Femme : Pourquoi ? Est-ce parce que tu travailles tard tous les soirs ? 
+男：いや、それより。	
+Homme : Non, c'est au-delà de ça. 
+女：ああ、わかった。飲みすぎでしょう。	
+Femme : Ah, j'ai compris. C'est parce que tu bois trop ? 
+男：いや、そうじゃなくて。 先月、子どもが生まれたでしょう。	
+Homme : Non, ce n'est pas ça. Mon enfant est né le mois dernier, n'est-ce pas ? 
+女：ああ、それで。	
+Femme : Ah, c'est pour ça. 
+男： よく泣くんだ。それで眠れなくて。	
+Homme : Il pleure souvent. Du coup, je ne peux pas dormir. 
+
+男の人はどうして眠いのですか。
+
+Pourquoi l'Homme est-il Fatigué ?
+La question est : Pourquoi l'homme est-il somnolent (a-t-il sommeil) ?
+L'homme rejette plusieurs suppositions faites par la femme :
+Hypothèse du travail tardif (Option 2) : L'homme répond : « Non, c'est au-delà de ça » (いや、それより).
+Hypothèse de la boisson (Option 3) : L'homme répond : « Non, ce n'est pas ça » (いや、そうじゃなくて).
+L'homme révèle ensuite la véritable raison de son manque de sommeil :
+Raison clé : « Mon enfant est né le mois dernier, n'est-ce pas ? Il pleure souvent. Du coup, je ne peux pas dormir. »
+ (先月、子どもが生まれたでしょう。よく泣くんだ。それで眠れなくて。)
+Le manque de sommeil est directement causé par le fait que son bébé le réveille la nuit en pleurant
+
+.✅ Choix de la Bonne Réponse
+
+Parce qu'il est malade. Faux
+Parce qu'il travaille tard.  Faux (Il dit que ce n'est pas la cause principale.)
+Parce qu'il boit trop d'alcool.  Faux
+Parce qu'il est réveillé par son enfant la nuit.  Vrai (Son enfant pleure souvent, l'empêchant de dormir.)";Pas d’image
+1996;N3;"聴解スクリプト： (5) 女の人二人が田中さんのボーイフレンドについて話しています。田中さんのボーイフレンドはどんな人ですか。 
+
+女1：ねねね、田中さんにボーイフレン ドができたんだって。 
+女2：そうなのよ。この前、会っちゃった。 
+女1：会社の人？ 女2：ううん、そうじゃない。 
+女1：ええ、どんな人だった？前のボーイフレン ドとっても大きかったわね。 
+女2：そうね。あまり背は高くないわね。 
+女1：スポーツマン？ 
+女2：それはよくわからないけど。そうね、真面目そうなタイプ。 
+
+田中さんのボーイフレンドはどんな人ですか。 
+
+1． スポーツマンで、背が高い人です。 
+2． スポーツマンで、背が高くない人です。 
+3． 真面目そうで、背が 高い人です。 
+4． 真面目そうで、背が高くない人です。 ";D;A;B;C;D;"聴解スクリプト： (5) 女の人二人が田中さんのボーイフレンドについて話しています。田中さんのボーイフレンドはどんな人ですか。	
+Script d'écoute : (5) Deux femmes parlent du petit ami de Tanaka-san. Quel genre de personne est le petit ami de Tanaka-san ? 
+女1：ねねね、田中さんにボーイフレン ドができたんだって。	
+Femme 1 : Hé, hé, on dit que Tanaka-san a un nouveau petit ami ! 
+女2：そうなのよ。この前、会っちゃった。	
+Femme 2 : Oui, c'est vrai. Je l'ai croisé l'autre jour. 
+女1：会社の人？	
+Femme 1 : Quelqu'un de son entreprise ? 
+女2：ううん、そうじゃない。	
+Femme 2 : Non, ce n'est pas le cas. 
+女1：ええ、どんな人だった？前のボーイフレン ドとっても大きかったわね。	
+Femme 1 : Ah, quel genre de personne est-ce ? Son ancien petit ami était très grand, n'est-ce pas ? 
+女2：そうね。 あまり背は高くないわね。	
+Femme 2 : Oui. Lui, il n'est pas très grand. 
+女1：スポーツマン？	
+Femme 1 : Est-ce un sportif ? 
+女2：それはよくわからないけど。 そうね、真面目そうなタイプ。	
+Femme 2 : Je ne suis pas sûre de ça. Hmm, oui, il a l'air sérieux comme type. 
+
+田中さんのボーイフレンドはどんな人ですか。	
+Question finale : Quel genre de personne est le petit ami de Tanaka-san ?
+
+Analyse et Justification
+
+La question demande les caractéristiques du nouveau petit ami de Tanaka-san, basées sur les observations de la Femme 2.
+Taille (背の高さ) : La Femme 2 compare sa taille à celle de l'ancien petit ami et dit : 「あまり背は高くないわね。」 (Il n'est pas très grand / Il est petit.)
+Sportif (スポーツマン) : La Femme 2 répond : « Je ne suis pas sûre » (よくわからない). Ce n'est donc pas une caractéristique confirmée.
+Personnalité/Apparence (タイプ) : La Femme 2 le décrit comme : 「真面目そうなタイプ。」 (Un type qui a l'air sérieux.)
+Les deux caractéristiques confirmées sont : n'est pas très grand (背が高くない) et a l'air sérieux (真面目そう).
+
+✅ Choix de la Bonne Réponse
+スポーツマンで、背が高い人です。 (Sportif et grand.)  Faux
+スポーツマンで、背が高くない人です。 (Sportif et petit.)  Faux (Pas confirmé comme sportif.)
+真面目そうで、背が高い人です。 (A l'air sérieux et grand.)  Faux (Il n'est pas grand.)
+真面目そうで、背が高くない人です。 (A l'air sérieux et n'est pas grand.)  Vrai";Pas d’image
+1996;N3;"聴解スクリプト： (6) 林さんと鈴木さんが話しています。鈴木さんはどうして自分の車で行きたいのですか。 
+男1：え、鈴木、今度の日曜日、うちの車で、海に行かないか。 
+男2：あ、いいよ。でも、日曜日だと、道が混むだろう。 
+男1：大丈夫だよ。早く出るから。 
+男2：後、誰が行くの？ 
+男1：後は池田と日の谷の二人。 
+男2:：そう か、僕、自分の車で行こうかな。 
+男1：どうして、うちの車大きいし、一台のほうが便利だろう。 
+男2：でも、林の運転、こわいからなあ。 
+男1：じゃ、鈴木に運 転させてやるよ。 
+男2：実は、もう一人連れて行きたいんだよ。 
+男1：あ、なんだ。彼女を連れてくるのか。でも、5人なら乗れるぜ。 
+男2：そうだげどさ。 男 1：わかったよ。じゃ、俺たち男3人で行きますよ。 
+
+鈴木さんはどうして自分の車で行きたいのですか。 
+1． 彼女と二人で行きたいからです。 
+2． 道が混む からです。 
+3． 車に5人は乗れないからです。 
+4． 自分で運転したいからです。 ";A;A;B;C;D;"聴解スクリプト： (6) 林さんと鈴木さんが話しています。鈴木さんはどうして自分の車で行きたいのですか。
+Script d'écoute : (6) Hayashi et Suzuki parlent. Pourquoi Suzuki veut-il prendre sa propre voiture ?
+男1 (Hayashi) : え、鈴木、今度の日曜日、うちの車で、海に行かないか。
+Homme 1 (Hayashi) : Hey Suzuki, est-ce que tu veux aller à la plage avec ma voiture ce dimanche ?
+男2 (Suzuki) : あ、いいよ。でも、日曜日だと、道が混むだろう。
+Homme 2 (Suzuki) : Ah, d'accord. Mais si c'est dimanche, il va y avoir des embouteillages, non ?
+男1 : 大丈夫だよ。早く出るから。
+Homme 1 : Ça va aller. On partira tôt.
+男2 : 後、誰が行くの？
+Homme 2 : Qui d'autre vient ?
+男1 : 後は池田と日の谷の二人。
+Homme 1 : Ensuite, il y a Ikeda et Hinotani, deux personnes.
+男2 : そうか、 僕、自分の車で行こうかな。
+Homme 2 : D'accord. Je crois que je vais prendre ma propre voiture
+.男1 : どうして、うちの車大きいし、一台のほうが便利だろう。
+Homme 1 : Pourquoi ? Ma voiture est grande et c'est plus pratique de n'en avoir qu'une seule, non ?
+男2 : でも、林の運転、こわいからなあ。
+Homme 2 : Mais, ta conduite (Hayashi), elle me fait peur.
+男1 : じゃ、鈴木に運転させてやるよ。
+Homme 1 : Alors, je te laisserai conduire.
+男2 : 実は、もう一人連れて行きたいんだよ。
+Homme 2 : En fait, je voudrais amener une personne de plus.
+男1 : あ、なんだ。 彼女を連れてくるのか。 でも、5人なら乗れるぜ。
+Homme 1 : Ah, d'accord. Tu amènes ta petite amie ? Mais ma voiture peut prendre cinq personnes.
+男2 : そうだげどさ。
+Homme 2 : C'est vrai, mais…
+男1 : わかったよ。じゃ、俺たち男3人で行きますよ。
+Homme 1 : J'ai compris. Alors, nous, les trois hommes, on y va.
+
+鈴木さんはどうして自分の車で行きたいのですか。
+Question finale : Pourquoi Suzuki veut-il prendre sa propre voiture ?
+
+Analyse et Justification
+La question demande la véritable raison pour laquelle Suzuki veut utiliser sa propre voiture.
+Raison suggérée par Suzuki (Rejetée) : Il a peur de la conduite d'Hayashi (林の運転、こわいから).  Hayashi propose de le laisser conduire, ce qui résout ce point, mais Suzuki hésite toujours. Ce n'est donc pas la raison principale.
+Vraie Raison (Clé) : Suzuki avoue : 「実は、もう一人連れて行きたいんだよ。」 (En fait, je voudrais amener une personne de plus.)
+Clarification : Hayashi comprend immédiatement que Suzuki veut y aller seul avec sa petite amie (彼女を連れてくるのか), même si la voiture de Hayashi peut contenir 5 personnes. L'insistance de Suzuki, même après avoir résolu le problème de la capacité (5 personnes) et de la conduite, indique qu'il veut un voyage en tête-à-tête avec sa petite amie.
+L'objectif final de Suzuki est d'avoir un voyage seul avec la personne qu'il veut amener, même s'il ne le dit pas explicitement.
+ L'option 1 résume le mieux cette intention.
+
+✅ Choix de la Bonne Réponse
+彼女と二人で行きたいからです。 
+(Parce qu'il veut y aller seul avec sa petite amie.)  Vrai (Il veut amener ""une personne de plus,"" et l'échange final montre qu'il veut être avec elle plutôt qu'avec les trois autres hommes.)
+道が混むからです。 (Parce qu'il y aura des embouteillages.)  Faux (C'est une excuse initiale.)
+車に5人は乗れないからです。 (Parce que 5 personnes ne peuvent pas monter dans la voiture.)  Faux (Hayashi dit que 5 personnes peuvent monter.)
+自分で運転したいからです。 (Parce qu'il veut conduire lui-même.)  Faux (C'était une solution au problème de la conduite d'Hayashi, mais il a une autre raison.)
+
+La réponse correcte est la 1.";Pas d’image
+1996;N3;"聴解スクリプト： (7) 男の人と女の人は何時からの映画を見ることにしましたか。 
+男：ねえ、映画の時間調べてくれた？ 
+女：うん、ええと、一番早いのね、11時からで、その 後は2時間おき。最後は7時からだって。 
+男：2時間おきって、11時の次は1時、その次は3時ということ？ 女：うん、そう。 
+男：7時のを見てから、晩御飯を 食べると、遅くなっちゃうから。その一つ前のにしない？ 
+女：うん、そうしよう。 
+
+二人は何時からの映画を見ることにしましたか。 
+
+1． 1時です。 
+2． 3時で す。 
+3． 5時です。 
+4． 7時です。 ";C;A;B;C;D;"聴解スクリプト： (7) 男の人と女の人は何時からの映画を見ることにしましたか。	
+Script d'écoute : (7) À quelle heure l'homme et la femme ont-ils décidé d'aller voir le film ? 
+男：ねえ、映画の時間調べてくれた？	
+Homme : Dis, tu as vérifié les horaires du film ? 
+女：うん、ええと、一番早いのね、11時からで、その 後は2時間おき。最後は7時からだって。	
+Femme : Oui, alors, le plus tôt est à 11h00, puis toutes les deux heures, et le dernier est à 19h00 (7h00). 
+男：2時間おきって、11時の次は1時、その次は3時ということ？	
+Homme : Toutes les deux heures, ça veut dire 1h00 après 11h00, puis 3h00 ensuite ? 
+女：うん、そう。	
+Femme : Oui, c'est ça. 
+男：7時のを見てから、晩御飯を食べると、遅くなっちゃうから。その 一つ前 のにしない？	
+Homme : Si on regarde celui de 19h00, il sera trop tard pour dîner après. On ne prendrait pas celui juste avant ? 
+女：うん、そうしよう。	
+Femme : Oui, faisons cela. 
+
+二人は何時からの映画を見ることにしましたか。	
+Question finale : À quelle heure ont-ils décidé d'aller voir le film ?
+
+Analyse et Justification
+La question demande l'heure du film qu'ils ont finalement choisi.
+Horaires disponibles : 11h00, 13h00 (11 + 2), 15h00 (13 + 2), 17h00 (15 + 2), et 19h00 (7h00 du soir - le dernier).
+Choix exclu : L'homme refuse la séance de 19h00 (7時のを見てから), car cela rendrait le dîner trop tard.
+Choix retenu (Clé) : Il propose de prendre celui juste avant (その一つ前), et la femme accepte.
+La séance juste avant 19h00 (7h00) est celle de 17h00 (5h00).
+✅ Choix de la Bonne Réponse
+1時です。 (13h00) $\rightarrow$ Faux
+3時です。 (15h00) $\rightarrow$ Faux
+5時です。 (17h00) $\rightarrow$ Vrai (C'est la séance juste avant celle de 19h00.)
+7時です。 (19h00) $\rightarrow$ Faux (Celle-ci est rejetée.)
+La réponse correcte est la 3.
+";Pas d’image
+1996;N3;"聴解スクリプト： (8) 男の人が女の人と話しています。男の人は女の人の隣に住んでいます。男の人は何がうるさいと言っていますか。 
+男：すみません、夜はもう少し静 かにしてくれませんか。 
+女：すみません。子どもがまだ小さくて。 
+男：いえいえ、子どもさんじゃなくて。 
+女：テレビとか、ラジオとかですか。 
+男：いいえ、そ うじゃなくて、あのう、 
+女：は？ 
+男：毎晩、遅く電話をかけるでしょう。 
+女：私？ 男：もう少し静かに話してくださいませんか。
+
+男の人は何がうるさいと言っ ていますか。 
+
+1． 子どもの声です。 
+2． 女の人の声です。 
+3． テレビの音です。 
+4． ラジオの音です。 ";B;;;;;"聴解スクリプト： (8) 男の人が女の人と話しています。男の人は女の人の隣に住んでいます。男の人は何がうるさいと言っていますか。,
+Script d'écoute : (8) Un homme parle à une femme. L'homme vit à côté de la femme. Qu'est-ce que l'homme dit être bruyant ? 
+男：すみません、夜はもう少し静 かにしてくれませんか。,
+""Homme : Excusez-moi, pourriez-vous faire un peu moins de bruit le soir ?"" 
+女：すみません。子どもがまだ小さくて。,
+Femme : Je suis désolée. C'est que mon enfant est encore petit. 
+男：いえいえ、 子どもさんじゃなくて。
+,""Homme : Non, non, ce n'est pas votre enfant."" 
+女：テレビとか、ラジオとかですか。,
+Femme : Est-ce la télévision ou la radio ? 
+男：いいえ、そうじゃなくて、あのう、,
+""Homme : Non, ce n'est pas ça, hum..."" 
+女：は？,
+Femme : Hein ? 
+男： 毎晩、遅く電話をかけるでしょう。,
+""Homme : Vous passez des appels téléphoniques tard tous les soirs, n'est-ce pas ?"" 
+女：私？,
+Femme : Moi ? 
+男： もう少し静かに話してくださいませんか。,
+Homme : Pourriez-vous parler un peu plus doucement ? 
+
+男の人は何がうるさいと言っていますか。,
+Question finale : Qu'est-ce que l'homme dit être bruyant ?
+
+Analyse et Justification
+La question demande ce qui est la source de bruit selon l'homme, après avoir éliminé plusieurs hypothèses.
+Hypothèse 1 (L'enfant) : Rejetée. L'homme dit : « ce n'est pas votre enfant » (子どもさんじゃなくて). $\rightarrow$ Option 1 rejetée.
+Hypothèse 2 (TV/Radio) : Rejetée. L'homme dit : « Non, ce n'est pas ça » (いいえ、そうじゃなくて). $\rightarrow$ Options 3 et 4 rejetées.
+Vraie Cause (Clé) : L'homme indique qu'elle passe des appels tard le soir (毎晩、遅く電話をかける) et lui demande de parler plus doucement (もう少し静かに話してくださいませんか).
+La source de bruit est donc la voix de la femme pendant ses conversations téléphoniques.
+✅ Choix de la Bonne Réponse
+子どもの声です。 (La voix de l'enfant.) $\rightarrow$ Faux
+女の人の声です。 (La voix de la femme.) $\rightarrow$ Vrai (Elle parle fort au téléphone.)
+テレビの音です。 (Le son de la télévision.) $\rightarrow$ Faux
+ラジオの音です。 (Le son de la radio.) $\rightarrow$ Faux
+La réponse correcte est la 2.
+";Pas d’image
+1996;N3;"聴解スクリプト： (9) 男の人と女の人が話しています。男の人はどうして遅くなりましたか。 
+男：ごめん、ずいぶん待った？ 
+女：起きるの、遅かったの？ 
+男：ううん、起きた のは6時。 
+女：早い。 
+男：それで、早く出て、時間があったから。喫茶店でコーヒーを飲んだんだ。 
+女：ううん。 
+男：それで、喫茶店を出たら、昔の友達に会 って、 
+女：ううん。 
+男：本当にごめん。 
+
+男の人はどうして遅くなりましたか。 
+
+1． 起きるのは遅かったからです。 
+2． 家を出るのは遅かったからです。 
+3． 喫茶店でコーヒーを飲んだからです。 
+4． 昔の友達と話していたからです。 ";D;A;B;C;D;"聴解スクリプト： (9) 男の人と女の人が話しています。男の人はどうして遅くなりましたか。
+Script d'écoute : (9) Un homme et une femme parlent. Pourquoi l'homme est-il arrivé en retard ?
+男：ごめん、ずいぶん待った？
+Homme : Désolé, tu as attendu longtemps ?
+女：起きるの、遅かったの？
+Femme : Tu t'es réveillé tard ?
+男：ううん、起きた のは6時。
+Homme : Non, je me suis levé à 6h00.
+女：早い。
+Femme : C'est tôt.
+男：それで、早く出て、時間があったから。喫茶店でコーヒーを飲んだんだ。
+Homme : Alors, je suis parti tôt et comme j'avais du temps, j'ai bu un café au café.
+女：ううん。
+Femme : D'accord.
+男：それで、喫茶店を出たら、 昔の友達に会って、
+Homme : Et puis, quand je suis sorti du café, j'ai rencontré un vieil ami,
+女：ううん。
+Femme : D'accord.
+男：本当にごめん。
+Homme : Je suis vraiment désolé.
+
+男の人はどうして遅くなりましたか。
+Question finale : Pourquoi l'homme est-il arrivé en retard ?
+
+Analyse et Justification
+La question demande la cause principale et finale du retard de l'homme.
+Hypothèse 1 (Se lever tard) : Rejetée. Il s'est levé à 6h00 (起きたのは6時). $\rightarrow$ Option 1 rejetée.
+Boire un café (Option 3) : Bien qu'il ait bu un café (喫茶店でコーヒーを飲んだ), cela était prévu car il était en avance, ce n'est pas ce qui l'a mis en retard.
+Rencontre imprévue (Clé) : Il est sorti du café et a rencontré un vieil ami (昔の友達に会って). C'est cet événement imprévu qui a prolongé son attente et l'a mis en retard.
+L'événement qui l'a empêché d'être à l'heure est la conversation avec son ami.
+✅ Choix de la Bonne Réponse
+起きるのは遅かったからです。 (Parce qu'il s'est levé tard.) $\rightarrow$ Faux
+家を出るのは遅かったからです。 (Parce qu'il est parti de la maison tard.) $\rightarrow$ Faux (Il est parti tôt.)
+喫茶店でコーヒーを飲んだからです。 (Parce qu'il a bu un café au café.) $\rightarrow$ Faux (Il l'a fait parce qu'il était en avance.)
+昔の友達と話していたからです。 (Parce qu'il parlait à un vieil ami.) $\rightarrow$ Vrai
+La réponse correcte est la 4.
+
+";Pas d’image
+1996;N3;"聴解スクリプト： (10) 男の人はどうして風邪を引いたといっていますか。 
+男：ああ、頭痛い。 
+女：風邪？ 
+男：今朝から。 
+女：布団ちゃんとかけて寝た。 
+男：うん、ちゃんとか けてたよ。 
+女：わかった。お風呂の後で体が冷えたでしょう。 
+男：ううん、ほら、昨日午後から雨になったでしょう。 
+女：傘持っていなかったの？ 
+男：うん。 
+女：しょうがないなあ。それに、上着ぐらい着てきなさいよ。風邪なら。 
+
+男の人はどうして風邪を引いたといっていますか。 
+
+1． 布団をかけなかったからで す。 
+2． お風呂の後体が冷えたからです。 
+3． 雨に濡れたからです。 
+4． 上着を着なかったからです。  ";C;;;;;"聴解スクリプト： (10) 男の人はどうして風邪を引いたといっていますか。	
+Script d'écoute : (10) Pourquoi l'homme dit-il qu'il a attrapé un rhume ? 
+男：ああ、頭痛い。	
+Homme : Ah, j'ai mal à la tête. 
+女：風邪？	
+Femme : Un rhume ? 
+男：今朝から。	
+Homme : Depuis ce matin. 
+女：布団ちゃんとかけて寝た。	
+Femme : Tu as bien mis ta couverture pour dormir ? 
+男：うん、ちゃんとかけてたよ。	
+Homme : Oui, je l'ai bien mise. 
+女：わかった。お風呂の後で体が冷えたでしょう。	
+Femme : J'ai compris. Ton corps s'est refroidi après le bain, n'est-ce pas ? 
+男：ううん、ほら、 昨日午後から雨になったでしょう。	
+Homme : Non, regarde, il s'est mis à pleuvoir hier après-midi, non ? 
+女：傘持っていなかったの？	
+Femme : Tu n'avais pas de parapluie ? 
+男： うん。	
+Homme : Non. 
+女：しょうがないなあ。それに、上着ぐらい着てきなさいよ。風邪なら。	
+Femme : C'est pas possible... En plus, mets au moins une veste si tu as un rhume ! 
+
+男の人はどうして風邪を引いたといっていますか。	
+Question finale : Pourquoi l'homme dit-il qu'il a attrapé un rhume ?
+
+Analyse et Justification
+La question demande la raison que l'homme donne pour son rhume.
+Hypothèse 1 (Couverture/Froid la nuit) : L'homme réfute en disant qu'il l'a bien mise (ちゃんとかけてたよ). $\rightarrow$ Option 1 rejetée.
+Hypothèse 2 (Froid après le bain) : L'homme réfute (ううん). $\rightarrow$ Option 2 rejetée.
+Raison donnée par l'homme (Clé) : Il mentionne qu'il a plu (雨になったでしょう) et confirme qu'il n'avait pas de parapluie (傘持っていなかったの？ $\rightarrow$ うん). Le fait d'être pris sous la pluie sans parapluie implique d'avoir été mouillé ou pris par la pluie.
+La cause principale avancée par l'homme est donc d'avoir été sous la pluie sans protection.
+✅ Choix de la Bonne Réponse
+布団をかけなかったからです。 (Parce qu'il n'a pas mis de couverture.) $\rightarrow$ Faux
+お風呂の後体が冷えたからです。 (Parce que son corps s'est refroidi après le bain.) $\rightarrow$ Faux
+雨に濡れたからです。 (Parce qu'il a été mouillé par la pluie.) $\rightarrow$ Vrai (Il n'avait pas de parapluie quand il pleuvait.)
+上着を着なかったからです。 (Parce qu'il n'a pas mis de veste.) $\rightarrow$ Faux (C'est une suggestion de la femme après qu'il a déjà le rhume.)
+La réponse correcte est la 3.
+";Pas d’image
+1996;N3;"聴解スクリプト： (11) 男の人が女の人にパーティについて聞いています。まだ決まらないのは何ですか。 
+男：ねね、今度のパーティ日本料理でいい？ 
+女：うん、それはい いけど。店はどこ？ 
+男：山中さんの知っている店。 
+女：うん、日本料理って高いじゃない？ 
+男：それはねえ、安いんだよ。一人2500円。問題はね、昼のほ うがいいという人と、夜じゃなければだめという人がいてね。 
+女：そうか、
+
+困ったね。 まだ決まらないのは何ですか。 
+1． 時間です。 
+2． 料理です。 
+3． 値段です。 
+4． 行く店です。";A;A;B;C;D;"日本語 (オリジナル)	フランス語 (意訳) 聴解スクリプト： (11) 男の人が女の人にパーティについて聞いています。まだ決まらないのは何ですか。	
+Script d'écoute : (11) Un homme interroge une femme sur une fête. Qu'est-ce qui n'est pas encore décidé ? 
+男：ねね、今度のパーティ日本料理でいい？	
+Homme : Dis, la nourriture japonaise, ça va pour la prochaine fête ? 
+女：うん、それはいいけど。店はどこ？	
+Femme : Oui, ça va, mais où est le restaurant ? 
+男：山中さんの知っている店。	
+Homme : Le restaurant que Yamanaka-san connaît. 
+女：うん、日本料理って高いじゃない？	
+Femme : Hmm, la cuisine japonaise, n'est-ce pas cher ? 
+男：それはねえ、安いんだよ。 一人2500円。	
+Homme : Ça, c'est bon marché. 2500 yens par personne. 
+男：問題はね、 昼のほうがいいという人と、夜じゃなければだめという人 がいてね。	
+Homme : Le problème, c'est qu'il y a des gens qui préfèrent midi, et d'autres qui insistent pour que ce soit soir. 
+女：そうか、困ったね。	
+Femme : Je vois, c'est un problème. 
+
+まだ決まらないのは何ですか。	
+Question finale : Qu'est-ce qui n'est pas encore décidé ?
+
+Qu'est-ce qui n'est pas encore décidé ?
+La question est : Qu'est-ce qui n'a pas encore été décidé concernant la fête ?
+Nous devons passer en revue les éléments mentionnés dans le dialogue pour voir ce qui est résolu et ce qui est en suspens :
+Le type de cuisine (料理 / La nourriture) :
+L'homme demande si la cuisine japonaise est bonne (日本料理でいい？).
+La femme répond : « Oui, c'est bon. » (うん、それはいい。) $\rightarrow$ C'est décidé.
+Le restaurant (行く店 / Le lieu) :
+L'homme indique que c'est le restaurant que connaît Yamanaka-san (山中さんの知っている店). $\rightarrow$ C'est décidé.
+Le prix (値段 / Le coût) :
+L'homme rassure la femme en disant : « C'est bon marché. 2500 yens par personne. » (安いんだよ。一人2500円。) $\rightarrow$ C'est décidé.
+L'heure (時間 / Le moment de la journée) :
+L'homme identifie le problème : « Le problème, c'est qu'il y a des gens qui préfèrent midi et d'autres qui insistent pour que ce soit le soir. » (問題はね、昼のほうがいいという人と、夜じゃなければだめという人がいてね。) $\rightarrow$ Ce n'est pas décidé.
+L'unique point de désaccord qui empêche l'organisation d'avancer est le moment de la journée.
+✅ Choix de la Bonne Réponse
+時間です。 (L'heure/Le moment de la journée.) $\rightarrow$ Vrai.
+料理です。 (La nourriture.) $\rightarrow$ Faux.
+値段です。 (Le prix.) $\rightarrow$ Faux.
+行く店です。 (Le restaurant.) $\rightarrow$ Faux.
+La réponse correcte est la 1.
+";Pas d’image
+1996;N3;"聴解スクリプト： 
+男：いらっしゃいませ。 
+女：さあ、何を食べましょうか。 
+男：何がいいかな。何にしようかな。 
+女：魚と肉、どっちがいいですか。サンドイッチもありますよ。 
+男：なんのサンドイッチですか。 
+女：野菜です。 
+男：じゃ、それにします。 
+女：私は昨日もおとといも魚だったから、今日は肉がいいかな。 
+
+男の人は何を食 べますか。 
+
+1． 肉を食べます。 
+2． 魚を食べます。 
+3． サンドイッチを食べます。 
+4． 野菜サラダを食べます。";C;A;B;C;D;"男：いらっしゃいませ。	
+Vendeur : Bienvenue. 
+女：さあ、何を食べましょうか。	
+Femme : Alors, qu'est-ce qu'on va manger ? 
+男：何がいいかな。何にしようかな。	
+Homme : Qu'est-ce qui serait bien ? Qu'est-ce que je vais prendre ? 
+女：魚と肉、どっちがいいですか。 サンドイッチもありますよ。	
+Femme : Qu'est-ce que tu préfères, le poisson ou la viande ? On a aussi des sandwichs. 
+男：なんのサンドイッチですか。	
+Homme : Quel genre de sandwich ? 
+女：野菜です。	
+Femme : Aux légumes. 
+男：じゃ、それにします。	
+Homme : Alors, je prends ça. 
+女：私は昨日もおとといも魚だったから、今日は肉がいいかな。	
+Femme : Moi, j'ai mangé du poisson hier et avant-hier, donc je pense que je vais prendre de la viande aujourd'hui. 
+
+男の人は何を食 べますか。	
+Question finale : Qu'est-ce que l'homme va manger ?
+
+Analyse et Justification
+La question demande ce que l'homme (男の人) choisit de manger.
+Options proposées par la femme : Poisson, Viande, Sandwich.
+Choix de l'homme : Il s'enquiert d'abord du type de sandwich (il est aux légumes).
+Décision finale de l'homme (Clé) : 「じゃ、それにします。」 (Alors, je prends ça [le sandwich].)
+L'homme prend donc le sandwich.
+✅ Choix de la Bonne Réponse
+肉を食べます。 (Il mange de la viande.) $\rightarrow$ Faux (C'est le choix de la femme.)
+魚を食べます。 (Il mange du poisson.) $\rightarrow$ Faux
+サンドイッチを食べます。 (Il mange un sandwich.) $\rightarrow$ Vrai
+野菜サラダを食べます。 (Il mange une salade de légumes.) $\rightarrow$ Faux (Il s'agit d'un sandwich aux légumes.)
+La réponse correcte est la 3.
+";Pas d’image

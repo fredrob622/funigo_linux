@@ -1,0 +1,85 @@
+$popplerPath = "C:\poppler\poppler-24.08.0\Library\bin"
+$pdf = "C:\Fichiers_Users\jplt grammaire\grammaireN3.pdf"
+$txt = "C:\Fichiers_Users\jplt grammaire\GrammaireN3_extrait.txt"
+& "$popplerPath\pdftotext.exe" -f 3 -l 57 "$pdf" "$txt"
+
+
+
+$popplerPath = "C:\poppler\poppler-24.08.0\Library\bin"
+$pdf = "C:\Fichiers_Users\jplt grammaire\grammaireN4.pdf"
+$txt = "C:\Fichiers_Users\jplt grammaire\GrammaireN4_extrait.txt"
+& "$popplerPath\pdftotext.exe" -f 3 -l 57 "$pdf" "$txt"
+
+
+$popplerPath = "C:\poppler\poppler-24.08.0\Library\bin"
+$pdf = "C:\Fichiers_Users\jplt grammaire\grammaireN2.pdf"
+$txt = "C:\Fichiers_Users\jplt grammaire\GrammaireN2_extrait.txt"
+& "$popplerPath\pdftotext.exe" -f 3 -l 57 "$pdf" "$txt"
+
+$popplerPath = "C:\poppler\poppler-24.08.0\Library\bin"
+$pdf = "C:\Fichiers_Users\jplt grammaire\grammaireN5.pdf"
+$txt = "C:\Fichiers_Users\jplt grammaire\GrammaireN5_extrait.txt"
+& "$popplerPath\pdftotext.exe" -f 3 -l 57 "$pdf" "$txt"
+
+DEmande à chatgpt
+
+Convertir fichier txt en csv à partir de la page 3 après la table des matières
+Le document Grammaire du JLPT N4 est bien structuré avec chaque point de grammaire présenté selon un format régulier :
+
+Il faudrait supprimer Grammaire du JLPT N4 Go-I 語彙 : www.go-i.fr
+ 
+Précision pour la colonne Titre je prends un exemple " あまり + verbe en -ない " sera le premier element de la colonne nommé Titre. ainsi que tout les textes en début de pages avant Nom.
+
+Titre
+
+Nom
+
+Description
+
+Construction
+
+Exemples fichier txt en pièce jointe 
+
+
+################# Convertir pdf vers txt pdftotext.exe ########################################################
+
+$popplerPath = "C:\poppler\poppler-24.08.0\Library\bin"
+$pdf = "C:\Fichiers_Users\jplt grammaire\VocabulaireN1.pdf"
+$txt = "C:\Fichiers_Users\jplt grammaire\VocabulaireN1.pdf_extrait.txt"
+& "$popplerPath\pdftotext.exe" -f 3 -l 57 "$pdf" "$txt"*
+
+
+demande
+
+Merci d’écrire un script power shell pour convertir le fichier GrammaireN3_extrait_doc_cleaned.txt en pièce jointe en fichier csv. 
+Je veux obtenir un fichier csv avec 5 colonnes 
+dont les entêtes seront 
+
+	Index 
+	Nom 
+	Description 
+	Construction 
+	Exemple 
+
+Les champs devront être "" séparé par ;. Les retours à la ligne doivent être gardés 
+dans la cellule.
+
+Exemple pour la prémière occurence   Index est équal a "Base verbale + がち";
+
+
+######################################################################################################################
+
+$popplerPath = "C:\poppler\poppler-24.08.0\Library\bin"
+$pdf = "grammaireN3.pdf"
+$txt = "GrammaireN3_extrait_doc.txt"
+& "$popplerPath\pdftotext.exe" -f 3 -l 57 "$pdf" "$txt"
+
+clean_grammaire_page_go_niveau.ps1 pour "Grammaire du JLPT N3*" "Go-I 語彙 : www.go-i.fr*" "^Page\b"
+
+.\clean_grammaire_page_go_niveau.ps1  GrammaireN3_extrait_doc.txt  GrammaireN3_extrait_doc_cleaned.txt
+
+
+
+.\convertion_txt_vers_csv.ps1  GrammaireN3_extrait_doc_cleaned.txt   GrammaireN3_doc.csv
+
+.\convert_grammaire_to_csv.ps1 .\GrammaireN3_extrait_doc_cleaned.txt .\GrammaireN3_doc.csv

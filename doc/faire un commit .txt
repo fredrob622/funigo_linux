@@ -1,0 +1,7 @@
+node server.js
+git add *
+git commit -m "202509141800 avec la documentation mise à jour"
+git branch -M main
+git push -u origin main
+git log --oneline
+history

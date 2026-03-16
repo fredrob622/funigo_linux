@@ -1,0 +1,47 @@
+blog
+
+table funigo_blog
+
+Titre Article date_creat date_modif
+
+CREATE TABLE funigo_blog (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    TITRE VARCHAR(200),
+	ARTICLE TEXT,
+	DATE_CREAT DATE,
+	DATE_MODIF DATE
+);
+
+mysql> desc funigo_blog;
++------------+--------------+------+-----+---------+----------------+
+| Field      | Type         | Null | Key | Default | Extra          |
++------------+--------------+------+-----+---------+----------------+
+| id         | int          | NO   | PRI | NULL    | auto_increment |
+| TITRE      | varchar(200) | YES  |     | NULL    |                |
+| ARTICLE    | text         | YES  |     | NULL    |                |
+| DATE_CREAT | date         | YES  |     | NULL    |                |
+| DATE_MODIF | date         | YES  |     | NULL    |                |
++------------+--------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+
+INSERT INTO funigo_blog (TITRE, ARTICLE, DATE_CREAT, DATE_MODIF)
+VALUES ('Liste des fichiers PDF insérer dans la table QUIZ', ' 1991 N2\n', '2025-09-10', '2025-09-10');
+
+
+Dans header.ejs
+---------------
+			<li class="dropdown">
+                <a href="javascript:void(0)">Blog</a>
+                <div class="dropdown-content">
+                    <a href="/Blog">›Blog</a>
+                </div>
+            </li>
+
+Dans le fichier header_blog.ejs
+-------------------------------
+        <ul id="nav-submenu-links">
+            <li><a href="/">Accueil<br>ホーム</a></li>
+            <li><a href="/blog_liste"> Liste des articles<br>記事一覧 </a></li>
+            <li><a href="/blog_ecriture"> Ajouter un article <br>記事を追加</a></li>
+        </ul>
+		

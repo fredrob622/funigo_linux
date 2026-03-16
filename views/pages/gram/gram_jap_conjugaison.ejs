@@ -1,0 +1,42 @@
+<%- include('../../partials/header_gram') %>
+
+<!-- ON AJOUTE L'ID ICI, SUR LE CONTENEUR PRINCIPAL -->
+<div id="container-wrapper" class="content content-black"> 
+    
+    <h2>Rechercher la conjugaison d'un verbe japonais</h2>
+    <form action="/gram_jap_conjugaison/search" method="POST" class="search-form">
+        <input type="text" name="searchTerm" value="<%= searchTerm %>" placeholder="Entrez un verbe en japonais (ex: 働く)">
+        <button type="submit">Rechercher</button>
+    </form>
+
+    <% if (results) { %>
+        <!-- Ce div n'a plus besoin d'ID -->
+        <div class="results-container" style="margin-top: 30px;">
+            <h3>Résultats pour "<%= searchTerm %>"</h3>
+
+            <div class="container-wrapper-content">
+                <%- results %>
+            </div>
+        </div>
+    <% } else if (searchTerm) { %>
+        <p>Aucun résultat trouvé pour "<%= searchTerm %>".</p>
+    <% } %>
+</div>
+
+<!-- Le style et le script restent inchangés, mais ils vont maintenant fonctionner -->
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Le script va maintenant trouver l'ID sans problème
+        const conjugaisonWrapper = document.getElementById('container-wrapper');
+        if (conjugaisonWrapper) {
+            const links = conjugaisonWrapper.querySelectorAll('a');
+            links.forEach(link => {
+                link.removeAttribute('href');
+            });
+        }
+    });
+</script>
+
+<%- include('../../partials/footer') %>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map of inari</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <style>
+        #map {
+            height: 600px; /* Hauteur de la carte */
+            width: 100%; /* Largeur de la carte */
+        }
+    </style>
+</head>
+<body>
+    <h1>Map of inari, Japan</h1>
+    <div id="map"></div>
+
+    <script>
+        // Coordonnées de inari
+        const inariCoords = [34.96785272885092, 135.77919832554045];
+
+        // Initialisation de la carte
+        const map = L.map('map').setView(inariCoords, 13);
+
+        // Ajout de la couche OpenStreetMap
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+            attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            maxZoom: 18,
+        }).addTo(map);
+
+        // Ajout d'un marqueur pour inari
+        L.marker(inariCoords).addTo(map)
+            .bindPopup('inari, Japan') // Popup en anglais
+            .openPopup();
+    </script>
+</body>
+</html>

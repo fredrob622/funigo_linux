@@ -1,0 +1,107 @@
+****************************************************************************************************************
+	Voir la version linux
+****************************************************************************************************************
+fred@funigo:~ $ uname -a
+Linux funigo 6.12.47+rpt-rpi-2712 #1 SMP PREEMPT Debian 1:6.12.47-1+rpt1 (2025-09-16) aarch64 GNU/Linux
+
+****************************************************************************************************************
+	Voir @ip de la WIFI
+****************************************************************************************************************
+fred@funigo:~ $ ip addr show wlan0
+3: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 88:a2:9e:8a:c0:92 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.1.2/24 brd 192.168.1.255 scope global dynamic noprefixroute wlan0
+       valid_lft 32716sec preferred_lft 32716sec
+    inet6 2a01:e0a:3f2:9380:8aa2:9eff:fe8a:c092/64 scope global dynamic mngtmpaddr proto kernel_ra 
+       valid_lft 86177sec preferred_lft 86177sec
+    inet6 fe80::8aa2:9eff:fe8a:c092/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+fred@funigo:~ $ 
+
+
+fred@funigo:~ $ hostname -I 
+192.168.1.2 2a01:e0a:3f2:9380:8aa2:9eff:fe8a:c092 
+
+fred@funigo:~ $ h
+NAME                          UUID                                  TYPE      DEVICE 
+netplan-wlan0-Freebox-128B17  adee2f9e-b621-3712-a116-cbda491de5d4  wifi      wlan0  
+lo                            f864b600-43b3-4404-9a85-db6583b5ea39  loopback  lo     
+netplan-eth0                  75a1216a-9d1a-30cd-8aca-ace5526ec021  ethernet  --  
+
+****************************************************************************************************************
+	Voir si IP est fixe
+****************************************************************************************************************
+
+fred@funigo:~ $ nmcli connection show netplan-wlan0-Freebox-128B17 | grep ipv4.method
+ipv4.method:                            auto => DHCP
+
+****************************************************************************************************************
+	Voir la gateway ip route | grep default
+****************************************************************************************************************
+
+fred@funigo:~ $ ip route | grep default
+default via 192.168.1.254 dev wlan0 proto dhcp src 192.168.1.2 metric 600 
+
+
+fred@funigo:~ $ ip addr show wlan0
+3: wlan0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 88:a2:9e:8a:c0:92 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.1.2/24 brd 192.168.1.255 scope global dynamic noprefixroute wlan0
+       valid_lft 31296sec preferred_lft 31296sec
+    inet6 2a01:e0a:3f2:9380:8aa2:9eff:fe8a:c092/64 scope global dynamic mngtmpaddr proto kernel_ra 
+       valid_lft 86266sec preferred_lft 86266sec
+    inet6 fe80::8aa2:9eff:fe8a:c092/64 scope link proto kernel_ll 
+       valid_lft forever preferred_lft forever
+fred@funigo:~ $ hostname
+funigo
+
+****************************************************************************************************************
+	Arreter et Demarrer l'interface reseau 
+****************************************************************************************************************
+
+
+sudo nmcli connection down "netplan-wlan0-Freebox-128B17" 
+
+sudo nmcli connection up "netplan-wlan0-Freebox-128B17"
+
+
+
+****************************************************************************************************************
+	Voir le gateway 8.8.8.8
+****************************************************************************************************************
+
+----Installé les outils 
+
+sudo apt update
+sudo apt install dnsutils
+
+fred@funigo:~ $ nslookup 8.8.8.8
+8.8.8.8.in-addr.arpa	name = dns.google.
+
+fred@funigo:~ $ dig google.com +short
+216.58.214.78
+
+
+nslookup 8.8.8.8 → Name: dns.google
+→ 8.8.8.8 = serveur DNS Google (nom officiel dns.google). Ta config utilise bien le DNS Google maintenant !
+
+text
+dig google.com +short → 216.58.214.78
+→ 216.58.214.78 = une des adresses IP actuelles du site google.com, résolue par 8.8.8.8.
+
+Le lien entre 8.8.8.8 et 216.58.214.78
+text
+Ton Raspberry Pi → demande à 8.8.8.8 : "C'est quoi l'IP de google.com ?"
+8.8.8.8 (Google DNS) → répond : "C'est 216.58.214.78"
+Ton navigateur → se connecte directement à 216.58.214.78
+8.8.8.8 est le "traducteur" (DNS) qui donne 216.58.214.78 (IP réelle du site).
+
+
+Authoritative answers can be found from:
+
+
+fred@funigo:~ $ ping -c 3 google.com
+PING google.com (2a00:1450:4007:807::200e) 56 data bytes
+64 bytes from par10s39-in-x0e.1e100.net (2a00:1450:4007:807::200e): icmp_seq=1 ttl=111 time=9.94 ms
+64 bytes from par10s39-in-x0e.1e100.net (2a00:1450:4007:807::200e): icmp_seq=2 ttl=111 time=12.5 ms
+64 bytes from par10s39-in-x0e.1e100.net (2a00:1450:4007:807::200e): icmp_seq=3 ttl=111 time=15.2 ms

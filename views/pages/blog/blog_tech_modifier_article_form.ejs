@@ -1,0 +1,39 @@
+<%- include('../../partials/header_blog_tech') %>
+
+<div class="content content-black">
+    <h2 class="blog_h2"><%= title %></h2>
+
+    <form action="/blog/modifier/<%= article.id %>" method="POST">
+
+        <div class="blog_add_mod_titre">
+            <label for="titre">Type de l'article :</label>
+            <input type="text" id="titre" name="type" class="blog_add_mod_type_input" value="<%= article.titre %>" required>
+        </div>
+
+        <div class="blog_add_mod_titre">
+            <label for="titre">Titre de l'article :</label>
+            <input type="text" id="titre" name="titre" class="blog_add_mod_titre_input" value="<%= article.titre %>" required>
+        </div>
+
+        <div class="blog_add_mod_contenu">
+            <label for="contenu">Contenu de l'article :</label>
+            <textarea id="contenu" name="contenu" class="blog_add_mod_contenu_text" rows="10"  required><%= article.contenu %></textarea>
+        </div>
+
+        <div class="blog_add_mod_image">
+            <label for="image">Ajouter le nom du fichier image</label>
+            <input type="text" name="image" class="blog_add_mod_fichier_input" placeholder="Entrer le titre du fichier image" >
+        </div>
+
+        <div class="blog_add_mod_fichier">
+            <label for="fichier">Ajouter le nom du fichier à ouvrir</label>
+            <input type="text" name="fichier" class="blog_add_mod_fichier_input" placeholder="Ajouter le nom du fichier à ouvrir" >
+        </div>
+
+        <button type="submit" class="blog_button">Enregistrer les modifications</button>
+        <a href="/blog_tech_liste" class="blog_button">Annuler</a>
+
+    </form>
+</div>
+
+<%- include('../../partials/footer') %>

@@ -1,0 +1,210 @@
+Routes vocab_dico ( dictionnaire en ligne ) :
+------------------------
+
+###################################################################################################################################################
+
+Dans partials/header.ejs
+------------------------
+
+            <li class="dropdown">
+                <a href="javascript:void(0)">Japonais 日本語</a>
+                <div class="dropdown-content">
+                    <a href="/kanji">› Kanji 漢字</a>
+                    <a href="/vocab">› Vocabulaire 語彙</a>  <-------------------------- on appelle la route 
+                    <a href="/grammaire">› Grammaire 文法</a>
+                </div>
+            </li>
+			
+Dans server.js la route /vocab_dico
+-----------------------------------
+
+app.get('/vocab_dico', (req, res) => {
+    // Cette route sert juste à afficher le formulaire vide au début.
+    res.render('pages/vocab_dico_form', { 
+        title: 'Recherche du mot', 
+        results: null, // On met null pour dire qu'il n'y a pas encore de résultat   
+        searchTerm: '' 
+    });
+});
+
+On charge la view pages/vocab_dico_form
+
+
+Dans pages/vocab_dico_form
+--------------------------
+
+<%- include('../partials/header_vocab') %>   <----------------- on charge le menu vocabulaire
+
+Dans ../partials/header_vocab
+-----------------------------
+        <ul id="nav-submenu-links">
+            <li><a href="/">Accueil<br>ホーム</a></li>
+            <li><a href="/vocab_jplt"> Vocabulaire JPLT<br>JPLTの基本語</a></li>
+            <li><a href="/vocab_dico"> Dictionnaire en ligne<br>辞書</a></li>   <--------- pour appeler la route /vocab_dico dans server.js
+        </ul>
+		
+		
+Dans pages/vocab_dico_form
+--------------------------
+
+On charge le formulaire pour rechercher le mot à traduire 
+
+<!-- ON AJOUTE L'ID ICI, SUR LE CONTENEUR PRINCIPAL -->
+<div id="conjugaison-wrapper" class="content content-black"> 
+    
+    <h2>Rechercher un mot dans le dictionnaire en ligne</h2>
+    <form action="/vocab_dico/search" method="POST" class="search-form">  <--------- pour appeler la route /vocab_dico/search  dans server.js
+        <input type="text" name="searchTerm" value="<%= searchTerm %>" placeholder="Entrez un mot en japonais ou en français">
+        <button type="submit">Rechercher</button>
+    </form>
+
+Dans server.js la route /vocab_dico/search
+------------------------------------------
+
+La route va charger et trier les données appelées sur le site https://www.dictionnaire-japonais.com/search.php
+
+	const encodedPart = encodeURIComponent(searchTerm);
+	
+		encodeURIComponent
+		est une fonction JavaScript qui encode une chaîne de caractères pour qu'elle puisse être utilisée dans une URL.
+		Pourquoi l'utiliser ? Les URL ne peuvent pas contenir certains caractères spéciaux (comme les espaces, les accents, les symboles, etc.). 
+		Cette fonction remplace ces caractères par des séquences d'échappement compatibles avec les URL.
+		
+		Si searchTerm = "こんにちは" (bonjour en japonais), encodeURIComponent(searchTerm) retourne "%E3%81%93%E3%82%93%E3%81%AB%E3%81%A1%E3%81%AF"
+			
+    const url = `https://www.dictionnaire-japonais.com/search.php?w=${encodedPart}&t=1`;
+	
+		https://www.dictionnaire-japonais.com/search.php  C'est l'URL de base du site. 
+		?w=${encodedPart} : Le paramètre w est utilisé pour passer le terme de recherche ( searchTerm ) encodé.
+		&t=1 : Un autre paramètre ( t=1 ) est ajouté à l'URL. Cela pourrait correspondre à un type de recherche ou à une option spécifique du site.
+		
+	       
+     const response = await axios.get(url, {
+         headers: {
+             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36'
+         }
+     });
+        
+		axios.get : C'est une méthode de la bibliothèque Axios qui permet d'effectuer une requête HTTP GET vers une URL spécifiée.
+		await : Ce mot-clé est utilisé dans un contexte asynchrone (dans une fonction async ) pour attendre que la promesse retournée par axios.get
+		const response : La réponse de la requête est stockée dans la variable response. Cette réponse contient généralement des informations comme 
+		le statut de la requête, les en-têtes, et les données retournées par le serveur.
+		
+		headers: { ... } : Les en-têtes HTTP sont des informations supplémentaires envoyées avec la requête pour fournir des détails sur le client ou 
+		pour influencer la manière dont le serveur traite la requête. Dans ce cas, un seul en-tête est spécifié : 'User-Agent'.
+		
+		'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36'
+		User-Agent : Cet en-tête indique au serveur quel type de client (navigateur, application, etc.) effectue la requête. Certains serveurs peuvent bloquer 
+		les requêtes provenant de clients non reconnus ou de scripts automatisés.
+		La chaîne de caractères spécifiée ici simule un navigateur Chrome sur Windows 10. Cela peut être utile pour éviter que le serveur ne bloque la requête 
+		en pensant qu'elle provient d'un bot ou d'un script automatisé.
+		
+	Résumé : Ce code effectue une requête GET asynchrone vers une URL spécifiée en utilisant Axios. Il inclut un en-tête
+		User-Agent pour simuler une requête provenant d'un navigateur Chrome sur Windows 10, ce qui peut aider à éviter les blocages par le serveur. La réponse de 
+		la requête est ensuite stockée dans la variable response
+		
+	const $ = cheerio.load(response.data);	
+		
+		utilise la bibliothèque Cheerio pour manipuler et parcourir du contenu HTML de manière simple et efficace. Voici ce qu'il fait étape par étape :
+		
+		response.data : Cela représente les données HTML récupérées, généralement à partir d'une requête HTTP (par exemple, avec Axios ou une autre bibliothèque de requêtes). 
+		Ces données sont souvent sous forme de chaîne de caractères HTML.
+		
+		cheerio.load() : Cette fonction de Cheerio prend le contenu HTML (ici, response.data ) et le transforme en un objet Cheerio. Cet objet permet de manipuler le HTML 
+		comme vous le feriez avec jQuery dans un navigateur.
+		
+		const $ : Le résultat de cheerio.load() est assigné à la variable $. Cette variable devient une fonction qui vous permet de sélectionner des éléments HTML, d'appliquer 
+		des modifications ou d'extraire des informations. Le $ est une convention courante, inspirée par jQuery, pour représenter cette fonction.
+		
+	Résumé, ce code charge le contenu HTML de response.data dans Cheerio, vous permettant ensuite de travailler avec ce HTML de manière intuitive et puissante. 
+	Par exemple, vous pourriez écrire $('h1').text() pour extraire le texte de tous les éléments <h1> dans le HTML. 
+	
+	
+	// 1. On crée un tableau vide pour stocker nos résultats structurés
+    const scrapedResults = [];
+	
+	
+	**** dans le contenu du fichier html dans la variable $
+		<ul class='resultsList'><li><a href='https://www.dictionnaire-japonais.com/w/26354/ママ'><span class='pertinence'><span class='diode'><span class='diodeLight' style='width:25px;background:#0f56b7'>
+		</span></span></span> <span class='jap'><span class='kana'>まま</span> <span class='jp'>ママ</span> <span class='romaji'>mama</span> </span><span class='fr'>maman</span> <span class='detail'>C'est l'équiva
+		lent de "haha", de plus en plus en vogue dans les familles japonaises, et notamment chez les jeunes.</span> <div class='clear'></div></a></li>
+		<li class='certified'><a href='https://www.dictionnaire-japonais.com/w/25333/兼業主婦'><span class='pertinence'><span class='diode'><span class='diodeLight' style='width:25px;background:#0f56b7'></span></s
+		pan></span> <span class='jap'><span class='kana'>けんぎょうしゅふ</span> <span class='jp'>兼業主婦</span> <span class='romaji'>kengyoushufu</span> </span><span class='fr'>maman à temps partiel, mère qui tr
+		availle</span> <span class='detail'></span> <div class='clear'></div></a></li>
+		<li><a href='https://www.dictionnaire-japonais.com/w/43860/親馬鹿'><span class='pertinence'><span class='diode'><span class='diodeLight' style='width:25px;background:#0f56b7'></span></span></span> <span cl
+		ass='jap'><span class='kana'>おやばか</span> <span class='jp'>親馬鹿</span> <span class='romaji'>oyabaka</span> </span><span class='fr'>maman gâteau, papa gâteau</span> <span class='detail'>Peut également 
+		s'écrire 親バカ et 親ばか.</span> <div class='clear'></div></a></li>
+		<li><a href='https://www.dictionnaire-japonais.com/w/453/お母さん'><span class='pertinence'><span class='diode'><span class='diodeLight' style='width:25px;background:#0f56b7'></span></span></span> <span cl
+		ass='jap'><span class='kana'>おかあさん</span> <span class='jp'>お母さん</span> <span class='romaji'>okaasan</span> </span><span class='fr'>maman, mère</span> <span class='detail'></span> <div class='clear
+		'></div></a></li>
+
+    // 2. On boucle sur chaque élément <li> dans la liste des résultats   <----------- on extrait les données ul.resultsList li
+    $('ul.resultsList li').each((index, element) => {
+    const li = $(element); // On sélectionne l'élément <li> courant
+
+    // 3. Pour chaque <li>, on extrait le texte de chaque <span> spécifique
+    const hiragana = li.find('span.kana').text().trim();
+    const kanji = li.find('span.jp').text().trim();
+    const romaji = li.find('span.romaji').text().trim();
+    const francais = li.find('span.fr').text().trim();
+    const detail = li.find('span.detail').text().trim();
+	
+		La ligne de code extrait le texte contenu dans l'élément <span class="kana"> à l'intérieur de l'élément li, puis le nettoie en supprimant les espaces superflus. 
+		Le résultat est stocké dans la constante hiragana
+
+    // 4. On combine la traduction française et les détails
+    const fullFrancais = detail ? `${francais} (${detail})` : francais;
+	
+	// 5. On ajoute un objet bien structuré à notre tableau de résultats
+          scrapedResults.push({
+              hiragana: hiragana,
+              kanji: kanji,
+              romaji: romaji,
+              francais: fullFrancais
+          });
+		  
+		  Dans ce morceau de code, on ajoute un nouvel objet (par push) à un tableau appelé scrapedResults
+		  
+	// 6. On envoie ce TABLEAU DE DONNÉES au template pages/vocab_dico_form , et non plus le HTML brut
+        res.render('pages/vocab_dico_form', { 
+            title: `Traduction pour "${searchTerm}"`, 
+            results: scrapedResults, // C'est maintenant un array d'objets !
+            searchTerm: searchTerm 
+        });
+		
+Dans pages/vocab_dico_form
+--------------------------
+
+     On crée un tableau avec les données reçu de server.js ( variable result )
+	 
+     <% if (results && results.length > 0) { %>
+        <div class="results-container" style="margin-top: 30px;">
+            <h3>Résultats pour "<%= searchTerm %>"</h3>
+
+            <!-- === CHANGEMENT MAJEUR : On crée un tableau HTML === -->
+			<!-- en-tête du tableau --->
+			
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>Hiragana/Kana</th>
+                        <th>Kanji</th>
+                        <th>Romaji</th>
+                        <th>Français</th>
+                    </tr>
+                </thead>
+                <tbody>
+				
+				
+                    <!-- On boucle sur chaque objet 'entry' dans notre tableau 'results' -->
+					
+                    <% results.forEach(entry => { %>
+                        <tr>
+                            <td><%= entry.hiragana %></td>
+                            <td><%= entry.kanji %></td>
+                            <td><%= entry.romaji %></td>
+                            <td><%= entry.francais %></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>

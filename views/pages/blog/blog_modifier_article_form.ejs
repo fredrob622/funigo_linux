@@ -1,0 +1,27 @@
+<%- include('../../partials/header_blog') %>
+<div class="content content-black">
+    <h2 class="blog_h2"><%= title %></h2>
+
+    <form action="/blog/modifier/<%= article.id %>" method="POST">
+
+        <div class="blog_add_mod_titre">
+            <label for="titre">Titre de l'article :</label>
+            <input type="text" id="titre" name="titre" class="blog_add_mod_titre_input" value="<%= article.titre %>" required>
+        </div>
+
+        <div class="blog_add_mod_contenu">
+            <label for="contenu">Contenu de l'article :</label>
+            <textarea id="contenu" name="contenu" class="blog_add_mod_contenu_text" rows="10"  required><%= article.contenu %></textarea>
+        </div>
+
+        <div class="blog_add_mod_url">
+            <label for="url">Contenu de l'article :</label>
+            <input type="text" id="url" name="url" class="blog_add_mod_url_input" value="<%= article.url %>" required>
+        </div>
+
+        <button type="submit" class="blog_button">Enregistrer les modifications</button>
+        <a href="/blog_liste" class="blog_button">Annuler</a>
+
+    </form>
+</div>
+<%- include('../../partials/footer') %>

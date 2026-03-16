@@ -1,0 +1,40 @@
+***************************************************************************************
+* Menu Japonais 日本語
+***************************************************************************************
+               <a href="javascript:void(0)">Japonais 日本語</a>
+                <div class="dropdown-content">
+                    <a href="/kanji">› Kanji 漢字</a>
+                    <a href="/vocab">› Vocabulaire 語彙</a>
+                    <a href="/grammaire">› Grammaire 文法</a>
+                </div>
+
+
+***************************************************************************************
+* La route /vocab
+***************************************************************************************
+
+La route /vocab  => pages/vocab_form
+
+***************************************************************************************
+* Menu /vocab_form
+***************************************************************************************
+
+<div style="display: flex; flex-direction: row; flex-wrap: wrap;">
+ 
+    <a href="/vocab_adjectif" class="vocab_href">Les Adjectifs<br>形容詞 (けいようし) </a>
+    <a href="/vocab_adverbe" class="vocab_href">Les Adverbes<br>副詞 (ふくし)</a>
+    <a href="/vocab_mot_interrogatif" class="vocab_href">Les Mots Interrogatifs<br> 疑問詞 (ぎもんし)</a>
+    <a href="/vocab_onomatopee" class="vocab_href">Les Onomatopées<br>オノマトペ</a>
+
+</div>
+
+***************************************************************************************
+* Menu /vocab_adjectif
+***************************************************************************************
+<div style="display: flex; flex-direction: row; flex-wrap: wrap;">
+ 
+    <a href="/vocab_adjectif_ii" class="vocab_href">Adjectif en い<br> 形容詞<br> (けいようし) </a>
+    <a href="/vocab_adjectif_na" class="vocab_href">Adjectif en な<br> 形容動詞<br> (けいようどうし) </a>
+    <a href="/vocab_adjectif_utilisation" class="vocab_href">Adjectif utilisation<br> 形容詞の活用<br> (けいようし の かつよう) </a>
+    
+</div>

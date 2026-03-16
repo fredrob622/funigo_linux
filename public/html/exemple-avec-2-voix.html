@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dialogue avec deux voix personnalisables</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 30px; }
+    select, textarea { width: 95%; margin-bottom: 10px; }
+    textarea { height: 50px; }
+    .replica { margin-bottom: 15px; }
+    label { font-weight: bold; }
+    #dialogue-container { margin-bottom: 15px; }
+  </style>
+</head>
+<body>
+  <h2>Dialogue à deux voix avec synthèse vocale</h2>
+
+  <div>
+    <label>Choisissez la voix du premier intervenant :</label>
+    <select id="voix1"></select><br>
+    <label>Choisissez la voix du second intervenant :</label>
+    <select id="voix2"></select>
+  </div>
+  <hr />
+  <div id="dialogue-container">
+    <div class="replica">
+      <label>Réplique 1 (Voix 1) :</label>
+      <textarea id="ligne1">Bonjour, comment vas-tu aujourd'hui ?</textarea>
+    </div>
+    <div class="replica">
+      <label>Réplique 2 (Voix 2) :</label>
+      <textarea id="ligne2">Je vais bien, merci ! Et toi ?</textarea>
+    </div>
+    <div class="replica">
+      <label>Réplique 3 (Voix 1) :</label>
+      <textarea id="ligne3">Ça va très bien aussi. Prêt pour notre projet ?</textarea>
+    </div>
+    <div class="replica">
+      <label>Réplique 4 (Voix 2) :</label>
+      <textarea id="ligne4">Bien sûr, commençons !</textarea>
+    </div>
+  </div>
+  <button onclick="jouerDialogue()">Écouter le dialogue</button>
+
+  <script>
+    const selectVoix1 = document.getElementById('voix1');
+    const selectVoix2 = document.getElementById('voix2');
+    let voices = [];
+
+    function chargerVoix() {
+      voices = window.speechSynthesis.getVoices();
+      selectVoix1.innerHTML = '';
+      selectVoix2.innerHTML = '';
+      for (let i = 0; i < voices.length; i++) {
+        if (voices[i].lang.startsWith('fr')) { // ne proposer que les voix françaises
+          const option1 = document.createElement('option');
+          option1.value = i;
+          option1.text = voices[i].name + (voices[i].default ? ' (par défaut)' : '');
+          selectVoix1.appendChild(option1);
+
+          const option2 = option1.cloneNode(true);
+          selectVoix2.appendChild(option2);
+        }
+      }
+      // Sélection masculines/féminines par défaut
+      if (selectVoix1.options.length > 1) selectVoix2.selectedIndex = 1;
+    }
+    chargerVoix();
+    // Recharge si la liste change (certains navigateurs chargent lentement)
+    window.speechSynthesis.onvoiceschanged = chargerVoix;
+
+    function jouerDialogue() {
+      const textes = [
+        { texte: document.getElementById('ligne1').value, voixIdx: selectVoix1.value },
+        { texte: document.getElementById('ligne2').value, voixIdx: selectVoix2.value },
+        { texte: document.getElementById('ligne3').value, voixIdx: selectVoix1.value },
+        { texte: document.getElementById('ligne4').value, voixIdx: selectVoix2.value }
+      ];
+      // Stoppe toute lecture précédente
+      window.speechSynthesis.cancel();
+      // Fonction pour enchaîner les répliques
+      let i = 0;
+      function lireSuivante() {
+        if (i >= textes.length) return;
+        const u = new SpeechSynthesisUtterance(textes[i].texte);
+        u.voice = voices[textes[i].voixIdx];
+        u.lang = u.voice.lang;
+        u.rate = 1;
+        u.pitch = 1;
+        u.onend = lireSuivante;
+        i++;
+        window.speechSynthesis.speak(u);
+      }
+      lireSuivante();
+    }
+  </script>
+</body>
+</html>
+<!-- Utilisation
+Deux menus déroulants te permettent de choisir deux voix différentes parmi celles installées sur ton système pour le dialogue.
+
+Modifie les répliques à ta guise dans les champs.
+
+Clique sur Écouter le dialogue : les voix vont alterner pour lire le texte.
+
+Astuces
+Tu peux ajouter/retirer des répliques dans le code HTML.
+
+Les voix proposées dépendent de ton système et navigateur : pour plus de diversité, installe d’autres voix vocales françaises sur ton ordinateur.
+
+Ce système fonctionne dans la plupart des navigateurs modernes, directement, sans bibliothèque externe.
+Si tu veux gérer un dialogue plus long, ou ajouter la sélection des langues/effets, ça se modifie facilement : il suffit d’ajouter des textarea et d’ajuster le script. -->

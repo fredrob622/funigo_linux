@@ -1,0 +1,53 @@
+
+<!-- Fichier : views/pages/kanji_form.ejs -->
+
+<%- include('../../partials/header_kanji', { title: title }) %>
+
+<div class="content content-black"> 
+    
+    <div class="vocab_titre" >   
+        <h2>Rechercher un Kanji</h2>
+        <a href="/kanji" class="vocab_href">Retour</a>
+    </div>
+    
+    <form action="/kanji_dico/search" method="POST" class="search-form">
+        <input type="text" name="searchTerm" value="<%= searchTerm %>" placeholder="Entrez un kanji, lecture, sens...">
+        <button type="submit">Rechercher</button>
+    </form>
+
+    <% if (results.length > 0) { %>
+        <!-- NOUVEAU : On ajoute le conteneur autour du tableau -->
+        <div class="results-table-container">
+            <h3>Résultats pour "<%= searchTerm %>"</h3>
+            
+            <!-- NOUVEAU : On ajoute la classe "results-table" au tableau -->
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>Niveau</th>
+                        <th>Kanji</th>
+                        <th>Onyomi</th>
+                        <th>Kunyomi</th>
+                        <th>Français</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% results.forEach(result => { %>
+                        <tr>
+                            <td><%= result.niveau %></td>
+                            <td><span class="jp-char"><%= result.kanji %></span></td>
+                            <td><%= result.onyomi %></td>
+                            <td><%= result.kunyomi %></td>
+                            <td><%= result.francais %></td>
+                            
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+    <% } else if (searchTerm) { %>
+        <p>Aucun résultat trouvé pour "<%= searchTerm %>".</p>
+    <% } %>
+</div>
+
+<%- include('../../partials/footer') %>

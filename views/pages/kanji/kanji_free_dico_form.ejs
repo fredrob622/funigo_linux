@@ -1,0 +1,70 @@
+<%- include('../../partials/header_kanji') %> <!-- Assurez-vous d'avoir un header adapté -->
+
+<div class="content content-black"> 
+
+    <div class="vocab_titre" >   
+        <h2>Dictionnaire des KANJI en ligne</h2>
+        <a href="/kanji" class="vocab_href">Retour</a>
+    </div>
+    
+    
+    <form action="/kanji_free_dico/search" method="POST" class="search-form">
+        <input type="text" name="searchTerm" value="<%= searchTerm %>" placeholder="Entrez un kanji">
+        <button type="submit">Rechercher</button>
+    </form>
+
+    <!-- On vérifie si l'objet 'results' existe et contient un kanji -->
+    <% if (results && results.kanji) { %>
+        <div class="kanji-results-container">
+            
+            <div class="kanji-main-char">
+                <%= results.kanji %>
+            </div>
+
+            <div class="kanji-section">
+                <h3>Significations</h3>
+                <p><%= results.significations %></p>
+            </div>
+
+            <% if (results.traceUrl) { %>
+                <div class="kanji-section">
+                    <h3>Tracé</h3>
+                    <img src="<%= results.traceUrl %>" alt="Ordre des traits du kanji <%= results.kanji %>" class="kanji-trace-img">
+                </div>
+            <% } %>
+
+             <% if (results.approches && results.approches.length > 0) { %>
+                <div class="kanji-section">
+                    <h3>Caractères ou éléments approchés</h3>
+                    <p class="kanji-approches-list">
+                        <!-- On joint les éléments du tableau avec un espace -->
+                        <%= results.approches.join(' ') %>
+                    </p>
+                </div>
+            <% } %>
+
+            <% if (results.exemples && results.exemples.length > 0) { %>
+                <div class="kanji-section">
+                    <h3>Exemples</h3>
+                    <ul class="kanji-examples-list">
+                        <% results.exemples.forEach(exemple => { %>
+                            <li><%= exemple %></li>
+                        <% }); %>
+                    </ul>
+                </div>
+            <% } %>
+
+        </div>
+    <% } else if (searchTerm) { %>
+        <p>Aucun résultat trouvé pour "<%= searchTerm %>".</p>
+    <% } %>
+
+    <!-- Affiche un message d'erreur s'il y en a un -->
+    <% if (typeof error !== 'undefined' && error) { %>
+        <p style="color: red; margin-top: 20px;"><%= error %></p>
+    <% } %>
+</div>
+
+
+
+<%- include('../../partials/footer') %>

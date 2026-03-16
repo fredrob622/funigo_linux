@@ -1,0 +1,198 @@
+Dans httpd-vhosts.conf
+**********************
+
+    # Header de sécurité (recommandé) # Activer HSTS pour SEO
+    Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains"
+	<IfModule mod_headers.c>
+    Header set Content-Security-Policy "default-src 'self'; \
+        script-src 'self'; \
+        style-src 'self' 'unsafe-inline'; \
+        connect-src 'self' https://api.open-meteo.com https://api.exchangerate-api.com https://cdn.jsdelivr.net; \
+        img-src 'self' data:; \
+        font-src 'self' data:;"
+    Header set X-Frame-Options "SAMEORIGIN"
+		Header set X-Content-Type-Options "nosniff"
+		Header set Referrer-Policy "no-referrer-when-downgrade"
+		Header set Permissions-Policy "geolocation=(self), microphone=()"
+	</IfModule>
+
+
+    L'URL https://cdn.jsdelivr.net fait référence au CDN (Content Delivery Network) de jsDelivr, un service gratuit qui permet 
+	d’héberger et de distribuer des fichiers web (principalement JavaScript, CSS, polices, images, etc.).
+
+Dans partials/header.ejs
+************************
+
+			<li class="dropdown">
+                <a href="javascript:void(0)">Langue 語</a>
+                <div class="dropdown-content">
+                    <a href="/kanji">› Dico Kanji 漢字</a>
+                    <a href="/kanji_tracer">› Tracer Kanji  漢字を書く</a>  <=== ajout
+                    <a href="/vocab">› Dico Vocabulaire 語彙</a>
+                    <a href="/grammaire_regles.html">› Grammaire - Règles 文法</a>
+                    <a href="/grammaire_conjugaison.html">› Grammaire - Conjugaison 活用</a>
+                    <a href="/grammaire_suffixes.html">› Grammaire - Suffixes</a>
+                </div>
+			</li>
+
+
+Dans server.js
+**************
+
+	// On crée la route /kanji_tracer
+
+	app.get('/kanji_tracer', (req, res) => {
+		res.render('pages/kanji_tracer_form', { title: 'Tracer du Kanji', results: [], searchTerm: '' });
+	});
+	
+	
+Dans pages/kanji_tracer_form
+****************************
+
+	// On crée le formulaire 
+	
+	<h2>Tracer un Kanji</h2>
+    <form action="/kanji_tracer/search" method="POST" class="search-form">
+        <input type="text" name="searchTerm" value="<%= searchTerm %>" placeholder="Entrez un kanji, lecture, sens...">
+        <button type="submit">Rechercher</button>
+    </form>
+
+    // lors de la soumission on appelle la requete /kanji_tracer/search
+
+Dans server.js
+**************
+
+    // On crée la route /kanji_tracer/search
+
+	// ... à l'intérieur de app.post('/kanji_tracer/search', ...)
+
+	app.post('/kanji_tracer/search', async (req, res) => {
+		const searchTerm = req.body.searchTerm;  // On récupère la donnée à chercher 
+		try {
+			// --- MODIFICATION DE LA REQUÊTE ---
+
+			// au lieu WHERE kanji LIKE '%日%' on met  WHERE kanji LIKE ?
+			const query = `
+				SELECT kanji, onyomi, kunyomi, francais, niveau 
+				FROM kanji_char 
+				WHERE kanji LIKE ? 
+				   OR onyomi LIKE ? 
+				   OR kunyomi LIKE ? 
+				   OR francais LIKE ? 
+				   OR niveau LIKE ?`; 
+
+			// searchPattern est la donnée à rechercher dans query        
+			const searchPattern = `%${searchTerm}%`.trim();
+			// searchPattern = searchPattern.trim();
+
+			// Log pour voir la requête SQL et les paramètres
+			console.log("--- NOUVELLE RECHERCHE KANJI ---");
+			console.log("Requête SQL exécutée :", query);
+			console.log("Avec le paramètre de recherche :", searchPattern);
+
+			// --- ON AJOUTE LE PARAMÈTRE UNE FOIS DE PLUS ---
+			const [results] = await dbPool.query(query, [searchPattern, searchPattern, searchPattern, searchPattern, searchPattern]);
+
+			// Log pour voir le résultat brut de la base de données
+			console.log("Résultat brut obtenu de la DB :", results);
+			console.log("Nombre de résultats trouvés :", results.length);
+			console.log("--------------------------------------");
+			
+			res.render('pages/kanji_tracer_form', { title: 'Résultats Kanji', results: results, searchTerm: searchTerm });
+		} catch (err) { 
+			console.error("ERREUR lors de la recherche Kanji :", err);
+			res.status(500).send("Erreur serveur."); 
+		}
+	});
+	
+Dans kanji_tracer_form.ejs
+**************************
+
+		<!-- Fichier : views/pages/kanji_tracer_form.ejs (Version finale et propre) -->
+
+		<%- include('../partials/header') %>
+
+		<div class="content content-black"> 
+			
+			<h2>Tracer un Kanji</h2>
+			<form action="/kanji_tracer/search" method="POST" class="search-form">
+				<input type="text" name="searchTerm" value="<%= searchTerm %>" placeholder="Recherchez un kanji...">
+				<button type="submit">Rechercher</button>
+			</form>
+
+			<% if (results.length > 0) { %>
+				<% const kanjiToTrace = results[0].kanji; %>    <!-- résultat de la requête -->
+
+				<!-- zone pour afficher le résultat -->
+				<div class="tracer-container">
+					<h3>Résultats pour "<%= searchTerm %>" - Tracé de : <span class="jp-char"><%= kanjiToTrace %></span></h3> 
+					
+					<!-- On passe le kanji via un attribut data-char -->
+					<!--data-char="..." : C'est un attribut de données personnalisé. C'est une convention en HTML5. Tous les attributs qui commencent par data- sont valides
+					et sont prévus pour stocker des informations ou des données que l'on veut rendre accessibles à notre JavaScript, sans que cela ait un impact sur le style 
+					ou la structure de la page. On aurait pu l'appeler data-kanji, data-caractere-a-tracer, etc. 
+					
+					dans  kanji-tracer.js  const kanjiChar = targetDiv.dataset.char; 
+					
+					targetDiv est notre élément <div>.
+					.dataset est un objet spécial en JavaScript qui donne accès à tous les attributs data-* d'un élément HTML.
+					.char correspond directement à ce qui se trouve après le data-. Si l'attribut était data-mon-kanji, on l'aurait récupéré avec 
+					targetDiv.dataset.monKanji (la notation "camelCase" est utilisée). -->
+					
+					<div id="kanji-target" data-char="<%= kanjiToTrace %>" style="display: flex; justify-content: center; align-items: center; margin: 20px 0;"></div>
+
+					<!-- Les boutons de contrôle -->
+					<div class="tracer-controls" style="text-align: center;">
+						<button id="animate-btn" class="tracer-btn">Animer</button>
+						<button id="quiz-btn" class="tracer-btn">S'entraîner</button>
+					</div>
+				</div>
+
+			<% } else if (searchTerm) { %>
+				<p>Aucun résultat trouvé pour "<%= searchTerm %>".</p>
+			<% } %>
+		</div>
+
+		<!-- On charge les scripts APRES le footer pour optimiser le chargement -->
+		<%- include('../partials/footer') %>
+
+		<!-- 
+			CHARGEMENT DES SCRIPTS EXTERNES
+			On supprime le script inline et on appelle nos fichiers .js
+
+			 serveur Node.js/EJS a fait son travail. Il a généré un fichier HTML et l'a envoyé au navigateur. 
+			 À la toute fin de ce fichier HTML, juste avant la balise </body>, le navigateur trouve ces deux 
+			 lignes cruciale
+
+			 Lancement de hanzi-writer.min.js :
+
+				Le navigateur voit la première ligne : <script src="/js/hanzi-writer.min.js"></script>.
+				Il envoie une requête à votre serveur pour obtenir ce fichier.
+				
+				Une fois le fichier téléchargé, le navigateur l'exécute immédiatement.
+				
+				Conséquence : L'exécution de ce script crée un objet global nommé HanziWriter dans la "mémoire" du navigateur. 
+				Cet objet contient toutes les fonctions nécessaires pour dessiner des kanjis 
+				(comme HanziWriter.create, writer.animateCharacter, etc.). À ce stade, rien n'est encore dessiné, mais "l'outil" est maintenant disponible.
+				Lancement de kanji-tracer.js :
+				
+				Une fois le premier script terminé, le navigateur passe à la ligne suivante : <script src="/js/kanji-tracer.js"></script>.
+				Il télécharge et exécute ce deuxième fichier.
+				Conséquence : L'exécution de ce script fait une seule chose pour l'instant : 
+				il dit au navigateur "Hé, quand l'événement DOMContentLoaded se produira, exécute cette fonction que je te donne".
+				
+		-->
+		<script src="/js/hanzi-writer.min.js"></script> <!-- La bibliothèque d'abord -->
+		<script src="/js/kanji-tracer.js"></script>   <!-- Notre script personnel ensuite -->
+
+	
+Dans partials/footer.ejs
+************************
+
+		// on ajoute le script téléchargé dans le fichier partials/footer.ejs
+		
+		<script src="/js/hanzi-writer.min.js"></script>
+		
+		 <script src="/js/swiper-bundle.min.js"></script>
+		<script src="/js/hanzi-writer.min.js"></script>
+		<script src="/js/main.js"></script>	

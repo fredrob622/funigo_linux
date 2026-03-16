@@ -1,0 +1,1262 @@
+1992;N2;"聴解スクリプト： 1番 青山さんはどんな顔をしていますか。 
+男：あ、鈴木さん、さっき青山さんという人が尋ねてきました。 
+女：青山さん？ 
+男：ええと、男の人で、30歳ぐらいかな。 
+女：太っていま した？ 
+男：ええ、そうですね。丸顔でしたね。髪は短くて真ん中から分けていましたよ。 
+女：はっ、わかった。 
+
+青山さんはどんな顔をしていますか。  ";A;A;B;C;D;"Titre
+聴解スクリプト： 1番 青山さんはどんな顔をしていますか。
+Script d'écoute : Numéro 1 Quel genre de visage a Aoyama-san ?
+Homme
+あ、鈴木さん、さっき青山さんという人が尋ねてきました。
+Ah, Suzuki-san, une personne nommée Aoyama-san est passée à l'instant.
+Femme
+青山さん？
+Aoyama-san ?
+Homme
+ええと、男の人で、30歳ぐらいかな。
+Euh, c'est un homme, environ 30 ans, je pense.
+Femme
+太っていました？
+Il était gros (ou costaud) ?
+Homme
+ええ、そうですね。丸顔でしたね。髪は短くて真ん中から分けていましたよ。
+Oui, c'est ça. Il avait un visage rond. Ses cheveux étaient courts et séparés par une raie au milieu.
+Femme
+はっ、わかった。
+Ah, je vois.
+Question
+青山さんはどんな顔をしていますか。
+Quel genre de visage a Aoyama-san ?
+
+2. Analyse et Détermination de la Description
+La question est : Quel genre de visage a Aoyama-san ?
+L'homme décrit Aoyama-san en se basant sur les questions de la femme :
+Corpulence : Il était 太っている (futotte iru - gros/costaud).
+Forme du visage : Il avait un 丸顔 (marugao) $\rightarrow$ un visage rond.
+Cheveux : Il avait les cheveux courts (mijika-kute) avec une raie au milieu (mannaka kara wakete imashita).
+La description du visage lui-même est qu'il était rond. (Si on prend la description physique dans son ensemble, il est gros/costaud avec un visage rond et des cheveux courts avec une raie au milieu).
+Pour répondre à ""Quel genre de visage"", on retient 丸顔 (visage rond).
+";1992_N2_1.jpg
+1992;N2;"聴解スクリプト： 2番 女の人は子供の机を買いに行きました。どの机を買うことにしましたか。 
+男：いらっしゃいませ！ 
+女：あの、子供の机なんですけれどね。 
+男：はい。こちらにいろいろござい ますが。 
+女：そうね。絵なんかがついてる、子供っぽいのじゃなくて。
+あ、それから窓のところにおくんで、あまり背が高すぎるのもね。
+男：然様でございますか。そうしますと、こ れなんかいかがでしょうか。 
+女：でもそれだと本棚を別に買わなきゃいけないから。こっち何するわ。 
+
+女の人はどの机を買うことにしましたか。  ";B;A;B;C;D;"Titre
+聴解スクリプト： 2番 女の人は子供の机を買いに行きました。どの机を買うことにしましたか。
+Script d'écoute : Numéro 2 Une femme est allée acheter un bureau pour enfant. Quel bureau a-t-elle décidé d'acheter ?
+Homme
+いらっしゃいませ！
+Bienvenue !
+Femme
+あの、子供の机なんですけれどね。
+Euh, je cherche un bureau pour enfant.
+Homme
+はい。こちらにいろいろございますが。
+Oui. Nous en avons plusieurs modèles ici.
+Femme
+そうね。絵なんかがついてる、子供っぽいのじゃなくて。あ、それから窓のところにおくんで、あまり背が高すぎるのもね。
+Hmm. Pas ceux qui ont des dessins et qui font trop enfantins. Ah, et comme je vais le mettre près de la fenêtre, il ne faut pas qu'il soit trop haut non plus.
+Homme
+然様でございますか。そうしますと、これなんかいかがでしょうか。
+Je vois. Dans ce cas, que diriez-vous de celui-ci ?
+Femme
+でもそれだと本棚を別に買わなきゃいけないから。こっち何するわ。
+Mais si je prends celui-là, je devrai acheter l'étagère séparément. Je vais prendre celui-là [à côté].
+Question
+女の人はどの机を買うことにしましたか。
+Quel bureau la femme a-t-elle décidé d'acheter ?
+
+2. Analyse et Détermination de la Réponse
+La question est : Quel bureau la femme a-t-elle décidé d'acheter ?
+La femme exprime plusieurs critères de sélection :
+Style : Pas de modèle enfantin ou avec des dessins (子供っぽいのじゃなくて).
+Hauteur : Pas de modèle trop haut (背が高すぎるのも), car il doit être placé près de la fenêtre.
+Fonctionnalité : L'homme lui propose un modèle. Elle le refuse en disant : ""Mais je devrai acheter l'étagère séparément"" (本棚を別に買わなきゃいけない). Cela implique qu'elle recherche un bureau qui inclut déjà une étagère (bibliothèque).
+Décision finale : Elle prend le modèle à côté : こっち何するわ (Kocchi ni suru wa - Je prends celui-ci).
+Le bureau finalement choisi est celui qui remplit les conditions, et surtout, celui qui inclut une étagère (contrairement à celui proposé par le vendeur) et qui est le moins enfantin et le moins haut.
+La description du bureau acheté est donc :
+Un bureau pour enfant...
+...qui n'est pas trop enfantin/haut.
+...et qui est équipé d'une étagère/bibliothèque intégrée.
+";1992_N2_2.jpg
+1992;N2;"聴解スクリプト： 3番 ここに指輪とそれを置く台があります。1万円の指輪はどの台に置きますか。 
+女：ええと、始めにこの4万円の指輪ね。
+これを一番低い台に置いてちょうだい。
+この台は前 のほうに出すから。それから2万円と3万円のは一番高い台と次に高い台の二つにね。
+あっ、どちらに置いてもいいわ。で、後残ったその台に1万円の指輪を置いてね。 
+
+1万円の 指輪はどの台に置きますか。 ";C;A;B;C;D;"Titre
+聴解スクリプト： 3番 ここに指輪とそれを置く台があります。1万円の指輪はどの台に置きますか。
+Script d'écoute : Numéro 3 Il y a ici des bagues et des présentoirs pour les placer. Sur quel présentoir doit-on placer la bague de 10 000 yens ?
+Femme
+ええと、始めにこの4万円の指輪ね。これを一番低い台に置いてちょうだい。この台は前のほうに出すから。それから2万円と3万円のは、一番高い台と次に高い台の二つにね。あっ、どちらに置いてもいいわ。で、後残ったその台に1万円の指輪を置いてね。
+Alors, commençons par la bague de 40 000 yens. Place-la sur le présentoir le plus bas, s'il te plaît. Ce présentoir sera mis en avant. Ensuite, pour les bagues de 20 000 yens et de 30 000 yens, mets-les sur les deux : le présentoir le plus haut et le deuxième plus haut. Ah, tu peux les mettre sur l'un ou l'autre. Et enfin, place la bague de 10 000 yens sur le présentoir qui reste après ça.
+Question
+1万円の指輪はどの台に置きますか。
+Sur quel présentoir doit-on placer la bague de 10 000 yens ?
+
+2. Analyse et Détermination de la Réponse
+La question est : Sur quel présentoir doit-on placer la bague de 10 000 yens ?
+Nous devons d'abord identifier les présentoirs utilisés par les autres bagues :
+Bague de 40 000 yens : Placer sur le présentoir le plus bas (一番低い台 - ichiban hikui dai).
+Bagues de 20 000 yens et 30 000 yens : Placer sur le présentoir le plus haut (一番高い台 - ichiban takai dai) ET sur le présentoir le deuxième plus haut (次に高い台 - tsugi ni takai dai).
+Les présentoirs utilisés sont donc :
+Le plus bas
+Le plus haut
+Le deuxième plus haut
+L'instruction finale pour la bague de 10 000 yens est de la placer sur 残ったその台 (nokotta sono dai) — le présentoir qui reste après que les autres bagues aient été placées.
+Puisque les présentoirs le plus haut, le deuxième plus haut et le plus bas sont occupés, le présentoir restant est logiquement le troisième plus haut (ou le deuxième plus bas, selon comment on compte, mais c'est le seul restant parmi les présentoirs intermédiaires).
+Conclusion : La bague de 10 000 yens est placée sur le présentoir restant (le troisième plus haut/deuxième plus bas).
+";1992_N2_3.jpg
+1992;N2;"聴解スクリプト： 
+4番 男の人が車を止める場所を店の人に聞いています。車はどこに止めますか。 
+男：あの車はどこに止めればいいですか。 
+女：はい。入って、ええと、左側の手前の三つが 当店の専用駐車場になっております。 
+男：左側の手前の三つですね。 
+女：はい。で、もしそちらがいっぱいでしたら、
+真ん中の列をお使いになられてもかまいません。 
+男：わか りました。どうも。 
+
+男の人は駐車場に来ました。
+車はどこに止めますか。 ";C;A;B;C;D;"Titre
+聴解スクリプト： 4番 男の人が車を止める場所を店の人に聞いています。車はどこに止めますか。
+Script d'écoute : Numéro 4 Un homme demande à un employé où garer sa voiture. Où doit-il se garer ?
+Homme
+あの車はどこに止めればいいですか。
+Où est-ce que je peux garer ma voiture ?
+Femme (Employée)
+はい。入って、ええと、左側の手前の三つが当店の専用駐車場になっております。
+Oui. En entrant, euh, les trois places les plus proches sur le côté gauche sont le parking réservé de notre magasin.
+Homme
+左側の手前の三つですね。
+Les trois places les plus proches sur le côté gauche, d'accord.
+Femme (Employée)
+はい。で、もしそちらがいっぱいでしたら、真ん中の列をお使いになられてもかまいません。
+Oui. Et si ces places sont pleines, vous pouvez utiliser les places de la rangée du milieu.
+Homme
+わかりました。どうも。
+J'ai compris. Merci.
+Question
+男の人は駐車場に来ました。車はどこに止めますか。
+L'homme est arrivé au parking. Où va-t-il garer sa voiture ?
+
+2. Analyse et Détermination de la Réponse
+La question est : Où l'homme va-t-il garer sa voiture ?
+La femme donne deux options, une prioritaire et une alternative :
+Option Principale (Parking du magasin) : Les trois places les plus proches sur le côté gauche (左側の手前の三つ).
+Option Alternative (En cas de besoin) : S'il n'y a plus de place là (いっぱいでしたら - ippai deshitara), il peut utiliser la rangée du milieu (真ん中の列 - mannaka no retsu).
+Puisque le dialogue se termine immédiatement après que l'homme a compris les instructions, il n'y a aucune indication que l'option principale soit pleine. En l'absence d'information contraire, on présume qu'il va d'abord se garer à l'endroit qui lui est désigné comme le parking du magasin.
+L'homme va donc se garer sur une des trois places les plus proches sur le côté gauche.
+";1992_N2_4.jpg
+1992;N2;"聴解スクリプト： 5番 二人の人が公園の案内板について相談しています。二人はどの案内板を使うことにしましたか。 
+女：あの、今度公園に立てる案内板のことなんですが。 
+男：ああ、水が飲 める場所の。 
+女：ええ、いろいろ考えたんですが。 
+男：ああ、これなんか面白いね。コップなんか持っていて。 
+女：この水道のはどうでしょうか。 
+男：うん、すぐわかるかな。こちな んか手を洗うところって感じたな。
+やっぱり人が水を飲んでいるような絵がいいんじゃないか。 
+女：じゃ、これかこれですね。
+だけと課長、こっちだとジュースなんて見たいですね。 
+男：そうだな。じゃ、こっちにしよう。 
+
+二人はどの案内板を使うことにしましたか。 ";B;A;B;C;D;"Titre
+聴解スクリプト： 5番 二人の人が公園の案内板について相談しています。二人はどの案内板を使うことにしましたか。
+Script d'écoute : Numéro 5 Deux personnes discutent des panneaux d'information pour le parc. Quel panneau ont-ils décidé d'utiliser ?
+Femme
+あの、今度公園に立てる案内板のことなんですが。
+Euh, c'est au sujet des panneaux d'information que nous allons installer dans le parc.
+Homme
+ああ、水が飲める場所の。
+Ah, celui pour indiquer l'endroit où l'on peut boire de l'eau.
+Femme
+ええ、いろいろ考えたんですが。
+Oui, j'ai réfléchi à plusieurs options.
+Homme
+ああ、これなんか面白いね。コップなんか持っていて。
+Ah, celui-ci est intéressant. On dirait qu'on tient une tasse.
+Femme
+この水道のはどうでしょうか。
+Que pensez-vous de celui-ci avec le robinet ?
+Homme
+うん、すぐわかるかな。これなんか手を洗うところって感じだな。やっぱり人が水を飲んでいるような絵がいいんじゃないか。
+Hmm, est-ce que ce serait clair immédiatement ? Celui-ci ressemble plutôt à un endroit pour se laver les mains. Je pense qu'une image où une personne boit de l'eau serait meilleure.
+Femme
+じゃ、これかこれですね。だけど Chef, celui-ci ressemble à du jus ou quelque chose comme ça.
+Alors, ce serait celui-ci ou celui-là, n'est-ce pas ? Mais Chef, celui-ci (le premier) ressemble plutôt à du jus (dans la tasse).
+Homme
+そうだな。じゃ、こっちにしよう。
+C'est vrai. Alors, prenons l'autre.
+Question
+二人はどの案内板を使うことにしましたか。
+Quel panneau d'information ont-ils décidé d'utiliser ?
+
+2. Analyse et Détermination de la Réponse
+La question est : Quel panneau d'information ont-ils décidé d'utiliser ?
+Les critères de sélection sont les suivants :
+Rejet du Robinet (水道): L'homme pense que cela ressemble à un endroit pour se laver les mains (手を洗うところ).
+Préférence pour le buveur: L'homme préfère une image d'une personne qui boit de l'eau (人が水を飲んでいるような絵).
+Comparaison des options restantes: La femme présente deux options restantes (celles représentant une personne qui boit : これかこれですね). Elle signale que la première option (こっちだと) ressemble à quelqu'un qui boit du jus (ジュースなんて).
+Décision finale: L'homme est d'accord avec l'objection de la femme (そうだな - Sō da na - C'est vrai) et dit : じゃ、こっちにしよう (Ja, kocchi ni shiyō).
+Comme ils ont deux options (A et B) et qu'ils rejettent l'option A (qui ressemble à du jus), ils choisissent l'autre option (B), qui est la seconde icône montrant une personne en train de boire de l'eau.
+Conclusion : Ils choisissent la deuxième icône montrant une personne buvant, celle qui ne ressemble pas à quelqu'un buvant du jus.
+";1992_N2_5.jpg
+1992;N2;"聴解スクリプト： 6番 男の人と女の人が上のポスターを見ながら話しています。ポスターをどう変えますか。 
+女：傘の宣伝ポスターこれでどうでしょう。 
+男：うん、大体いいけど。
+後絵をもう少し大 きくしたほうがいいんじゃない。
+人物は胸から上だけにして。
+そうすれば傘がポスターの幅いっぱいになって強調できるし。 
+女：はい。 
+
+ポスターをどう変えますか。  ";C;A;B;C;D;"Titre
+聴解スクリプト： 6番 男の人と女の人が上のポスターを見ながら話しています。ポスターをどう変えますか。
+Script d'écoute : Numéro 6 Un homme et une femme discutent en regardant l'affiche ci-dessus (non visible). Comment vont-ils modifier l'affiche ?
+Femme
+傘の宣伝ポスターこれでどうでしょう。
+Que pensez-vous de cette affiche publicitaire pour des parapluies ?
+Homme
+うん、大体いいけど。後絵をもう少し大きくしたほうがいいんじゃない。
+Hum, c'est généralement bien. Mais ne serait-il pas préférable de rendre l'image un peu plus grande ?
+Homme
+人物は胸から上だけにして。そうすれば傘がポスターの幅いっぱいになって強調できるし。
+Coupez la personne à partir de la poitrine seulement. De cette façon, le parapluie couvrira toute la largeur de l'affiche et sera mis en évidence.
+Femme
+はい。
+Oui (J'ai compris).
+Question
+ポスターをどう変えますか。
+Comment vont-ils modifier l'affiche ?
+
+2. Analyse et Détermination des Modifications
+La question est : Comment vont-ils modifier l'affiche ?
+L'homme suggère deux modifications interdépendantes, dans le but d'agrandir le parapluie et de le mettre en évidence (強調できるし - kyōchō dekiru shi) :
+Agrandir l'image : 絵をもう少し大きくする (e o mō sukoshi ōkiku suru).
+Recadrer le modèle : 人物は胸から上だけにする (jinbutsu wa mune kara ue dake ni suru) $\rightarrow$ La personne (le modèle) doit être coupée/montrée seulement à partir de la poitrine vers le haut.
+L'objectif de ces changements est de faire en sorte que le parapluie remplisse toute la largeur de l'affiche (傘がポスターの幅いっぱいになって).
+Conclusion : Ils vont agrandir l'image du parapluie en recadrant le modèle au niveau de la poitrine.
+";1992_N2_6.jpg
+1992;N2;"聴解スクリプト： 7番 先生が体操のやり方を説明しています。説明している体操はどれですか。 
+男：え、まず仰向けに寝て足を伸ばしたまま、まっすぐ上に上げます。
+ちょうど上半身と足が90 度。
+直角になるようにします。
+そうしてゆっくり降ろします。
+そのときに完全に降ろしてしまわないで、
+床から10センチぐらいのところで止めるんです。
+そしてまた両足を伸ばしたま ま、上に上げます。
+
+ 先生が説明している体操はどれですか。  ";A;A;B;C;D;"Titre
+聴解スクリプト： 7番 先生が体操のやり方を説明しています。説明している体操はどれですか。
+Script d'écoute : Numéro 7 Le professeur explique comment faire un exercice. Quel est l'exercice de gymnastique qu'il décrit ?
+Homme (Professeur)
+え、まず仰向けに寝て足を伸ばしたまま、まっすぐ上に上げます。ちょうど上半身と足が90度。直角になるようにします。
+Euh, d'abord, allongez-vous sur le dos et, en gardant les jambes tendues, levez-les tout droit. Assurez-vous que le haut du corps et les jambes forment un angle de 90 degrés (un angle droit).
+Homme (Professeur)
+そうしてゆっくり降ろします。そのときに完全に降ろしてしまわないで、床から10センチぐらいのところで止めるんです。そしてまた両足を伸ばしたまま、上に上げます。
+Ensuite, descendez-les lentement. À ce moment-là, ne les laissez pas descendre complètement, arrêtez-les à environ 10 centimètres du sol. Et puis, levez à nouveau les deux jambes, toujours tendues.
+Question
+先生が説明している体操はどれですか。
+Quel est l'exercice de gymnastique que le professeur décrit ?
+
+2. Analyse et Détermination de l'Exercice
+La question est : Quel est l'exercice de gymnastique que le professeur décrit ?
+L'explication détaillée correspond à un exercice classique de renforcement des abdominaux inférieurs :
+Position de départ : Allongé sur le dos (仰向けに寝て).
+Mouvement montant : Lever les jambes tendues jusqu'à 90 degrés (まっすぐ上に上げます).
+Mouvement descendant : Descendre les jambes lentement (ゆっくり降ろします).
+Point d'arrêt critique : S'arrêter à environ 10 cm du sol, sans toucher (床から10センチぐらいのところで止めるんです).
+Répétition : Relever les jambes pour une nouvelle répétition.
+Cet exercice est le Levée de Jambes au Sol (ou Lying Leg Raise en anglais), un exercice abdominal où le maintien des jambes juste au-dessus du sol maximise l'engagement musculaire.
+Conclusion : L'exercice décrit est la Levée de jambes au sol (avec arrêt avant le contact).
+";1992_N2_7.jpg
+1992;N2;"聴解スクリプト： 8番 番号はどのようにつけますか。 
+男：ええと、じゃ、番号を机につけていってください。
+黒板に向かって右の列から始めてください。
+で、前から後ろに番号の若順に1、2、3と並 べて、後ろまでいったら、
+今度は後ろから前にいってください。じゃ、よろしく。 
+
+番号はどのようにつけますか。  ";B;A;B;C;D;"Titre
+聴解スクリプト： 8番 番号はどのようにつけますか。
+Script d'écoute : Numéro 8 Comment les numéros doivent-ils être attribués ?
+Homme
+ええと、じゃ、番号を机につけていってください。黒板に向かって右の列から始めてください。
+Euh, bien, attribuez les numéros aux bureaux. Commencez par la colonne de droite, face au tableau.
+Homme
+で、前から後ろに番号の若い順に1、2、3と並べて、後ろまでいったら、今度は後ろから前にいってください。じゃ、よろしく。
+Et, de l'avant vers l'arrière, attribuez les numéros dans l'ordre croissant (1, 2, 3, etc.). Une fois arrivé au fond, passez ensuite de l'arrière vers l'avant. Bien, faites comme ça.
+Question
+番号はどのようにつけますか。
+Comment les numéros doivent-ils être attribués ?
+
+2. Analyse et Détermination de l'Ordre
+La question est : Comment les numéros doivent-ils être attribués ?
+Les instructions décrivent un ordre d'attribution en zigzag à l'intérieur d'une colonne :
+Point de départ (Colonne) : Commencez par la colonne de droite, face au tableau (黒板に向かって右の列から).
+Premier sens (Attribution) : Commencez par le numéro 1, en allant de l'avant vers l'arrière (前から後ろに).
+Deuxième sens (Attribution, après le fond) : Une fois arrivé au fond de cette colonne, continuez à attribuer les numéros en remontant de l'arrière vers l'avant (後ろから前に).
+L'ordre des numéros dans la première colonne est donc :
+1 (devant) $\rightarrow$ 2 $\rightarrow$ 3 $\rightarrow$ ... (fin de la colonne)
+Puis, le numéro suivant (N) est attribué à la place la plus en arrière de la même colonne, en remontant vers l'avant.
+La méthode est : Attribuer les numéros en zigzag à l'intérieur de la première colonne (colonne de droite).
+";1992_N2_8.jpg
+1992;N2;"聴解スクリプト： 9番 タムさんの国のグラフはどれですか。 
+女：タムさん、あなたの国は日本にどんなものを輸出しているんですか。 
+男：はい。最近は魚やえびなどの魚貝類の輸出はずいぶん 
+増えて30％ぐらいになったそうですが、相変わらず一番多いのはバナナで、
+輸出総額の半分以上を占めているらしいです。後は木材とか、穀物っていうとこですね。 
+
+タムさんの 国のグラフはどれですか。 ";A;A;B;C;D;"Titre
+聴解スクリプト： 9番 タムさんの国のグラフはどれですか。
+Script d'écoute : Numéro 9 Quel est le graphique représentant le pays de Tam-san ?
+Femme
+タムさん、あなたの国は日本にどんなものを輸出しているんですか。
+Tam-san, qu'est-ce que votre pays exporte vers le Japon ?
+Homme (Tam-san)
+はい。最近は魚やえびなどの魚貝類の輸出はずいぶん増えて30％ぐらいになったそうですが、相変わらず一番多いのはバナナで、輸出総額の半分以上を占めているらしいです。後は木材とか、穀物っていうとこですね。
+Oui. Il paraît que l'exportation de fruits de mer tels que le poisson et les crevettes a beaucoup augmenté récemment pour atteindre environ 30 %. Cependant, la part la plus importante reste la banane, qui semble représenter plus de la moitié (la moitié ou plus) du montant total des exportations. Après, il y a le bois et les céréales.
+Question
+タムさんの国のグラフはどれですか。
+Quel est le graphique représentant le pays de Tam-san ?
+
+2. Analyse et Détermination des Caractéristiques du Graphique
+La question est de choisir le graphique qui correspond à la description des exportations du pays de Tam-san.
+Voici les données d'exportation fournies par Tam-san :
+Bananes (バナナ) : Représentent plus de la moitié (半分以上 - hanbun ijō) du total des exportations.
+Conclusion : La banane doit être le secteur le plus grand du graphique (plus de 50 %).
+Fruits de mer (魚やえびなど) : Leur exportation a augmenté pour atteindre environ 30 % (30％ぐらい).
+Autres : Bois (木材) et céréales (穀物).
+Le graphique correct doit donc montrer :
+1er secteur : Bananes, supérieur à 50 %.
+2e secteur : Fruits de mer, environ 30 %.
+Autres secteurs : Bois, céréales, etc., représentant le reste (environ 20 %).
+Le graphique correct sera celui où la catégorie ""Banane"" est majoritaire (plus de la moitié) et où la catégorie ""Fruits de mer"" est la deuxième plus grande (environ 30 %).
+";1992_N2_9.jpg
+1992;N2;"聴解スクリプト： 10番 男の人はグラフのどの部分を見てほしいと言っていますか。 
+男：ええと、このグラフはA社とB社の自動車の生産台数。
+つまりどのぐらい自動車を作ってきたかを示すグラ フなんですが。
+その中でええと、A社のほうを見てください。80年から85年にかけて、
+一度大変低くなっていますが、それから伸びて、
+B社の生産台数に近づいた年です。そこで す。
+その部分を見てほしいんですが、わかりますか。
+この時期なぜこのような変化が起きたかというのを… 
+
+男の人はグラフのどの部分を見てほしいと言っていますか。 ";D;A;B;C;D;"Titre
+聴解スクリプト： 10番 男の人はグラフのどの部分を見てほしいと言っていますか。
+Script d'écoute : Numéro 10 Quelle partie du graphique l'homme demande-t-il de regarder ?
+Homme
+ええと、このグラフはA社とB社の自動車の生産台数。つまりどのぐらい自動車を作ってきたかを示すグラフなんですが。その中でええと、A社のほうを見てください。
+Euh, ce graphique montre le nombre d'automobiles produites par la société A et la société B. C'est-à-dire la quantité de voitures qu'elles ont produites. Là-dedans, euh, regardez la partie concernant la société A.
+Homme
+80年から85年にかけて、一度大変低くなっていますが、それから伸びて、B社の生産台数に近づいた年です。そこです。その部分を見てほしいんですが、わかりますか。この時期なぜこのような変化が起きたかというのを…
+Entre l'année 80 et l'année 85, on voit que la production a chuté considérablement une fois, mais elle a ensuite augmenté, se rapprochant du nombre d'unités produites par la société B. C'est là. C'est cette partie que je voudrais que vous regardiez, vous voyez ? Pourquoi un tel changement s'est-il produit pendant cette période...
+Question
+男の人はグラフのどの部分を見てほしいと言っていますか。
+Quelle partie du graphique l'homme demande-t-il de regarder ?
+
+2. Analyse et Détermination de la Partie du Graphique
+La question est : Quelle partie du graphique l'homme demande-t-il de regarder ?
+L'homme veut attirer l'attention sur une séquence spécifique des données de la société A :
+Chute : La production est devenue très basse entre 80 et 85 (80年から85年にかけて、一度大変低くなっています).
+Reprise : Après cette chute, elle a augmenté (それから伸びて).
+Point d'intérêt : L'augmentation a été suffisamment forte pour que la production se rapproche de celle de la société B (B社の生産台数に近づいた年です).
+Il résume ensuite cette zone en disant : そこです。その部分を見てほしい (Soko desu. Sono bubun o mite hoshii) — C'est là. C'est cette partie que je veux que vous regardiez.
+Conclusion : La partie qu'il met en évidence est la période où la production de la société A est passée d'un point bas (entre 80 et 85) à une forte augmentation, se rapprochant de la production de la société B.
+";1992_N2_10.jpg
+1992;N2;"聴解スクリプト： 1番 男の人が引越しをしました。新しいアパートは何が一番問題ですか。 
+男：僕最近引っ越したんだよ。 
+女：そう。場所はどこなの。 
+男：駅から歩いて10分ぐら いのところなんだ。通勤時間は30分ぐらいかな。 
+女：そのくらいの時間ならまあまあね。アパートの周りは。 
+男：店も多いし便利だけど、けっこう高いビルがあ ってね。 
+女：じゃ、テレビの映りにくいかもね。 
+男：うん。でもそれよりも暗いんだよ。昼間でも電気つけなきゃならないんだ。 
+
+男の人のアパートは何が一番問題 ですか。 
+
+1. 日当たりが悪いことです。 
+2. 買い物に不便なことです。 
+3. 通勤時間が長いことです。 
+4. 駅まで遠いことです。 ";A;A;B;C;D;"Titre
+聴解スクリプト： 1番 男の人が引越しをしました。新しいアパートは何が一番問題ですか。
+Script d'écoute : Numéro 1 Un homme a déménagé. Quel est le plus grand problème de son nouvel appartement ?
+Homme
+僕最近引っ越したんだよ。
+J'ai déménagé récemment.
+Femme
+そう。場所はどこなの。
+Ah oui ? Où est-ce ?
+Homme
+駅か ら歩いて10分ぐらいのところなんだ。通勤時間は30分ぐらいかな。
+C'est à environ 10 minutes à pied de la gare. Le trajet pour aller au travail prend environ 30 minutes.
+Femme
+そのくらいの時間ならまあまあね。アパートの周りは。
+Ce temps de trajet est acceptable. Et les alentours de l'appartement ?
+Homme
+店も多いし便利だけど、けっこう高いビルがあってね。
+Il y a beaucoup de magasins, c'est pratique, mais il y a pas mal de grands immeubles autour.
+Femme
+じゃ、テレビの映りにくいかもね。
+Alors, la réception de la télévision doit être mauvaise.
+Homme
+うん。でもそれよりも暗いんだよ。昼間でも電気つけなきゃならないんだ。
+Oui. Mais plus que ça, il fait sombre. Même en journée, je dois allumer la lumière.
+Question
+男の人のアパートは何が一番問題ですか。
+Quel est le plus grand problème de l'appartement de l'homme ?
+
+2. Analyse et Détermination de la Réponse
+La question est de savoir quel est le plus grand problème (一番問題 - ichiban mondai) de l'appartement.
+L'homme mentionne plusieurs points :
+Distance/Trajet : 10 minutes de la gare (bon), 30 minutes de trajet (acceptable). $\rightarrow$ Ce n'est pas le problème.
+Commodités : Beaucoup de magasins, pratique (便利). $\rightarrow$ Ce n'est pas le problème.
+Problèmes potentiels : Beaucoup de grands immeubles (けっこう高いビルがある).
+La femme suggère la mauvaise réception TV.
+L'homme corrige en disant que c'est pire que ça (それよりも - sore yori mo).
+Le problème principal est : 暗いんだよ。昼間でも電気つけなきゃならないんだ。 (Kurai n da yo. Hiruma demo denki tsukenakya naranai n da.)
+Il fait sombre.
+Il doit allumer la lumière même en journée.
+Cela indique que l'appartement manque de lumière naturelle, c'est-à-dire que son ensoleillement est mauvais (日当たりが悪い - hiatari ga warui), probablement à cause des grands immeubles environnants.
+3. Choix de la Bonne Réponse
+日当たりが悪いことです。(Le mauvais ensoleillement.) $\leftarrow$ C'est la bonne réponse. (暗い et 昼間でも電気つけなきゃならない confirment ce point).
+買い物に不便なことです。(Le manque de commodités pour les courses.) $\rightarrow$ Faux (Il est pratique).
+通勤時間が長いことです。(Le temps de trajet est long.) $\rightarrow$ Faux (30 minutes est jugé acceptable).
+駅まで遠いことです。(C'est loin de la gare.) $\rightarrow$ Faux (10 minutes est jugé acceptable).
+";Pas d’image
+1992;né;"聴解スクリプト： 2番 女の人は外国にいる友達とどのように連絡を取っていますか。 
+男：君、友達外国にいるんだって、彼にはよく手紙なんか書くの。 
+女：いいえ。手紙は書き ません。電話ではよく話しますけど。 
+男：でも国際電話だと電話代がかかって大変だろう。 
+女：いえ、大丈夫です。私からは電話しないんです。いつも向こうか らかかってくるんです。 
+男：じゃ、彼のほうが大変なんだ。 
+女：ええ。でも手紙のやり取りより簡単ですから。 
+
+女の人は友達とどのように連絡を取っています か。 
+
+1. 女の人は友達によく手紙を書きます。 
+2. 女の人は友達によく電話を掛けます。 
+3. 女の人は友達からよく手紙をもらいます。 
+4. 女の人は友達からよく 電話をもらいます。";D;;;;;"Titre
+聴解スクリプト： 2番 女の人は外国にいる友達とどのように連絡を取っていますか。
+Script d'écoute : Numéro 2 Comment la femme garde-t-elle contact avec son ami à l'étranger ?
+Homme
+君、友達外国にいるんだって、彼にはよく手紙なんか書くの。
+Il paraît que ton ami est à l'étranger. Tu lui écris souvent des lettres ?
+Femme
+いいえ。手紙は書きません。電話ではよく話しますけど。
+Non. Je n'écris pas de lettres. Mais nous nous parlons souvent au téléphone.
+Homme
+でも国際電話だと電話代がかかって大変だろう。
+Mais les appels internationaux doivent coûter cher, ça doit être difficile.
+Femme
+いえ、大丈夫です。私からは電話しないんです。いつも向こうからかかってくるんです。
+Non, ça va. Ce n'est pas moi qui appelle. C'est toujours lui qui appelle depuis là-bas.
+Homme
+じゃ、彼のほうが大変なんだ。
+Alors c'est lui qui doit faire face aux difficultés.
+Femme
+ええ。でも手紙のやり取りより簡単ですから。
+Oui. Mais c'est plus simple que d'échanger des lettres.
+Question
+女の人は友達とどのように連絡を取っていますか。
+Comment la femme garde-t-elle contact avec son ami ?
+
+2. Analyse et Détermination de la Réponse
+La question est : Comment la femme garde-t-elle contact avec son ami ?
+En analysant le dialogue, nous apprenons les faits suivants concernant la communication de la femme :
+Elle n'écrit pas de lettres (手紙は書きません).
+Elle parle souvent au téléphone (電話ではよく話します).
+Elle ne prend jamais l'initiative d'appeler (私からは電話しないんです).
+C'est toujours l'ami qui l'appelle (いつも向こうからかかってくるんです).
+La méthode principale est le téléphone, et spécifiquement, la femme reçoit les appels.
+3. Choix de la Bonne Réponse
+女の人は友達によく手紙を書きます。(La femme écrit souvent des lettres à son ami.) $\rightarrow$ Faux.
+女の人は友達によく電話を掛けます。(La femme appelle souvent son ami.) $\rightarrow$ Faux.
+女の人は友達からよく手紙をもらいます。(La femme reçoit souvent des lettres de son ami.) $\rightarrow$ Faux (Ils n'échangent pas de lettres).
+女の人は友達からよく電話をもらいます。(La femme reçoit souvent des appels de son ami.) $\leftarrow$ C'est la bonne réponse. (向こうからかかってくる signifie ""recevoir un appel de là-bas"").
+";
+1992;N2;"聴解スクリプト： 3番 女の人が電気屋に電話をかけています。女の人のテレビはどこがおかしいのですか。 
+男：はい、山田電機です。
+ 女：あの、テレビの修理をお願いしたい んですが。 
+男：はいはい。それで状態は色ですか。
+ 女：いえ。音がおかしいんです。 
+男：音が出ないんですか。 
+女：出ることは出るんですが、大きくならないん です。 
+男：はい、わかりました。じゃ、すぐ伺います。 
+
+女の人のテレビはどこがおかしいのですか。 
+
+1. 何も映りません。 
+2. 音が出ません。 
+3. 音の調節ができま せん。 
+4. 色の調節ができません。  ";C;A;B;C;D;"Titre
+聴解スクリプト： 3番 女の人が電気屋に電話をかけています。女の人のテレビはどこがおかしいのですか。
+Script d'écoute : Numéro 3 Une femme appelle un magasin d'électronique. Qu'est-ce qui ne va pas avec sa télévision ?
+Homme
+はい、山田電機です。
+Oui, Electricité Yamada.
+Femme
+あの、テレビの修理をお願いしたい んですが。
+Euh, j'aimerais demander une réparation pour ma télévision.
+Homme
+はいはい。それで状態は色ですか。
+Oui, oui. Et quel est le problème, est-ce la couleur ?
+Femme
+いえ。音がおかしいんです。
+Non. C'est le son qui ne va pas.
+Homme
+音が出ないんですか。
+Le son ne sort pas ?
+Femme
+出ることは出るんですが、大きくならないんです。
+Il sort, oui, mais il ne devient pas plus fort (on ne peut pas l'augmenter).
+Homme
+はい、わかりました。じゃ、すぐ伺います。
+Bien, j'ai compris. J'arrive immédiatement.
+Question
+女の人のテレビはどこがおかしいのですか。
+Qu'est-ce qui ne va pas avec la télévision de la femme ?
+
+2. Analyse et Détermination de la Réponse
+La question est : Qu'est-ce qui ne va pas avec la télévision de la femme ?
+La femme identifie le problème comme étant lié au son (音がおかしいんです - oto ga okashii n desu).
+Le vendeur demande si le son ne sort pas (音が出ないんですか - oto ga denai n desu ka), ce à quoi la femme répond :
+出ることは出るんですが、大きくならないんです。
+(Deru koto wa deru n desu ga, ōkiku naranai n desu.)
+Le son sort, mais il ne devient pas plus fort (il ne s'augmente pas).
+Le problème est donc que le son existe, mais qu'il est impossible de le régler ou de l'augmenter, c'est-à-dire que le réglage du volume est impossible.
+3. Choix de la Bonne Réponse
+何も映りません。(Rien n'est affiché [à l'écran].) $\rightarrow$ Faux.
+音が出ません。(Le son ne sort pas.) $\rightarrow$ Faux (Le son sort, mais reste faible).
+音の調節ができません。(Le réglage du son/volume est impossible.) $\leftarrow$ C'est la bonne réponse. (大きくならない signifie que le volume ne peut pas être ajusté).
+色の調節ができません。(Le réglage de la couleur est impossible.) $\rightarrow$ Faux (Le problème de couleur a été rejeté).
+";Pas d’image
+1992;N2;"聴解スクリプト： 4番 女の人は今までどんな目的で外国に行ったのですか。
+ 男：ね、外国に行ったことある？ 
+女：うん、あるわ。二回。 
+男：何しに行ったの。 
+女：最初は学生時 代に半年英語を習いに行ったの。 
+男：へえ。で、二回目は。 
+女：二回目はね。会社に入ってから出張で十日くらい。
+でも今度は留学や仕事じゃなくて、観光で 行ってみたいわ。 
+男：観光か、いいね。 
+
+女の人は今までどんな目的で外国に行ったのですか。 
+
+1. 仕事と勉強です。 
+2. 仕事と観光です。 
+3. 観光と勉強です。 
+4. 仕事と勉強と観光です。 ";A;A;B;C;D;"Titre
+聴解スクリプト： 4番 女の人は今までどんな目的で外国に行ったのですか。
+Script d'écoute : Numéro 4 Dans quel but la femme est-elle allée à l'étranger jusqu'à présent ?
+Homme
+ね、外国に行ったことある？
+Dis, tu es déjà allée à l'étranger ?
+Femme
+うん、あるわ。二回。
+Oui, j'y suis allée. Deux fois.
+Homme
+何しに行ったの。
+Qu'est-ce que tu y as fait ?
+Femme
+最初は学生時代に半年英語を習いに行ったの。
+La première fois, quand j'étais étudiante, j'y suis allée pour six mois afin d'apprendre l'anglais (étude/apprentissage).
+Homme
+へえ。で、二回目は。
+Ah. Et la deuxième fois ?
+Femme
+二回目はね。会社に入ってから出張で十日くらい。でも今度は留学や仕事じゃなくて、観光で行ってみたいわ。
+La deuxième fois, c'était un voyage d'affaires (travail) d'une dizaine de jours après être entrée dans l'entreprise. Mais cette fois-ci (à l'avenir), j'aimerais y aller pour du tourisme, pas pour étudier ou travailler.
+Homme
+観光か、いいね。
+Le tourisme, c'est bien.
+Question
+女の人は今までどんな目的で外国に行ったのですか。
+Dans quel but la femme est-elle allée à l'étranger jusqu'à présent ?
+
+2. Analyse et Détermination de la Réponse
+La question porte sur les objectifs de voyage de la femme jusqu'à présent (今まで).
+Les deux voyages passés qu'elle mentionne sont :
+Premier voyage : Apprendre l'anglais (勉強 / Études).
+Deuxième voyage : Voyage d'affaires (仕事 / Travail).
+Elle mentionne le tourisme (観光) comme un but pour une prochaine fois (今度), pas comme un voyage qu'elle a déjà fait.
+Les buts passés sont donc le travail et les études.
+3. Choix de la Bonne Réponse
+仕事と勉強です。(Travail et études.) $\leftarrow$ C'est la bonne réponse.
+仕事と観光です。(Travail et tourisme.)
+観光と勉強です。(Tourisme et études.)
+仕事と勉強と観光です。(Travail, études et tourisme.)
+";Pas d’image
+1992;N2;"聴解スクリプト： 4番 飛行機の中で旅行客同士が話しています。男の人はこれからどうしますか。
+男：あの、これからちょっと寝ようと思うんですが。 
+女：でもあと30分で食事で すよ食事の後にしたらいかがですか。 
+男：ええ。でもあまりおなかがすいてないんですよ。
+女：食事は決まった時間にしたほうがいいですよ。 
+男：そうですね。 じゃ、食事の時間になったら、起こしていただけますか。 
+女：ええ、いいですよ。 
+
+男の人はこれからどうしますか。 
+
+1. 寝た後で食事をします。 
+2. 食事をした後で 寝ます。 
+3. 寝ないで食事をします。 
+4. 何も食べずに起きています。  ";C;A;B;C;D;"Titre
+聴解スクリプト： 4番 女の人は今までどんな目的で外国に行ったのですか。
+Script d'écoute : Numéro 4 Dans quel but la femme est-elle allée à l'étranger jusqu'à présent ?
+Homme
+ね、外国に行ったことある？
+Dis, tu es déjà allée à l'étranger ?
+Femme
+うん、あるわ。二回。
+Oui, j'y suis allée. Deux fois.
+Homme
+何しに行ったの。
+Qu'est-ce que tu y as fait ?
+Femme
+最初は学生時代に半年英語を習いに行ったの。
+La première fois, quand j'étais étudiante, j'y suis allée pour six mois afin d'apprendre l'anglais (étude/apprentissage).
+Homme
+へえ。で、二回目は。
+Ah. Et la deuxième fois ?
+Femme
+二回目はね。会社に入ってから出張で十日くらい。でも今度は留学や仕事じゃなくて、観光で行ってみたいわ。
+La deuxième fois, c'était un voyage d'affaires (travail) d'une dizaine de jours après être entrée dans l'entreprise. Mais cette fois-ci (à l'avenir), j'aimerais y aller pour du tourisme, pas pour étudier ou travailler.
+Homme
+観光か、いいね。
+Le tourisme, c'est bien.
+Question
+女の人は今までどんな目的で外国に行ったのですか。
+Dans quel but la femme est-elle allée à l'étranger jusqu'à présent ?
+
+2. Analyse et Détermination de la Réponse
+La question porte sur les objectifs de voyage de la femme jusqu'à présent (今まで).
+Les deux voyages passés qu'elle mentionne sont :
+Premier voyage : Apprendre l'anglais (勉強 / Études).
+Deuxième voyage : Voyage d'affaires (仕事 / Travail).
+Elle mentionne le tourisme (観光) comme un but pour une prochaine fois (今度), pas comme un voyage qu'elle a déjà fait.
+Les buts passés sont donc le travail et les études.
+3. Choix de la Bonne Réponse
+仕事と勉強です。(Travail et études.) $\leftarrow$ C'est la bonne réponse.
+仕事と観光です。(Travail et tourisme.)
+観光と勉強です。(Tourisme et études.)
+仕事と勉強と観光です。(Travail, études et tourisme.)
+";Pas d’image
+1992;N2;"聴解スクリプト： 5番 電話がかかってきました。女の人はどうすればいいですか。 
+女：はい、営業部でございます。 
+男：東京商事の佐藤ですが。 
+女：いつもお世話になっており ます。 
+男：田中さんお願いしたいんですが。 
+女：あの田中はただいまちょっと席をはずしておりますが。 
+男：あ、そうですか。困ったな。 
+女：お急ぎですか｡ 
+男： ええ、まあ。 
+女：では戻り次第お電話差し上げますので、念のためお電話番後を伺いますか。 
+男：いや、今出先なもので、電話があったとお伝えください。 
+女： かしこまりました。 
+
+女の人はどうすればいいですか。 
+
+1. 男の人に後で電話します。 
+2. 田中さんのいるところを男の人に教えます。 
+3. 男の人のいるところを田 中さんに教えます。 
+4. 男の人から電話があったことを田中さんに伝えます。  ";B;A;B;C;D;"Titre
+聴解スクリプト： 5番 電話がかかってきました。女の人はどうすればいいですか。
+Script d'écoute : Numéro 5 Un appel téléphonique est reçu. Que doit faire la femme ?
+Femme
+はい、営業部でございます。
+Oui, service commercial.
+Homme
+東京商事の佐藤ですが。
+C'est Satō de Tokyo Shoji.
+Femme
+いつもお世話になっております。
+Merci de votre soutien habituel.
+Homme
+田中さんお願いしたいんですが。
+J'aimerais parler à Tanaka-san.
+Femme
+あの田中はただいまちょっと席をはずしておりますが。
+Tanaka est actuellement absent de son bureau.
+Homme
+あ、そうですか。困ったな。
+Ah, je vois. Quel dommage.
+Femme
+お急ぎですか｡
+C'est urgent ?
+Homme
+ええ、まあ。
+Oui, plutôt.
+Femme
+では戻り次第お電話差し上げますので、念のためお電話番後を伺いますか。
+Dans ce cas, nous vous rappellerons dès qu'il sera de retour. Puis-je vous demander votre numéro de téléphone juste au cas où ?
+Homme
+いや、今出先なもので、電話があったとお伝えください。
+Non, je suis en déplacement en ce moment, alors dites-lui simplement que j'ai appelé.
+Femme
+かしこまりました。
+J'ai bien compris.
+Question
+女の人はどうすればいいですか。
+Que doit faire la femme ?
+
+2. Analyse et Détermination de la Tâche
+La question est : Que doit faire la femme ?
+La femme a proposé soit un rappel (l'homme donne son numéro) soit de lui laisser un message.
+L'homme rejette l'idée d'être rappelé (car il est en déplacement - 出先) et donne son instruction finale :
+電話があったとお伝えください。
+(Denwa ga atta to otsutae kudasai.)
+Veuillez lui (Tanaka-san) transmettre qu'il y a eu un appel.
+La femme accepte cette tâche en disant かしこまりました (Kashikomarimashita - J'ai bien compris).
+La tâche de la femme est donc de transmettre à Tanaka-san que Satō-san l'a appelé.
+3. Choix de la Bonne Réponse
+男の人に後で電話します。(Elle rappellera l'homme plus tard.) $\rightarrow$ Faux, l'homme a refusé.
+田中さんのいるところを男の人に教えます。(Elle indique à l'homme où se trouve Tanaka-san.) $\rightarrow$ Faux.
+男の人のいるところを田中さんに教えます。(Elle indique à Tanaka-san où se trouve l'homme.) $\rightarrow$ Faux.
+男の人から電話があったことを田中さんに伝えます。(Elle transmet à Tanaka-san qu'il y a eu un appel de l'homme.) $\leftarrow$ C'est la bonne réponse.
+";Pas d’image
+1992;N2;"聴解スクリプト：
+ 6番 男の人は女の人から聞いた話を友達に伝えました。
+ところが間違えて伝えてしまったことがあります。何を間違えましたか。 
+女：もしもし。 
+男：はい。 
+女：あ っ、田中さん。明日のパーティーね。
+会は時からなんだけど。準備があるから、三年生はその前に集まろうってことになったの。
+だから体育館に12時に来てくれ る。
+それからポットにお茶を入れて持ってくるのを忘れないでね。で、今のこと皆にも伝えといて。 
+男：はい。1時間前に体育館にお茶を持って集合ですね。わ かりました。 
+女：じゃ。 
+男：あっ、あのさ。明日のパーティーね。
+ええと、三年生は1時にね、体育館に集合なんだって。
+で、お茶も忘れないようにって。 
+
+何を間違 えて伝えましたか。 
+
+1. 集まる時間です。 
+2. 集まる場所です。 
+3. 集まる人です。 
+4. 持って行くものです。  ";B;A;B;C;D;"Titre
+聴解スクリプト： 6番 男の人は女の人から聞いた話を友達に伝えました。ところが間違えて伝えてしまったことがあります。何を間違えましたか。
+Script d'écoute : Numéro 6 Un homme a transmis à ses amis les informations qu'il a reçues d'une femme. Cependant, il a commis une erreur dans la transmission. Quelle est l'erreur commise ?
+Femme
+もしもし。
+Allô.
+Homme
+はい。
+Oui.
+Femme
+あっ、田中さん。明日のパーティーね。会は3時からなんだけど。準備があるから、三年生はその前に集まろうってことになったの。だから体育館に12時に来てくれる。それからポットにお茶を入れて持ってくるのを忘れないでね。で、今のこと皆にも伝えといて。
+Ah, Tanaka-san. C'est au sujet de la fête de demain. La fête commence à 15h00, mais comme il y a des préparatifs, il a été décidé que les troisièmes années se rassembleraient avant cela. Alors, viens au gymnase à 12h00. Et n'oublie pas d'apporter du thé dans une théière thermos. Et transmets cela à tout le monde.
+Homme (Répétition à la femme)
+はい。1時間前に体育館にお茶を持って集合ですね。わかりました。
+Oui. Se rassembler une heure avant (14h00 ? Non, il a dit 12h00 précédemment, mais 15h00-1h = 14h00. Il a mal fait la conversion ici.) au gymnase en apportant du thé, c'est ça ? J'ai compris.
+Femme
+じゃ。
+Au revoir.
+Homme (Transmission aux amis)
+あっ、あのさ。明日のパーティーね。ええと、三年生は1時にね、体育館に集合なんだって。で、お茶も忘れないようにって。
+Ah, au fait. La fête de demain. Euh, il paraît que les troisièmes années doivent se rassembler à 13h00 au gymnase. Et n'oubliez pas le thé.
+Question
+何を間違えて伝えましたか。
+Quelle information a-t-il transmise de manière incorrecte ?
+
+2. Analyse et Détermination de l'Erreur
+Nous devons comparer les instructions originales de la femme avec le message transmis par l'homme à ses amis :
+Information
+Instruction Originale (Femme)
+Message Transmis (Homme)
+Résultat
+Heure de rassemblement
+12時 (12h00)
+1時 (13h00)
+Incorrect (Erreur d'une heure)
+Lieu de rassemblement
+体育館 (Gymnase)
+体育館 (Gymnase)
+Correct
+Personnes concernées
+三年生 (Troisièmes années)
+三年生 (Troisièmes années)
+Correct
+Article à apporter
+お茶 (Thé)
+お茶 (Thé)
+Correct
+L'homme a clairement confondu 12時 (12h00), l'heure qu'il a entendue et initialement répétée, avec 1時 (13h00), l'heure qu'il a transmise à ses amis.
+L'erreur concerne l'heure de rassemblement.
+3. Choix de la Bonne Réponse
+集まる時間です。(L'heure de rassemblement.) $\leftarrow$ C'est la bonne réponse.
+集まる場所です。(Le lieu de rassemblement.)
+集まる人です。(Les personnes qui se rassemblent.)
+";Pas d’image
+1992;N2;"聴解スクリプト： 7番 男の人はどうして遅れたのですか。 
+男：すみません、遅くなって。 
+女：遅かったよね。どうしたんですか。もう9時よ。 
+男：あの、道路が込んでバスが遅れた ので。 
+女：嘘でしょう。李さんはもう来てるじゃないですか。
+同じ寮に住んでるんでしょう。どうしてあなただけ遅れたの。 
+男：あっ、あの、朝ちょっと急な用事が できたので。 
+女：本当？それも嘘じゃない。 
+男：すみまさん。実は夕べ3時ごろまで友達と話していたもので。 
+女：どうせ、そんなことだろうと思ったわ。 
+
+男の人 はどうして遅れたのですか。 
+
+1. 道路が込んでいたからです。 
+2. 急な用事があったからです。 
+3. バスが遅れたからです。 
+4. 朝寝坊をしたからです。  ";C;A;B;C;D;"Titre
+聴解スクリプト： 7番 男の人はどうして遅れたのですか。
+Script d'écoute : Numéro 7 Pourquoi l'homme était-il en retard ?
+Homme
+すみません、遅くなって。
+Excusez-moi d'être en retard.
+Femme
+遅かったよね。どうしたんですか。もう9時よ。
+Tu es en retard. Que s'est-il passé ? Il est déjà 9h00.
+Homme
+あの、道路が込んでバスが遅れたので。
+Euh, le bus était en retard à cause des embouteillages.
+Femme
+嘘でしょう。李さんはもう来てるじゃないですか。同じ寮に住んでるんでしょう。どうしてあなただけ遅れたの。
+Sans blague. Li-san est déjà là, n'est-ce pas ? Vous habitez dans le même dortoir. Pourquoi seulement toi es-tu en retard ?
+Homme
+あっ、あの、朝ちょっと急な用事ができたので。
+Ah, euh, j'ai eu une affaire urgente ce matin.
+Femme
+本当？それも嘘じゃない。
+Vraiment ? Ce n'est pas un mensonge aussi ?
+Homme
+すみまさん。実は夕べ3時ごろまで友達と話していたもので。
+Excusez-moi. En fait, j'étais en train de parler avec des amis jusqu'à environ 3 heures du matin la nuit dernière.
+Femme
+どうせ、そんなことだろうと思ったわ。
+Je m'en doutais.
+Question
+男の人はどうして遅れたのですか。
+Pourquoi l'homme était-il en retard ?
+
+2. Analyse et Détermination de la Véritable Raison
+La question demande la véritable raison du retard de l'homme.
+Excuses initiales (Rejetées) :
+Bus en retard (バスが遅れた): La femme rejette cette excuse en faisant remarquer que Li-san, qui habite au même endroit, est déjà là.
+Affaire urgente (急な用事があった): La femme doute de cette excuse.
+Véritable raison (Avouée) :
+実は夕べ3時ごろまで友達と話していたもので (Jitsu wa yūbe sanji goro made tomodachi to hanashite ita mono de.) $\rightarrow$ En fait, j'ai parlé avec des amis jusqu'à environ 3 heures du matin la nuit dernière.
+Rester éveillé jusqu'à 3 heures du matin est la cause directe du réveil tardif et donc du retard (faire la grasse matinée).
+3. Choix de la Bonne Réponse
+道路が込んでいたからです。(À cause des embouteillages.) $\rightarrow$ Faux (Excuse rejetée).
+急な用事があったからです。(À cause d'une affaire urgente.) $\rightarrow$ Faux (Excuse douteuse).
+バスが遅れたからです。(À cause du retard du bus.) $\rightarrow$ Faux (Excuse rejetée).
+朝寝坊をしたからです。(Parce qu'il a fait la grasse matinée/s'est levé tard.) $\leftarrow$ C'est la meilleure réponse. (Rester debout jusqu'à 3 heures est la cause du 寝坊 - nebou).
+";Pas d’image
+1992;N2;"聴解スクリプト： 1番 男の人と女の人が話しています。今年二人は授業にちゃんと出ていますか。 
+男：君今年は欠席が多くないか。 
+女：うん、まあね。でもあなたも去年はずい ぶん欠席したじゃない。 
+男：うん。でも今年は欠席が一回だけだよ。 
+
+今年二人は授業にちゃんと出ていますか。 
+
+1. 男の人は欠席が多いですが、女の人は少 ないです。 
+2. 男の人は欠席が少ないですが、女の人は多いです。 
+3. 男の人も女の人も欠席が多いです。 
+4. 男の人も女の人も欠席が少ないです。 ";B;B;;;;"Titre
+聴解スクリプト： 1番 男の人と女の人が話しています。今年二人は授業にちゃんと出ていますか。
+Script d'écoute : Numéro 1 Un homme et une femme parlent. Est-ce que les deux assistent correctement aux cours cette année ?
+Homme
+君今年は欠席が多くないか。
+Tu n'as pas eu beaucoup d'absences cette année ?
+Femme
+うん、まあね。でもあなたも去年はずいぶん欠席したじゃない。
+Oui, c'est vrai. Mais toi aussi, tu as eu beaucoup d'absences l'année dernière, n'est-ce pas ?
+Homme
+うん。でも今年は欠席が一回だけだよ。
+Oui. Mais cette année, je n'ai manqué qu'une seule fois.
+Question
+今年二人は授業にちゃんと出ていますか。
+Est-ce que les deux assistent correctement aux cours cette année ?
+
+2. Analyse et Détermination de la Réponse
+La question se concentre sur la situation de présence cette année (今年).
+Analysons la situation de chacun cette année :
+La femme : L'homme lui demande si elle n'a pas beaucoup d'absences (欠席が多い - kesseki ga ōi). Elle répond par l'affirmative (うん, まあね - Oui, c'est vrai).
+Conclusion pour la femme : Elle a beaucoup d'absences.
+L'homme : Il admet avoir eu beaucoup d'absences l'année dernière, mais affirme : 今年は欠席が一回だけだよ (une seule absence cette année).
+Conclusion pour l'homme : Il a peu d'absences.
+L'homme a peu d'absences, mais la femme en a beaucoup.
+3. Choix de la Bonne Réponse
+男の人は欠席が多いですが、女の人は少ないです。(L'homme a beaucoup d'absences, mais la femme en a peu.) $\rightarrow$ Faux.
+男の人は欠席が少ないですが、女の人は多いです。(L'homme a peu d'absences, mais la femme en a beaucoup.) $\leftarrow$ C'est la bonne réponse.
+男の人も女の人も欠席が多いです。(L'homme et la femme ont tous les deux beaucoup d'absences.) $\rightarrow$ Faux (L'homme en a peu).
+男の人も女の人も欠席が少ないです。(L'homme et la femme ont tous les deux peu d'absences.) $\rightarrow$ Faux (La femme en a beaucoup).
+";Pas d’image
+1992;N2;"聴解スクリプト： 2番 女の人が先輩のところに相談に行きました。女の人はこの後どうしますか。 
+女：先輩は社会学の大山という先生をご存じですか。 
+男：ああ、大山先生な ら、学部のときに講義を受けたことがあるよ。 
+女：あの大山先生に卒業論文のことで一度話を伺いたいと思ってるんですが、
+紹介していただけませんでしょう か。
+男：んー、僕は先生のクラスには出たけど、特に親しく知っていただいたというわけでもないからな。
+あっ、先生に直接お願いしてみたら、手紙で。 
+女：失 礼じゃないでしょうか。 
+男：大丈夫じゃないかな。ま、いきなり電話じゃ失礼だけどね。 
+女：はい。 
+
+女の人はこの後どうしますか。 
+
+1. 先生に手紙を書きます。 
+2. 先生に電話をします。 
+3. 先輩と一緒に先生に会いに行きます。 
+4. 先輩に先生への紹介状を書いてもらいます。 ";A;;;;;"Titre
+聴解スクリプト： 2番 女の人が先輩のところに相談に行きました。女の人はこの後どうしますか。
+Script d'écoute : Numéro 2 Une femme est allée consulter son aîné. Que va faire la femme après cela ?
+Femme
+先輩は社会学の大山という先生をご存じですか。
+Mon aîné, connaissez-vous le professeur Ōyama de sociologie ?
+Homme
+ああ、大山先生なら、学部のときに講義を受けたことがあるよ。
+Ah, le professeur Ōyama, j'ai suivi son cours pendant mes études de premier cycle.
+Femme
+あの大山先生に卒業論文のことで一度話を伺いたいと思ってるんですが、紹介していただけませんでしょうか。
+J'aimerais lui parler une fois au sujet de mon mémoire de fin d'études. Ne pourriez-vous pas me le présenter ?
+Homme
+んー、僕は先生のクラスには出たけど、特に親しく知っていただいたというわけでもないからな。あっ、先生に直接お願いしてみたら、手紙で。
+Hum, j'ai assisté aux cours du professeur, mais je n'ai pas de relation particulièrement étroite avec lui. Ah, pourquoi ne pas lui demander directement, par lettre ?
+Femme
+失礼じゃないでしょうか。
+Ne serait-ce pas impoli ?
+Homme
+大丈夫じゃないかな。ま、いきなり電話じゃ失礼だけどね。
+Je pense que ça ira. Bon, l'appeler directement par téléphone serait impoli.
+Femme
+はい。
+Oui (J'ai compris).
+Question
+女の人はこの後どうしますか。
+Que va faire la femme après cela ?
+
+2. Analyse et Détermination de la Réponse
+La question est : Que va faire la femme après cela ?
+La femme cherche à contacter le Professeur Ōyama, de préférence par l'intermédiaire de son aîné (先輩).
+L'aîné (homme) refuse de la présenter directement, car il n'est pas assez proche du professeur.
+L'aîné propose une alternative : 先生に直接お願いしてみたら、手紙で (Demandez-lui directement, par lettre).
+La femme s'inquiète que ce soit impoli, mais l'homme la rassure en disant que la lettre est acceptable (contrairement au téléphone, qui serait impoli).
+La femme conclut en disant はい (Oui/J'ai compris), indiquant qu'elle accepte le plan suggéré.
+Le plan accepté est de contacter le professeur Ōyama par lettre.
+3. Choix de la Bonne Réponse
+先生に手紙を書きます。(Elle écrira une lettre au professeur.) $\leftarrow$ C'est la bonne réponse.
+先生に電話をします。(Elle appellera le professeur.) $\rightarrow$ Faux (jugé impoli).
+先輩と一緒に先生に会いに行きます。(Elle ira voir le professeur avec son aîné.) $\rightarrow$ Faux (l'aîné a refusé de l'accompagner).
+先輩に先生への紹介状を書いてもらいます。(Elle demandera à son aîné de lui écrire une lettre de recommandation.) $\rightarrow$ Faux (l'aîné a refusé toute médiation directe).
+";Pas d’image
+1992;N2;"聴解スクリプト： 3番 女の人はどうして仕事を変えたのですか。 
+男：仕事変えたんだって。 
+女：そうなのよ。 
+男：仕事がきつかったの。休みが少なかったとか。
+女：ううん。お給 料もまあまあだったんけど、上の人があれこれうるさくて。
+
+ 女の人はどうして仕事を変えたのですか。 
+
+1. 給料が安かったからです。 
+2. 休みが少なかったから です。 
+3. 仕事が大変だったからです。 
+4. 人間関係がいやだったからです。  ";D;;;;;"Titre
+聴解スクリプト： 3番 女の人はどうして仕事を変えたのですか。
+Script d'écoute : Numéro 3 Pourquoi la femme a-t-elle changé de travail ?
+Homme
+仕事変えたんだって。
+Il paraît que tu as changé de travail.
+Femme
+そうなのよ。
+Oui, c'est ça.
+Homme
+仕事がきつかったの。休みが少なかったとか。
+Le travail était trop dur ? Ou peut-être trop peu de jours de congé ?
+Femme
+ううん。お給料もまあまあだったんけど、上の人があれこれうるさくて。
+Non. Le salaire était acceptable, mais mon supérieur était pénible (critiquait trop) pour tout et n'importe quoi.
+Question
+女の人はどうして仕事を変えたのですか。
+Pourquoi la femme a-t-elle changé de travail ?
+
+2. Analyse et Détermination de la Réponse
+La question est : Pourquoi la femme a-t-elle changé de travail ?
+La femme rejette les raisons proposées par l'homme :
+Travail dur (仕事がきつかった) : Rejeté (ううん - uun, non).
+Peu de jours de congé (休みが少なかった) : Rejeté.
+Salaire (お給料) : Acceptable (まあまあ - mā mā).
+Elle donne ensuite la véritable raison :
+上の人があれこれうるさくて。
+(Ue no hito ga are kore urusakute.)
+Mon supérieur était pénible (critiquait trop) pour tout et n'importe quoi.
+Le problème n'était ni la difficulté, ni le salaire, ni le temps libre, mais le comportement de son supérieur (上の人 - ue no hito). Ceci relève des relations humaines ou interpersonnelles au travail (人間関係 - ningen kankei).
+3. Choix de la Bonne Réponse
+給料が安かったからです。(Parce que le salaire était bas.) $\rightarrow$ Faux (Le salaire était acceptable).
+休みが少なかったからです。(Parce qu'il y avait peu de jours de congé.) $\rightarrow$ Faux (Rejeté).
+仕事が大変だったからです。(Parce que le travail était difficile.) $\rightarrow$ Faux (Rejeté).
+人間関係がいやだったからです。(Parce qu'elle n'aimait pas les relations humaines.) $\leftarrow$ C'est la meilleure réponse. (Le fait que le supérieur soit critique est un problème de relations interpersonnelles).
+";Pas d’image
+1992;N2;"聴解スクリプト： 4番 飛行機の中で旅行客同士が話しています。男の人はこれからどうしますか。 
+男：あの、これからちょっと寝ようと思うんですが。 
+女：でもあと30分で食事で すよ食事の後にしたらいかがですか。 
+男：ええ。でもあまりおなかがすいてないんですよ。 
+女：食事は決まった時間にしたほうがいいですよ。 
+男：そうですね。 じゃ、食事の時間になったら、起こしていただけますか。 
+女：ええ、いいですよ。 
+
+男の人はこれからどうしますか。 
+
+1. 寝た後で食事をします。 
+2. 食事をした後で 寝ます。 
+3. 寝ないで食事をします。 
+4. 何も食べずに起きています。 ";A;;;;;"Titre
+聴解スクリプト： 4番 飛行機の中で旅行客同士が話しています。男の人はこれからどうしますか。
+Script d'écoute : Numéro 4 Deux voyageurs discutent dans l'avion. Que va faire l'homme maintenant ?
+Homme
+あの、これからちょっと寝ようと思うんですが。
+Euh, je pensais dormir un peu maintenant.
+Femme
+でもあと30分で食事ですよ。食事の後にしたらいかがですか。
+Mais le repas est dans 30 minutes. Pourquoi n'attendriez-vous pas après le repas ?
+Homme
+ええ。でもあまりおなかがすいてないんですよ。
+Oui. Mais je n'ai pas très faim.
+Femme
+食事は決まった時間にしたほうがいいですよ。
+Il vaut mieux manger à l'heure prévue.
+Homme
+そうですね。じゃ、食事の時間になったら、起こしていただけますか。
+C'est vrai. Alors, pourriez-vous me réveiller quand ce sera l'heure du repas ?
+Femme
+ええ、いいですよ。
+Oui, bien sûr.
+Question
+男の人はこれからどうしますか。
+Que va faire l'homme maintenant ?
+
+2. Analyse et Détermination de la Réponse
+La question est : Que va faire l'homme maintenant ?
+L'homme exprime d'abord le désir de dormir immédiatement (これからちょっと寝ようと思う).
+La femme le persuade d'attendre 30 minutes pour manger d'abord.
+L'homme accepte le conseil (そうですね - C'est vrai).
+Il demande ensuite à la femme de le réveiller lorsque le repas sera servi (食事の時間になったら、起こしていただけますか).
+Puisqu'il demande à être réveillé pour le repas, cela signifie qu'il va d'abord dormir (maintenant) et manger après s'être réveillé.
+3. Choix de la Bonne Réponse
+寝た後で食事をします。(Il va dormir, puis manger.) $\leftarrow$ C'est la bonne réponse. (Il commence à dormir maintenant et demande à être réveillé pour le repas.)
+食事をした後で寝ます。(Il va manger, puis dormir.) $\rightarrow$ Faux (Il dort immédiatement).
+寝ないで食事をします。(Il va manger sans dormir.) $\rightarrow$ Faux (Il dort maintenant).
+何も食べずに起きています。(Il reste éveillé sans rien manger.) $\rightarrow$ Faux.
+";Pas d’image
+1992;N2;"聴解スクリプト： 5番 電話がかかってきました。女の人はどうすればいいですか。 
+女：はい、営業部でございます。 
+男：東京商事の佐藤ですが。 
+女：いつもお世話になっており ます。 
+男：田中さんお願いしたいんですが。 
+女：あの田中はただいまちょっと席をはずしておりますが。 
+男：あ、そうですか。困ったな。 
+女：お急ぎですか｡ 
+男： ええ、まあ。 
+女：では戻り次第お電話差し上げますので、念のためお電話番後を伺いますか。 
+男：いや、今出先なもので、電話があったとお伝えください。 
+女： かしこまりました。 
+
+女の人はどうすればいいですか。 
+
+1. 男の人に後で電話します。 
+2. 田中さんのいるところを男の人に教えます。 
+3. 男の人のいるところを田 中さんに教えます。 
+4. 男の人から電話があったことを田中さんに伝えます。  ";D;;;;;"Titre
+聴解スクリプト： 5番 電話がかかってきました。女の人はどうすればいいですか。
+Script d'écoute : Numéro 5 Un appel téléphonique est reçu. Que doit faire la femme ?
+Femme
+はい、営業部でございます。
+Oui, service commercial.
+Homme
+東京商事の佐藤ですが。
+C'est Satō de Tokyo Shoji.
+Femme
+いつもお世話になっております。
+Merci de votre soutien habituel.
+Homme
+田中さんお願いしたいんですが。
+J'aimerais parler à Tanaka-san.
+Femme
+あの田中はただいまちょっと席をはずしておりますが。
+Tanaka est actuellement absent de son bureau.
+Homme
+あ、そうですか。困ったな。
+Ah, je vois. Quel dommage.
+Femme
+お急ぎですか｡
+C'est urgent ?
+Homme
+ええ、まあ。
+Oui, plutôt.
+Femme
+では戻り次第お電話差し上げますので、念のためお電話番後を伺いますか。
+Dans ce cas, nous vous rappellerons dès qu'il sera de retour. Puis-je vous demander votre numéro de téléphone juste au cas où ?
+Homme
+いや、今出先なもので、電話があったとお伝えください。
+Non, je suis en déplacement en ce moment, alors dites-lui simplement que j'ai appelé.
+Femme
+かしこまりました。
+J'ai bien compris.
+Question
+女の人はどうすればいいですか。
+Que doit faire la femme ?
+
+2. Analyse et Détermination de la Tâche
+La question est : Que doit faire la femme ?
+La femme propose un rappel, mais l'homme, étant en déplacement (出先), décline l'offre de donner son numéro et donne l'instruction finale :
+電話があったとお伝えください。
+(Denwa ga atta to otsutae kudasai.)
+Veuillez lui (Tanaka-san) transmettre qu'il y a eu un appel.
+La femme accepte cette tâche en disant かしこまりました (Kashikomarimashita - J'ai bien compris).
+La tâche de la femme est donc de transmettre à Tanaka-san que Satō-san a appelé.
+3. Choix de la Bonne Réponse
+男の人に後で電話します。(Elle rappellera l'homme plus tard.) $\rightarrow$ Faux, l'homme a refusé ce service.
+田中さんのいるところを男の人に教えます。(Elle indique à l'homme où se trouve Tanaka-san.) $\rightarrow$ Faux.
+男の人のいるところを田中さんに教えます。(Elle indique à Tanaka-san où se trouve l'homme.) $\rightarrow$ Faux.
+男の人から電話があったことを田中さんに伝えます。(Elle transmet à Tanaka-san qu'il y a eu un appel de l'homme.) $\leftarrow$ C'est la bonne réponse.
+";Pas d’image
+1992;N2;"聴解スクリプト： 6番 男の人は女の人から聞いた話を友達に伝えました。
+ところが間違えて伝えてしまったことがあります。何を間違えましたか。
+
+ 女：もしもし。 
+男：はい。 
+女：あ っ、田中さん。明日のパーティーね。
+会は時からなんだけど。準備があるから、三年生はその前に集まろうってことになったの。
+だから体育館に12時に来てくれ る。
+それからポットにお茶を入れて持ってくるのを忘れないでね。
+で、今のこと皆にも伝えといて。 
+男：はい。1時間前に体育館にお茶を持って集合ですね。わ かりました。 
+女：じゃ。 男：あっ、あのさ。明日のパーティーね。
+ええと、三年生は1時にね、体育館に集合なんだって。
+で、お茶も忘れないようにって。 
+
+何を間違 えて伝えましたか。 
+
+1. 集まる時間です。 
+2. 集まる場所です。 
+3. 集まる人です。 
+4. 持って行くものです。 ";A;;;;;"Titre
+聴解スクリプト： 6番 男の人は女の人から聞いた話を友達に伝えました。ところが間違えて伝えてしまったことがあります。何を間違えましたか。
+Script d'écoute : Numéro 6 Un homme a transmis à ses amis les informations qu'il a reçues d'une femme. Cependant, il a commis une erreur dans la transmission. Quelle est l'erreur commise ?
+Femme
+もしもし。
+Allô.
+Homme
+はい。
+Oui.
+Femme
+あっ、田中さん。明日のパーティーね。会は3時からなんだけど。準備があるから、三年生はその前に集まろうってことになったの。だから体育館に12時に来てくれる。それからポットにお茶を入れて持ってくるのを忘れないでね。で、今のこと皆にも伝えといて。
+Ah, Tanaka-san. C'est au sujet de la fête de demain. La fête commence à 15h00. Comme il y a des préparatifs, il a été décidé que les troisièmes années se rassembleraient avant cela. Alors, viens au gymnase à 12h00. Et n'oublie pas d'apporter du thé dans une théière thermos. Et transmets cela à tout le monde.
+Homme (Répétition à la femme)
+はい。1時間前に体育館にお茶を持って集合ですね。わかりました。
+Oui. Se rassembler une heure avant (il comprend mal l'heure, mais valide la tâche) au gymnase en apportant du thé, c'est ça ? J'ai compris.
+Femme
+じゃ。
+Au revoir.
+Homme (Transmission aux amis)
+あっ、あのさ。明日のパーティーね。ええと、三年生は1時にね、体育館に集合なんだって。で、お茶も忘れないようにって。
+Ah, au fait. La fête de demain. Euh, il paraît que les troisièmes années doivent se rassembler à 13h00 au gymnase. Et n'oubliez pas le thé.
+Question
+何を間違えて伝えましたか。
+Quelle information a-t-il transmise de manière incorrecte ?
+
+2. Analyse et Détermination de l'Erreur
+Nous comparons les instructions originales de la femme avec le message transmis par l'homme :
+Information
+Instruction Originale (Femme)
+Message Transmis (Homme)
+Résultat
+Heure de rassemblement
+12時 (12h00)
+1時 (13h00)
+Incorrect (Erreur d'une heure)
+Lieu de rassemblement
+体育館 (Gymnase)
+体育館 (Gymnase)
+Correct
+Personnes concernées
+三年生 (Troisièmes années)
+三年生 (Troisièmes années)
+Correct
+Article à apporter
+お茶 (Thé)
+お茶 (Thé)
+Correct
+L'homme a clairement confondu 12時 (12h00) avec 1時 (13h00) lorsqu'il a transmis le message à ses amis.
+L'erreur concerne l'heure de rassemblement.
+3. Choix de la Bonne Réponse
+集まる時間です。(L'heure de rassemblement.) $\leftarrow$ C'est la bonne réponse.
+集まる場所です。(Le lieu de rassemblement.)
+集まる人です。(Les personnes qui se rassemblent.)
+持って行くものです。(L'article à apporter.)
+";Pas d’image
+1992;N2;"聴解スクリプト： 7番 男の人はどうして遅れたのですか。 
+男：すみません、遅くなって。 
+女：遅かったよね。どうしたんですか。もう9時よ。 
+男：あの、道路が込んでバスが遅れた ので。 
+女：嘘でしょう。李さんはもう来てるじゃないですか。
+同じ寮に住んでるんでしょう。どうしてあなただけ遅れたの。 
+男：あっ、あの、朝ちょっと急な用事が できたので。 
+女：本当？それも嘘じゃない。 
+男：すみまさん。実は夕べ3時ごろまで友達と話していたもので。 
+女：どうせ、そんなことだろうと思ったわ。 
+
+男の人 はどうして遅れたのですか。 
+
+1. 道路が込んでいたからです。 
+2. 急な用事があったからです。 
+3. バスが遅れたからです。 
+4. 朝寝坊をしたからです。 ";D;;;;;"Titre
+聴解スクリプト： 7番 男の人はどうして遅れたのですか。
+Script d'écoute : Numéro 7 Pourquoi l'homme était-il en retard ?
+Homme
+すみません、遅くなって。
+Excusez-moi d'être en retard.
+Femme
+遅かったよね。どうしたんですか。もう9時よ。
+Tu es en retard. Que s'est-il passé ? Il est déjà 9h00.
+Homme
+あの、道路が込んでバスが遅れたので。
+Euh, le bus était en retard à cause des embouteillages.
+Femme
+嘘でしょう。李さんはもう来てるじゃないですか。同じ寮に住んでるんでしょう。どうしてあなただけ遅れたの。
+Sans blague. Li-san est déjà là. Vous habitez dans le même dortoir. Pourquoi seulement toi es-tu en retard ?
+Homme
+あっ、あの、朝ちょっと急な用事ができたので。
+Ah, euh, j'ai eu une affaire urgente ce matin.
+Femme
+本当？それも嘘じゃない。
+Vraiment ? Ce n'est pas un mensonge aussi ?
+Homme
+すみまさん。実は夕べ3時ごろまで友達と話していたもので。
+Excusez-moi. En fait, j'étais en train de parler avec des amis jusqu'à environ 3 heures du matin la nuit dernière.
+Femme
+どうせ、そんなことだろうと思ったわ。
+Je m'en doutais.
+Question
+男の人はどうして遅れたのですか。
+Pourquoi l'homme était-il en retard ?
+
+2. Analyse et Détermination de la Véritable Raison
+La question demande la véritable raison du retard de l'homme.
+L'homme donne d'abord deux excuses (bus en retard, affaire urgente), qui sont toutes deux rejetées par la femme.
+Il révèle ensuite la vérité :
+実は夕べ3時ごろまで友達と話していたもので。
+(Jitsu wa yūbe sanji goro made tomodachi to hanashite ita mono de.)
+En fait, j'ai parlé avec des amis jusqu'à environ 3 heures du matin la nuit dernière.
+Rester debout jusqu'à 3 heures du matin a inévitablement conduit à se réveiller tard, ce qui est appelé 朝寝坊 (asanebō) en japonais (faire la grasse matinée/se lever tard).
+3. Choix de la Bonne Réponse
+道路が込んでいたからです。(À cause des embouteillages.) $\rightarrow$ Faux (Excuse rejetée).
+急な用事があったからです。(À cause d'une affaire urgente.) $\rightarrow$ Faux (Excuse douteuse).
+バスが遅れたからです。(À cause du retard du bus.) $\rightarrow$ Faux (Excuse rejetée).
+朝寝坊をしたからです。(Parce qu'il a fait la grasse matinée/s'est levé tard.) $\leftarrow$ C'est la cause réelle.
+";Pas d’image

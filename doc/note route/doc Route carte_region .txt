@@ -1,0 +1,187 @@
+
+
+
+Routes carte_region :
+---------------------
+
+
+###################################################################################################################################################
+
+Dans artials/header.ejs
+------------------------
+
+Charge le fichier css public/css/style.css
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funigo - <%= title %></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+On créée l'onglet qui appel /region_carte       <a href="/region_carte">› Carte de Région</a>
+
+            <li class="dropdown">
+                <a href="javascript:void(0)">France フランス</a>
+                <div class="dropdown-content">
+                    <a href="/departements">› Département</a>
+                    <a href="/regions">› Région</a>
+                    <a href="/region_carte">› Carte de Région</a>
+                    <a href="/departement_carte">› Carte de Département</a>
+                </div>
+            </li>
+###################################################################################################################################################	
+
+Dans server.js 
+--------------
+
+app.get('/region_carte', async (req, res) => {
+    try {
+        // 1. La requête SQL pour récupérer tous les noms de régions
+        // J'ajoute ORDER BY pour que la liste déroulante soit triée par ordre alphabétique
+        const query = 'SELECT reg_nom FROM reg_fr ORDER BY reg_nom ASC;';
+        
+        console.log("--- NOUVELLE PAGE CARTE DES RÉGIONS ---");
+        console.log("Exécution de la requête :", query);
+
+        // 2. On exécute la requête
+		//		Le mot-clé await est utilisé avec les fonctions asynchrones (définies avec async).
+		// 		Il "met en pause" l'exécution de la fonction jusqu'à ce que la promesse à laquelle il est appliqué soit résolue (c'est-à-dire, qu'elle se 
+		//		termine avec succès ou échoue).
+		//		Dans ce cas, il attend que l'opération de la base de données (dbPool.query(query)) soit terminée.	
+		
+		// dbPool.query(query):
+		//		dbPool fait probablement référence à un pool de connexions à une base de données. 
+		//		.query(query) est une méthode de cet objet dbPool qui exécute une requête SQL (représentée par la variable query) sur la base de données.
+		//		Cette méthode query retourne généralement une Promesse qui se résoudra avec les résultats de la requête.
+		//
+		// 		const [regions] = ... (Déstructuration de tableau)
+		//		La méthode dbPool.query(query) (surtout avec des bibliothèques comme mysql2/promise ou pg) renvoie souvent un tableau où le premier élément 
+		//		est le tableau des résultats réels (vos regions dans ce cas), et le deuxième élément contient des informations supplémentaires sur la requête 
+		//		(comme les champs de la table).
+		//		En utilisant const [regions] = ..., vous extrayez directement le premier élément de ce tableau de résultats et l'assignez à une nouvelle constante 
+		//		nommée regions. Cela rend le code plus concis et lisible.
+		
+		
+        const [regions] = await dbPool.query(query);
+
+        console.log(`${regions.length} régions trouvées.`);
+        console.log("---------------------------------------");
+
+        // 3. On rend la nouvelle page EJS en lui passant la liste des régions
+		// res.render() :
+		//		C'est une méthode fournie par Express.js (via l'objet response, d'où res).
+		//		Elle est utilisée pour rendre une vue (un fichier de template) sur le serveur et envoyer le HTML généré au client (le navigateur). 
+		//		C'est ce qu'on appelle le "rendu côté serveur" (Server-Side Rendering - SSR).
+		// 'pages/region_carte_form' :
+		// 		C'est le chemin du fichier de template EJS que vous voulez rendre.
+		//		Express va chercher ce fichier dans le répertoire que vous avez configuré comme votre dossier de vues 
+		//		(par exemple, app.set('views', path.join(__dirname, 'views'));). Si votre dossier de vues est views, 
+		//		alors Express cherchera views/pages/region_carte_form.ejs.
+		// listeRegion: regions : 
+		//		Cela signifie que la variable regions (qui contient probablement un tableau de données de régions, 
+		//		comme celle que vous obtiendriez d'une base de données via const [regions] = await dbPool.query(query);) 
+		//		sera passée au template sous le nom listeRegion. Dans votre template EJS, vous pourrez alors boucler sur 
+		//		listeRegion pour afficher chaque région (par exemple, <% listeRegion.forEach(region => { %> ... <%= region.nom %> ... <% }); %>).
+		
+        res.render('pages/region_carte_form', { 
+            title: 'Carte des Régions',
+            // La variable `listeRegion` contient maintenant un tableau d'objets [{ reg_nom: '...' }, ...]
+            listeRegion: regions 
+        });
+
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page carte des régions :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+###################################################################################################################################################	
+
+Dans region_carte_form.ejs 
+-------------------------------
+
+<!-- Fichier: views/pages/region_carte_form.ejs -->
+
+<%- include('../partials/header') %>  <!-- Fichier: partials/header.js pour insérer le menu -->
+
+<!-- On utilise content-black pour un style cohérent -->
+<div class="content content-black">
+    
+    <h2>Carte des Régions de France</h2>
+    
+    <div class="form-container" style="text-align: center; margin-bottom: 30px;">
+        <label for="region-select" style="display: block; margin-bottom: 10px; font-size: 1.0em;">Choisissez une région :</label>
+        
+        <!-- Voici notre liste déroulante -->
+        <select id="region-select" style="padding: 5px; font-size: 0.8em; border-radius: 8px; min-width: 300px;">
+            <option value="" disabled selected>-- Sélectionnez une région --</option>
+            
+            <!-- Boucle EJS pour remplir la liste avec les données de la variable listeRegion -->
+            <% listeRegion.forEach(region => { %>
+                <option value="<%= region.reg_nom %>"><%= region.reg_nom %></option>
+            <% }); %>
+        </select>
+    </div>
+
+    <!-- Ce conteneur affichera l'image. Il est caché par défaut. 
+        - On lui ajoute la classe "cartes-flex-container" pour le style. -->
+
+
+<div id="cartes-container" class="cartes-flex-container" style="display: none;">
+    
+    <!-- On ajoute la classe "carte-position" -->
+    <div class="carte-item carte-position">
+        <h4>Position en France</h4>
+        <img id="region-position-image" src="" alt="Carte de la position de la région" width="100"/>
+    </div>
+
+    <!-- On ajoute la classe "carte-departements" -->
+    <div class="carte-item carte-departements">
+        <h4>Départements de la Région</h4>
+        <img id="region-departement-image" src="" alt="Carte des départements de la région" />
+    </div>
+
+</div>
+
+
+
+<%- include('../partials/footer') %>
+
+
+##############################################################################################################
+
+Dans main.js
+-------------------------------
+
+    // Fonction:  charger l'image position pour la région dans region_carte_form.ejs
+    // --- NOUVEAU : Logique pour la page carte des régions ---
+    const regionSelect = document.getElementById('region-select');
+
+    if (regionSelect) {
+        const cartesContainer = document.getElementById('cartes-container');
+        const positionImage = document.getElementById('region-position-image');
+        const departementImage = document.getElementById('region-departement-image');
+
+        regionSelect.addEventListener('change', () => {
+            const selectedRegion = regionSelect.value;
+
+            if (selectedRegion) {
+                // Construire les deux chemins d'image
+                const positionImagePath = `/images/cartes/france/reg_position/${selectedRegion}.webp`;
+                const departementImagePath = `/images/cartes/france/reg_departement/${selectedRegion}.webp`;
+                
+                // Mettre à jour la source des deux images
+                positionImage.src = positionImagePath;
+                departementImage.src = departementImagePath;
+
+                // Afficher le conteneur principal
+                cartesContainer.style.display = 'flex'; // On utilise 'flex' pour activer le CSS Flexbox
+
+            } else {
+                // Cacher le conteneur si aucune région n'est sélectionnée
+                cartesContainer.style.display = 'none';
+            }
+        });
+    }

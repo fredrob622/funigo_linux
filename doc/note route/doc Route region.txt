@@ -1,0 +1,134 @@
+
+Routes region :
+------------------------
+
+###################################################################################################################################################
+
+Dans partials/header.ejs
+------------------------
+
+            <li class="dropdown">
+                <a href="javascript:void(0)">France フランス</a>
+                <div class="dropdown-content">
+                    <a href="/departements">› Département 県</a>
+                    <a href="/departement_carte">› Carte de Département 地方の地図</a>
+                    <a href="/regions">› Région 地域</a>
+                    <a href="/region_carte">› Carte de Région 県の地図</a>                  
+                </div>
+            </li>
+			
+###################################################################################################################################################	
+
+Dans server.js 
+--------------
+
+//*******************************************************************************************************************************//
+// NOUVEAU : Régions (avec liste déroulante et affichage des détails)
+//*******************************************************************************************************************************//
+
+app.get('/regions', async (req, res) => {
+    try {
+        // --- PARTIE 1 : On charge TOUJOURS la liste complète des régions ---
+        const queryAllRegions = 'SELECT reg_nom FROM reg_fr ORDER BY reg_nom ASC;';
+        const [allRegions] = await dbPool.query(queryAllRegions);
+        
+        // --- PARTIE 2 : On regarde si l'utilisateur a sélectionné une région ---
+        // La région sélectionnée arrivera dans l'URL, comme: /regions?selection=Bretagne
+        const selectedRegionName = req.query.selection || '';
+
+        let regionDetails = []; // On initialise un tableau vide pour les détails
+
+        // --- PARTIE 3 : Si une région est sélectionnée, on va chercher ses détails ---
+        if (selectedRegionName) {
+            console.log(`--- Recherche des détails pour la région : ${selectedRegionName} ---`);
+            const queryDetails = `
+                SELECT reg_nom, reg_cheflieu, reg_dep, reg_superficie, reg_population
+                FROM reg_fr 
+                WHERE reg_nom = ?`; // Recherche exacte avec le nom de la région
+
+            const [details] = await dbPool.query(queryDetails, [selectedRegionName]);
+            regionDetails = details; // On remplit notre tableau avec le résultat
+        }
+
+        // --- PARTIE 4 : On rend la page en lui passant TOUTES les données ---
+        res.render('pages/region_form', { 
+            title: 'Les Régions Françaises',
+            listeRegion: allRegions,      // Pour la liste déroulante
+            results: regionDetails,       // Pour le tableau de résultats (contient les détails ou est vide)
+            searchTerm: selectedRegionName // Pour savoir quelle région pré-sélectionner dans la liste
+        });
+
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page des régions :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+
+###################################################################################################################################################	
+
+Dans region_form.ejs 
+--------------------
+
+
+<%- include('../partials/header') %>
+
+<div class="content content-black">
+    
+    <h2>Informations sur les Régions Françaises</h2>
+    
+    <form action="/regions" method="GET" class="search-form" style="justify-content: center; align-items: flex-end; gap: 15px;">
+        
+        <div style="text-align: center;">
+            <label for="region-select" style="display: inline; margin-bottom: 10px; margin-right: 20px;">Choisissez une région :</label>
+            <select id="region-select" name="selection" style="padding: 5px; font-size: 1em; border-radius: 8px; min-width: 300px;margin-right: 20px;">
+                <option value="" disabled <%= !searchTerm ? 'selected' : '' %>>-- Sélectionnez --</option>
+                <% listeRegion.forEach(region => { %>
+                    <option value="<%= region.reg_nom %>" <%= (region.reg_nom === searchTerm) ? 'selected' : '' %>>
+                        <%= region.reg_nom %>
+                    </option>
+                <% }); %>
+            </select>
+            <button type="submit">Afficher</button>
+        </div>
+        
+        
+    </form>
+
+    <% if (results && results.length > 0) { %>
+        <div class="results-table-container">
+            <h3>Détails pour "<%= searchTerm %>"</h3>
+            
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>Nom Région</th>
+                        <th>Chef-lieu</th>
+                        <th>Départements</th>
+                        <th>Superficie (km²)</th>
+                        <th>Population</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% results.forEach(region => { %>
+                        <tr>
+                            <td data-label="Nom Région"><%= region.reg_nom || 'N/A' %></td>
+                            <td data-label="Chef-lieu"><%= region.reg_cheflieu || 'N/A' %></td>
+                            <td data-label="Départements" style="white-space: normal;"><%= region.reg_dep || 'N/A' %></td>
+                            <td data-label="Superficie (km²)" style="text-align: left;"><%= region.reg_superficie ? region.reg_superficie.toLocaleString('fr-FR') : 'N/A' %></td>
+                            <td data-label="Population" style="text-align: left;"><%= region.reg_population ? region.reg_population.toLocaleString('fr-FR') : 'N/A' %></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+    <% } %>
+</div>
+<style>
+
+    
+
+
+</style>
+
+<%- include('../partials/footer') %>

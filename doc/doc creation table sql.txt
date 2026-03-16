@@ -1,0 +1,310 @@
+mysql> use jap;
+Database changed
+mysql> show tables;
++---------------+
+| Tables_in_jap |
++---------------+
+| dep_fr        |
+| kanji_char    |
+| quiz          |
+| vocab_char    |
++---------------+
+
+mysql> CREATE TABLE jap.reg_fr (
+    ->     reg_index INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    ->     reg_nom VARCHAR(100) NULL,
+    ->     reg_cheflieu VARCHAR(100) NULL,
+    ->     reg_dep VARCHAR(300) NULL,
+    ->     reg_superficie INT NULL,
+    ->     reg_population INT NULL
+    -> )
+    -> ENGINE=InnoDB
+    -> DEFAULT CHARSET=utf8mb4
+    -> COLLATE=utf8mb4_ja_0900_as_cs;
+Query OK, 0 rows affected (0.04 sec)
+
+
+mysql> show tables;
++---------------+
+| Tables_in_jap |
++---------------+
+| dep_fr        |
+| kanji_char    |
+| quiz          |
+| reg_fr        |
+| vocab_char    |
++---------------+
+5 rows in set (0.00 sec)
+
+mysql> desc reg_fr;
++----------------+--------------+------+-----+---------+----------------+
+| Field          | Type         | Null | Key | Default | Extra          |
++----------------+--------------+------+-----+---------+----------------+
+| reg_index      | int          | NO   | PRI | NULL    | auto_increment |
+| reg_nom        | varchar(100) | YES  |     | NULL    |                |
+| reg_cheflieu   | varchar(100) | YES  |     | NULL    |                |
+| reg_dep        | varchar(300) | YES  |     | NULL    |                |
+| reg_superficie | int          | YES  |     | NULL    |                |
+| reg_population | int          | YES  |     | NULL    |                |
++----------------+--------------+------+-----+---------+----------------+
+6 rows in set (0.00 sec)
+
+mysql> LOAD DATA INFILE 'C:/Fichiers_Users/funigo/doc/region.csv'
+    -> INTO TABLE reg_fr
+    -> CHARACTER SET utf8mb4
+    -> FIELDS TERMINATED BY ';'
+    -> OPTIONALLY ENCLOSED BY '"'
+    -> LINES TERMINATED BY '\r\n' -- ou '\n' selon le format du fichier
+    -> IGNORE 1 LINES -- pour ignorer l’en-tête
+    -> (reg_nom, reg_cheflieu, reg_dep, @superficie, @population)
+    -> SET reg_superficie = REPLACE(@superficie, ' ', ''),
+    ->     reg_population = REPLACE(@population, ' ', '');
+ERROR 1290 (HY000): The MySQL server is running with the --secure-file-priv option so it cannot execute this statement
+mysql> SHOW VARIABLES LIKE 'secure_file_priv';
++------------------+------------------------------------------------+
+| Variable_name    | Value                                          |
++------------------+------------------------------------------------+
+| secure_file_priv | C:\ProgramData\MySQL\MySQL Server 8.0\Uploads\ |
++------------------+------------------------------------------------+
+1 row in set, 1 warning (0.00 sec)
+
+
+mysql> ALTER TABLE reg_fr MODIFY COLUMN reg_cheflieu VARCHAR(300) NULL;
+Query OK, 0 rows affected (0.02 sec)
+
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/region.csv'
+INTO TABLE reg_fr
+CHARACTER SET utf8mb4
+FIELDS TERMINATED BY ';'
+OPTIONALLY ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 LINES
+(reg_nom, reg_cheflieu, reg_dep, @superficie, @population)
+SET reg_superficie = REPLACE(@superficie, ' ', ''),
+    reg_population = REPLACE(@population, ' ', '');
+
+
+mysql>TRUNCATE TABLE reg_fr;
+
+SELECT * FROM reg_fr INTO OUTFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/reg_fr.csv'
+FIELDS TERMINATED BY ';' ENCLOSED BY '"' LINES TERMINATED BY '\r\n';
+
+SELECT * FROM dep_fr INTO OUTFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/dep_fr.csv'
+FIELDS TERMINATED BY ';' ENCLOSED BY '"' LINES TERMINATED BY '\r\n';
+
+SELECT * FROM kanji_char INTO OUTFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/kanji_char.csv'
+FIELDS TERMINATED BY ';' ENCLOSED BY '"' LINES TERMINATED BY '\r\n';
+
+SELECT * FROM vocab_char INTO OUTFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/vocab_char.csv'
+FIELDS TERMINATED BY ';' ENCLOSED BY '"' LINES TERMINATED BY '\r\n';
+
+SELECT * FROM quiz INTO OUTFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/quiz.csv'
+FIELDS TERMINATED BY ';' ENCLOSED BY '"' LINES TERMINATED BY '\r\n';
+
+C:\Users\fredr>mysqldump -u japadmin -p jap dep_fr kanji_char quiz reg_fr vocab_char > base_jap_export.sql
+Enter password: ********
+
+****************************************************************************************************************************************************
+Creation de la table gram_char
+****************************************************************************************************************************************************
+CREATE TABLE jap.gram_char (
+         gram_index INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+		 niveau VARCHAR(5) NULL,
+         titre VARCHAR(100) NULL,
+         nom VARCHAR(250) NULL,
+         description VARCHAR(400) NULL,
+         construction VARCHAR(400) NULL,
+         exemple VARCHAR(400) NULL
+     )
+     ENGINE=InnoDB
+     DEFAULT CHARSET=utf8mb4
+     COLLATE=utf8mb4_ja_0900_as_cs;
+****************************************************************************************************************************************************
+modifié les chalps d'une  gram_char
+****************************************************************************************************************************************************
+ALTER TABLE gram_char
+MODIFY COLUMN description VARCHAR(900);
+
+ALTER TABLE gram_char
+MODIFY COLUMN construction VARCHAR(900);
+
+ALTER TABLE gram_char
+MODIFY COLUMN exemple VARCHAR(900);
+
+ALTER TABLE gram_char
+MODIFY COLUMN titre TEXT;
+
+mysql> CREATE TABLE jap.gram_char (
+    ->          gram_index INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    ->          niveau VARCHAR(10),
+    ->          titre VARCHAR(10) NULL,
+    ->          nom TEXT(250) NULL,
+    ->          description TEXT NULL,
+    ->          construction TEXT NULL,
+    ->          exemple TEXT NULL
+    ->      )
+    ->      ENGINE=InnoDB
+    ->      DEFAULT CHARSET=utf8mb4
+    ->      COLLATE=utf8mb4_ja_0900_as_cs;
+
+mysql> desc gram_char;
++--------------+--------------+------+-----+---------+----------------+
+| Field        | Type         | Null | Key | Default | Extra          |
++--------------+--------------+------+-----+---------+----------------+
+| gram_index   | int          | NO   | PRI | NULL    | auto_increment |
+| niveau       | varchar(10)  | YES  |     | NULL    |                |
+| titre        | varchar(100) | YES  |     | NULL    |                |
+| nom          | text         | YES  |     | NULL    |                |
+| description  | text         | YES  |     | NULL    |                |
+| construction | text         | YES  |     | NULL    |                |
+| exemple      | text         | YES  |     | NULL    |                |
++--------------+--------------+------+-----+---------+----------------+
+7 rows in set (0.00 sec)
+
+mysql> LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/Grammaire_JLPT_N5.csv'
+    -> INTO TABLE gram_char
+    -> CHARACTER SET utf8mb4
+    -> FIELDS TERMINATED BY ','
+    -> ENCLOSED BY '"'
+    -> LINES TERMINATED BY '\r\n'
+    -> IGNORE 1 ROWS
+    -> (niveau, titre, nom, description, construction, exemple);
+Query OK, 48 rows affected (0.02 sec)
+Records: 48  Deleted: 0  Skipped: 0  Warnings: 0
+
+########### supprimer une table #################################
+
+DELETE FROM vocab_char;
+
+########### effacer les données d'une table #################################
+
+DELETE FROM vocab_char;
+
+########### compter les lignes d'une table #################################
+
+SELECT COUNT(*) AS nombre_de_lignes FROM vocab_char;
+
+########### charger des données dans une table #################################
+
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/Grammaire_JLPT_N5_Copilote_CLEAN.csv'
+INTO TABLE gram_char
+FIELDS TERMINATED BY ';'
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES
+(niveau, titre, nom, description, construction, exemple);
+
+
+########################################################################################
+########################## Table vocab_char  ###########################################
+########################################################################################
+
+desc vocab_char;
++------------+-------------+------+-----+---------+----------------+
+| Field      | Type        | Null | Key | Default | Extra          |
++------------+-------------+------+-----+---------+----------------+
+| voca_index | int         | NO   | PRI | NULL    | auto_increment |
+| niveau     | varchar(6)  | YES  |     | NULL    |                |
+| kana       | varchar(50) | YES  |     | NULL    |                |
+| kanji      | varchar(40) | YES  |     | NULL    |                |
+| francais   | text        | YES  |     | NULL    |                |
++------------+-------------+------+-----+---------+----------------+
+
+########################################################################################
+Modification de la colonne vocab_char
+########################################################################################
+
+ALTER TABLE vocab_char MODIFY COLUMN kana varchar(100);
+
+########################################################################################
+efface els données de vocab_char
+########################################################################################
+
+DELETE FROM vocab_char;
+
+########### charger des données dans une table #################################
+
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/VocabulaireN1_JLPT.csv'
+INTO TABLE vocab_char
+FIELDS TERMINATED BY ';'
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES
+(niveau, kana, kanji, francais);
+
+
+########### compter les lignes d'une table #################################
+
+SELECT COUNT(*) AS nombre_de_lignes FROM vocab_char;
+
+
+########### charger des données dans une table #################################
+
+LOAD DATA INFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/VocabulaireN1_JLPT_vide.csv'
+INTO TABLE vocab_char
+FIELDS TERMINATED BY ';'
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES
+(niveau, kana, kanji, francais);
+
+########### renuméroter la colonne index #################################
+
+SET @new_id = 0;
+UPDATE vocab_char SET voca_index = (@new_id := @new_id + 1);
+
+- Initialise une variable @new_id à 0.
+
+########### sauvegarder la table dans un fichier  #################################
+
+SHOW VARIABLES LIKE 'secure_file_priv';
++------------------+------------------------------------------------+
+| Variable_name    | Value                                          |
++------------------+------------------------------------------------+
+| secure_file_priv | C:\ProgramData\MySQL\MySQL Server 8.0\Uploads\ |
++------------------+------------------------------------------------+
+
+SELECT * 
+INTO OUTFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/vocab_char.csv'
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+FROM vocab_char;
+
+
+SELECT * 
+INTO OUTFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/kanji_char.csv'
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+FROM kanji_char;
+
+SELECT * 
+INTO OUTFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/gram_char.csv'
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+FROM gram_char;
+
+SELECT * 
+INTO OUTFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/dep_fr.csv'
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+FROM dep_fr;
+
+SELECT * 
+INTO OUTFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/reg_fr.csv'
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+FROM reg_fr;
+
+################## export de la structure ##############################################
+
+
+mysqldump -u root -pmysql_2010 --no-data jap > "C:/Fichiers_Users/funigo/doc/base-jap/structure-jap-$timestamp.sql"
+mysqldump: [Warning] Using a password on the command line interface can be insecure.
+PS C:\Users\fredr> mysqldump -u root -p --no-data jap > "C:/Fichiers_Users/funigo/doc/base-jap/structure-jap-$timestamp.sql"
+Enter password: **********
+

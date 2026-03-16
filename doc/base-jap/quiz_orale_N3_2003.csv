@@ -1,0 +1,499 @@
+2003;N3;"聴解スクリプト： １ばん （男の人と女の人が話しています） 部屋はどうなりましたか？ 
+男：ドアを閉めましょうか？ 
+女：いいえ、開けていてください。でも、電気は消してい きましょう
+ 男：はい、分かりました。 
+
+部屋はどうなりましたか？ ";C;A;B;C;D;"
+聴解スクリプト： １ばん （男の人と女の人が話しています） 部屋はどうなりましたか？
+Script d'écoute : Question 1 : (Un homme et une femme parlent) Comment est devenue la pièce ?
+男：ドアを閉めましょうか？
+(Homme) : Devrais-je fermer la porte ?
+Homme
+女：いいえ、開けていてください。
+(Femme) : Non, laissez-la ouverte.
+Femme
+でも、電気は消していきましょう
+(Femme) : Mais, éteignons la lumière.
+Femme
+男：はい、分かりました。
+(Homme) : Oui, j'ai compris.
+Homme
+部屋はどうなりましたか？
+Comment est devenue la pièce ?
+
+Justification de la Réponse
+L'état final de la pièce est déterminé par les instructions acceptées par l'homme :
+La porte (ドア) : L'homme propose de la fermer, mais la femme répond いいえ、開けていてください (Non, laissez-la ouverte).
+La lumière (電気) : La femme dit 電気は消していきましょう (éteignons la lumière).
+L'homme accepte les instructions.
+Réponse : La porte est restée ouverte et la lumière a été éteinte.
+
+";2003_N3_1.jpg
+2003;N3;"聴解スクリプト： ２ばん （男の人と女の人が話しています） 女の人は始めにいくら出しましたか？ 
+男：はい、お客さん。全部で１６００円です 
+女：はい 
+男：あれ、５０円足り ませんよ。 
+女：あら
+
+ー 女の人は始めにいくら出しましたか？ ";D;A;B;C;D;"
+聴解スクリプト： ２ばん （男の人と女の人が話しています） 女の人は始めにいくら出しましたか？
+Script d'écoute : Question 2 : (Un homme et une femme parlent) Combien la femme a-t-elle payé au début ?
+男：はい、お客さん。全部で１６００円です
+(Homme/Vendeur) : Oui, Madame. Le total est de 1600 yens.
+Homme
+女：はい
+(Femme/Cliente) : Oui (Implique qu'elle paie).
+Femme
+男：あれ、５０円足りませんよ。
+(Homme/Vendeur) : Oh, il manque 50 yens.
+Homme
+女：あら
+(Femme/Cliente) : Oh là là !
+Femme
+女の人は始めにいくら出しましたか？
+Combien la femme a-t-elle payé au début ?
+
+Explication (Calcul du Montant Initial)
+La question est de trouver le montant que la femme a donné au vendeur avant que celui-ci ne signale le manque d'argent.
+Prix Total : 1600 yens.
+Montant Manquant : 50 yens.
+Pour trouver le montant initialement payé, vous devez soustraire le montant manquant du prix total :
+$$1600 \text{ yens} - 50 \text{ yens} = \mathbf{1550 \text{ yens}}$$
+Réponse : La femme a payé 1550 yens au début.
+
+";2003_N3_2.jpg
+2003;N3;"聴解スクリプト： ３ばん （男の人と女の人が話しています） 二人は何時に会いますか？ 
+男：今晩のパーティー 八時半からだね 
+女：うん。でも 始まる前に十五分か二 十分ぐらいお茶飲むか行かない？ 
+男：そうだね。じゃー、パーティーが始まる三十分前に会うか？ 
+女：いいわね、そうしましょう。 
+
+二人は何時に会います か？ ";A;A;B;C;D;"聴解スクリプト： ３ばん （男の人と女の人が話しています） 二人は何時に会いますか？
+Script d'écoute : Question 3 : (Un homme et une femme parlent) À quelle heure vont-ils se rencontrer ?
+男：今晩のパーティー 八時半からだね
+(Homme) : La fête de ce soir commence à 20h30 (huit heures et demie), n'est-ce pas ?
+Homme
+女：うん。でも 始まる前に十五分か二十分ぐらいお茶飲むか行かない？
+(Femme) : Oui. Mais avant que ça commence, on ne pourrait pas aller boire un thé pendant quinze ou vingt minutes ?
+Femme
+男：そうだね。じゃー、パーティーが始まる 三十分前 に会うか？
+(Homme) : D'accord. Alors, et si on se rencontrait trente minutes avant que la fête ne commence ?
+Homme
+女： いいわね、そうしましょう。
+(Femme) : C'est une bonne idée, faisons cela.
+Femme
+二人は何時に会いますか？
+À quelle heure vont-ils se rencontrer ?
+
+Explication (Calcul de l'Heure)
+Pour trouver l'heure de leur rencontre, vous devez utiliser l'heure de début de la fête et le temps convenu avant cet événement :
+Heure de début de la fête : 8h30 du soir (20h30).
+Moment de la rencontre convenu : L'homme propose 三十分前 (30 minutes avant), et la femme accepte.
+Calcul : L'heure de début (20h30) moins 30 minutes.
+$$20 \text{h} 30 - 30 \text{ minutes} = \mathbf{20 \text{h} 00}$$
+Réponse : Ils vont se rencontrer à 20h00 (huit heures du soir).
+
+";2003_N3_3.jpg
+2003;N3;"聴解スクリプト： ４ばん （女の人が話しています） いなくなった猫はどの猫ですか？ 
+女うちの猫はいなくなりました。体が白くて、毛も長いの子で、後ろの足だけ黒い猫で す。 
+猫を見た人は教えてください お願いします。 
+
+いなくなった猫はどの猫ですか？  ";A;A;B;C;D;"
+聴解スクリプト： ４ばん （女の人が話しています） いなくなった猫はどの猫ですか？
+Script d'écoute : Question 4 : (Une femme parle) Quel est le chat qui a disparu ?
+女うちの猫はいなくなりました。
+(Femme) : Notre chat a disparu.
+Femme
+体が白くて、毛も長いの子で、
+(Femme) : Son corps est blanc, c'est un chat à poils longs...
+Femme
+後ろの足だけ黒い猫です。
+(Femme) : ... et ses pattes arrière seulement sont noires.
+Femme
+猫を見た人は教えてください お願いします。
+(Femme) : Si quelqu'un a vu le chat, veuillez nous en informer, s'il vous plaît.
+Femme
+いなくなった猫はどの猫ですか？
+Quel est le chat qui a disparu ?
+
+Justification de la Réponse
+La description du chat est très précise et combine trois éléments :
+Couleur du corps : Blanc (体が白くて).
+Longueur du poil : Long (毛も長い).
+Marques distinctives : Seules les pattes arrière sont noires (後ろの足だけ黒い).
+Réponse : Le chat perdu est un chat à poils longs, de couleur blanche, avec des taches noires uniquement sur ses pattes arrière.
+
+";2003_N3_4.jpg
+2003;N3;"聴解スクリプト： ５ばん （男の人と女の人が写真を見ながら話しています） この男の人の一番上の娘はどの人ですか？
+一番上の娘です。 
+男：これ この前家族皆で撮 った写真。 
+女：えー、奥さんいつも若いですね、うえの嬢さんたち二人はお母さんより大きいけど 高校生ですか？ 
+男：いいえ、まだ中学生。上は三年生 で、下は一年生。この大きい方が妹なんですよ。
+もうすぐ僕より高くなりそうでしょう。 
+女：本当。 
+
+この男の人の一番上の娘はどの人ですか？ ";B;A;B;C;D;"
+聴解スクリプト： ５ばん （男の人と女の人が写真を見ながら話しています） この男の人の一番上の娘はどの人ですか？
+Script d'écoute : Question 5 : (Un homme et une femme regardent une photo) Qui est la fille aînée de cet homme ?
+男：これ この前家族皆で撮った写真。
+(Homme) : Tiens, c'est une photo que nous avons prise de toute la famille l'autre jour.
+Homme
+女：えー、奥さんいつも若いですね、うえの嬢さんたち二人はお母さんより大きいけど 高校生ですか？
+(Femme) : Oh, votre femme est toujours aussi jeune. Les deux filles aînées sont plus grandes que leur mère, sont-elles lycéennes ?
+Femme
+男：いいえ、まだ中学生。 上は三年生で、下は一年生。
+(Homme) : Non, elles sont encore au collège. L'aînée est en troisième année, et la cadette est en première année.
+Homme
+男：この 大きい方 が 妹 なんですよ。もうすぐ僕より高くなりそうでしょう。
+(Homme) : La plus grande (en taille) est en fait la cadette. Elle sera bientôt plus grande que moi, n'est-ce pas ?
+Homme
+女：本当。
+(Femme) : Vraiment.
+Femme
+この男の人の一番上の娘はどの人ですか？
+Qui est la fille aînée de cet homme ?
+
+
+Explication (Démonstration du Choix)
+La question est un piège sur la relation entre l'âge et la taille.
+Identification de la fille aînée : L'homme précise que les deux filles sont au collège : 上は三年生 (L'aînée est en troisième année) et 下は一年生 (La cadette est en première année). La fille aînée est donc la troisième année.
+Identification de la taille : L'homme donne une information clé sur la taille : この大きい方が妹なんですよ (La plus grande des deux est la cadette).
+Conclusion : Si la cadette est la plus grande (en taille), cela signifie que la fille aînée (la troisième année) est la plus petite (en taille) des deux filles plus grandes que la mère.
+Réponse : La fille aînée est la plus petite des deux filles qui sont plus grandes que leur mère (celle qui est en troisième année de collège).
+";2003_N3_5.jpg
+2003;N3;"聴解スクリプト： ６ばん （男の人と女の人が話しています） 男の人がするスポーツはどれですか？ 
+女：高橋さんはどのスポーツをするんですか？ 
+男：なんだと思います か？ 
+女：サッカーとか 野球とか？ 
+男：いいえ、大勢でするスポーツはだめなんですよ。 
+女：じゃあ、泳いだり、走ったり？ 
+男：いいえ、一人だけのちょっ と寂しくて。 
+女：あー。
+
+それじゃー 男の人がするスポーツはどれですか？ ";A;A;B;C;D;"
+聴解スクリプト： ６ばん （男の人と女の人が話しています） 男の人がするスポーツはどれですか？
+Script d'écoute : Question 6 : (Un homme et une femme parlent) Quel est le sport que l'homme pratique ?
+女：高橋さんはどのスポーツをするんですか？
+(Femme) : Quel sport pratiquez-vous, M. Takahashi ?
+Femme
+男：なんだと思いますか？
+(Homme) : Qu'est-ce que vous pensez ?
+Homme
+女：サッカーとか 野球とか？
+(Femme) : Le football ou le baseball, peut-être ? (Sports d'équipe)
+Femme
+男：いいえ、 大勢でするスポーツはだめなんですよ。
+(Homme) : Non, les sports qui se jouent avec beaucoup de monde, ça ne me va pas. (Rejet des sports de grande équipe)
+Homme
+女：じゃあ、泳いだり、走ったり？
+(Femme) : Alors, la natation ou la course à pied ? (Sports individuels solitaires)
+Femme
+男：いいえ、 一人だけのちょっ と寂しくて。
+(Homme) : Non, être tout seul, c'est un peu triste. (Rejet des sports strictement solitaires)
+Homme
+男の人がするスポーツはどれですか？
+Quel est le sport que l'homme pratique ?
+
+
+Justification de la Réponse
+Pour trouver le sport, il faut combiner les indices par élimination :
+Il n'est pas pratiqué par beaucoup de monde (大勢はだめ) : Ce n'est pas un grand sport d'équipe (comme le football, le baseball ou le basketball).
+Il n'est pas pratiqué seul (一人だけは寂しい) : Ce n'est pas un sport strictement solitaire (comme la course à pied ou la natation sans équipe).
+Conclusion : Le sport que l'homme pratique doit être un sport joué à deux ou en petit groupe (par exemple, le tennis, le tennis de table, le badminton en double, l'escalade avec un partenaire, ou le golf en duo).
+Le sport est un sport de duo ou de petite équipe qui lui permet de parler avec son partenaire.
+";2003_N3_6.jpg
+2003;N3;"聴解スクリプト： ７ばん （男の人と女の人が話しています） 部屋は今どうなっていますか？ 
+女：変ねぇ... 
+男：どうした？ 
+女：窓 閉めてたはずなんだけど。 
+男：忘れたん だろう。 
+女：そうかなぁ。あっ、花瓶も倒れてる。 
+男：本当だ、泥棒に入られたかな。 
+
+部屋は今どうなっていますか？  ";D;A;B;C;D;"
+聴解スクリプト： ７ばん （男の人と女の人が話しています） 部屋は今どうなっていますか？
+Script d'écoute : Question 7 : (Un homme et une femme parlent) Comment est la pièce maintenant ?
+女：変ねぇ...
+(Femme) : C'est étrange...
+Femme
+男：どうした？
+(Homme) : Qu'est-ce qui ne va pas ?
+Homme
+女： 窓 閉めてたはずなんだけど。
+(Femme) : J'étais censée avoir fermé la fenêtre.
+Femme
+男：忘れたんだろう。
+(Homme) : Tu as dû oublier.
+Homme
+女：そうかなぁ。あっ、 花瓶も倒れてる。
+(Femme) : Tu penses ? Ah ! Le vase (花瓶) est aussi renversé (倒れてる).
+Femme
+男：本当だ、泥棒に入られたかな。
+(Homme) : C'est vrai. On s'est fait cambrioler, peut-être ?
+Homme
+部屋は今どうなっていますか？
+Comment est la pièce maintenant ?
+
+Justification de la Réponse
+La question demande l'état actuel (今どうなっていますか) de la pièce, en se basant sur les observations des deux personnes.
+Les observations confirmées sont :
+La fenêtre : La femme pensait l'avoir fermée, mais elle est ouverte (implicitement, sinon elle ne serait pas surprise).
+Le vase : Il est renversé (花瓶も倒れてる).
+Réponse : La fenêtre est ouverte (ou ne correspond pas à l'état attendu) et le vase est renversé. (De manière plus générale : La pièce est en désordre et la fenêtre est ouverte.)
+
+";2003_N3_7.jpg
+2003;N3;"聴解スクリプト： ８ばん （男の人が電話で話しています） この男の人がどこにいますか？ 
+電話が鳴った.... はい、山田です。
+あっ、今車の中なんです。
+娘に駅まで送って もらうところです。
+うん、いつも運転してもらって、僕は後ろなんです。
+後ろの方がゆっくりできますから。
+それに、運転は娘のほうがうまいんですよ。 
+
+この 男の人がどこにいますか？ ";A;A;B;C;D;"
+聴解スクリプト： ８ばん （男の人が電話で話しています） この男の人がどこにいますか？
+Script d'écoute : Question 8 : (Un homme parle au téléphone) Où se trouve cet homme ?
+電話が鳴った.... はい、山田です。
+Le téléphone sonne... Oui, c'est Yamada.
+Homme
+あっ、今 車の中 なんです。
+Ah, en ce moment, je suis dans la voiture.
+Homme
+娘に駅まで送ってもらうところです。
+Je suis sur le point de me faire déposer à la gare par ma fille.
+Homme
+うん、いつも運転してもらって、僕は 後ろ なんです。
+Oui, elle conduit toujours, et moi, je suis derrière (à l'arrière).
+Homme
+後ろの方がゆっくりできますから。
+C'est parce qu'on peut se détendre davantage à l'arrière.
+Homme
+それに、運転は娘のほうがうまいんですよ。
+De plus, ma fille conduit mieux que moi.
+Homme
+この男の人がどこにいますか？
+Où se trouve cet homme ?
+
+Justification de la Réponse
+L'homme indique très clairement sa position actuelle :
+Lieu principal : 今 車の中なんです (Je suis dans la voiture en ce moment).
+Position précise : 僕は後ろなんです (Moi, je suis derrière / à l'arrière).
+Réponse : L'homme se trouve à l'arrière d'une voiture (qui est conduite par sa fille). Plus simplement : Dans une voiture.
+
+";2003_N3_8.jpg
+2003;N3;"聴解スクリプト： ９ばん （先生が女の子と話しています） 誰が女の子に料理を教えていますか？ 
+先生：マリさんは料理が上手ですね 
+マリ：うちでいつも教えてもらってま す。 
+先生：そう、お母さんから？ 
+マリ：いいえ、祖父が料理が好きで よく教えてくれるんです。 
+先生：えー、お母さんやおばあさんじゃないの？お姉さん は？ 
+マリ：いいえ、姉が教えてくれたことはありません。 
+
+誰が女の子に料理を教えていますか？ ";A;A;B;C;D;"
+聴解スクリプト： ９ばん （先生が女の子と話しています） 誰が女の子に料理を教えていますか？
+Script d'écoute : Question 9 : (Une enseignante et une fille parlent) Qui apprend la cuisine à la fille ?
+先生：マリさんは料理が上手ですね
+(Enseignante) : Mari, vous cuisinez bien !
+Enseignante
+マリ：うちでいつも教えてもらっています。
+(Mari) : On m'apprend tout le temps à la maison.
+Mari
+先生：そう、お母さんから？
+(Enseignante) : Ah, c'est votre mère ? (Suggestion)
+Enseignante
+マリ： いいえ、祖父が料理が好きで よく教えてくれるんです。
+(Mari) : Non. C'est mon grand-père (祖父) qui aime cuisiner et m'apprend souvent.
+Mari
+先生：えー、お母さんやおばあさんじゃないの？お姉さんは？
+(Enseignante) : Ah bon ? Ce n'est pas votre mère ou votre grand-mère ? Et votre sœur aînée ? (Suggestions alternatives)
+Enseignante
+マリ：いいえ、姉が教えてくれたことはありません。
+(Mari) : Non, ma sœur aînée ne m'a jamais appris.
+Mari
+誰が女の子に料理を教えていますか？
+Qui apprend la cuisine à la fille ?
+
+Justification de la Réponse
+L'enseignante propose plusieurs personnes (mère, grand-mère, sœur aînée), mais Mari les rejette toutes implicitement ou explicitement.
+Mari désigne clairement une seule personne :
+いいえ、祖父が料理が好きで よく教えてくれるんです。 (Non, c'est mon grand-père qui aime cuisiner et m'apprend souvent.)
+Réponse : C'est son grand-père (祖父) qui apprend la cuisine à la fille (Mari).
+
+";2003_N3_9.jpg
+2003;N3;"聴解スクリプト： 10ばん （お父さんとお母さんが話しています） この人たちの子供が描いた絵はどれですか？ 
+お父さん：この絵 何？ 
+お母さん：あ、それ？タクシーで描 いたお父さんの顔。 
+お父さん：え、僕？どうして髪が一本だけなんだろう？僕は髪が多いのに。 
+お母さん：一本もないよりいいでしょう。 
+お父さん：この、 真ん中に描いてある 長い横の線は何？ 
+お母さん：あ、それは鬚よ。 
+お父さん：あ？鬚か？
+
+鼻を描いてないから分からないんだよ この人たちの子供が 描いた絵はどれですか？ ";B;A;B;C;D;"
+聴解スクリプト： 10ばん （お父さんとお母さんが話しています） この人たちの子供が描いた絵はどれですか？
+Script d'écoute : Question 10 : (Un père et une mère parlent) Quel est le dessin fait par l'enfant de ces personnes ?
+お父さん：この絵 何？
+(Père) : C'est quoi ce dessin ?
+Père
+お母さん：あ、それ？ タクシーで描いたお父さんの顔。
+(Mère) : Ah, ça ? C'est le visage de papa que l'enfant a dessiné dans le taxi.
+Mère
+お父さん：え、僕？ どうして髪が一本だけなんだろう？ 僕は髪が多いのに。
+(Père) : Hein, moi ? Pourquoi n'y a-t-il qu'un seul cheveu ? Alors que j'ai beaucoup de cheveux !
+Père
+お母さん：一本もないよりいいでしょう。
+(Mère) : C'est mieux que de n'en avoir aucun, n'est-ce pas ?
+Mère
+お父さん：この、真ん中に描いてある 長い横の線は何？
+(Père) : Et cette longue ligne horizontale dessinée au milieu, qu'est-ce que c'est ?
+Père
+お母さん：あ、それは 鬚よ。
+(Mère) : Ah, ça, c'est ta moustache/barbe (鬚 - hige).
+Mère
+お父さん：あ？鬚か？鼻を描いてないから分からないんだよ
+(Père) : Hein ? Une moustache ? Je ne peux pas savoir, parce qu'il n'a pas dessiné le nez !
+Père
+この人たちの子供が描いた絵はどれですか？
+Quel est le dessin fait par l'enfant de ces personnes ?
+
+解説 (Explication des caractéristiques du dessin)
+質問は、子供が描いた絵の特徴を尋ねています。会話から、その絵には以下の要素があることが分かります。
+Sujet : Le visage du père (お父さんの顔).
+Cheveux : Seulement un cheveu (髪が一本だけ).
+Ligne au milieu : Une longue ligne horizontale au centre du visage (identifiée comme la moustache/barbe).
+Absence : Il n'y a pas de nez (鼻を描いてない).
+Réponse : Le dessin est un portrait du père qui possède un seul cheveu sur la tête, une longue ligne horizontale au centre (la moustache/barbe), et sans nez.
+
+";2003_N3_10.jpg
+2003;N3;"聴解スクリプト： 11ばん （二人の女の子が話しています） このお母さんが子供に毎日させていることは何ですか？
+毎日です。 
+女１：洗濯とか掃除とか お子さんにさせる んですか？ 
+女２：できるだけ自分のことは自分でさせたいとは思っているんですが、
+洗濯が私がやりますね。でも、食事の後は必ず自分が使ったものを 洗わせます。
+それから、休みの日だけは部屋の掃除をさせます。 
+女１：勉強はどうですか？ 
+女２：勉強しろと言ったことはありません。私は言わなくても やっているようですから。 
+女１：そうですか、いいですね。 
+
+このお母さんが子供に毎日させていることは何ですか？ ";C;A;B;C;D;"
+聴解スクリプト： 11ばん （二人の女の子が話しています） このお母さんが子供に毎日させていることは何ですか？
+Script d'écoute : Question 11 : (Deux femmes parlent) Quelle est la tâche que cette mère fait faire à son enfant tous les jours ?
+女１：洗濯とか掃除とか お子さんにさせる んですか？
+(Femme 1) : Faites-vous faire la lessive ou le ménage à votre enfant ?
+Amie
+女２：できるだけ自分のことは自分でさせたいとは思っているんですが、洗濯が私がやりますね。
+(Femme 2/Mère) : J'aimerais qu'il fasse ses propres affaires autant que possible, mais la lessive, c'est moi qui la fais.
+Mère
+女２：でも、 食事の後は必ず自分が使ったものを 洗わせます。
+(Mère) : Mais, après les repas, je le force absolument à laver ce qu'il a utilisé.
+Mère
+女２：それから、 休みの日だけ は部屋の掃除をさせます。
+(Mère) : Et le nettoyage de sa chambre, je le lui fais faire seulement les jours de congé.
+Mère
+女１：勉強はどうですか？
+(Amie) : Et les études ?
+Amie
+女２：勉強しろと言ったことはありません。私は言わなくても やっているようですから。
+(Mère) : Je ne lui ai jamais dit d'étudier. Il semble le faire sans que j'aie besoin de le dire.
+Mère
+このお母さんが子供に毎日させていることは何ですか？
+Quelle est la tâche que cette mère fait faire à son enfant tous les jours ?
+
+
+Justification de la Réponse
+La question est de trouver l'action effectuée quotidiennement (毎日).
+Analysons les tâches mentionnées :
+Lessive (洗濯) : La mère la fait elle-même. (NON)
+Nettoyage de la chambre (部屋の掃除) : Seulement les jours de congé (休みの日だけ). (NON QUOTIDIEN)
+Études (勉強) : L'enfant le fait, mais la mère ne le force pas. (NON COMPULSÉ PAR LA MÈRE)
+Vaisselle/Nettoyage après les repas : La mère dit qu'elle le fait absolument après les repas (食事の後は必ず). Comme les repas ont lieu tous les jours, cette tâche est la seule qui est quotidienne et obligatoire pour l'enfant.
+Réponse : La tâche que la mère fait faire à son enfant tous les jours est de laver/nettoyer les ustensiles et la vaisselle qu'il a utilisés après les repas. (Ou : Laver sa vaisselle après avoir mangé.)
+";2003_N3_11.jpg
+2003;N3;"聴解スクリプト： 12ばん （男の人がパソコンについて話しています） コンピュータを少し使ったことがある人は何番の教室で勉強しますか？ 
+男：お早うございます。これ からパソコンのクラスを始めますが、２０１番～２０４番の教室に分かれて勉強します。
+え、今日始めてコンピュータを使う人は隣の２０１番の教室に行って ください。 
+少し使ったことがある人はこのままこの教室に行ってください。 
+簡単な文や絵が描ける人は２０３番。 
+もっと複雑なこともできる人は２０４番の 教室へ行ってください。 
+では皆さん、頑張ってください。 
+
+コンピュータを少し使ったことがある人は何番の教室で勉強しますか？  ";D;A;B;C;D;"
+聴解スクリプト： 12ばん （男の人がパソコンについて話しています） コンピュータを少し使ったことがある人は何番の教室で勉強しますか？
+Script d'écoute : Question 12 : (Un homme parle d'ordinateurs) Dans quelle salle de classe les personnes ayant un peu d'expérience en informatique vont-elles étudier ?
+男：お早うございます。これからパソコンのクラスを始めますが、２０１番～２０４番の教室に分かれて勉強します。
+(Homme/Instructeur) : Bonjour. Nous allons commencer les cours d'informatique maintenant, et nous étudierons répartis dans les salles de classe numérotées 201 à 204.
+え、今日始めてコンピュータを使う人は隣の２０１番の教室に行ってください。
+(Homme) : Euh, les gens qui utilisent un ordinateur pour la première fois aujourd'hui, veuillez aller dans la salle de classe 201, à côté.
+少し使ったことがある人は このままこの教室に行ってください。
+(Homme) : Les gens qui ont un peu d'expérience (少し使ったことがある人), veuillez rester dans cette salle comme vous êtes (ou aller dans cette salle).
+簡単な文や絵が描ける人は２０３番。
+(Homme) : Les gens qui peuvent écrire des phrases simples ou dessiner des images, allez à la salle 203.
+もっと複雑なこともできる人は２０４番の教室へ行ってください。
+(Homme) : Les gens qui peuvent faire des choses plus compliquées, allez à la salle 204.
+コンピュータを少し使ったことがある人は何番の教室で勉強しますか？
+Dans quelle salle de classe les personnes ayant un peu d'expérience en informatique vont-elles étudier ?
+
+Justification de la Réponse
+La question concerne le groupe des personnes ayant un peu d'expérience (少し使ったことがある人).
+L'instruction donnée pour ce groupe est : このままこの教室に行ってください (Veuillez simplement rester/aller dans cette salle).
+En analysant la répartition des salles (201 à 204) :
+Débutants absolus : Salle 201
+Niveau Intermédiaire (simple) : Salle 203
+Niveau Avancé : Salle 204
+Niveau un peu d'expérience : Cette salle
+Puisque les autres salles sont nommées (201, 203, 204), « cette salle » (l'endroit où se trouve l'instructeur) doit correspondre au numéro manquant dans la séquence.
+Réponse : Les personnes ayant un peu d'expérience en informatique vont étudier dans la salle 202 (la salle implicite où se tiennent l'instructeur et ce groupe). L'instruction est de rester dans la salle actuelle (この教室).
+
+";2003_N3_12.jpg
+2003;N3;"聴解スクリプト： 13ばん （男の人が話しています） 午後はどんな予定ですか？ 
+男：午後の予定を言います、よく聞いてください。 
+女：はい 
+男：まず水泳が三時間、そして ビデオを見て、自分の読み方を研究します。終わったら食事です。 
+女：はい 
+男：あっ、食事の前に掃除をします 
+女：えー、掃除をしなければならないです か？ 
+男：はい、じゃー、頑張ってください 
+女：はーい 
+
+午後はどんな予定ですか？ ";D;A;B;C;D;"
+聴解スクリプト： 13ばん （男の人が話しています） 午後はどんな予定ですか？
+Script d'écoute : Question 13 : (Un homme parle) Quel est le programme de l'après-midi ?
+男：午後の予定を言います、よく聞いてください。
+(Homme) : Je vais vous dire le programme de l'après-midi, écoutez bien.
+Homme
+女：はい
+(Femme) : Oui.
+Femme
+男：まず 水泳が三時間、 そして ビデオを見て、 自分の読み方を研究します。
+(Homme) : Premièrement, trois heures de natation (水泳), puis vous regarderez une vidéo pour étudier votre propre façon de lire.
+Homme
+男：終わったら食事です。
+(Homme) : Quand ce sera fini, ce sera le repas (食事).
+Homme
+女：はい
+(Femme) : Oui.
+Femme
+男：あっ、食事の前に 掃除をします
+(Homme) : Ah ! Avant le repas (食事の前に), vous ferez le ménage (掃除).
+Homme
+女：えー、掃除をしなければならないですか？
+(Femme) : Quoi ? Nous devons faire le ménage ?
+Femme
+男：はい、じゃー、頑張ってください
+(Homme) : Oui. Bon, faites de votre mieux.
+Homme
+女：はーい
+(Femme) : Oui.
+Femme
+午後はどんな予定ですか？
+Quel est le programme de l'après-midi ?
+
+Justification de la Réponse
+La question demande l'ordre des activités prévues pour l'après-midi (午後はどんな予定ですか). Il faut suivre l'ordre donné par l'homme, y compris la correction :
+D'abord : Natation (水泳が三時間).
+Ensuite : Regarder une vidéo / Étudier sa lecture (ビデオを見て、自分の読み方を研究します).
+Correction (avant le repas) : Ménage/Nettoyage (掃除).
+Enfin : Repas (食事).
+Réponse : Le programme de l'après-midi est : Natation (3h) → Regarder une vidéo et étudier sa lecture → Ménage/Nettoyage → Repas.
+
+";2003_N3_13.jpg

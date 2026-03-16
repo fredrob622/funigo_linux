@@ -1,0 +1,4 @@
+  git add *
+  git commit -m "SEO vhost robots sitemaps. Fichier csv pour kanji vocabulaire grammaire département région"
+  git branch main
+  git push --set-upstream origin main

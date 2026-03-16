@@ -1,0 +1,60 @@
+<%- include('../../partials/header_vocab', { title: title }) %> 
+<div class="content content-black">
+
+    <div id="haut"></div>
+
+    <div class="vocab_titre" >   
+        <h2><%= title %></h2>
+        <a href="/vocab_onomatopee" class="vocab_href">Retour</a>
+    </div>
+        <p class="texte-clignotant"><br>Cliquer sur une ligne pour avoir des détails<br></p>
+        <br>
+        <% if (results && results.length > 0) { %>
+            <table  class="ono-results-table">
+                <thead>
+                    <tr>
+                        <th>KATAKANA</th>
+                        <th>SIGNIFICATION</th>
+                        <th>ROMANJI</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% results.forEach((item, index) => { %>
+                        <!-- Ligne principale cliquable -->
+                        <tr class="<%= index % 2 === 0 ? 'main-row' : 'main-row alternate' %>">
+                            <td><%= item.katakana %></td>
+                            <td><%= item.signification %></td>
+                            <td><%= item.romanji %></td>
+                        </tr>
+                        <!-- Ligne de détail cachée. Elle DOIT suivre immédiatement la ligne principale. -->
+                        <!-- Nous ajoutons les données brutes dans les attributs pour que le JS puisse les nettoyer. -->
+                        <tr class="detail-row hidden" data-detail-brut="<%- item.detail %>" data-exemple-brut="<%- item.exemple %>">
+                            <!-- colspan="3" étend la cellule de détail sur toutes les colonnes -->
+                            <td colspan="3">
+                                <div class="detail-content">
+                                    
+                                    <!-- Affichage du DETALIL (texte inséré par JS) -->
+                                    <div class="detail-title">Détail :</div>
+                                    <!-- La classe pre-wrap permet de conserver les sauts de ligne (\n) -->
+                                    <p><br></p>
+                                    <p class="pre-wrap detail-text"></p>
+
+                                    <!-- Affichage de l'EXEMPLE (texte inséré par JS) -->
+                                    <div class="detail-title">Exemple :</div>
+                                    <p><br></p>
+                                    <p class="pre-wrap exemple-text"></p>
+                                </div>
+                            </td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        <% } else { %>
+            <p>Aucune onomatopée Giseigo trouvée.</p>
+        <% } %>
+    </div>
+
+        <%- include('../../partials/footer') %>
+</body>
+
+</html>

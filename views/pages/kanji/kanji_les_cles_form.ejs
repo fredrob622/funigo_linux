@@ -1,0 +1,48 @@
+<%- include('../../partials/header_vocab', { title: title }) %>
+
+<div class="content content-black"> 
+
+    <div class="vocab_titre" >   
+        <h2>Résultats pour "<%= title %>"</h2>
+        <a href="/kanji" class="vocab_href">Retour</a>
+    </div>
+
+    <% if (results.length > 0) { %>
+        <!-- NOUVEAU : On ajoute le conteneur autour du tableau -->
+        <div class="results-table-container">
+            
+            
+            <!-- NOUVEAU : On ajoute la classe "results-table" au tableau -->
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>Nombre de traits</th>
+                        <th>Numéro</th>
+						<th>Clé</th>
+                        <th>Lecture</th>
+						<th>signification</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <% results.forEach(result => { %>
+                        <tr>
+                            <td><span class="jp-char"><%= result.cle_nb_trait %></span></td>
+                            <td><span class="jp-char"><%= result.cle_numero %></span></td>
+                            <td><span class="jp-char"><%= result.cle_cle %></span></td>
+                            <td><span class="jp-char"><%= result.cle_lecture %></span></td>
+                            <td><span class="jp-char"><%= result.cle_signification %></span></td>
+							
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+
+    <% } else if (searchTerm) { %>
+        <p>Aucun résultat trouvé pour les Clés.</p>
+    <% } %>
+
+</div>
+
+<%- include('../../partials/footer') %>

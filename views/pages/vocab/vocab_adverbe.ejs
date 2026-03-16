@@ -1,0 +1,43 @@
+<%- include('../../partials/header_vocab', { title: title }) %>
+
+<div class="content content-black"> 
+
+    <div class="vocab_titre" >   
+        <h2>Résultats pour "<%= title %>"</h2>
+        <a href="/vocab" class="vocab_href">Retour</a>
+    </div>
+
+    <% if (results.length > 0) { %>
+        <!-- NOUVEAU : On ajoute le conteneur autour du tableau -->
+        <div class="results-table-container">
+            
+            
+            <!-- NOUVEAU : On ajoute la classe "results-table" au tableau -->
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>Francais</th>
+                        <th>Kanji</th>
+                        <th>Kana</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <% results.forEach(result => { %>
+                        <tr>
+                            <td><span class="jp-char"><%= result.francais %></span></td>
+                            <td><span class="jp-char"><%= result.kanji %></span></td>
+                            <td><span class="jp-char"><%= result.kana %></span></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+
+    <% } else if (searchTerm) { %>
+        <p>Aucun résultat trouvé pour les Adverbes.</p>
+    <% } %>
+
+</div>
+
+<%- include('../../partials/footer') %>

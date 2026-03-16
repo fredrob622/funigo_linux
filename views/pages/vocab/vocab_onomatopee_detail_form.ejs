@@ -1,0 +1,95 @@
+
+<%- include('../../partials/header_vocab', { title: title }) %> 
+<div class="content content-black">
+
+    <div id="haut"></div>
+
+    <div class="vocab_titre" >   
+        <h2><%= title %></h2>
+        <a href="/vocab_onomatopee" class="vocab_href">Retour</a>
+    </div>
+
+    <form action="/vocab_onomatopee_detail/search" method="POST" id="ono-detail-form">
+        <div class="form-container-double">
+            
+            <!-- Liste déroulante par Katakana -->
+            <div>
+                <label for="ono-katana-select" >Par Katakana :</label>
+                <select id="ono-katana-select" name="katakana" class="ono-detail">
+                    <option value="">-- Choisir par Katakana--</option>
+                    <% listeOnoDetail.forEach( onoDetail => { %>
+                        <!-- On utilise 'searchTerm' pour pré-sélectionner l'option -->
+                        <option value="<%= onoDetail.katakana %>" data-signification="<%= onoDetail.signification %>" data-romanji="<%= onoDetail.romanji %>"  <%= (searchTerm === onoDetail.katakana) ? 'selected' : '' %>>
+                            <%= onoDetail.katakana %>
+                        </option>
+                    <% }); %>
+                </select>
+            </div>
+
+            <!-- Liste déroulante par Signification -->
+            <div>
+                <label for="ono-signification-select" >Par Signification :</label>
+                <select id="ono-signification-select" name="signification" class="ono-detail">
+                    <option value="">-- Choisir une signification--</option>
+                    <% listeOnoDetail.forEach( onoDetail => { %>
+                        <!-- On utilise 'searchTerm' pour pré-sélectionner l'option -->
+                        <option value="<%= onoDetail.signification %>" data-katakana="<%= onoDetail.katakana %>" data-romanji="<%= onoDetail.romanji %>"  <%= (searchTerm === onoDetail.signification) ? 'selected' : '' %>>
+                            <%= onoDetail.signification %>
+                        </option>
+                    <% }); %>
+                </select>
+            </div>
+
+            <!-- Liste déroulante par Romanji -->
+            <div>
+                <label for="ono-romanji-select" >Par Romanji :</label>
+                <select id="ono-romanji-select" name="romanji" class="ono-detail">
+                    <option value="">-- Choisir par romanji --</option>
+                    <% listeOnoDetail.forEach( onoDetail => { %>
+                        <!-- On utilise 'searchTerm' pour pré-sélectionner l'option -->
+                        <option value="<%= onoDetail.romanji %>" data-katakana="<%= onoDetail.katakana %>" data-romanji="<%= onoDetail.romanji %>"  <%= (searchTerm === onoDetail.romanji) ? 'selected' : '' %>>
+                            <%= onoDetail.romanji %>
+                        </option>
+                    <% }); %>
+                </select>
+            </div>
+
+
+    
+    	<% if (results && results.length > 0) { %>
+        <%# On crée une variable pour plus de clarté %>
+        <% const regleDetails = results[0]; %>
+	 
+		<div class="ono-detail-result">
+			<h4>Katakana</h4>
+			<p><%= results[0].katakana || 'N/A' %></p>
+
+        <div class="ono-detail-result">
+			<h4>Signification</h4>
+			<p><%= results[0].signification || 'N/A' %></p>
+		</div>
+		
+		<div class="ono-detail-result">
+			<h4>romanji</h4>
+			<p><%= results[0].romanji || 'N/A' %></p>
+		</div>
+		
+		<div class="ono-detail-result">
+			<h4>Details</h4>
+			<p><%= results[0].detail || 'N/A' %></p>
+		</div>
+		
+		<div class="ono-detail-result">
+			<h4>Exemples</h4>
+			<p><%= results[0].exemple || 'N/A' %></p>
+		</div>
+	 
+	<% } %>
+
+    <div class="vocab_titre" >   
+        <a href="#haut" class="vocab_href">Haut</a>
+    </div>
+
+</div>
+
+<%- include('../../partials/footer') %>

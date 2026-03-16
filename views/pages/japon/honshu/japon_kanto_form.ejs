@@ -1,0 +1,145 @@
+<%- include('../../../partials/honshu/header_kanto') %>
+
+<div class="content content-black"> 
+<div id=japon-ile-titre>
+    <h2>Le Kanto</h2>
+</div>
+
+<body>
+    
+    <div id="box-titre" >
+        <h1>Titre du lieu</h1>
+    </div>
+    
+    <div id="box-contenaire1">
+        <div id="box1">
+            <p>box1</p>
+            <video autoplay loop muted playsinline >
+                <source src="/video/Funari.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div id="box2">
+            <p>box2</p>
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3269.7562479203926!2d135.7705118762514!3d34.96714016921389!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60010f153d2e6d21%3A0x7b1aca1c753ae2e9!2sFushimi%20Inari-taisha!5e0!3m2!1sfr!2sfr!4v1708500000000!5m2!1sfr!2sfr" 
+                width="100%" 
+                height="100%"  
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </div>
+
+    <div id="box-contenaire2">
+        <div id="box3">
+            <p>box1</p>
+            <video autoplay loop muted playsinline >
+                <source src="/video/japon/clip-honshu.webm" type="video/mp4" >
+            </video>
+        </div>
+        <div id="box4">
+            <p>box2</p>
+             <img src="/images/cartes/japon/honshu/kanto-region.jpg" alt="Carte Honshu"  >
+        </div>
+    </div>
+</div>
+</body>
+
+<style>
+    #box-titre{
+        display: block;
+        background-color: rgb(42, 165, 118);  
+    }
+    h1 {
+        padding: 2px 50px 2px 10px;
+    }
+    #box-contenaire1{
+        display: flex;
+    }
+    #box-contenaire2{
+        display: flex;
+        /* margin-top: 10px; */
+        
+    }
+    #box1{
+        width: 50%;
+        height: auto;
+        background-color: brown;
+        margin-right: 5px;
+    }
+
+    #box1 video, #box2 iframe, #box3 video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Remplit bien le rectangle de 200px de haut */
+        display: block;
+    }
+
+    #box2{
+        width: 50%;
+        height: 300px;
+        background-color: rgba(42, 165, 138, 0.438);
+        padding: 0; 
+        overflow: hidden;
+    }
+
+     #box2 iframe {
+        width: 100%;
+        height: 100%;   /* ← prend toute la hauteur du parent */
+        display: block;
+        border: 0;
+    }
+    #box3{
+        width: 50%;
+        height: auto;
+        background-color: brown;
+        margin-right: 5px;
+    }
+    #box4{
+        /* width: 85%;
+        height: 400px; */
+        background-color: rgba(42, 165, 138, 0.438);
+        position: relative;
+    width: 50%;        /* Pleine largeur du parent */
+    height: 400px;      /* Hauteur fixe ; ou '50vh' pour viewport, ou 'aspect-ratio: 16/9;' */
+    overflow: hidden;   /* Cache les parties rognées */
+}
+
+    
+    #box4 img {
+    max-width: 200px;
+    height: auto ;
+    /* height: auto; */
+    object-fit: cover;  /* Couvre sans déformer ; 'contain' pour tout voir sans crop */
+    display: block; /* Évite les espaces blancs sous l'image */
+}
+
+@media screen and (max-width: 600px) {
+    #box-contenaire1{
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+    #box1{
+        width: 100%;
+        height: 150px;
+        background-color: brown;
+        margin-right: 5px;
+    }
+
+    #box2{
+        width: 100%;
+        height: 300px;
+        background-color: rgba(42, 165, 138, 0.438);
+        padding: 0; 
+        overflow: hidden;
+    }
+
+}
+</style>
+
+
+<%- include('../../../partials/footer') %>

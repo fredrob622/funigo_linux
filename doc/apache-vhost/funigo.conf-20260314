@@ -1,0 +1,70 @@
+# Redirection de HTTP vers HTTPS
+<VirtualHost *:80>
+    ServerName www.funigo.fr
+    ServerAlias funigo.fr
+    # On redirige tout vers la version sécurisée
+    Redirect permanent / https://www.funigo.fr/
+RewriteEngine on
+RewriteCond %{SERVER_NAME} =funigo.fr [OR]
+RewriteCond %{SERVER_NAME} =www.funigo.fr
+RewriteRule ^ https://%{SERVER_NAME}%{REQUEST_URI} [END,NE,R=permanent]
+</VirtualHost>
+
+# Configuration principale pour HTTPS (SSL)
+<VirtualHost *:443>
+    ServerName www.funigo.fr
+    ServerAlias funigo.fr
+
+    # On adapte vos chemins Windows vers Linux
+    SSLEngine on
+    
+    # Vos headers de sécurité [cite: 81, 82]
+    Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains"
+    <IfModule mod_headers.c>
+        Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'sha256-8AFl6gs2BjOGxU9eZtoVWi4wLFMR4DkrvF+TlMsKORc='; style-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline'; connect-src 'self' https://api.open-meteo.com https://api.exchangerate-api.com https://worldtimeapi.org https://cdn.jsdelivr.net; img-src 'self' data:https://*.googleapis.com https://*.gstatic.com https://*.google.com https://*.ytiming.com; font-src 'self' https://cdnjs.cloudflare.com data:;frame-src https://www.google.com https://maps.google.com https://maps.googleapis.com https://www.youtube.com https://youtube.com"
+        Header set X-Frame-Options "SAMEORIGIN"
+        Header set X-Content-Type-Options "nosniff"
+        Header set Referrer-Policy "no-referrer-when-downgrade"
+    </IfModule>
+    
+    # Configuration du Reverse Proxy vers Node.js 
+    ProxyPass /.well-known !
+    ProxyPreserveHost On
+    ProxyRequests Off
+    ProxyPass / http://localhost:5000/
+    ProxyPassReverse / http://localhost:5000/
+  
+    # Chemins des logs version Linux 
+    ErrorLog ${APACHE_LOG_DIR}/funigo-error.log
+    CustomLog ${APACHE_LOG_DIR}/funigo-access.log common
+    Include /etc/letsencrypt/options-ssl-apache.conf
+    SSLCertificateFile /etc/letsencrypt/live/funigo.fr-0001/fullchain.pem
+SSLCertificateKeyFile /etc/letsencrypt/live/funigo.fr-0001/privkey.pem
+</VirtualHost>
+
+
+# Configuration principale pour HTTPS (SSL) win.funigo.fr
+<VirtualHost *:443>
+    ServerName win.funigo.fr
+    ServerAlias funigo.fr
+
+    # On adapte vos chemins Windows vers Linux
+    SSLEngine on
+    SSLCertificateFile "/etc/letsencrypt/live/win.funigo.fr/fullchain.pem"
+    SSLCertificateKeyFile "/etc/letsencrypt/live/win.funigo.fr/privkey.pem"
+
+    # Important pour le CSS/JS
+    ProxyPreserveHost on
+    RequestHeader set X-Forwarded-Proto "https" 
+
+    
+    # Configuration du Reverse Proxy vers Node.js 
+    ProxyPass / http://192.168.1.7:6000/
+    ProxyPassReverse / http://192.168.1.7:6000/
+  
+    # Chemins des logs version Linux 
+    ErrorLog ${APACHE_LOG_DIR}/funigo-error.log
+    CustomLog ${APACHE_LOG_DIR}/funigo-access.log common
+</VirtualHost>
+
+

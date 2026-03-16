@@ -1,0 +1,100 @@
+<%- include('../../partials/header', { title: title }) %>
+
+<div class="content content-black">
+    <h2><%= title %></h2>
+    
+    <!-- Le formulaire reste identique -->
+    <form method="get" action="/quiz_orale">
+        <div class="form-container-double">
+            <select id="niveau-select" name="niveau">
+                <option value="">Choisir un niveau</option>
+                <option value="N1">N1</option>
+                <option value="N2">N2</option>
+                <option value="N3">N3</option>
+                <option value="N4">N4</option>
+            </select>
+            <select id="annee-select" name="annee">
+                <option value="">Choisir une année</option>
+            </select>
+        </div>
+        <button type="submit" class="btn-standard">Rechercher</button>
+    </form>
+
+    <!-- Le quiz n'est affiché que si des résultats existent -->
+    <% if (results && results.length > 0) { %>
+        <div id="quiz-container">
+            <div id="score-container">
+                <br>
+                <p>Score: <span id="score">0</span> / <span id="total-questions"><%= results.length %></span>
+                &emsp;Niveau: <span id="niveau"><%= results[0].NIVEAU %></span>
+                &emsp;Année: <span id="annee"><%=  results[0].ANNEE %></span></p>
+                <br>
+            </div>
+
+            <% results.forEach(function(question, index) { %>
+                <div class="question-container <%= index === 0 ? 'active' : '' %>" id="question-<%= index %>" data-rep-ok="<%= question.REP_OK %>">
+                    <% if (question.IMAGE) { %>
+                        <img src="/images/quiz_orale/<%= question.NIVEAU %>/<%= question.IMAGE %>" alt="Image pour la question" style="max-width: 300px; margin-bottom: 15px;">
+                    <% } %>
+                    <BR>
+                    <div class="answers">
+                        <label><input type="checkbox" name="reponse-<%= index %>" value="<%= question.REP1 %>"> <%= question.REP1 %></label><br>
+                        <label><input type="checkbox" name="reponse-<%= index %>" value="<%= question.REP2 %>"> <%= question.REP2 %></label><br>
+                        <label><input type="checkbox" name="reponse-<%= index %>" value="<%= question.REP3 %>"> <%= question.REP3 %></label><br>
+                        <label><input type="checkbox" name="reponse-<%= index %>" value="<%= question.REP4 %>"> <%= question.REP4 %></label><br>
+                    </div>   
+                    <BR>
+                        
+                    <div class="question-text-container">  
+                        
+                        <button class="speak-btn btn-standard " title="Écouter le texte">Écouter le texte 🔊</button>
+                        <BR><BR>
+
+                        <button class="show-texte-btn btn-standard" title="Voir le texte">Voir le texte</button>
+                        <BR><BR>
+
+                        <button class="show-translation-btn btn-standard" title="Voir la traduction">Voir la traduction</button>
+
+                    </div>
+                    <BR>
+                    <p class="question-text pre-wrap" style="display: none;"><%= question.TEXTE %></p>
+                    
+                    <BR>
+                    <p class="translation-text pre-wrap" style="display: none;"><%= question.TRADUCTION %></p>    
+
+                    <div id="feedback-<%= index %>" class="feedback"></div>
+                </div>
+            <% }); %>
+            
+            <div id="quiz-control">
+                <button id="continuer-btn" class="btn-standard" >Continuer</button>
+                <button id="arreter-btn" class="btn-standard" style="display: none;">Terminer le Quiz</button>
+            </div>
+            <BR>
+        </div>
+    <% } %>
+</div>
+
+
+
+<style>
+    .form-container-double { display: flex; justify-content: center; gap: 5px; margin-bottom: 10px; flex-wrap: wrap; }
+    #niveau-select, #annee-select { padding: 5px; font-size: 0.9em; border-radius: 8px; min-width: 150px; }
+    .btn-standard { padding: 8px 4px; background-color: #074107; color: white; border: none; border-radius: 4px; cursor: pointer; 
+        margin-top: 10px; width: 150px; }
+    .btn-standard:hover { background-color: #074107;  transform: scale(1.1); }
+    .question-container { display: none; }
+    .answers { display: flex; gap: 5%;}
+    .question-container.active { display: block; }
+    .question-text-container { display: flex;  align-items: center; gap: 10px;  }
+    .question-text, .translation-text { padding: 10px;}
+    .speak-btn {padding: 8px 16px; background-color: #074107; border: none;  /* Agrandit l'émoji pour qu'il soit plus cliquable */
+            cursor: pointer; color: white; transition: transform 0.2s; }
+    .speak-btn:hover { transform: scale(1.1); /* Effet de zoom léger au survol */ color: #ffffff; }
+    .score-container  { display: flex; /* horizontal */   align-items: flex-start; justify-content: space-between; }
+    .pre-wrap { white-space: pre-wrap; font-size: 0.9em; line-height: 1.4; margin-top: 5px; margin-bottom: 15px; padding-left: 10px; 
+        border-left: 3px solid #ccc; background-color: rgb(63, 62, 62);}
+
+</style>
+
+<%- include('../../partials/footer') %>

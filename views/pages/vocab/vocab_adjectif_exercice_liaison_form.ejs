@@ -1,0 +1,48 @@
+<%- include('../../partials/header_blog_tech') %>
+<div  class="content content-black">
+    <div class="vocab_titre" >  
+        <h2 ><%= title %></h2>
+        <a href="/vocab_adjectif" class="vocab_href">Retour</a>
+        <h2 class="blog_h2_execercice">Traduire la phrase en japonais</h2>
+    </div>
+
+<p style="animation: blink 2s infinite;"><br>Cliquer sur une ligne pour avoir la réponse<br></p>
+<% if ( results && results.length > 0) { %> 
+    
+    <% results.forEach((article, index) => { %> 
+    
+        <div class="blog_article"> 
+            
+            <!-- Déterminer la classe à ajouter en fonction de l'index -->
+            <%  const alternateClass = (index % 2 === 0) ? 'blog_article_entete_even' : 'blog_article_entete_odd';     %>
+            <div class="blog_article_entete article-tech-toggle <%= alternateClass %>" data-target-id="content-<%= index %>"> 
+
+                <h3 class="blog_h3" data-target-id="content-<%= index %>" >
+                    <p> <%= article.francais %> </p>
+                    <p> <%= article.liste_adj %> </p>   
+                </h3>
+                
+            </div>
+            
+            <div class="blog_contenus_container bloc_tech_hidden" id="content-<%= index %>"> 
+ 
+                <div class="blog_contenu_2">
+                    <p> <%= article.kanji %> </p> 
+                    <p> <%= article.hiragana %> </p>                                         
+                </div>
+                      
+            </div>
+
+        </div> 
+    <% }); %>
+    
+</div>
+<% } else { %>
+    <p>Aucun article trouvé.</p>
+<% } %>
+
+
+<%- include('../../partials/footer') %>
+
+
+

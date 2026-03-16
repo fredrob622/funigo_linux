@@ -1,0 +1,56 @@
+<%- include('../../partials/header_gram') %>
+
+<div class="content content-black">
+    
+    <h2 class="gram-regles-h2">Règles de grammaire</h2>
+    				
+    <form action="/gram_jap_regles" method="GET" class="search-form" style="justify-content: center; align-items: flex-end; gap: 15px;">
+        
+        <div style="text-align: center;">
+            <label for="gram-nom-select" style="display: inline; margin-bottom: 10px; margin-right: 20px;">
+                Choisissez une règle:
+            </label>
+            <select id="gram-nom-select" name="selection"  class="gram-nom-select" >
+                <option value="" disabled <%= !searchTerm ? 'selected' : '' %>>-- Sélectionnez --</option>
+                <% listeGramRegle.forEach( regle => { %>
+                    <option value="<%= regle.nom %>"
+                    class="gram-regle-option"    
+                    <%= (regle.nom === searchTerm) ? 'selected' : '' %>>
+                    <%= regle.nom %>
+                    </option>
+                <% }); %>
+            </select>
+            <p><br></p>
+            <button type="submit">Afficher</button>
+        </div>
+             
+    </form>
+	
+	<% if (results && results.length > 0) { %>
+        <%# On crée une variable pour plus de clarté %>
+        <% const regleDetails = results[0]; %>
+	 
+		<div class="gram-regle">
+			<h4>Nom</h4>
+			<p><%= results[0].nom || 'N/A' %></p>
+		</div>
+		
+		<div class="gram-regle">
+			<h4>Description</h4>
+			<p><%= results[0].description || 'N/A' %></p>
+		</div>
+		
+		<div class="gram-regle">
+			<h4>Contruction</h4>
+			<p><%= results[0].construction || 'N/A' %></p>
+		</div>
+		
+		<div class="gram-regle">
+			<h4>Exemples</h4>
+			<p><%= results[0].exemple || 'N/A' %></p>
+		</div>
+	 
+	<% } %>
+</div>
+
+<%- include('../../partials/footer') %>  

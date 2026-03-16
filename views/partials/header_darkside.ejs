@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Villes du Japon</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+<body>
+    <ul class="nav-links">
+        <li><a href="#fukuoka">Fukuoka</a></li>
+        <li><a href="#nagasaki">Nagasaki</a></li>
+        <li><a href="#saga">Saga</a></li>
+        <li><a href="#oita">Oita</a></li>
+        <li><a href="#kumamoto">Kumamoto</a></li>
+        <li><a href="#miyazaki">Miyazaki</a></li>
+        <li><a href="#kagoshima">Kagoshima</a></li>
+    </ul>
+
+</body>
+</html>
+<style>
+    /* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
+    justify-content: center; /* Centre les éléments horizontalement */
+    gap: 10px; /* Espace entre les éléments */
+}
+
+.nav-links li {
+    flex: 1 1 auto; /* Les éléments s'adaptent à la taille de l'écran */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    display: block;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #ddd;
+}
+
+/* Responsive pour les petits écrans */
+@media (max-width: 600px) {
+    .nav-links {
+        flex-direction: row ; /* Empile les éléments verticalement */
+        flex-wrap: wrap;
+    }
+}
+</style>
+<script>
+   // script.js
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault(); // Empêche le comportement par défaut du lien
+        alert(`Vous avez cliqué sur : ${link.textContent}`);
+    });
+}); 
+</script>

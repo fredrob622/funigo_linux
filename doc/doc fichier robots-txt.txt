@@ -1,0 +1,12 @@
+# Fichier robots.txt pour Funigo - Version recommandée
+
+# Indique que les règles s'appliquent à tous les robots
+User-agent: *
+
+# N'interdit l'accès à aucune page
+# Laisser Disallow vide est la manière correcte de dire "tout est autorisé"
+Disallow:
+
+# Indique aux robots où se trouve le plan du site (sitemap)
+# Adaptez le nom de domaine si nécessaire
+Sitemap: https://www.funigo.fr/sitemap.xml

@@ -1,0 +1,44 @@
+SELECT * 
+INTO OUTFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/donnees_table_vocab_char.csv'
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+FROM vocab_char;
+
+SELECT * 
+INTO OUTFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/donnees_table_kanji_char.csv'
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+FROM kanji_char;
+
+SELECT * 
+INTO OUTFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/donnees_table_gram_char.csv'
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+FROM gram_char;
+
+SELECT * 
+INTO OUTFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/donnees_table_quiz.csv'
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+FROM quiz;
+
+SELECT * 
+INTO OUTFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/donnees_table_dep_fr.csv'
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+FROM dep_fr;
+
+SELECT * 
+INTO OUTFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/donnees_table_reg_fr.csv'
+FIELDS TERMINATED BY ',' 
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+FROM reg_fr;
+
+
+ mysqldump -u root -p --no-data jap > "C:/Fichiers_Users/funigo/doc/base-jap/structure-jap-$timestamp.sql"

@@ -1,0 +1,38 @@
+<%- include('../../partials/header_blog_tech') %>
+<div  class="content content-black">
+    <h2 class="blog_h2" ><%= title %></h2>
+
+<% if ( listeArticles && listeArticles.length > 0) { %>
+    
+    <% listeArticles.forEach(article => { %>
+    <div class="blog_article"> 
+        <div class="blog_article_entete">  
+            <h3 class="blog_h3"><%= article.titre %></h3>
+            
+                <div class="blog_actions">
+                    <a href="/blog_tech/modifier/<%= article.id %>" class="action-icon update-icon" title="Modifier l'article">
+                        <i class="fas fa-edit"></i>
+                    </a>
+                    <form action="/blog_tech/supprimer/<%= article.id %>" method="POST" style="display:inline;" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet article ?');">
+                        <button type="submit" class="action-icon delete-icon" title="Supprimer l'article">
+                            <i class="fas fa-trash-alt"></i>
+                        </button>
+                    </form>
+                <p><br></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="blog_contenu">
+            <p> <%= article.contenu %> </p>
+        </div>
+
+        <% }); %>
+    </div>    
+</div>
+<% } else { %>
+    <p>Aucun article trouvé.</p>
+<% } %>
+
+<%- include('../../partials/footer') %>
+

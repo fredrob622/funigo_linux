@@ -1,0 +1,18 @@
+# Installation
+sudo apt update
+sudo apt install -y phpmyadmin
+
+# Pendant l'installation :
+# - Choisir "apache2" comme serveur web
+# - Configurer la base de données avec dbconfig-common : Oui
+# - Entrer un mot de passe pour phpMyAdmin
+
+# Activer la configuration Apache
+sudo ln -s /etc/phpmyadmin/apache.conf /etc/apache2/conf-available/phpmyadmin.conf
+sudo a2enconf phpmyadmin
+sudo systemctl reload apache2
+
+# Accéder via navigateur
+# http://192.168.1.2/phpmyadmin
+
+username: japadmin  password: jap_2010

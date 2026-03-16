@@ -1,0 +1,60 @@
+###################################################################################################
+		HTML ouvrir un onglet pour afficher une fichier 
+###################################################################################################
+
+HTML ( ejx) 
+###########
+
+<% if (article.fichier) { %>
+    <button class="btn-open-file" data-fichier="<%= article.fichier %>">
+        Ouvrir le fichier: <%= article.fichier %>
+    </button>
+<% } %>
+
+Javascript
+##########
+
+document.addEventListener('click', function (e) {
+  if (e.target.classList.contains('btn-open-file')) {
+    const fileName = e.target.dataset.fichier;
+    if (fileName) {
+      window.open('fichier/fichier_note_tech/' + encodeURIComponent(fileName), '_blank');
+    }
+  }
+});
+
+1. Le principe global : La délégation d'événement
+
+document.addEventListener('click', function (e) { ... })
+Au lieu d'ajouter un écouteur d'événement sur chaque bouton individuellement (ce qui serait lourd si vous avez 50 boutons), 
+le code écoute tous les clics n'importe où sur la page (document). C'est ce qu'on appelle la délégation d'événement.
+
+Le filtrage (Vérifier où on a cliqué)
+
+if (e.target.classList.contains('btn-open-file')) { ... }
+
+À chaque clic, le script vérifie : "Est-ce que l'élément sur lequel j'ai cliqué (e.target) possède la classe CSS btn-open-file ?".
+Si non : Le script ne fait rien (le clic est ignoré).
+Si oui : Le script comprend que c'est un bouton pour ouvrir un fichier et continue.
+
+La récupération du nom de fichier
+
+const fileName = e.target.dataset.fichier;
+
+Le script va chercher une information cachée dans le bouton. 
+En HTML, cela correspond à un attribut data-fichier="...".
+
+Exemple HTML correspondant : <button class="btn-open-file" data-fichier="mon_rapport.pdf">
+
+Ici, la variable fileName vaudra "mon_rapport.pdf".
+
+if (fileName) {
+  window.open('fichier/fichier_note_tech/' + encodeURIComponent(fileName), '_blank');
+}
+
+if (fileName) : On s'assure que le nom du fichier n'est pas vide pour éviter d'ouvrir une page d'erreur.
+
+encodeURIComponent(fileName) : C'est très important. Si votre fichier s'appelle "Note été 2023.pdf", 
+l'URL ne doit pas contenir d'espaces ou d'accents bruts. Cette fonction va transformer le nom en format URL valide (par exemple : Note%20%C3%A9t%C3%A9%202023.pdf).
+
+window.open(..., '_blank') : Cela ouvre l'URL construite dans un nouvel onglet du navigateur.

@@ -1,0 +1,38 @@
+#
+# Virtual Hosts
+#
+
+# Redirection de HTTP vers HTTPS pour www
+<VirtualHost *:80>
+    ServerName www.funigo.fr
+    ServerAlias funigo.fr
+    Redirect permanent / https://www.funigo.fr/
+</VirtualHost>
+
+# Configuration principale pour HTTPS
+<VirtualHost *:443>
+    ServerName www.funigo.fr
+    ServerAlias funigo.fr
+
+    # Configuration SSL/TLS
+    SSLEngine on
+    SSLCertificateFile "c:/Certbot/live/funigo.fr/fullchain.pem"
+    SSLCertificateKeyFile "c:/Certbot/live/funigo.fr/privkey.pem"
+    
+    # Header de sécurité (recommandé)
+    Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains"
+    
+    # Configuration du Reverse Proxy
+    # Ne pas interférer avec les requêtes de renouvellement de Certbot
+    ProxyPass /.well-known !
+    
+    # Transférer toutes les autres requêtes vers l'application Node.js
+    ProxyPreserveHost On
+    ProxyRequests Off
+    ProxyPass / http://localhost:5000/
+    ProxyPassReverse / http://localhost:5000/
+    
+    # Fichiers de log (adaptez les chemins si nécessaire)
+    ErrorLog "C:/Apache24/logs/funigo-error.log"
+    CustomLog "C:/Apache24/logs/funigo-access.log" common
+</VirtualHost>

@@ -1,0 +1,145 @@
+Étape 1 : Le Débogage Essentiel
+La première chose à faire est de voir exactement ce que le site vous renvoie. Votre log dit qu'il ne trouve pas ul.result-list, mais il ne dit pas ce qu'il a reçu à la place.
+Ajoutez une seule ligne pour voir le HTML brut que votre serveur reçoit.
+Modifiez votre route vocab_dico/search comme ceci :
+code
+JavaScript
+// ... dans server.js
+
+app.post('/vocab_dico/search', async (req, res) => {
+    // ...
+    try {
+        // ...
+        const response = await axios.get(url, {
+            headers: {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36'
+            }
+        });
+        
+        // =========================================================
+        // ====> AJOUTEZ CETTE LIGNE DE DÉBOGAGE <====
+        console.log("----- DÉBUT DU HTML REÇU PAR AXIOS -----");
+        console.log(response.data);
+        console.log("----- FIN DU HTML REÇU PAR AXIOS -----");
+        // =========================================================
+
+        const $ = cheerio.load(response.data);
+        const resultsList = $('ul.result-list');
+        // ... le reste du code ...
+    } catch (err) {
+        // ...
+    }
+});
+Relancez votre serveur, faites une recherche pour "maman", puis regardez votre console de terminal. Vous allez probablement voir une page HTML qui n'est PAS la page de résultats. Ce sera peut-être :
+Une page de captcha ("Êtes-vous un robot ?").
+Une page qui dit "Veuillez activer JavaScript".
+Une page d'erreur de leur part.
+Ceci nous donnera l'indice final.
+
+***********************************************************************************************************************************************************************************************************
+
+
+Étape 2 : La Solution la plus probable (Plan B)
+Très souvent, les sites vérifient d'autres en-têtes en plus du User-Agent. Essayons d'imiter un navigateur de manière encore plus complète.
+Remplacez votre appel axios par celui-ci, qui inclut plus d'en-têtes "humains" :
+code
+JavaScript
+// ... dans server.js
+
+const response = await axios.get(url, {
+    headers: {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36',
+        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+        'Accept-Language': 'fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7',
+        'Referer': 'https://www.dictionnaire-japonais.com/', // Très important !
+        'DNT': '1', // Do Not Track
+        'Upgrade-Insecure-Requests': '1'
+    }
+});
+Le header 'Referer' est souvent la clé. Il indique au serveur que la requête provient d'une page de son propre site, ce qui est un comportement normal pour un utilisateur.
+
+
+
+
+
+
+
+***********************************************************************************************************************************************************************************************************
+
+Étape 3 : La Solution Ultime (Plan C - Si le reste échoue)
+Si même avec tous ces en-têtes, le site refuse de coopérer, cela signifie qu'il exécute du code JavaScript pour vérifier l'environnement du navigateur (taille de l'écran, polices installées, etc.). 
+axios ne peut pas faire ça, car il ne fait que télécharger le HTML.
+Dans ce cas, il faut utiliser un "headless browser" comme Puppeteer. C'est un outil qui pilote un vrai navigateur Chrome en arrière-plan. C'est plus lent, mais ça passe à travers 99% des protections.
+Installez Puppeteer :
+code
+Bash
+npm install puppeteer
+Importez-le en haut de server.js :
+code
+JavaScript
+const puppeteer = require('puppeteer');
+Remplacez TOUT le bloc try...catch de votre route vocab_dico/search par celui-ci :
+code
+JavaScript
+// ... dans server.js
+
+app.post('/vocab_dico/search', async (req, res) => {
+    const searchTerm = req.body.searchTerm.trim();
+    if (!searchTerm) { return res.redirect('/vocab_dico'); }
+
+    // On déclare le navigateur en dehors du try pour pouvoir le fermer dans le finally
+    let browser;
+    try {
+        const encodedPart = encodeURIComponent(searchTerm);
+        const url = `https://www.dictionnaire-japonais.com/search.php?w=${encodedPart}&t=1`;
+
+        console.log(`--- Recherche avec Puppeteer ---`);
+        console.log(`mot recherché : ${searchTerm}`);
+        console.log(`URL cible : ${url}`);
+
+        // 1. Lancer un navigateur
+        browser = await puppeteer.launch();
+        const page = await browser.newPage();
+
+        // 2. Naviguer vers l'URL
+        await page.goto(url, { waitUntil: 'networkidle2' }); // Attend que la page soit bien chargée
+
+        // 3. Extraire le contenu APRÈS que tout JavaScript ait tourné
+        const content = await page.evaluate(() => {
+            const resultsList = document.querySelector('ul.result-list');
+            if (resultsList) {
+                // On enlève les liens directement dans le navigateur
+                resultsList.querySelectorAll('a').forEach(a => a.removeAttribute('href'));
+                return resultsList.innerHTML;
+            }
+            return null; // Retourne null si la liste n'est pas trouvée
+        });
+        
+        // 4. Fermer le navigateur
+        await browser.close();
+
+        if (!content) {
+            console.log("Aucune liste de résultats (<ul class='result-list'>) trouvée sur la page avec Puppeteer.");
+        }
+
+        res.render('pages/vocab_dico_form', {
+            title: `Traduction pour "${searchTerm}"`,
+            results: content,
+            searchTerm: searchTerm
+        });
+
+    } catch (err) {
+        console.error("ERREUR lors du scraping avec Puppeteer :", err.message);
+        if (browser) {
+            await browser.close(); // S'assurer que le navigateur se ferme même en cas d'erreur
+        }
+        res.render('pages/vocab_dico_form', {
+            title: 'Erreur',
+            results: `<p style="color: red;">Une erreur est survenue lors de la recherche pour "${searchTerm}".</p>`,
+            searchTerm: searchTerm
+        });
+    }
+});
+Je vous recommande de commencer par l'Étape 1 (débogage) puis l'Étape 2 (plus de headers). Si ça ne marche toujours pas, passez à l'Étape 3 (Puppeteer) qui est la solution la plus robuste.
+
+***********************************************************************************************************************************************************************************************************

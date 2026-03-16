@@ -1,0 +1,61 @@
+**************************************************************************************
+Convertir UTF-16LE en UTF-8
+
+fred@funigo:~/Documents $ mysql -u japadmin -p jap < jap_complet.sql
+Enter password:
+ERROR: ASCII '\0' appeared in the statement, but this is not allowed unless option --binary-mode is enabled and mysql is run in non-interactive mode. 
+Set --binary-mode to 1 if ASCII '\0' is expected. Query: '��-'.
+fred@funigo:~/Documents $ file jap_complet.sql
+jap_complet.sql: Unicode text, UTF-16, little-endian text, with very long lines (10043), with CRLF line terminators
+
+fred@funigo:~/Documents $ sudo apt install -y libc-bin
+libc-bin is already the newest version (2.41-12+rpt1).
+Summary:
+  Upgrading: 0, Installing: 0, Removing: 0, Not Upgrading: 90
+  
+  
+fred@funigo:~/Documents $ iconv -f UTF-16LE -t UTF-8 jap_complet.sql > jap_utf8.sql
+fred@funigo:~/Documents $ file jap_utf8.sql
+jap_utf8.sql: affix definition for MySpell/Hunspell, with BOM, 1st line "-- MySQL dump 10.13  Distrib 8.0.41, for Win64 (x86_64)"
+
+**************************************************************************************************************************************
+Le fichier a toujours un problème - le BOM (Byte Order Mark) interfère. Supprimons-le :
+
+# Supprimer le BOM UTF-8
+sed '1s/^\xEF\xBB\xBF//' jap_utf8.sql > jap_clean.sql
+
+# Vérification
+file jap_clean.sql
+
+jap_clean.sql: Unicode text, UTF-8 text, with very long lines (23175), with CRLF line terminators
+
+**************************************************************************************************************************************
+Pb ERROR 1273 (HY000) at line 25: Unknown collation: 'utf8mb4_ja_0900_as_cs'
+
+Le problème est que votre MySQL sur Raspberry Pi ne reconnaît pas la collation utf8mb4_ja_0900_as_cs (spécifique à MySQL 8.0 sur Windows). 
+Il faut la remplacer par une collation compatible.
+
+fred@funigo:~/Documents $ sed -i 's/utf8mb4_ja_0900_as_cs/utf8mb4_unicode_ci/g' jap_clean.sql
+
+fred@funigo:~/Documents $ grep -n "COLLATE" jap_clean.sql | head -5
+27:  `FRANCAIS` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+28:  `KANJI` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+29:  `KANA` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+30:  `ROMAJI` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+31:  `TYPE` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+
+***************************************************************************************
+
+Pour supprimer tous les DEFINER
+
+fred@funigo:~/Documents $ sed -i 's/DEFINER=[^ ]*//g' jap_clean.sql
+fred@funigo:~/Documents $ grep -n "DEFINER" jap_clean.sql
+670:/*!50013  SQL SECURITY DEFINER */
+688:/*!50013  SQL SECURITY DEFINER */
+706:/*!50013  SQL SECURITY DEFINER */
+724:/*!50013  SQL SECURITY DEFINER */
+742:/*!50013  SQL SECURITY DEFINER */
+760:/*!50013  SQL SECURITY DEFINER */
+fred@funigo:~/Documents $ sed -i '/DEFINER/d' jap_clean.sql
+fred@funigo:~/Documents $ sed -i 's/SQL SECURITY DEFINER/SQL SECURITY INVOKER/g' jap_clean.sql
+fred@funigo:~/Documents $ mysql -u japadmin -p --default-character-set=utf8mb4 jap < jap_clean.sql
