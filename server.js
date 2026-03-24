@@ -80,9 +80,9 @@ app.get('/', async (req, res) => { // La fonction devient 'async'
             };
         });
 
-        console.log(`${formattedArticles.length} Liste des articles formatés.`);
-        console.log(formattedArticles);
-
+        // console.log(`${formattedArticles.length} Liste des articles formatés.`);
+        // console.log(formattedArticles);
+        console.log("Page d'acceuil avec les 3 derniers articles du blog");
         // 1. Définir le chemin absolu vers le dossier des vidéos
         // path.join est la méthode la plus sûre pour construire des chemins de fichiers
         const videoDirectory = path.join(__dirname, 'public', 'video');
@@ -879,9 +879,9 @@ app.get('/vocab_gitaigo', async (req, res) => {
         const [results] = await dbPool.query(query);
 
         // Log pour voir le résultat brut de la base de données
-        console.log("Résultat brut obtenu de la DB :", results);
-        console.log("Nombre de résultats trouvés :", results.length);
-        console.log("--------------------------------------");
+        // console.log("Résultat brut obtenu de la DB :", results);
+        // console.log("Nombre de résultats trouvés :", results.length);
+        // console.log("--------------------------------------");
 
         res.render('pages/vocab/vocab_gitaigo_form', { title: 'Mots onomatopées Gitaigo', results: results});
     } catch (err) {
@@ -1055,6 +1055,15 @@ app.get('/grammaire', (req, res) => {
     }
 });
 
+// *******************************************************************************************************************************//
+//  Recherche d'une règle de grammaire
+// *******************************************************************************************************************************//
+
+app.get('/gram_jap_rech_regles', (req, res) => {
+    res.render('pages/gram/gram_jap_rech_regles_form', { 
+		title: 'Recherche d\'une Règles'
+	});
+});
 
 // *******************************************************************************************************************************//
 // Dico gram_conjugaison
@@ -1708,7 +1717,7 @@ app.get('/blog_liste', async (req, res) => {
         });
 
         console.log(`${formattedArticles.length} Liste des articles formatés.`);
-        console.log(formattedArticles);
+        // console.log(formattedArticles);
 
         res.render('pages/blog/blog_liste_article_form.ejs', { 
             title: 'Liste des Articles du Blog',
@@ -1888,8 +1897,8 @@ app.get('/blog_tech_liste', async (req, res) => {
 
         // Formatage des dates avant de les passer au template
 
-        console.log(`articles.length} Liste des articles TECH formatés.`);
-        console.log(articles);
+        // console.log(`articles.length} Liste des articles TECH formatés.`);
+        // console.log(articles);
 
         res.render('pages/blog/blog_tech_liste_article_form.ejs', { 
             title: 'Liste des Articles du Blog TECH',
@@ -2023,15 +2032,18 @@ app.get('/blog_tech/modifier/:id', async (req, res) => {
 });
 
 // Route pour soumettre la modification (POST)
+console.log('block tech modifier');
 
 app.post('/blog_tech/modifier/:id', async (req, res) => {
     const articleId = req.params.id;
     const { type, titre, contenu, image, fichier  } = req.body; // Récupérer le titre et le contenu du formulaire
 
     try {
-        const query = 'UPDATE note_tech SET type = ?, titre = ?, contenu = ?, image = ?, fichier = ? ';
-        await dbPool.query(query, [type, titre, contenu, image, fichier]);
-        res.redirect('/blog_tech_liste'); // Rediriger vers la liste après modification
+        const query = 'UPDATE note_tech SET type = ?, titre = ?, contenu = ?, image = ?, fichier = ? WHERE id = ?';
+        await dbPool.query(query, [type, titre, contenu, image, fichier, articleId]);
+        console.log('Article modifier')
+            res.redirect('/blog_tech_liste'); // Rediriger vers la liste après modification
+
     } catch (err) {
         console.error(`ERREUR lors de la modification de l'article ${articleId} TECH :`, err);
         res.status(500).send("Erreur serveur.");

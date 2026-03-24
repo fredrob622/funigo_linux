@@ -1,0 +1,146 @@
+
+Windows:	Voir les caratéristiques du partage
+------------------------------------------------
+
+PS C:\WINDOWS\system32> Get-SmbShareAccess -Name "funigo-fichier"
+
+Name           ScopeName AccountName             AccessControlType AccessRight
+----           --------- -----------             ----------------- -----------
+funigo-fichier *         BUILTIN\Administrateurs Allow             Full
+funigo-fichier *         Tout le monde           Allow             Full
+
+
+Windows:	Création de l'utilisateur partage avec son mot de passe
+-------------------------------------------------------------------
+
+C:\Windows\System32>net user partage Tokyo_2010 /add
+La commande s’est terminée correctement.
+
+Windows:	Voir les propriétés détaillées (Configuration)
+-------------------------------------------------------------------
+PS C:\WINDOWS\system32> Get-SmbShare -Name "funigo-fichier"| Select-Object *
+
+
+PresetPathAcl          : System.Security.AccessControl.DirectorySecurity
+ShareState             : Online
+AvailabilityType       : NonClustered
+ShareType              : FileSystemDirectory
+FolderEnumerationMode  : AccessBased
+CachingMode            : Manual
+LeasingMode            : Full
+QoSFlowScope           : File
+SmbInstance            : Default
+CATimeout              : 0
+CompressData           : False
+ConcurrentUserLimit    : 0
+ContinuouslyAvailable  : False
+CurrentUsers           : 1
+Description            :
+DirectoryHandleLeasing : True
+EncryptData            : False
+IdentityRemoting       : False
+Infrastructure         : False
+IsolatedTransport      : False
+Name                   : funigo-fichier
+Path                   : C:\funigo-fichier
+QoSPolicyId            : {00000000-0000-0000-0000-000000000000}
+Scoped                 : False
+ScopeName              : *
+SecurityDescriptor     : O:S-1-5-21-1483173906-57546936-2002865768-1003G:S-1-5-21-1483173906-57546936-2002865768-1003D:
+                         (A;OICI;FA;;;BA)(A;OICI;FA;;;WD)
+ShadowCopy             : False
+Special                : False
+Temporary              : False
+Volume                 : \\?\Volume{213bb72f-669b-441a-9704-96bc6f60b82e}\
+PSComputerName         :
+CimClass               : ROOT/Microsoft/Windows/SMB : MSFT_SmbShare
+CimInstanceProperties  : {AvailabilityType, CachingMode, CATimeout, CompressData...}
+CimSystemProperties    : Microsoft.Management.Infrastructure.CimSystemProperties
+
+windows:	Création une nouvelle règle dans le pare-feu Windows pour autoriser le trafic entrant lié au partage de fichiers (SMB).
+---------------------------------------------------------------------------------------------------------------------------------
+
+PS C:\WINDOWS\system32> New-NetFirewallRule -DisplayName "SMB-In" -Direction Inbound -Protocol TCP -LocalPort 445 -Action Allow
+Name                          : {878f7be0-801c-409b-87ba-7cc80e09ae91}
+DisplayName                   : SMB-In
+Description                   :
+DisplayGroup                  :
+Group                         :
+Enabled                       : True
+Profile                       : Any
+Platform                      : {}
+Direction                     : Inbound
+Action                        : Allow
+EdgeTraversalPolicy           : Block
+LooseSourceMapping            : False
+LocalOnlyMapping              : False
+Owner                         :
+PrimaryStatus                 : OK
+Status                        : La règle a été analysée à partir de la banque. (65536)
+EnforcementStatus             : NotApplicable
+PolicyStoreSource             : PersistentStore
+PolicyStoreSourceType         : Local
+RemoteDynamicKeywordAddresses : {}
+PolicyAppId                   :
+PackageFamilyName             :
+
+Raspberry: Tester depuis le Raspberry
+--------------------------
+
+fred@funigo:~ $ smbclient -L //192.168.1.7 -U partage
+Password for [WORKGROUP\partage]:
+        Sharename       Type      Comment
+        ---------       ----      -------
+        ADMIN$          Disk      Administration à distance
+        C$              Disk      Partage par défaut
+        funigo-fichier  Disk
+        IPC$            IPC       IPC distant
+        Users           Disk
+SMB1 disabled -- no workgroup available
+
+
+Raspberry: Rendre le montage permanent au démarrage
+--------------------------------------------------
+
+	Créer un fichier de credentials (sécurité)
+	------------------------------------------
+	
+fred@funigo:~ $ sudo vim /etc/samba/credentials_windows
+fred@funigo:~ $ cat /etc/samba/credentials_windows
+username=partage
+password=Tokyo_2010
+
+	Ajouter dans /etc/fstab
+	-----------------------
+	
+sudo chmod 600 /etc/samba/credentials_windows
+
+	Teste manuel
+	------------
+	
+sudo mount -t cifs //192.168.1.7/funigo-fichier /home/fred/funigo-fichier -o username=partage,password=Tokyo_2010,uid=1000,gid=1000
+fred@funigo:~ $
+
+	Modifier le fichier 
+	------------------
+
+fred@funigo:~ $ cat /etc/fstab
+proc            /proc           proc    defaults          0       0
+PARTUUID=fce19825-01  /boot/firmware  vfat    defaults          0       2
+PARTUUID=fce19825-02  /               ext4    defaults,noatime  0       1
+//192.168.1.7/funigo-fichier  /home/fred/funigo-fichier  cifs  credentials=/etc/samba/credentials_windows,uid=1000,gid=1000,_netdev,x-systemd.automount  0  0
+
+	Tester sans redémarrer
+	----------------------
+	
+sudo mount -a
+
+Récapitulatif de ce qui a été mis en place
+------------------------------------------
+
+
+Élément							Valeur
+Dossier Windows partagé			\\192.168.1.7\funigo-fichier
+Compte Windows dédié			partage
+Point de montage Raspberry		/home/fred/funigo-fichier
+Port ouvert						TCP 445 (SMB)

@@ -1,0 +1,242 @@
+Installation de Certbot
+-----------------------
+Tout d'abord, vous devez installer Certbot et son plugin pour Apache. Sur la plupart des distributions Linux, utilisez :
+
+Bash
+
+sudo apt update
+sudo apt install certbot python3-certbot-apache
+
+2. Génération du certificat
+---------------------------
+Sous Linux, Certbot peut configurer automatiquement vos fichiers VirtualHost ou simplement générer les certificats. 
+Comme vous avez déjà une structure d'hôtes virtuels personnalisée, je vous recommande la commande suivante qui génère le certificat 
+sans modifier vos fichiers de configuration immédiatement :
+
+Bash
+
+sudo certbot certonly --apache -d funigo.fr -d www.funigo.fr
+
+certonly : Récupère le certificat mais ne modifie pas vos fichiers .conf.
+
+--apache : Utilise l'authentificateur Apache pour prouver que vous possédez le domaine.
+
+3. Emplacement des fichiers
+-----------------------------
+
+Une fois la commande terminée, vos certificats ne seront plus dans C:/Certbot/live/  mais dans le répertoire standard Linux :
+
+Certificat (fullchain) : /etc/letsencrypt/live/funigo.fr/fullchain.pem
+
+Clé privée : /etc/letsencrypt/live/funigo.fr/privkey.pem
+
+4. Mise à jour de votre configuration Apache
+--------------------------------------------
+
+Vous devez maintenant modifier votre fichier httpd-vhosts.conf 
+(ou le fichier correspondant dans /etc/apache2/sites-available/) pour pointer vers ces nouveaux chemins :
+
+VirtualHost *:443>
+    ServerName www.funigo.fr
+    # ... autres directives ...
+
+    SSLEngine on
+    SSLCertificateFile "/etc/letsencrypt/live/funigo.fr/fullchain.pem"
+    SSLCertificateKeyFile "/etc/letsencrypt/live/funigo.fr/privkey.pem"
+    
+    # Votre configuration de Proxy vers Node.js reste la même 
+    ProxyPass / http://localhost:5000/
+    ProxyPassReverse / http://localhost:5000/
+</VirtualHost>
+
+Pour tester si le renouvellement fonctionne, vous pouvez lancer :
+
+Bash
+sudo certbot renew --dry-run
+
+Script de vérification et de logs personnalisé
+Si vous voulez un script que vous pouvez lancer manuellement pour vérifier l'état et forcer une action si nécessaire, créez un fichier check_cert.sh :
+
+Bash
+		#!/bin/bash
+		
+		# Configuration
+		DOMAIN="funigo.fr"
+		EMAIL="admin@example.com" # [source 30]
+		
+		echo "--- Vérification du certificat pour $DOMAIN ---"
+		
+		# 1. Vérifier la date d'expiration via OpenSSL
+		EXPIRY_DATE=$(openssl x509 -enddate -noout -in /etc/letsencrypt/live/$DOMAIN/fullchain.pem | cut -d= -f2)
+		echo "Date d'expiration actuelle : $EXPIRY_DATE"
+		
+		# 2. Tenter un renouvellement silencieux
+		# --post-hook redémarre Apache uniquement si le certificat a été renouvelé
+		sudo certbot renew --post-hook "systemctl reload apache2" --quiet
+		
+		if [ $? -eq 0 ]; then
+			echo "Le processus de renouvellement s'est déroulé avec succès."
+		else
+			echo "Erreur lors du renouvellement."
+		fi
+		
+3. Adaptation de votre Apache pour Linux
+----------------------------------------
+
+Selon votre fichier httpd.conf actuel, Apache sous Linux utilisera l'utilisateur daemon par défaut. 
+Assurez-vous que cet utilisateur a accès aux logs dans /var/log/apache2/.
+
+Dans votre configuration httpd-vhosts.conf adaptée, n'oubliez pas de mettre à jour les chemins des certificats vers le répertoire standard de Certbot sur Linux :
+
+SSLCertificateFile "/etc/letsencrypt/live/funigo.fr/fullchain.pem"
+
+SSLCertificateKeyFile "/etc/letsencrypt/live/funigo.fr/privkey.pem"
+
+4. Automatisation avec Crontab (Optionnel)
+------------------------------------------
+
+Bien que le certbot.timer soit suffisant, certains administrateurs préfèrent une règle cron classique. 
+Pour vérifier le certificat tous les lundis à minuit :
+
+Tapez sudo crontab -e
+
+Ajoutez cette ligne à la fin : 
+
+0 0 * * 1 certbot recd new --post-hook "systemctl reload apache2" >> /var/log/certbot-renew.log
+
+*******************************************************************************************************************************************************************************************
+
+Script de vérification et de logs personnalisé
+Si vous voulez un script que vous pouvez lancer manuellement pour vérifier l'état et forcer une action si nécessaire, créez un fichier check_cert.sh :
+
+Bash
+		#!/bin/bash
+		
+		# Configuration
+		DOMAIN="funigo.fr"
+		EMAIL="admin@example.com" # [source 30]
+		
+		echo "--- Vérification du certificat pour $DOMAIN ---"
+		
+		# 1. Vérifier la date d'expiration via OpenSSL
+		EXPIRY_DATE=$(openssl x509 -enddate -noout -in /etc/letsencrypt/live/$DOMAIN/fullchain.pem | cut -d= -f2)
+		echo "Date d'expiration actuelle : $EXPIRY_DATE"
+		
+		# 2. Tenter un renouvellement silencieux
+		# --post-hook redémarre Apache uniquement si le certificat a été renouvelé
+		sudo certbot renew --post-hook "systemctl reload apache2" --quiet
+		
+		if [ $? -eq 0 ]; then
+			echo "Le processus de renouvellement s'est déroulé avec succès."
+		else
+			echo "Erreur lors du renouvellement."
+		fi
+
+
+3. Adaptation de votre Apache pour Linux
+----------------------------------------
+
+Selon votre fichier httpd.conf actuel, Apache sous Linux utilisera l'utilisateur daemon par défaut. 
+Assurez-vous que cet utilisateur a accès aux logs dans /var/log/apache2/.
+
+Dans votre configuration httpd-vhosts.conf adaptée, n'oubliez pas de mettre à jour les chemins des certificats vers le répertoire standard de Certbot sur Linux :
+
+SSLCertificateFile "/etc/letsencrypt/live/funigo.fr/fullchain.pem"
+
+SSLCertificateKeyFile "/etc/letsencrypt/live/funigo.fr/privkey.pem"
+
+4. Automatisation avec Crontab (Optionnel)
+------------------------------------------
+
+Bien que le certbot.timer soit suffisant, certains administrateurs préfèrent une règle cron classique. 
+Pour vérifier le certificat tous les lundis à minuit :
+
+Tapez sudo crontab -e
+
+Ajoutez cette ligne à la fin : 
+
+0 0 * * 1 certbot renew --post-hook "systemctl reload apache2" >> /var/log/certbot-renew.log
+
+
+5. lire la date du certificat 
+------------------------------------------
+
+fred@funigo:/etc/letsencrypt/live $ ls
+
+funigo.fr  README  
+
+fred@funigo:/etc/letsencrypt/live $ cd funigo.fr
+fred@funigo:/etc/letsencrypt/live/funigo.fr $ ls
+
+fullchain.pem  privkey.pem
+
+fred@funigo:/etc/letsencrypt/live/funigo.fr $ openssl x509 -in fullchain.pem -noout -dates
+notBefore=Dec 22 17:01:43 2025 GMT
+notAfter=Mar 22 17:01:42 2026 GMT
+
+6. voir les DNS
+------------------------------------------
+
+fred@funigo:/etc/letsencrypt/live/funigo.fr-0001 $ sudo openssl x509 -in fullchain.pem -text -noout | grep DNS
+                DNS:funigo.fr, DNS:www.funigo.fr
+----------------------------------------------------------------------------------------------------------
+
+Dans apache2  répertoire /etc/apache2/sites-available
+
+cat funigo.conf
+
+# Configuration principale pour HTTPS (SSL)
+<VirtualHost *:443>
+    ServerName www.funigo.fr
+    ServerAlias funigo.fr
+
+    # On adapte vos chemins Windows vers Linux
+    SSLEngine on
+    SSLCertificateFile "/etc/letsencrypt/live/funigo.fr/fullchain.pem"
+    SSLCertificateKeyFile "/etc/letsencrypt/live/funigo.fr/privkey.pem"
+
+    # Vos headers de sécurité [cite: 81, 82]
+    Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains"
+    <IfModule mod_headers.c>
+        Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'sha256-8AFl6gs2BjOGxU9eZtoVWi4wLFMR4DkrvF+TlMsKORc='; style-src 'self' https://cdnjs.cloudflare.com 'unsafe-inline'; connect-src 'self' https://api.open-meteo.com https://api.exchangerate-api.com https://worldtimeapi.org https://cdn.jsdelivr.net; img-src 'self' data:https://*.googleapis.com https://*.gstatic.com https://*.google.com https://*.ytiming.com; font-src 'self' https://cdnjs.cloudflare.com data:;frame-src https://www.google.com https://maps.google.com https://maps.googleapis.com https://www.youtube.com https://youtube.com"
+        Header set X-Frame-Options "SAMEORIGIN"
+        Header set X-Content-Type-Options "nosniff"
+        Header set Referrer-Policy "no-referrer-when-downgrade"
+    </IfModule>
+
+    # Configuration du Reverse Proxy vers Node.js
+    ProxyPass /.well-known !
+    ProxyPreserveHost On
+    ProxyRequests Off
+    ProxyPass / http://localhost:5000/
+    ProxyPassReverse / http://localhost:5000/
+
+    # Chemins des logs version Linux
+    ErrorLog ${APACHE_LOG_DIR}/funigo-error.log
+    CustomLog ${APACHE_LOG_DIR}/funigo-access.log common
+</VirtualHost>
+
+
+# Configuration principale pour HTTPS (SSL) win.funigo.fr
+<VirtualHost *:443>
+    ServerName win.funigo.fr
+    ServerAlias funigo.fr
+
+    # On adapte vos chemins Windows vers Linux
+    SSLEngine on
+    SSLCertificateFile "/etc/letsencrypt/live/win.funigo.fr/fullchain.pem"
+    SSLCertificateKeyFile "/etc/letsencrypt/live/win.funigo.fr/privkey.pem"
+
+    # Important pour le CSS/JS
+    ProxyPreserveHost on
+    RequestHeader set X-Forwarded-Proto "https"
+
+
+    # Configuration du Reverse Proxy vers Node.js
+    ProxyPass / http://192.168.1.7:6000/
+    ProxyPassReverse / http://192.168.1.7:6000/
+
+    # Chemins des logs version Linux
+    ErrorLog ${APACHE_LOG_DIR}/funigo-error.log
+    CustomLog ${APACHE_LOG_DIR}/funigo-access.log common
+</VirtualHost>

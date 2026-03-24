@@ -1,0 +1,90 @@
+Installation de Samba
+---------------------
+
+sudo apt update
+sudo apt install samba
+
+Vérifiez que le service Samba est actif :
+-----------------------------------------
+
+sudo systemctl status smbd
+
+Créer le répertoire à partager :
+--------------------------------
+
+mkdir /home/fred/partage
+
+Donner les permissions :
+--------------------------------
+
+sudo chmod 777 /home/fred/partage
+
+L'ajouter à la base Samba et définir son mot de passe :
+-------------------------------------------------------
+sudo smbpasswd -a nom_utilisateur
+
+Activer l'utilisateur
+---------------------
+
+sudo smbpasswd -e nom_utilisateur
+
+Voir les utilisateurs
+---------------------
+
+grep fred /etc/samba/smb.conf
+
+   path = /home/fred/partage
+   valid users = fred
+   force user = fred
+   
+Voir les permissions
+---------------------
+
+ $ ls -la /var/www/funigo/public
+total 44
+drwxr-xr-x 9 fred www-data 4096 Jan 24 22:55 .
+drwxr-xr-x 8 fred www-data 4096 Mar 16 23:16 ..
+drwxr-xr-x 2 fred www-data 4096 Jan 24 22:55 css
+drwxr-xr-x 2 fred www-data 4096 Jan 24 22:55 data
+drwxr-xr-x 3 fred www-data 4096 Jan 24 22:55 fichier
+drwxr-xr-x 2 fred www-data 4096 Jan 24 22:55 html
+drwxr-xr-x 7 fred www-data 4096 Jan 24 22:55 images
+drwxr-xr-x 2 fred www-data 4096 Jan 24 22:55 js
+-rwxr-xr-x 1 fred www-data   70 Jan 24 22:55 robots.txt
+-rwxr-xr-x 1 fred www-data 2367 Jan 24 22:55 sitemap.xml
+drwxr-xr-x 3 fred www-data 4096 Mar 16 22:47 video
+$ ls -la /var/www/funigo/ | grep public
+drwxr-xr-x   9 fred www-data  4096 Jan 24 22:55 public
+
+Ajouter à la fin du fichier
+---------------------------
+
+ $ sudo vim /etc/samba/smb.conf
+ 
+ [PartageFred]
+   path = /home/fred/partage
+   writeable = yes
+   browseable = yes
+   public = no
+
+[funigo-public]
+   comment = Funigo Public Web
+   path = /var/www/funigo/public
+   browseable = yes
+   read only = no
+   writable = yes
+   create mask = 0775
+   directory mask = 0775
+   valid users = fred
+   force user = fred
+   
+   
+ Pour visualiser le partage sous windows
+ ---------------------------------------
+ 
+ \\@ip ou nom machine\Nom_du_partage dans le navigateur
+ 
+ \\192.168.1.2\PartageFred
+ 
+ \\192.168.1.2\funigo-public\images\note_tech
+

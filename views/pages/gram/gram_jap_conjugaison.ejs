@@ -3,7 +3,11 @@
 <!-- ON AJOUTE L'ID ICI, SUR LE CONTENEUR PRINCIPAL -->
 <div id="container-wrapper" class="content content-black"> 
     
-    <h2>Rechercher la conjugaison d'un verbe japonais</h2>
+    <div class="vocab_titre" >   
+        <h2><%= title %></h2>
+        <a href="/grammaire" class="vocab_href">Retour</a>
+    </div>
+
     <form action="/gram_jap_conjugaison/search" method="POST" class="search-form">
         <input type="text" name="searchTerm" value="<%= searchTerm %>" placeholder="Entrez un verbe en japonais (ex: 働く)">
         <button type="submit">Rechercher</button>

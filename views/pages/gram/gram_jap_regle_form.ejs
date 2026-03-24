@@ -1,29 +1,18 @@
 <%- include('../../partials/header_gram') %>
 
 <div class="content content-black">
-    
-    <h2 class="gram-regles-h2">Règles de grammaire</h2>
+
+
+    <div class="vocab_titre" >   
+        <h2><%= title %></h2>
+        <a href="/grammaire" class="vocab_href">Retour</a>
+    </div>
+
+    <!-- <h2 class="gram-regles-h2">Règles de grammaire</h2> -->
     				
-    <form action="/gram_jap_regles" method="GET" class="search-form" style="justify-content: center; align-items: flex-end; gap: 15px;">
-        
-        <div style="text-align: center;">
-            <label for="gram-nom-select" style="display: inline; margin-bottom: 10px; margin-right: 20px;">
-                Choisissez une règle:
-            </label>
-            <select id="gram-nom-select" name="selection"  class="gram-nom-select" >
-                <option value="" disabled <%= !searchTerm ? 'selected' : '' %>>-- Sélectionnez --</option>
-                <% listeGramRegle.forEach( regle => { %>
-                    <option value="<%= regle.nom %>"
-                    class="gram-regle-option"    
-                    <%= (regle.nom === searchTerm) ? 'selected' : '' %>>
-                    <%= regle.nom %>
-                    </option>
-                <% }); %>
-            </select>
-            <p><br></p>
-            <button type="submit">Afficher</button>
-        </div>
-             
+	<form action="/kanji_dico/search" method="POST" class="search-form">
+        <input type="text" name="searchTerm" value="<%= searchTerm %>" placeholder="Rechercher une règle">
+        <button type="submit">Rechercher</button>
     </form>
 	
 	<% if (results && results.length > 0) { %>
