@@ -1,0 +1,20 @@
+# Autorise tous les robots à accéder à toutes les pages
+User-agent: *
+Allow: /
+
+# Bloque un dossier spécifique pour tous les robots
+User-agent: *
+Disallow: /dossier-prive/
+
+# Bloque un fichier spécifique pour tous les robots
+User-agent: *
+
+
+Disallow: /fichier-secret.html
+
+# Bloque un dossier spécifique pour un robot spécifique
+User-agent: Googlebot
+Disallow: /dossier-googlebot/
+
+# Indique l'emplacement du sitemap
+Sitemap: https://www.funigo.fr/sitemap.xml
