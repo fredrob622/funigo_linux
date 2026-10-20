@@ -85,7 +85,7 @@ app.get('/', async (req, res) => { // La fonction devient 'async'
         console.log("Page d'acceuil avec les 3 derniers articles du blog");
         // 1. Définir le chemin absolu vers le dossier des vidéos
         // path.join est la méthode la plus sûre pour construire des chemins de fichiers
-        const videoDirectory = path.join(__dirname, 'public', 'video');
+        const videoDirectory = path.join(__dirname, 'public', 'video', 'acceuil');
         
         // 2. Lire tous les noms de fichiers dans le dossier
         const allFiles = await fs.readdir(videoDirectory);
@@ -109,9 +109,6 @@ app.get('/', async (req, res) => { // La fonction devient 'async'
             videoFile: randomVideo ,// On envoie le nom du fichier    
             listeArticles: formattedArticles 
         });
-
-
-        
         
     } catch (err) {
         console.error("Erreur lors de la lecture du dossier des vidéos :", err);
@@ -123,8 +120,6 @@ app.get('/', async (req, res) => { // La fonction devient 'async'
     }
     
 });
-
-
 
 
 
@@ -396,6 +391,21 @@ app.post('/kanji_free_dico/search', async (req, res) => {
 });
 
 // *******************************************************************************************************************************//
+// Ecrire en japonais avec un PC ou téléphone
+// *******************************************************************************************************************************//
+app.get('/kanji_ecrire_japonais', (req, res) => {
+    try {   
+        // Cette route sert juste à afficher le formulaire vide au début.
+        res.render('pages/kanji/kanji_ecrire_Japonais_form', { title: 'Ecrire en japonais avec un PC ou téléphone' });
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Ecrire en japonais avec un PC ou téléphone:", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+
+
+// *******************************************************************************************************************************//
 // Menu kanji Hiragana
 // *******************************************************************************************************************************//
 app.get('/kanji_hiragana', (req, res) => {
@@ -468,7 +478,7 @@ app.get('/vocab', (req, res) => {
 });
 
 // *******************************************************************************************************************************//
-// Dico Vocab JPLT
+// route VOCAB Dico Vocab JPLT
 // *******************************************************************************************************************************//
 
 app.get('/vocab_jplt', (req, res) => {
@@ -512,7 +522,7 @@ app.post('/vocab_jplt/search', async (req, res) => {
 });
 
 // *******************************************************************************************************************************//
-// Dico franco/japonais en ligne
+// route VOCABDico franco/japonais en ligne
 // *******************************************************************************************************************************//
 
 app.get('/vocab_dico', (req, res) => {
@@ -598,7 +608,7 @@ app.post('/vocab_dico/search', async (req, res) => {
 });
 
 // *******************************************************************************************************************************//
-// route adjectif
+// route VOCAB route adjectif
 // *******************************************************************************************************************************//
 
 app.get('/vocab_adjectif', async (req, res) => { 
@@ -625,7 +635,7 @@ app.get('/vocab_adjectif', async (req, res) => {
 });
 
 // *******************************************************************************************************************************//
-// route adjectif_ii
+// route VOCAB adjectif_ii
 // *******************************************************************************************************************************//
 
 app.get('/vocab_adjectif_ii', async (req, res) => { 
@@ -652,7 +662,7 @@ app.get('/vocab_adjectif_ii', async (req, res) => {
 });
 
 // *******************************************************************************************************************************//
-// route adjectif_na
+// route VOCAB  adjectif_na
 // *******************************************************************************************************************************//
 
 app.get('/vocab_adjectif_na', async (req, res) => { 
@@ -679,7 +689,7 @@ app.get('/vocab_adjectif_na', async (req, res) => {
 });
 
 // *******************************************************************************************************************************//
-// route adjectif utilisation
+// route VOCAB  adjectif utilisation
 // *******************************************************************************************************************************//
 
 app.get('/vocab_adjectif_utilisation', async (req, res) => {
@@ -709,7 +719,7 @@ app.get('/vocab_adjectif_utilisation', async (req, res) => {
 });
 
 // *******************************************************************************************************************************//
-// route les liaisons des adjectifs /vocab_adjectif_liaison
+// route VOCABles liaisons des adjectifs /vocab_adjectif_liaison
 // *******************************************************************************************************************************//
 app.get('/vocab_adjectif_liaison', (req, res) => {
     // Cette route sert juste à afficher la page.
@@ -719,7 +729,7 @@ app.get('/vocab_adjectif_liaison', (req, res) => {
 });
 
 // *******************************************************************************************************************************//
-// route exercice de liaison des adjectifs /vocab_adjectif_exercice_liaison
+// route VOCAB  exercice de liaison des adjectifs /vocab_adjectif_exercice_liaison
 // *******************************************************************************************************************************//
 
 app.get('/vocab_adjectif_exercice_liaison', async (req, res) => { 
@@ -746,7 +756,7 @@ app.get('/vocab_adjectif_exercice_liaison', async (req, res) => {
 });
 
 // *******************************************************************************************************************************//
-// route passé des adjectifs /vocab_adjectif_passe
+// route VOCAB  passé des adjectifs /vocab_adjectif_passe
 // *******************************************************************************************************************************//
 app.get('/vocab_adjectif_passe', (req, res) => {
     // Cette route sert juste à afficher la page.
@@ -756,7 +766,7 @@ app.get('/vocab_adjectif_passe', (req, res) => {
 });
 
 // *******************************************************************************************************************************//
-// route exercice du passé des adjectifs /vocab_adjectif_exercice_liaison
+// route VOCAB exercice du passé des adjectifs /vocab_adjectif_exercice_liaison
 // *******************************************************************************************************************************//
 
 app.get('/vocab_adjectif_exercice_passe', async (req, res) => { 
@@ -783,7 +793,7 @@ app.get('/vocab_adjectif_exercice_passe', async (req, res) => {
 });
 
 // *******************************************************************************************************************************//
-// route vocab adverbe
+// route VOCAB  adverbe
 // *******************************************************************************************************************************//
 
 app.get('/vocab_adverbe', async (req, res) => { 
@@ -1000,7 +1010,7 @@ app.post('/vocab_onomatopee_detail/search', async (req, res) => {
 });
 
 // *******************************************************************************************************************************//
-//  Vocab Compter
+//  route VOCAB Compter
 // *******************************************************************************************************************************//
 
 app.get('/vocab_compter', async (req, res) => {
@@ -1041,6 +1051,190 @@ app.get('/vocab_compter', async (req, res) => {
     }
 });
 
+// *******************************************************************************************************************************//
+//  route VOCAB Politesse
+// *******************************************************************************************************************************//
+
+app.get('/vocab_politesse', (req, res) => {
+    try {
+        res.render('pages/vocab/vocab_politesse_form', { title: 'La politesse Japonaise' });
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de vocab_politesse_form :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+// *******************************************************************************************************************************//
+//  route VOCAB Politesse keisho
+// *******************************************************************************************************************************//
+
+app.get('/vocab_politesse_keisho', (req, res) => {
+    try {
+        res.render('pages/vocab/politesse/vocab_politesse_keisho_form', { title: 'Keishō 敬称' });
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de vocab_politesse_keisho_form :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+// *******************************************************************************************************************************//
+//  route VOCAB Politesse keisho exercice
+// *******************************************************************************************************************************//
+
+app.get('/vocab_keisho_exercice', async (req, res) => {
+
+    try {
+        // MODIFICATION CLÉ : Sélectionner TOUTES les colonnes
+        const query = `
+            SELECT type, francais, liste_terme, kanji, hiragana
+			FROM vocab_exer_politesse
+			WHERE TYPE = 'Keisho'
+        `;
+
+        const [results] = await dbPool.query(query);
+
+
+        // Log pour voir le résultat brut de la base de données
+        console.log("Résultat brut obtenu de la DB :", results);
+        console.log("Nombre de résultats trouvés :", results.length);
+        console.log("--------------------------------------");
+
+        res.render('pages/vocab/politesse/vocab_keisho_exercice_form', { title: 'Exercice sur Keisho', results: results});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page Exercice sur Keisho :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+// *******************************************************************************************************************************//
+//  route VOCAB Politesse teineigo
+// *******************************************************************************************************************************//
+
+app.get('/vocab_politesse_teineigo', (req, res) => {
+    try {
+        res.render('pages/vocab/politesse/vocab_politesse_teineigo_form', { title: 'Teineigo 丁寧語' });
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de vocab_politesse_teineigo_form :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+// *******************************************************************************************************************************//
+//  route VOCAB Politesse teineigo exercice
+// *******************************************************************************************************************************//
+
+app.get('/vocab_exerc_teineigo', async (req, res) => {
+
+    try {
+        // MODIFICATION CLÉ : Sélectionner TOUTES les colonnes
+        const query = `
+            SELECT type, francais, liste_terme, kanji, hiragana
+			FROM vocab_exer_politesse
+			WHERE TYPE = 'Teineigo'
+        `;
+
+        const [results] = await dbPool.query(query);
+
+
+
+        // Log pour voir le résultat brut de la base de données
+        console.log("Résultat brut obtenu de la DB :", results);
+        console.log("Nombre de résultats trouvés :", results.length);
+        console.log("--------------------------------------");
+
+        res.render('pages/vocab/politesse/vocab_teineigo_exercice_form', { title: 'Exercice sur Teineigo', results: results});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page Exercice sur Teineigo :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+// *******************************************************************************************************************************//
+//  route VOCAB Politesse sonkeigo
+// *******************************************************************************************************************************//
+
+app.get('/vocab_politesse_sonkeigo', (req, res) => {
+    try {
+        res.render('pages/vocab/politesse/vocab_politesse_sonkeigo_form', { title: 'Sonkeigo 尊敬語' });
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de vocab_politesse_sonkeigo_form :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+// *******************************************************************************************************************************//
+//  route VOCAB Politesse sonkeigo exercice
+// *******************************************************************************************************************************//
+
+app.get('/vocab_exerc_sonkeigo', async (req, res) => {
+
+    try {
+        // MODIFICATION CLÉ : Sélectionner TOUTES les colonnes
+        const query = `
+            SELECT type, francais, liste_terme, kanji, hiragana
+			FROM vocab_exer_politesse
+			WHERE TYPE = 'Sonkeigo'
+        `;
+
+        const [results] = await dbPool.query(query);
+
+
+
+        // Log pour voir le résultat brut de la base de données
+        console.log("Résultat brut obtenu de la DB :", results);
+        console.log("Nombre de résultats trouvés :", results.length);
+        console.log("--------------------------------------");
+
+        res.render('pages/vocab/politesse/vocab_sonkeigo_exercice_form', { title: 'Exercice sur Sonkeigo', results: results});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page Exercice sur Sonkeigo :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+
+// *******************************************************************************************************************************//
+//  route VOCAB Politesse kenjougo
+// *******************************************************************************************************************************//
+
+app.get('/vocab_politesse_kenjougo', (req, res) => {
+    try {
+        res.render('pages/vocab/politesse/vocab_politesse_kenjougo_form', { title: 'Kenjougo 恥謝語' });
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de vocab_politesse_kenjougo_form :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+// *******************************************************************************************************************************//
+//  route VOCAB Politesse kenjougo exercice
+// *******************************************************************************************************************************//
+
+app.get('/vocab_kenjougo_exercice', async (req, res) => {
+
+    try {
+        // MODIFICATION CLÉ : Sélectionner TOUTES les colonnes
+        const query = `
+            SELECT type, francais, liste_terme, kanji, hiragana
+			FROM vocab_exer_politesse
+			WHERE TYPE = 'Kenjougo'
+        `;
+
+        const [results] = await dbPool.query(query);
+
+
+        // Log pour voir le résultat brut de la base de données
+        console.log("Résultat brut obtenu de la DB :", results);
+        console.log("Nombre de résultats trouvés :", results.length);
+        console.log("--------------------------------------");
+
+        res.render('pages/vocab/politesse/vocab_kenjougo_exercice_form', { title: 'Exercice sur Kenjougo', results: results});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page Exercice sur Kenjougo :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
 // ------------------------------------------------------------- Langue Grammaire ----------------------------------------------------------//
 // *******************************************************************************************************************************//
 // Menu Grammaire
@@ -1056,13 +1250,45 @@ app.get('/grammaire', (req, res) => {
 });
 
 // *******************************************************************************************************************************//
-//  Recherche d'une règle de grammaire
+// Grammaire japonaise gram_jap_rech_regles
 // *******************************************************************************************************************************//
 
 app.get('/gram_jap_rech_regles', (req, res) => {
-    res.render('pages/gram/gram_jap_rech_regles_form', { 
-		title: 'Recherche d\'une Règles'
-	});
+    res.render('pages/gram/gram_jap_rech_regles_form', { title: 'Recherche d\'un régle', results: [], searchTerm: '' });
+});
+
+app.post('/gram_jap_liste_regles/search', async (req, res) => {
+    const searchTerm = req.body.searchTerm.trim();
+    try {
+        // --- MODIFICATION DE LA REQUÊTE ---
+		
+
+        const query = `
+            SELECT  nom, description, construction, exemple
+            FROM gram_char
+            WHERE nom LIKE ?
+			   OR description LIKE ?`; // Valeur LIKE
+			   
+	    // searchPattern est la donnée à rechercher dans query        
+        const searchPattern = `%${searchTerm}%`;
+		
+		// Log pour voir la requête SQL et les paramètres
+        console.log("--- NOUVELLE RECHERCHE KANJI ---");
+        console.log("Requête SQL exécutée :", query);
+        console.log("Avec le paramètre de recherche :", searchPattern);
+			
+		const [results] = await dbPool.query(query, [searchPattern, searchPattern, searchPattern, searchPattern ]);
+		
+		// Log pour voir le résultat brut de la base de données
+        console.log("Résultat brut obtenu de la DB :", results);
+        console.log("Nombre de résultats trouvés :", results.length);
+        console.log("--------------------------------------");
+		
+        res.render('pages/gram/gram_jap_rech_regles_form', { title: 'Règle recherchée', results: results, searchTerm: searchTerm });
+    } catch (err) { 
+        console.error("ERREUR lors de la recherche Kanji :", err);
+        res.status(500).send("Erreur serveur."); 
+    }
 });
 
 // *******************************************************************************************************************************//
@@ -1144,10 +1370,10 @@ app.post('/gram_jap_conjugaison/search', async (req, res) => {
 
 
 // *******************************************************************************************************************************//
-// Grammaire japonaise les règles
+// Grammaire japonaise liste des règles
 // *******************************************************************************************************************************//
 
-app.get('/gram_jap_regles', async (req, res) => {
+app.get('/gram_jap_liste_regles', async (req, res) => {
     try {
         // --- PARTIE 1 : On charge TOUJOURS la liste complète de la colonne nom ---
         const gramAllNom = 'SELECT nom FROM gram_char ORDER BY nom ASC;';
@@ -1177,7 +1403,7 @@ app.get('/gram_jap_regles', async (req, res) => {
         }
 
         // --- PARTIE 4 : On rend la page en lui passant TOUTES les données ---
-        res.render('pages/gram/gram_jap_regle_form', { 
+        res.render('pages/gram/gram_jap_liste_regles_form', { 
             title: 'Les Règles de grammaire Japonaise',
             listeGramRegle: allGramNom,      // Pour la liste déroulante
             results: gramNomDetails,       // Pour le tableau de résultats (contient les détails ou est vide)
@@ -1266,6 +1492,64 @@ app.get('/gram_mot_interrogatif', (req, res) => {
     res.render('pages/gram/gram_interrogatif_form', { 
         title: 'Mots Interrogatifs'
     });
+});
+
+// *******************************************************************************************************************************//
+// route gram les particules
+// *******************************************************************************************************************************//
+
+
+app.get('/gram_particuleGaWa', (req, res) => {
+    // Cette route sert juste à afficher le formulaire vide au début.
+    res.render('pages/lecon/lecon_01_10/lecon_01/lecon01_gram_particuleGaWa_form', { 
+        title: 'Les Particules は et が'
+    });
+});
+
+app.get('/gram_particuleNo', (req, res) => {
+    // Cette route sert juste à afficher le formulaire vide au début.
+    res.render('pages/lecon/lecon_01_10/lecon_01/lecon01_gram_particuleNo_form', { 
+        title: 'La Particule の'
+    });
+});
+
+// *******************************************************************************************************************************//
+// route GRAM  exercice de liaison des adjectifs /gram_particuleGaWa_exec
+// *******************************************************************************************************************************//
+
+app.get('/gram_exec', async (req, res) => { 
+
+	const paramName = req.query.paramName;
+	
+	if (!paramName) {
+        return res.status(400).send("Le paramètre 'paramName' est requis.");
+    }
+	
+    try {
+
+        // --- MODIFICATION DE LA REQUÊTE ---
+        const query = `SELECT question, kanji, hiragana, romanji, reponse, francais FROM gram_excercice where titre_excercice = ? ;`; 
+
+        // --- ON AJOUTE LE PARAMÈTRE UNE FOIS DE PLUS ---
+		const [results] = await dbPool.query(query, [paramName ]);
+
+
+        // Log pour voir le résultat brut de la base de données
+        console.log("Résultat brut obtenu de la DB :", results);
+        console.log("Nombre de résultats trouvés :", results.length);
+        console.log("--------------------------------------");
+        
+        
+        res.render('pages/lecon/lecon_01_10/lecon_01/lecon01_gram_particule_exec_form', 
+            { 
+            results : results,
+			title : results[0].question
+			});
+			
+    } catch (err) {
+        console.error("ERREUR lors du chargement de l'excercice ${paramName}", err);
+        res.status(500).send("Erreur serveur.");
+    }
 });
 
 // ------------------------------------------------------------- France ----------------------------------------------------------//
@@ -1452,27 +1736,14 @@ app.get('/region_carte', async (req, res) => {
 // ------------------------------------------------------------- Japon ----------------------------------------------------------//
 
 // *******************************************************************************************************************************//
-// Ile de Kyushuu
+// Le Japon
 // *******************************************************************************************************************************//
 
-app.get('/japon_kyushu', (req, res) => {
+app.get('/japon', (req, res) => {
     try {
-        res.render('pages/japon/japon_kyushu_form', { title: 'Ile de Kyushu'});
+        res.render('pages/japon/japon_form', { title: 'Le Japon'});
     } catch (err) {
-        console.error("ERREUR lors du chargement de la page de Japon Kyushu :", err);
-        res.status(500).send("Erreur serveur.");
-    }
-});
-
-// *******************************************************************************************************************************//
-// Ile de Kyushuu
-// *******************************************************************************************************************************//
-
-app.get('/japon_kyushu', (req, res) => {
-    try {
-        res.render('pages/japon/japon_kyushu_form', { title: 'Ile de Kyushu'});
-    } catch (err) {
-        console.error("ERREUR lors du chargement de la page de Japon Kyushu :", err);
+        console.error("ERREUR lors du chargement de la page de Japon  :", err);
         res.status(500).send("Erreur serveur.");
     }
 });
@@ -1490,15 +1761,623 @@ app.get('/japon_honshu', (req, res) => {
     }
 });
 
+//***********************************************************//
+//  ********************* Honshu Kanto *********************//
 
 app.get('/japon_honshu_kanto', (req, res) => {
     try {
-        res.render('pages/japon/honshu/japon_kanto_form', { title: 'Ile de Honshu'});
+        res.render('pages/japon/honshu/japon_kanto_form', { title: 'Région du Kanto'});
     } catch (err) {
-        console.error("ERREUR lors du chargement de la page de Japon Honshu :", err);
+        console.error("ERREUR lors du chargement de la page de Japon Kanto :", err);
         res.status(500).send("Erreur serveur.");
     }
 });
+
+//  ********************* Honshu Kanto Tokyo *********************//
+
+app.get('/japon_kanto_tokyo', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/kanto/tokyo/japon_kanto_tokyo_form', { title: 'Tokyo'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Kanto Tokyo:", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+//  ********************* Honshu Kanto quartier de Tokyo *********************//
+
+app.get('/japon_quartier_tokyo', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/kanto/tokyo/japon_kanto_tokyo_quartiers_form', { title: 'Les quartiers de Tokyo'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Quartier Tokyo:", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_kanto_tokyo_ameyoko', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/kanto/tokyo/japon_kanto_tokyo_ameyoko_form', { title: 'Ameyoko'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Quartier  Ameyoko:", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_kanto_tokyo_akihabara', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/kanto/tokyo/japon_kanto_tokyo_akihabara_form', { title: 'Akihabara'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Quartier  Akihabara:", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_kanto_tokyo_asakusa', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/kanto/tokyo/japon_kanto_tokyo_asakusa_form', { title: 'Asakusa'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Quartier  Asakusa:", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_kanto_tokyo_harajuku', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/kanto/tokyo/japon_kanto_tokyo_harajuku_form', { title: 'Harajuku'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Quartier  Harajuku:", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_kanto_tokyo_ikebukuro', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/kanto/tokyo/japon_kanto_tokyo_ikebukuro_form', { title: 'Ikebukuro'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Quartier  Ikebukuro:", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_kanto_tokyo_imperial', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/kanto/tokyo/japon_kanto_tokyo_imperial_form', { title: 'Imperial'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Quartier  Imperial:", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_kanto_tokyo_mairie', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/kanto/tokyo/japon_kanto_tokyo_mairie_form', { title: 'Mairie'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Quartier  Mairie:", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_kanto_tokyo_odaiba', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/kanto/tokyo/japon_kanto_tokyo_odaiba_form', { title: 'Odaiba'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Quartier  Odaiba:", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_kanto_tokyo_ochanomizu', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/kanto/tokyo/japon_kanto_tokyo_ochanomizu_form', { title: 'Ochanomizu'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Quartier  Ochanomizu:", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_kanto_tokyo_roppongi', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/kanto/tokyo/japon_kanto_tokyo_roppongi_form', { title: 'Roppongi'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Quartier  Roppongi:", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_kanto_tokyo_ryogoku', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/kanto/tokyo/japon_kanto_tokyo_ryogoku_form', { title: 'Ryogoku'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Quartier  Ryogoku:", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_kanto_tokyo_skytree', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/kanto/tokyo/japon_kanto_tokyo_skytree_form', { title: 'Skytree'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Quartier  Skytree:", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_kanto_tokyo_shimbashi', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/kanto/tokyo/japon_kanto_tokyo_shimbashi_form', { title: 'Shimbashi'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Quartier  Shimbashi:", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_kanto_tokyo_shibuya', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/kanto/tokyo/japon_kanto_tokyo_shibuya_form', { title: 'Shibuya'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Quartier  Shibuya:", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_kanto_tokyo_shinagawa', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/kanto/tokyo/japon_kanto_tokyo_shinagawa_form', { title: 'Shinagawa'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Quartier  Shinagawa:", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_kanto_tokyo_tour', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/kanto/tokyo/japon_kanto_tokyo_tour_form', { title: 'Tour'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Quartier  Tour:", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_kanto_tokyo_yanaka', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/kanto/tokyo/japon_kanto_tokyo_yanaka_form', { title: 'Yanaka'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Quartier  Yanaka:", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_kanto_tokyo_yasukuni', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/kanto/tokyo/japon_kanto_tokyo_yasukuni_form', { title: 'Yasukuni'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Quartier  Yasukuni:", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+//  ********************* Honshu Kanto aéroports de Tokyo *********************//
+
+app.get('/japon_aeroport_tokyo', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/kanto/tokyo/japon_kanto_tokyo_aeroport_form', { title: 'Aéroports de Tokyo'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page des Aéroports de Tokyo:", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+// ******************************************************************************
+
+app.get('/japon_kanto_yokohama', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/kanto/japon_kanto_yokohama_form', { title: 'Yokohama'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Kanto Yokohama:", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_kanto_nikko', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/kanto/japon_kanto_nikko_form', { title: 'Nikko'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Kanto Nikko:", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_kanto_enoshima', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/kanto/japon_kanto_enoshima_form', { title: 'Enoshima'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Kanto Enoshima:", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_kanto_kawagoe', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/kanto/japon_kanto_kawagoe_form', { title: 'Kawagoe'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Kanto Kawagoe:", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+
+app.get('/japon_kanto_hakone', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/kanto/japon_kanto_hakone_form', { title: 'Hakone'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Kanto Hakone:", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_kanto_kamakura', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/kanto/japon_kanto_kamakura_form', { title: 'Kamakura'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Kanto Kamakura:", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+//********************* Honshu Kansai *********************//
+
+app.get('/japon_honshu_kansai', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/japon_kansai_form', { title: 'Région du Kansai'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Kansai :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_kansai_osaka', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/japon_kansai_osaka_form', { title: 'Osaka'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Osaka :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_kansai_kyoto', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/japon_kansai_kyoto_form', { title: 'Kyoto'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Kyoto :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_kansai_nara', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/japon_kansai_nara_form', { title: 'Nara'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Nara :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_kansai_arashiyama', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/japon_kansai_arashiyama_form', { title: 'Arashiyama'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Arashiyama :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_kansai_inari', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/japon_kansai_inari_form', { title: 'Inari'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Inari :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_kansai_himeji', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/japon_kansai_himeji_form', { title: 'Himeji'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Himeji :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_kansai_koyasan', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/japon_kansai_koyasan_form', { title: 'Kōyasan'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Kōyasan :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_kansai_kobe', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/japon_kansai_kobe_form', { title: 'Kobe'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Kobe :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_kansai_inari', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/japon_kansai_inari_form', { title: 'Inari'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Inari :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+//********************* Honshu Chubu *********************//
+
+app.get('/japon_honshu_chubu', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/japon_chubu_form', { title: 'Région du Chubu'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Chubu :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_chubu_montfuji', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/chubu/japon_chubu_montfuji_form', { title: 'Mont Fuji 富士山'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Mont Fuji :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_chubu_takayama', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/chubu/japon_chubu_takayama_form', { title: 'Takayama 高山'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Takayama :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_chubu_shiragawago', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/chubu/japon_chubu_shiragawago_form', { title: 'Shirakawa-go 白川村'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Shirakawa-go :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_chubu_matsumoto', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/chubu/japon_chubu_matsumoto_form', { title: 'Matsumoto 松本'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Matsumoto :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_chubu_kanazawa', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/chubu/japon_chubu_kanazawa_form', { title: 'Kanazawa 加治川'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Kanazawa :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_chubu_nagoya', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/chubu/japon_chubu_nagoya_form', { title: 'Nagoya 名古屋'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Nagoya :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_chubu_inuyama', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/chubu/japon_chubu_inuyama_form', { title: 'Inuyama 伊吹山'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Inuyama :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_chubu_shiragawago', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/chubu/japon_chubu_shiragawago_form', { title: 'Shirakawa-go 白川村'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Shirakawa-go :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_chubu_hammatsu', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/chubu/japon_chubu_hammatsu_form', { title: 'Hammatsu 浜松'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Hammatsu :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+//********************* Honshu Chugoku *********************//
+
+app.get('/japon_honshu_chugoku', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/japon_chugoku_form', { title: 'Région du Chugoku'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Chugoku :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_chugoku_okayama', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/japon_chugoku_okayama_form', { title: 'Région du Okayama'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Chugoku Okayama :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_chugoku_matsue', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/japon_chugoku_matsue_form', { title: 'Région du Matsue'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Chugoku Matsue :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_chugoku_hiroshima', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/japon_chugoku_hiroshima_form', { title: 'Région du Hiroshima'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Chugoku Hiroshima :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_chugoku_miyajima', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/japon_chugoku_miyajima_form', { title: 'Région du Miyajima'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Chugoku Miyajima :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_chugoku_kurashiki', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/japon_chugoku_kurashiki_form', { title: 'Région du Kurashiki'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Chugoku Kurashiki :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+
+//********************* Honshu Tohoku *********************//
+
+app.get('/japon_honshu_tohoku', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/japon_tohoku_form', { title: 'Région du Tohoku'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Tohoku :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_tohoku_sendai', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/tohoku/japon_tohoku_sendai_form', { title: 'Sendai'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Sendai :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_tohoku_matsushima', (req, res) => {
+    try {
+        res.render('pages/japon/honshu/tohoku/japon_tohoku_matsushima_form', { title: 'Matsushima'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Matsushima :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+// *******************************************************************************************************************************//
+// Ile de Kyushuu
+// *******************************************************************************************************************************//
+
+app.get('/japon_kyushu', (req, res) => {
+    try {
+        res.render('pages/japon/japon_kyushu_form', { title: 'Ile de Kyushu'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Kyushu :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_kyushu_fukuoka', (req, res) => {
+    try {
+        res.render('pages/japon/japon_kyushu_fukuoka_form', { title: 'Ville de Fukuoka 福岡'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Kyushu Fukuoka :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_kyushu_kagoshima', (req, res) => {
+    try {
+        res.render('pages/japon/japon_kyushu_kagoshima_form', { title: 'Ville de Kagoshima 鹿児'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Kyushu Kagoshima:", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_kyushu_kumamoto', (req, res) => {
+    try {
+        res.render('pages/japon/japon_kyushu_kumamoto_form', { title: 'Ville de Kumamoto 熊本'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Kyushu Kumamoto:", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_kyushu_miyazaki', (req, res) => {
+    try {
+        res.render('pages/japon/japon_kyushu_miyazaki_form', { title: 'Ville de Miyazaki 雲仙'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Kyushu Miyazaki:", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_kyushu_nagasaki', (req, res) => {
+    try {
+        res.render('pages/japon/japon_kyushu_nagasaki_form', { title: 'Ville de Nagasaki 長崎'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Kyushu Nagasaki:", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_kyushu_oita', (req, res) => {
+    try {
+        res.render('pages/japon/japon_kyushu_oita_form', { title: 'Ville de Oita 大分'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Kyushu Oita:", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_kyushu_saga', (req, res) => {
+    try {
+        res.render('pages/japon/japon_kyushu_saga_form', { title: 'Ville de Saga 佐賀'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Kyushu Saga:", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_kyushu_okinawa', (req, res) => {
+    try {
+        res.render('pages/japon/japon_kyushu_okinawa_form', { title: 'Ile d\'Okinawa 沖縄'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Kyushu Okinawa:", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
 // *******************************************************************************************************************************//
 // Ile de Shikoku
 // *******************************************************************************************************************************//
@@ -1508,6 +2387,51 @@ app.get('/japon_shikoku', (req, res) => {
         res.render('pages/japon/japon_shikoku_form', { title: 'Ile de Shikoku'});
     } catch (err) {
         console.error("ERREUR lors du chargement de la page de Japon Shikoku :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_shikoku_kochi', (req, res) => {
+    try {
+        res.render('pages/japon/japon_shikoku_kochi_form', { title: 'Ville de Kochi 高知'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Shikoku Kochi:", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_shikoku_matsuyama', (req, res) => {
+    try {
+        res.render('pages/japon/japon_shikoku_matsuyama_form', { title: 'Ville de Matsuyama 松山'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Shikoku :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_shikoku_takamatsu', (req, res) => {
+    try {
+        res.render('pages/japon/japon_shikoku_takamatsu_form', { title: 'Ville de Takamatsu 高松'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Shikoku Takamatsu:", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_shikoku_kotohira', (req, res) => {
+    try {
+        res.render('pages/japon/japon_shikoku_kotohira_form', {title: 'Ville de Kotohira 金刀比羅宮'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Shikoku Kotohira:", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+app.get('/japon_shikoku_naoshima', (req, res) => {
+    try {
+        res.render('pages/japon/japon_shikoku_naoshima_form', { title: 'Ile de Naoshima 直島'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Shikoku Naoshima:", err);
         res.status(500).send("Erreur serveur.");
     }
 });
@@ -1524,6 +2448,21 @@ app.get('/japon_hokkaido', (req, res) => {
         res.status(500).send("Erreur serveur.");
     }
 });
+
+// *******************************************************************************************************************************//
+// Ile de Okinawa
+// *******************************************************************************************************************************//
+
+
+app.get('/japon_okinawa', (req, res) => {
+    try {
+        res.render('pages/japon/japon_okinawa_form', { title: 'Ile d\'Okinawa'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Japon Okinawa :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
 
 // ------------------------------------------------------------- Quiz ----------------------------------------------------------//
 
@@ -1912,7 +2851,7 @@ app.get('/blog_tech_liste', async (req, res) => {
 });
 
 // *******************************************************************************************************************************//
-// Blog écriture d'un article
+// BLOG_TECH écriture d'un article
 // *******************************************************************************************************************************//
 
 app.get('/blog_tech_ecriture', (req, res) => {
@@ -1950,7 +2889,7 @@ app.post('/blog_tech_stockage', async (req, res) => {
 });
 
 //*******************************************************************************************************************************//
-// Route pour la suppression d'un article (via POST)
+// BLOG_TECH Route pour la suppression d'un article (via POST)
 //*******************************************************************************************************************************//
 
 app.post('/blog_tech/supprimer/:id', async (req, res) => {
@@ -1966,7 +2905,7 @@ app.post('/blog_tech/supprimer/:id', async (req, res) => {
 });
 
 // *******************************************************************************************************************************//
-// Blog modification ou suppression d'un article
+// BLOG_TECH modification ou suppression d'un article
 // *******************************************************************************************************************************//
 app.get('/blog_tech_modif', async (req, res) => {
     try {
@@ -1988,7 +2927,7 @@ app.get('/blog_tech_modif', async (req, res) => {
 });
 
 //*******************************************************************************************************************************//
-// Route pour la suppression d'un article (via POST)
+// BLOG_TECH Route pour la suppression d'un article (via POST)
 //*******************************************************************************************************************************//
 
 app.post('/blog_tech/supprimer/:id', async (req, res) => {
@@ -2005,7 +2944,7 @@ app.post('/blog_tech/supprimer/:id', async (req, res) => {
 
 
 // *******************************************************************************************************************************//
-// Blog_tech Route pour afficher le formulaire de modification d'un article
+// BLOG_TECH Route pour afficher le formulaire de modification d'un article
 // *******************************************************************************************************************************//
 
 
@@ -2049,3 +2988,135 @@ app.post('/blog_tech/modifier/:id', async (req, res) => {
         res.status(500).send("Erreur serveur.");
     }
 });
+// *******************************************************************************************************************************//
+/// BLOG_TECH Route blog_tech_rech  d'un articles dans blog_tech
+// *******************************************************************************************************************************//
+
+app.get('/blog_tech_rech', (req, res) => {
+    // On envoie un tableau vide sous le nom 'listeArticles' pour éviter l'erreur au premier chargement
+    res.render('pages/blog/blog_tech_rech_form', { 
+        title: 'Recherche d\'un article', 
+        listeArticles: [], 
+        searchTerm: '' 
+    });
+});
+
+app.post('/blog_tech_rech/search',  async (req, res) => {
+    const searchTerm = req.body.searchTerm.trim();
+	
+try {
+    const searchTerm = req.body.searchTerm.trim();
+    const searchPattern = `%${searchTerm}%`; // Ajout des % pour le LIKE
+
+    const query = `
+        SELECT id, type, titre, contenu, image, fichier 
+        FROM note_tech 
+        WHERE titre LIKE ? OR contenu LIKE ?`;
+
+    // On passe [searchPattern, searchPattern] pour remplir les deux "?"
+    const [articles] = await dbPool.query(query, [searchPattern, searchPattern]);
+
+    res.render('pages/blog/blog_tech_rech_form', { 
+        title: 'Résultats de recherche',
+        listeArticles: articles, // Le nom doit correspondre à celui de l'EJS
+        searchTerm: searchTerm
+    });
+
+} catch (err) {
+    console.error("ERREUR :", err);
+    res.status(500).send("Erreur serveur.");
+}
+});
+
+// ------------------------------------------------------------- LANGUE Leçon ----------------------------------------------------//
+// *******************************************************************************************************************************//
+// Menu Lecon
+// *******************************************************************************************************************************//
+
+app.get('/lecon', (req, res) => {
+    try {
+        res.render('pages/lecon/lecon_form', { title: 'Leçons'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Leçons :", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+
+// *******************************************************************************************************************************//
+// Menu lecon 01 
+// *******************************************************************************************************************************//
+
+app.get('/lecon01', (req, res) => {
+    try {
+        res.render('pages/lecon/lecon_01_10/lecon_01/lecon01_form', { title: 'Leçon 01'});
+    } catch (err) {
+        console.error("ERREUR lors du chargement de la page de Leçons 01", err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+// dialogue de la leçon 01
+
+app.get('/lecon_dialogue', async (req, res) => {
+    const paramName1 = req.query.paramName1;
+    const paramName2 = req.query.paramName2;
+
+    if (!paramName1 || !paramName2) {
+        return res.status(400).send("Les paramètres 'paramName1' et 'paramName2' sont requis.");
+    }
+
+    try {
+        const query = `SELECT dialogue_num, kanji, hiragana, romanji, francais, explication 
+                       FROM dialogue 
+                       WHERE lecon_num = ? AND dialogue_num = ?;`;
+        const [results] = await dbPool.query(query, [paramName1, paramName2]);
+
+        console.log("Résultat brut obtenu de la DB :", results);
+        console.log("Nombre de résultats trouvés :", results.length);
+        console.log("--------------------------------------");
+
+        res.render('pages/lecon/lecon_01_10/lecon_01/lecon_dialogue_form', {
+            title: `${paramName1} - ${paramName2}`,
+            results: results
+        });
+
+    } catch (err) {
+        console.error(`ERREUR lors du chargement de Vocabulaire de la leçon ${paramName}`, err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+
+// vocabulaire de la leçon 01
+
+app.get('/lecon_vocabulaire', async (req, res) => {
+    const paramName = req.query.paramName;
+    const section = req.query.section;
+
+    if (!paramName) {
+        return res.status(400).send("Le paramètre 'paramName' est requis.");
+    }
+
+    try {
+        const query = `SELECT section, kanji, hiragana, romanji, francais, type 
+                       FROM vocabulaire 
+                       WHERE lecon_num = ? AND section = ?;`;
+        const [results] = await dbPool.query(query, [paramName, section]);
+
+        console.log("Résultat brut obtenu de la DB :", results);
+        console.log("Nombre de résultats trouvés :", results.length);
+        console.log("--------------------------------------");
+
+        res.render('pages/lecon/lecon_01_10/lecon_01/lecon01_vocab_form', {
+            title: `Vocabulaire de la leçon ${paramName} - ${section}`,
+            results: results
+        });
+
+    } catch (err) {
+        console.error(`ERREUR lors du chargement de Vocabulaire de la leçon ${paramName}`, err);
+        res.status(500).send("Erreur serveur.");
+    }
+});
+
+

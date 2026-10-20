@@ -7,7 +7,7 @@
     
     <div class="vocab_titre" >   
         <h2>Vocabulaire JPLT</h2>
-        <a href="/vocab" class="vocab_href">Retour</a>
+        <button type="button" id="btn-back" class="vocab_href"> ← Page précédente </button>
     </div>
 
     <form action="/vocab_jplt/search" method="POST" class="search-form">
@@ -34,7 +34,12 @@
                     <% results.forEach(result => { %>
                         <tr>
                             <td><%= result.niveau %></td>
-                            <td><span class="jp-char"><%= result.kanji %></span></td>
+                            <td>
+                                <div>
+                                    <button class="btn-speak btn-standard" data-text="<%= result.kanji %>">🔊</button>                                  
+                                    <span class="jp-char">&nbsp; <%= result.kanji %></span>
+                                </div>
+                            </td>
                             <td><span class="jp-char"><%= result.kana %></span></td>
                             <td><%= result.francais %></td>
                         </tr>

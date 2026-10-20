@@ -2,9 +2,12 @@
 <div  class="content content-black">
     <div class="vocab_titre" >  
         <h2 ><%= title %></h2>
-        <a href="/vocab_adjectif" class="vocab_href">Retour</a>
+        <button type="button" id="btn-back" class="vocab_href"> ← Page précédente </button>
         <h2 class="blog_h2_execercice">Traduire la phrase en japonais</h2>
     </div>
+
+
+
 
 <p style="animation: blink 2s infinite;"><br>Cliquer sur une ligne pour avoir la réponse<br></p>
 <% if ( results && results.length > 0) { %> 

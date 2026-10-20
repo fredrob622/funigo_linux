@@ -1,0 +1,68 @@
+Installation
+------------
+
+sudo apt update && sudo apt install cifs-utils -y
+
+fred@sashimi:~/partage_ulysse/docker$ dpkg -l | grep cifs-utils.
+ii  cifs-utils   2:7.4-1ubuntu0.26.04.3     amd64   Common Internet File System utilities
+
+On modifie le mot de passe sous windows
+---------------------------------------
+PS C:\Users\fredr> Get-LocalUser
+
+Name               Enabled Description
+----               ------- -----------
+Administrateur     False   Compte d’utilisateur d’administration
+DefaultAccount     False   Compte utilisateur géré par le système.
+fredr              True
+funigo-fichier     True
+Invité             True    Compte d’utilisateur invité
+partage            True
+WDAGUtilityAccount False   Compte d’utilisateur géré et utilisé par le système pour les scénarios Window...
+
+net user partage Partage_2010
+
+
+On créé un fichier credentials_windows
+--------------------------------------
+
+sudo cat /etc/samba/credentials_windows
+username=partage
+password=Partage_2010
+
+
+
+
+fred@sashimi:~/partage_ulysse/docker$ sudo chmod 600 /etc/samba/credentials_windows
+
+
+fred@sashimi:~/partage_ulysse/docker$ ls -ltr  /etc/samba/credentials_windows
+-rw------- 1 root root 37 Sep  8 15:08 /etc/samba/credentials_windows
+
+
+On créer le répertoire de montage
+---------------------------------
+
+mkdir -p /home/fred/partage_ulysse/docker
+
+Mondification du fichier /etc/fstab
+-----------------------------------
+
+fred@sashimi:~/partage_ulysse/docker$ sudo vi /etc/fstab
+
+fred@sashimi:~/partage_ulysse/docker$ cat /etc/fstab
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+# / was on /dev/sda2 during curtin installation
+/dev/disk/by-uuid/58146cd3-60f2-4add-85b1-08ee3119a978 / ext4 defaults 0 1
+# /boot/efi was on /dev/sda1 during curtin installation
+/dev/disk/by-uuid/A463-E7F2 /boot/efi vfat defaults 0 1
+/swap.img       none    swap    sw      0       0
+#
+# montage du partage windows
+//192.168.1.7/projet-docker /home/fred/partage_ulysse/docker cifs credentials=/etc/samba/credentials_windows, iocharset=utf8,file_mode=0777,dir_mode=0777,nofail 0 0//192.168.1.7/projet-docker /home/fred/partage_ulysse/docker cifs credentials=/etc/samba/credentials-docker,iocharset=utf8,file_mode=0777,dir_mode=0777,nofail 0 0

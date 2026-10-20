@@ -5,8 +5,12 @@
 
 
 <div class="content content-black"> 
-    
-  <h2>Créer le QUIZ de niveau</h2>
+  
+  <div class="vocab_titre" >
+    <h2>Créer le QUIZ de niveau</h2>
+    <button type="button" id="btn-back" class="vocab_href"> ← Page précédente </button>
+  </div> 
+
   <form action="/quiz/search" method="POST" class="search-form">
       <input type="text" name="searchTerm" value="<%= searchTerm %>" placeholder="Entrer un niveau N4 N3 N2 N1">
       <button type="submit">Rechercher</button>

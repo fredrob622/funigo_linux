@@ -1,0 +1,17 @@
+Pour choisir un fichier au hasard dans ce répertoire et le copier dans /projet-docker/03-alpine-vpn-fire/ :
+
+cp "$(find /home/fred/partage_sushi/openvpn -maxdepth 1 -type f | shuf -n 1)" /projet-docker/03-alpine-vpn-fire/
+
+Si tu veux afficher le fichier choisi avant la copie :
+
+fichier=$(find /home/fred/partage_sushi/openvpn -maxdepth 1 -type f | shuf -n 1)
+echo "Fichier choisi : $fichier"
+cp "$fichier" /projet-docker/03-alpine-vpn-fire/
+
+shuf est une commande Linux qui mélange aléatoirement des lignes (shuffle). L'option -n 1 limite le résultat à une seule ligne tirée au hasard.
+
+Décomposition
+bash
+shuf -n 1 fichier.txt
+shuf → mélange les lignes du fichier dans un ordre aléatoire
+-n 1 → n'affiche que les N premières lignes du résultat mélangé (ici N=1)

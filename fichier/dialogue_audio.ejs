@@ -1,0 +1,109 @@
+<%# Partial : lecture audio du dialogue (colonne kanji de "results") %>
+<style>
+  .da-box{margin:12px 0;padding:10px;border:1px solid #666;border-radius:8px}
+  .da-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:8px 0}
+  .da-box button{padding:8px 14px;border:0;border-radius:6px;cursor:pointer;background:#c0392b;color:#fff;font-size:1rem}
+  .da-box button.da-sec{background:#444}
+  .da-box select{max-width:100%}
+  .da-line{padding:6px 10px;margin:4px 0;border-radius:6px;cursor:pointer;border-left:6px solid transparent;font-size:1.1rem;color:#111}
+  .da-line.Aiko{background:#fde8ef;border-color:#e0608a}
+  .da-line.Kenji{background:#e6f0fd;border-color:#3b82f6}
+  .da-line.da-on{outline:3px solid #f1c40f}
+  #da-msg{font-size:.85rem;opacity:.8}
+</style>
+
+<div class="da-box">
+  <strong>🔊 Écouter le dialogue</strong>
+  <div class="da-row">
+    <button type="button" id="da-play">▶ Lire</button>
+    <button type="button" id="da-stop" class="da-sec">■ Arrêter</button>
+    <label>Vitesse <input type="range" id="da-rate" min="0.5" max="1.5" step="0.1" value="0.9"></label>
+  </div>
+  <div class="da-row">
+    <label>Aiko (femme) <select id="da-vf"></select></label>
+    <label>Kenji (homme) <select id="da-vm"></select></label>
+  </div>
+  <div id="da-msg"></div>
+  <div id="da-out"></div>
+</div>
+
+<script>
+(function(){
+  // Les phrases kanji viennent de la base (une ligne SQL = une réplique)
+  const phrases = <%- JSON.stringify(results.map(r => r.kanji)).replace(/</g, '\\u003c') %>;
+
+  const $ = id => document.getElementById(id);
+  const synth = window.speechSynthesis;
+  let voices = [], token = 0;
+  const FEM = /kyoko|haruka|ayumi|nanami|mizuki|sayaka|o-ren|female|女|google 日本語|hina|shiori/i;
+  const MAL = /ichiro|otoya|keita|takumi|hattori|male|男|daichi|naoki/i;
+
+  // "Aiko : texte" -> { who:'Aiko', text:'texte' }  (le nom n'est jamais lu)
+  const lines = phrases.map(p => {
+    const m = String(p || '').match(/^\s*(Aiko|Kenji)\s*[:：]\s*(.+)$/i);
+    return m ? { who: /^aiko$/i.test(m[1]) ? 'Aiko' : 'Kenji', text: m[2].trim() } : null;
+  }).filter(Boolean);
+
+  function loadVoices(){
+    voices = synth.getVoices().filter(v => /^ja/i.test(v.lang));
+    const fill = (sel, pick) => {
+      sel.innerHTML = '';
+      if(!voices.length){ sel.innerHTML = '<option value="-1">(voix par défaut)</option>'; return; }
+      voices.forEach((v,i) => sel.add(new Option(v.name + ' (' + v.lang + ')', i)));
+      sel.value = pick;
+    };
+    let f = voices.findIndex(v => FEM.test(v.name) && !MAL.test(v.name));
+    let m = voices.findIndex(v => MAL.test(v.name));
+    if(f < 0) f = 0;
+    if(m < 0) m = voices.length > 1 ? (f === 0 ? 1 : 0) : 0;
+    fill($('da-vf'), f); fill($('da-vm'), m);
+    $('da-msg').textContent = !voices.length
+      ? "Aucune voix japonaise détectée : installez-en une dans votre système."
+      : (voices.length === 1 ? "Une seule voix japonaise : la hauteur du son distingue femme et homme." : "");
+  }
+  loadVoices();
+  synth.onvoiceschanged = loadVoices;
+
+  // Affichage du dialogue reconstitué
+  lines.forEach((l, i) => {
+    const d = document.createElement('div');
+    d.className = 'da-line ' + l.who;
+    d.id = 'da-l' + i;
+    d.textContent = l.who + ' : ' + l.text;
+    d.onclick = () => start(i);
+    $('da-out').appendChild(d);
+  });
+
+  function clearHl(){ document.querySelectorAll('.da-on').forEach(e => e.classList.remove('da-on')); }
+
+  function speak(line){
+    return new Promise(res => {
+      const u = new SpeechSynthesisUtterance(line.text.replace(/\s+/g, ''));
+      u.lang = 'ja-JP';
+      u.rate = parseFloat($('da-rate').value);
+      const v = voices[parseInt((line.who === 'Aiko' ? $('da-vf') : $('da-vm')).value)];
+      if(v){ u.voice = v; u.lang = v.lang; }
+      const same = voices.length < 2 || $('da-vf').value === $('da-vm').value;
+      u.pitch = same ? (line.who === 'Aiko' ? 1.6 : 0.5) : (line.who === 'Aiko' ? 1.2 : 0.8);
+      u.onend = u.onerror = () => res();
+      synth.speak(u);
+    });
+  }
+
+  async function start(from){
+    synth.cancel();
+    const my = ++token;
+    for(let i = from || 0; i < lines.length; i++){
+      if(my !== token) return;
+      clearHl();
+      $('da-l' + i).classList.add('da-on');
+      await speak(lines[i]);
+      await new Promise(r => setTimeout(r, 350));
+    }
+    if(my === token) clearHl();
+  }
+
+  $('da-play').onclick = () => start(0);
+  $('da-stop').onclick = () => { token++; synth.cancel(); clearHl(); };
+})();
+</script>

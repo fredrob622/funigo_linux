@@ -1,0 +1,122 @@
+<%- include('../../partials/header_japon') %>
+
+<body>
+    <div class="content content-black"> 
+        <div id=japon-ile-titre>
+            <h2 ><%= title %></h2>
+            <button type="button" id="btn-back" class="vocab_href"> ← Page précédente </button>
+        </div>
+
+
+        <div id="japongeo-contenaire1">
+            <div id="japongeo1">
+
+                <p class="class_p">Le <span class="vocab_span_bold">Japon</span> est un archipel composé de quatre grandes îles ( <span class="vocab_span_bold">Honshu</span>, <span class="vocab_span_bold">Hokkaido</span>, <span class="vocab_span_bold">Kyushu</span> et <span class="vocab_span_bold">Shikoku</span> ) et d'une multitude d'îles plus petites.<br><br></p>
+
+                <p class="class_p">La distance du nord de <span class="vocab_span_bold">Hokkaidō</span> (par exemple, le cap Sōya) au sud de <span class="vocab_span_bold">Kyūshū</span> 
+                (par exemple, le cap Sata) est d'environ 2 000 kilomètres à vol d'oiseau. L'archipel entier avec ( <span class="vocab_span_bold">Okinawa</span> ) s'étend lui sur une longueur  comprise entre 2 500 et 3 800
+               .<br><br></p>
+
+                <a href="/images/cartes/japon/japon/carte-du-japon1.jpg" target="_blank">
+                    <img src="/images/cartes/japon/japon/carte-du-japon1.jpg" alt="Carte Kyushu">
+                </a>
+                <br><br>
+                <p class="class_p">La population du <span class="vocab_span_bold">Japon</span> est d'environ 126 millions d'habitants (2021).<br><br></p>
+
+                <p class="class_p"><span class="vocab_span_bold">Tokyo</span> est la capitale du <span class="vocab_span_bold">Japon</span> et aussi la plus grande metropole du monde avec plus de 35 millions 
+                d'habitants.<br><br></p>
+            
+                <p class="class_p">Le <span class="vocab_span_bold">Japon</span> estune <span class="vocab_span_bold">monarchie constitutionnelle</span> avec un <span class="vocab_span_bold">empereur</span> et un parlement élu, <span class="vocab_span_bold">la Diète</span>. 
+            </div>
+
+
+            <div id="japongeo2">
+
+            <div>
+
+                <a href="/japon_honshu">
+                    <img src="/images/cartes/japon/japon/Honshu.jpg" alt="Honshu">
+                </a>
+                <p><a href="/japon_honshu" class="geo_href">Honshu</a></p>
+
+            </div>
+
+           <div>
+
+                <a href="/japon_shikoku">
+                    <img src="/images/cartes/japon/japon/Shikoku.jpg" alt="Shikoku">
+                </a>
+                <p><a href="/japon_shikoku" class="geo_href">Shikoku</a></p>
+
+            </div>
+
+            <div>
+
+                <a href="/japon_kyushu">
+                    <img src="/images/cartes/japon/japon/Kyushu.jpg" alt="Kyushu">
+                </a>
+                <p><a href="/japon_kyushu" class="geo_href">Kyushu</a></p>
+
+            </div>
+
+            <div>
+
+                <a href="/japon_hokkaido">
+                    <img src="/images/cartes/japon/japon/Hokkaido.jpg" alt="Hokkaido">
+                </a>
+                <p><a href="/japon_hokkaido" class="geo_href">Hokkaido</a></p>
+
+            </div>
+        
+        </div>
+
+    </div>
+
+</body>
+<style>
+
+    .class_p {  text-indent:50px; } 
+    .geo_href { color: white; text-decoration: underline;  padding: 5px 10px ; border-radius: 5px; margin-right: 10px;  font-size: 1.0em; font-weight: 300px; width: 60px; display: inline-block; text-align: center;  }
+
+
+    #japongeo-contenaire1 { display: flex; justify-content: space-between; gap: 20px; }
+
+    #japongeo1 { width: 70%; height: auto; }
+
+    #japongeo1 img { width: 100%; height: auto; }
+
+
+
+    #japongeo2 { width: 30%; display: flex; flex-direction: column; gap: 20px; }
+
+    #japongeo2 img { width: 90%; height: auto; }
+
+        @media screen and (max-width: 700px) {
+
+        	
+            /*******************************/
+
+        #japongeo-contenaire1 { display: flex; justify-content: space-between; gap: 20px; flex-direction: column; align-items: center; }
+
+        #japongeo1 { width: 100%; height: auto; }
+
+        #japongeo1 img { width: 100%; height: auto; }
+
+
+
+        #japongeo2 { width: 100%; display: flex; flex-direction: row; flex-wrap: wrap; gap: 15px; justify-content: center; }
+
+        #japongeo2 > div { display: flex; flex-direction: column; align-items: center; width: 120px; }
+
+        #japongeo2 > div img { width: 120px; height: 90px; object-fit: cover; }
+
+        #japongeo2 > div p { margin: 5px 0 0 0; text-align: center; }
+        
+        }
+
+
+
+</style>
+
+
+<%- include('../../partials/footer') %>

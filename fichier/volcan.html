@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table class="politesse-table">
+  <thead>
+    <tr>
+      <th class="politesse-th">Volcan</th>
+      <th class="politesse-th">Préfecture</th>
+      <th class="politesse-th">Altitude</th>
+      <th class="politesse-thead">Statut</th>
+    </tr>
+  </thead>
+  <tbody class="politesse-tbody">
+      <thead>
+    <tr>
+      <thead class="politesse-thead">Volcan</th>
+      <thead class="politesse-thead">Préfecture</th>
+      <thead class="politesse-thead">Altitude</th>
+      <thead class="politesse-thead">Statut</th>
+    </tr>
+  </thead>
+    <tr>
+      <td>Mont Aso</td>
+      <td>Kumamoto</td>
+      <td>1 592 m</td>
+      <td>Très actif</td>
+    </tr>
+    <tr>
+      <td>Sakurajima</td>
+      <td>Kagoshima</td>
+      <td>1 117 m</td>
+      <td>Très actif</td>
+    </tr>
+    <tr>
+      <td>Kirishima</td>
+      <td>Kagoshima / Miyazaki</td>
+      <td>1 700 m</td>
+      <td>Actif</td>
+    </tr>
+    <tr>
+      <td>Mont Unzen</td>
+      <td>Nagasaki</td>
+      <td>1 483 m</td>
+      <td>Actif</td>
+    </tr>
+    <tr>
+      <td>Mont Kuju</td>
+      <td>Ōita</td>
+      <td>1 791 m</td>
+      <td>Actif</td>
+    </tr>
+    <tr>
+      <td>Mont Kaimon</td>
+      <td>Kagoshima</td>
+      <td>924 m</td>
+      <td>Endormi</td>
+    </tr>
+    <tr>
+      <td>Shinmoedake</td>
+      <td>Kagoshima / Miyazaki</td>
+      <td>1 421 m</td>
+      <td>Actif</td>
+    </tr>
+    <tr>
+      <td>Ōhachi</td>
+      <td>Kagoshima / Miyazaki</td>
+      <td>1 424 m</td>
+      <td>Actif</td>
+    </tr>
+    <tr>
+      <td>Mont Karakuni</td>
+      <td>Kagoshima / Miyazaki</td>
+      <td>1 700 m</td>
+      <td>Faiblement actif</td>
+    </tr>
+  </tbody>
+</table>
+</body>
+<style>.politesse-table {
+  border-collapse: collapse;
+  border: 2px solid rgb(140 140 140);
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  width: 100%; /* Optionnel : pour qu'il prenne toute la largeur */
+  color: white; /* Pour que le texte soit lisible sur le fond sombre */
+  background-color: #1a1a1a;
+}
+
+.politesse-thead {
+  background-color: rgb(15, 15, 15);
+}
+
+.politesse-table th,
+.politesse-table td {
+  border: 1px solid rgb(160 160 160);
+  padding: 8px 10px;
+}
+
+/* Centre le texte de la dernière colonne (Hiragana) */
+.politesse-table td:last-of-type {
+  text-align: center;
+}
+
+/* Effet zébré pour les lignes paires */
+.politesse-tbody > tr:nth-of-type(even) {
+  background-color: rgb(15, 15, 15);
+}
+
+/* Style pour mettre en avant les kanjis */
+.japanese-text {
+  font-weight: bold;
+  color: white; /* Un petit rouge discret pour le rappel du Japon */
+}</style>
+</html>

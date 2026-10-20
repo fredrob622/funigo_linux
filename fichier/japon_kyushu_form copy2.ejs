@@ -1,0 +1,127 @@
+
+<%- include('../../partials/header_kyushu') %>
+
+<body>
+    <div class="content content-black"> 
+        <div id=japon-ile-titre>
+            <h2>île de Honshu</h2>
+        </div>
+        
+        <div id="box-contenaire1">
+
+            
+            <div id="box1">
+                <a href="/images/cartes/japon/honshu/carte-honshu-avec-ville.png" target="_blank">
+                    <img src="/images/cartes/japon/honshu/carte-honshu-avec-ville.png" alt="Carte Honshu">
+                </a>
+            </div>
+            
+        
+            <div id="box2">
+                <p>
+                    <h2>Honshu : Le Cœur du Japon</h2> <br>
+ 
+                    <span class="vocab_span_bold">Honshu (本州)</span> est la plus grande et la plus peuplée des îles constituant l'archipel japonais.<br><br>
+                    
+                    La superficie de Honshu est de <span class="vocab_span_bold">227 960 km²</span><br><br>
+                    
+                    <span class="vocab_span_bold">80%</span> de la population vie à Honshu.<br><br>
+                    
+                    Il y a plus de <span class="vocab_span_bold">100 millions d'habitants</span><br><br>
+                    
+                    Les plus grandes villes du Japon sont à Honshu.<br><br>
+                    
+                    La liste des villes les plus peulplé par ordre croissant sont <span class="vocab_span_bold">Tokyo, Yokohama, Osaka, Nagoya, Kawasaki, Kobe, Saitama, Hiroshima, Sendai</span>.<br><br>
+                </p>
+            </div>
+
+
+        </div>
+
+        <div id="box-contenaire2">
+
+            <div id="box4">            
+                <a href="/video/japon/clip-honshu01.webm" target="_blank">
+                    <video autoplay loop muted playsinline>
+                        <source src="/video/japon/diap-honshu.webm" type="video/webm">
+                    </video>
+                </a>
+            </div>
+                <div id="box5">Box 5</div>
+                <div id="box6">Box 6</div>
+                <div id="box7">Box 7</div>
+            </div>
+
+         </div>
+  <!-- ******************* css -->
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+    }
+	
+	#box-contenaire1 {  display: flex; }
+
+    #box1 { width: 50%; height: auto; padding: 0; overflow: hidden; }
+
+    #box1 img { width: 100%;  height: 100%;  object-fit: cover;  display: block; }
+
+    #box1 > a img { cursor: pointer; }
+            
+    #box2 { width: 50%; height: auto;  margin-left: 15px;}
+
+
+
+    #box-contenaire2 { display: grid; grid-template-columns: 1fr 1fr ; grid-template-rows: 1fr 1fr 1fr; width: 100%; height: 100vh; border: 3px solid black; }
+
+    #box4 { grid-column: 1; grid-row: 1; border: 3px solid black; }
+
+    #box4 video { width: 132%;  height: auto;  object-fit: cover;  display: block;  margin-left: -80px; }
+    
+    #box5 {
+      grid-column: 1;
+      grid-row: 2;
+      border: 3px solid black;
+    }
+
+    #box6 {
+      grid-column: 2;
+      grid-row: 1 / span 3;
+      border: 3px solid black;
+    }
+	
+	#box7 {
+      grid-column: 1;
+      grid-row: 3;
+      border: 3px solid black;
+    }
+
+
+    @media screen and (max-width: 600px) {
+
+        #box-contenaire1 { display: flex;  flex-direction: column; }
+
+        /* #box-contenaire1 { display: flex;  flex-direction: row;  } */
+
+        #box1 { width: 90%; height: auto; margin-right: 5px; margin: auto;   }
+
+        #box2 { width: 90%; height: auto; margin-left: 15px; margin: auto;  margin-top: 10px; }
+
+        
+        #box-contenaire2 { display: flex;   }
+
+        #box4 { width: 100%; height: auto;  margin-bottom: 10px; justify-content:  center; margin: auto; }
+
+    }
+
+
+  </style>
+<%- include('../../partials/footer') %>
+

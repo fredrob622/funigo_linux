@@ -5,10 +5,10 @@
     
     <!-- MODIFICATION ICI : On remplace le nom en dur par la variable EJS -->
     <% if (videoFile) { %>
-      <source src="/video/<%= videoFile %>" type="video/mp4">
+      <source src=/video/acceuil/<%= videoFile %> type="video/mp4">
     <% } else { %>
       <!-- Fallback si jamais la variable n'est pas passée -->
-      <source src="/video/Funari.mp4" type="video/mp4">
+      <source src="/video/acceuil/Funari.mp4" type="video/mp4">
     <% } %>
     
     Ton navigateur ne supporte pas la vidéo.

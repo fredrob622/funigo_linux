@@ -1,0 +1,554 @@
+<%- include('../../../../partials/header_gram') %>
+
+<div class="content content-black">
+
+	<div class="vocab_titre" >   
+        <h2 class="gram-regles-h2">La particule の (no)</h2>
+        <a href="/vocab_dico" class="vocab_href">Dictionnaire</a>
+            <a href="/gram_exec?paramName=<%= encodeURIComponent('particule_no') %>" class="vocab_href">Exercice : La particule の</a> 
+        <button type="button" id="btn-back" class="vocab_href"> ← Page précédente </button>
+
+    </div>
+
+    <h2 class="japongeoh2">La particule の (no). Pour montrer une relation de propriété ou d'appartenance</h2>
+
+    <div class="gram-regles-content" >
+        <p>
+            <p class="gram-regles-p">
+                La particule の (no) est l’une des particules les plus utilisées en japonais. <br>
+                Elle sert principalement à exprimer la possession, la relation entre deux noms et la nominalisation d’une phrase. 
+            </p>
+
+            <p class="gram-regles-p">
+
+                <div class="sous-titre">                      
+                    <span class="vocab_span_bold">1. Exprimer la possession</span> : <br><br>
+                    La structure la plus courante est :	Possesseur の objet possédé<br>
+                    En français, cela correspond souvent à « de » ou « à ».
+                </div>
+                <br><br>
+                <u>Analogie en français: </u> : <br><br>
+                En français, cela correspond souvent à « de » ou « à ».<br><br>
+               
+
+
+                <div class="gram-regles-exemple">
+
+                    <u>Exemple: </u><br><br>
+
+                    <p class="question-container">
+                        私<span class="vocab_span_bold">の</span>本
+                        <button class="btn-speak btn-standard" data-text="私の本。">🔊</button>
+                    </p> 
+                    わたしのほん<br>	
+                    watashi no hon	<br>
+                    mon livre / le livre de moi<br><br>
+
+
+                    <p class="question-container">
+						田中さん<span class="vocab_span_bold">の</span>車	 
+                        <button class="btn-speak btn-standard" data-text="田中さんの車">🔊</button>
+                    </p> 
+                    たなかさんのくるま	<br>
+                    Tanaka-san no kuruma.<br>
+                    La voiture de Tanaka-san.<br><br>
+
+                    <p class="question-container">
+                        これは先生 <span class="vocab_span_bold">の</span> ペンです。
+                        <button class="btn-speak btn-standard" data-text="これは先生のペンです。">🔊</button>
+                    </p> 
+                    これはせんせいのペンです。<br>	
+                    Kore wa sensei no pen desu.	<br>
+                    Ceci est le stylo du professeur.<br><br>
+
+                    
+                    <p class="question-container">
+                        それは友達 <span class="vocab_span_bold">の</span> かばんです。
+                        <button class="btn-speak btn-standard" data-text="それは友達のかばんです。">🔊</button>
+                    </p> 
+                    それはともだちのかばんです。<br>	
+                    Sore wa tomodachi no kaban desu.<br>	
+                    C’est le sac de mon ami.
+
+                </div>
+
+            </p>
+        </p>
+    </div>   
+
+    <!-- ********************************************** -->
+
+    <div class="gram-regles-content" >
+        <p>
+            <p class="gram-regles-p">
+
+                <div class="sous-titre">                      
+                    <span class="vocab_span_bold">2. Relier deux noms</span> : <br><br>
+                    La particule の ne marque pas uniquement la possession.<br>
+                    lle peut aussi préciser une relation entre deux noms.
+                </div>
+                <br><br>
+
+
+                <div class="gram-regles-exemple">
+
+                    <u>Exemple: </u><br><br>
+
+                    <p class="question-container">
+                        日本語 <span class="vocab_span_bold">の</span> 先生
+                        <button class="btn-speak btn-standard" data-text="日本語の先生">🔊</button>
+                    </p> 
+                    にほんごのせんせい.	<br>
+                    nihongo no sensei.	<br>
+                    professeur de japonais. <br><br>
+
+                    <p class="question-container">
+                        大学 <span class="vocab_span_bold">の</span> 学生.
+                        <button class="btn-speak btn-standard" data-text="大学の学生。">🔊</button>
+                    </p> 
+                    だいがくのがくせい.	<br>	
+                    Daigaku no gakusei.	<br>
+                    Un étudiant de l’université. <br><br>
+
+                    <p class="question-container">
+                        会社 <span class="vocab_span_bold">の</span> 社長
+                        <button class="btn-speak btn-standard" data-text="会社の社長。">🔊</button>
+                    </p> 
+                    かいしゃのしゃちょう.<br>	
+                    kaisha no shachō.<br>	
+                    directeur de l’entreprise<br><br>
+
+                    <p class="question-container">
+                        春 <span class="vocab_span_bold">の</span> 祭り。
+                        <button class="btn-speak btn-standard" data-text="春の祭り。">🔊</button>
+                    </p> 
+                    はるのまつり.<br>	
+                    haru no matsuri	.<br>
+                    fête du printemps<br><br>
+
+                    <p class="question-container">
+                        東京 <span class="vocab_span_bold">の</span> 駅。
+                        <button class="btn-speak btn-standard" data-text="東京の駅。">🔊</button>
+                    </p> 
+                    とうきょうのえき.<br>	
+                    Tōkyō no eki.<br>	
+                    gare de Tokyo.
+
+                </div>
+
+            </p>
+        </p>
+    </div>   
+    				
+                <!--     ********************************************** -->
+
+    <div class="gram-regles-content" >
+        <p>
+            <p class="gram-regles-p">
+
+                <div class="sous-titre">                      
+                    <span class="vocab_span_bold">3. Indiquer l’appartenance à un groupe</span> : <br><br>
+                    La particule の peut indiquer l’appartenance à une famille, une organisation, une école ou un groupe.
+                </div>
+                <br><br>
+
+
+                <div class="gram-regles-exemple">
+
+                    <u>Exemple: </u><br><br>
+
+                    <p class="question-container">
+                        私は大学 <span class="vocab_span_bold">の</span> 学生です。
+                        <button class="btn-speak btn-standard" data-text="私は大学の学生です。">🔊</button>
+                    </p> 
+                    わたしはだいがくのがくせいです。<br>	
+                    Watashi wa daigaku no gakusei desu.<br>	
+                    Je suis étudiant à l’université. <br><br>
+
+                    <p class="question-container">
+                        彼は会社 <span class="vocab_span_bold">の</span> 社員です。
+                        <button class="btn-speak btn-standard" data-text="彼は会社の社員です。">🔊</button>
+                    </p> 
+                    かれはかいしゃのしゃいんです。<br>	
+                    Kare wa kaisha no shain desu.<br>	
+                    Il est employé de l’entreprise.<br><br>
+
+                    <p class="question-container">
+                        会社 <span class="vocab_span_bold">の</span> 社長
+                        <button class="btn-speak btn-standard" data-text="会社の社長。">🔊</button>
+                    </p> 
+                    かいしゃのしゃちょう.<br>	
+                    kaisha no shachō.<br>	
+                    directeur de l’entreprise<br><br>
+
+                    <p class="question-container">
+                        彼女は日本 <span class="vocab_span_bold">の</span> 人です。
+                        <button class="btn-speak btn-standard" data-text="彼女は日本の人です。">🔊</button>
+                    </p> 
+                    かのじょはにほんのひとです。<br>	
+                    Kanojo wa Nihon no hito desu.<br>	
+                    Elle est japonaise.
+
+
+                </div>
+
+            </p>
+        </p>
+    </div>   
+    				
+                    <!--     ********************************************** -->
+
+    <div class="gram-regles-content" >
+        <p>
+            <p class="gram-regles-p">
+
+                <div class="sous-titre">                      
+                    <span class="vocab_span_bold">4. Remplacer un nom déjà connu</span> : <br><br>
+                    La particule の peut remplacer un nom lorsque celui-ci est déjà compris dans le contexte.
+                </div>
+                <br><br>
+
+
+                <div class="gram-regles-exemple">
+
+                    <u>Exemple: </u><br><br>
+
+                    <p class="question-container">
+                        これは私 <span class="vocab_span_bold">の</span> 本です。あれは弟 <span class="vocab_span_bold">の</span> です。
+                        <button class="btn-speak btn-standard" data-text="これは私の本です。あれは弟のです。">🔊</button>
+                    </p> 
+                    これはわたしのほんです。あれはおとうとのです。Dans 弟の, le nom 本 est sous-entendu :<br>	
+                    Kore wa watashi no hon desu. Are wa otōto no desu.<br>	
+                    Ceci est mon livre. Celui-là est à mon petit frère. <br><br>
+
+                    <p class="question-container">
+                        赤い <span class="vocab_span_bold">の</span> をください。
+                        <button class="btn-speak btn-standard" data-text="赤いのをください。">🔊</button>
+                    </p> 
+                    あかいのをください。<br>
+                    Akai no o kudasai.	<br>
+                    Donnez-moi le rouge, s’il vous plaît.<br><br>
+
+                    <p class="question-container">
+                        大きい <span class="vocab_span_bold">の</span> はどれですか。
+                        <button class="btn-speak btn-standard" data-text="大きいのはどれですか。">🔊</button>
+                    </p>
+                    おおきいのはどれですか。<br>	
+                    Ōkii no wa dore desu ka.<br>	
+                    Le grand, lequel est-ce ? <br><br>
+
+                    <p class="question-container">
+                        私 <span class="vocab_span_bold">の</span> は新しいです。
+                        <button class="btn-speak btn-standard" data-text="私のは新しいです。">🔊</button>
+                    </p> 
+                    わたしのはあたらしいです。<br>	
+                    Watashi no wa atarashii desu.<br>	
+                    Le mien est neuf.
+
+                </div>
+
+            </p>
+        </p>
+    </div>
+    
+                    <!--     ********************************************** -->
+
+    <div class="gram-regles-content" >
+        <p>
+            <p class="gram-regles-p">
+
+                <div class="sous-titre">                      
+                    <span class="vocab_span_bold">5. Nominaliser une action</span> : <br><br>
+                    La particule の peut transformer une proposition en groupe nominal. <br>
+                    Elle correspond alors souvent à « le fait de », « ce que » ou « l’action de ».
+                </div>
+                <br>
+
+
+                <div class="gram-regles-exemple">
+
+                    <u>Exemple: </u><br><br>
+
+                    <p class="question-container">
+                        日本語を勉強する <span class="vocab_span_bold">の</span> は楽しいです。
+                        <button class="btn-speak btn-standard" data-text="日本語を勉強するのは楽しいです。">🔊</button>
+                    </p> 
+                    にほんごをべんきょうするのはたのしいです。	<br>
+                    Nihongo o benkyō suru no wa tanoshii desu.	<br>
+                    Étudier le japonais est agréable.<br><br>
+
+                    <p class="question-container">
+                        本を読む <span class="vocab_span_bold">の</span> が好きです。
+                        <button class="btn-speak btn-standard" data-text="本を読むのが好きです。">🔊</button>
+                    </p> 
+                    ほんをよむのがすきです。<br>	
+                    Hon o yomu no ga suki desu.	<br>
+                    J’aime lire des livres.<br><br>
+
+                    <p class="question-container">
+                        料理をする <span class="vocab_span_bold">の</span> が好きです。
+                        <button class="btn-speak btn-standard" data-text="料理をするのが好きです。">🔊</button>
+                    </p>
+                    りょうりをするのがすきです。<br>	
+                    Ryōri o suru no ga suki desu.<br>
+                    J’aime cuisiner.<br><br>
+
+                    <p class="question-container">
+                        電車で行く <span class="vocab_span_bold">の</span> を忘れました。	
+                        <button class="btn-speak btn-standard" data-text="電車で行くのを忘れました。">🔊</button>
+                    </p> 
+                    でんしゃでいくのをわすれました。<br>	
+                    Densha de iku no o wasuremashita.<br>	
+                    J’ai oublié d’y aller en train.
+
+                </div>
+
+            </p>
+        </p>
+    </div>   
+
+                    <!--     ********************************************** -->
+
+    <div class="gram-regles-content" >
+        <p>
+            <p class="gram-regles-p">
+
+                <div class="sous-titre">                      
+                    <span class="vocab_span_bold">6. Différence entre の et こと</span> : <br><br>
+                    Les deux formes peuvent nominaliser une phrase mais il y a une nuance de sens. <br>
+                    Avec 好き, 楽しい, 見る ou les verbes liés à une expérience concrète, の est très fréquent.
+                </div>
+                <br>
+
+
+                <div class="gram-regles-exemple">
+
+                    <u>Exemple: </u><br><br>
+
+                    <p class="question-container">
+                        日本語を勉強する <span class="vocab_span_bold">の</span> が好きです。
+                        <button class="btn-speak btn-standard" data-text="日本語を勉強するのが好きです。">🔊</button>
+                    </p> 
+                    にほんごをべんきょうするのがすきです。<br>
+                    Nihongo o benkyō suru no ga suki desu.<br>
+                    J’aime étudier le japonais.<br><br>
+
+                    <p class="question-container">
+                        日本語を勉強する <span class="vocab_span_bold">こと</span> が好きです。
+                        <button class="btn-speak btn-standard" data-text="日本語を勉強することが好きです。">🔊</button>
+                    </p> 
+                    にほんごをべんきょうするものがすきです。<br>
+                    Nihongo o benkyō suru koto ga suki desu.<br>
+                    J’aime étudier le japonais.<br><br>
+
+                    <p class="question-container">
+                        音楽を聞く <span class="vocab_span_bold">の</span> が好きです。
+                        <button class="btn-speak btn-standard" data-text="音楽を聞くのが好きです。">🔊</button>
+                    </p>
+                    おんがくをきくのがすきです。<br>
+                    Ongaku o kiku no ga suki desu.<br>
+                    J’aime écouter de la musique..<br><br>
+
+                    <p class="question-container">
+                        音楽を聞く <span class="vocab_span_bold">の</span> が大切です。		
+                        <button class="btn-speak btn-standard" data-text="音楽を聞くことが大切です。">🔊</button>
+                    </p> 
+                    おんがくをきくことがたいせつです。<br>
+                    Ongaku o kiku koto ga taisetsu desu.<br>
+                    Il est important d’écouter de la musique.
+
+                </div>
+
+            </p>
+        </p>
+    </div> 
+    
+                    <!--     ********************************************** -->
+
+    <div class="gram-regles-content" >
+        <p>
+            <p class="gram-regles-p">
+
+                <div class="sous-titre">                      
+                    <span class="vocab_span_bold">7. La forme explicative のです</span> : <br><br>
+                    La structure のです ou sa forme familière んです sert à donner une explication ou à demander une explication.
+                </div>
+                <br>
+
+
+                <div class="gram-regles-exemple">
+
+                    <u>Exemple: </u><br><br>
+
+                    <p class="question-container">
+                        どうした <span class="vocab_span_bold">の</span> ですか。
+                        <button class="btn-speak btn-standard" data-text="どうしたのですか。">🔊</button>
+                    </p> 
+                    どうしたのですか。<br>	
+                    Dō shita no desu ka. <br>	
+                    Que s’est-il passé ?<br><br>
+
+                    <p class="question-container">
+                        どうした <span class="vocab_span_bold">ん</span> ですか。
+                        <button class="btn-speak btn-standard" data-text="どうしたんですか。">🔊</button>
+                    </p> 
+                    どうしたんですか。<br>
+                    Dō shitan desu ka.<br>	
+                    Qu’est-ce qui se passe ?<br><br>
+
+
+                    <p class="question-container">
+                        病気な <span class="vocab_span_bold">の</span> です。
+                        <button class="btn-speak btn-standard" data-text="病気なのです。">🔊</button>
+                    </p>
+                    びょうきなのです。	<br>
+                    Byōki na no desu.	<br>
+                    C’est parce que je suis malade.<br><br>
+
+                    <p class="question-container">
+                        明日、試験がある <span class="vocab_span_bold">ん</span> です。	
+                        <button class="btn-speak btn-standard" data-text="明日、試験があるんです。">🔊</button>
+                    </p>
+                    あした、しけんがあるんです。
+                    Ashita, shiken ga arun desu.	
+                    C’est parce que j’ai un examen demain.<br><br>
+
+                    <p class="question-container">
+                        電車が遅れた <span class="vocab_span_bold">ん</span> です。		
+                        <button class="btn-speak btn-standard" data-text="電車が遅れたんです。	">🔊</button>
+                    </p>
+                    でんしゃがおくれたんです。<br>	
+                    Densha ga okuretan desu. <br>	
+                    C’est parce que le train a eu du retard.<br><br>
+
+                    <div class="sous-titre">                      
+                        <span class="vocab_span_bold">Avec un nom ou un adjectif en な</span> : <br><br>
+                        Avant のです, on utilise な après un nom ou un adjectif en な 
+                    </div>
+
+                    <p class="question-container">
+                        学生なのです。
+                        明日、試験がある <span class="vocab_span_bold">なの</span> です。	
+                        <button class="btn-speak btn-standard" data-text="学生なのです。">🔊</button>
+                    </p>
+                    がくせいなのです。<br>
+                    Gakusei na no desu.<br>
+                    C’est parce que je suis étudiant.<br><br>
+
+                    <p class="question-container">
+                        静か<span class="vocab_span_bold">なん</span>です。	
+                        <button class="btn-speak btn-standard" data-text="静かなんです。">🔊</button>
+                    </p>
+                    しずかなんです。<br>
+                    Shizuka nan desu.<br>
+                    C’est calme / En fait, c’est calme.<br><br>
+
+                    <div class="sous-titre">                      
+                        <span class="vocab_span_bold">Avec un adjectif en い ou un verbe, on ne met pas な</span> : <br><br>
+                    </div>
+
+                    <p class="question-container">
+                        忙しい <span class="vocab_span_bold">ん</span> です。	
+                        <button class="btn-speak btn-standard" data-text="忙しいんです。">🔊</button>
+                    </p>
+                    いそがしいんです。<br>
+                    Isogashii n desu.<br>
+                    C’est parce que je suis occupé.<br><br>
+
+                    <p class="question-container">
+                        行く <span class="vocab_span_bold">ん</span> です。
+                        <button class="btn-speak btn-standard" data-text="行くんです。">🔊</button>
+                    </p>
+                    いくんです。<br>
+                    Iku n desu.<br>
+                    C’est que j’y vais.
+                
+                </div>
+
+            </p>
+        </p>
+    </div>   
+
+                    <!--     ********************************************** -->
+
+    <div class="gram-regles-content" >
+
+            <p class="gram-regles-p">
+
+                <div class="sous-titre">                      
+                    <span class="vocab_span_bold">8. Ne pas confondre の avec ん</span> : <br><br>
+                    Dans la conversation, のです devient souvent んです :<br>
+                    La forme んです est une contraction de のです.<br>
+                    Elle est très courante à l’oral, mais のです est plus formel ou plus écrit.
+                </div>
+                <br>
+
+
+                <div class="gram-regles-exemple">
+
+                    <u>Exemple: </u><br><br>
+
+                    <p class="question-container">
+                        今日は休みな <span class="vocab_span_bold">の</span> です。
+                        <button class="btn-speak btn-standard" data-text="今日は休みなのです。">🔊</button>
+                    </p> 
+                    きょうはやすみなのです。<br>
+                    Kyō wa yasumi na no desu.<br>
+                    Aujourd’hui, c’est un jour de repos.<br><br>
+
+                    <p class="question-container">
+                        今日は休みな <span class="vocab_span_bold">ん</span> です。
+                        <button class="btn-speak btn-standard" data-text="今日は休みなんです。。">🔊</button>
+                    </p> 
+                    きょうはやすみなんです。<br>
+                    Kyō wa yasumi nan desu.<br>
+                    Aujourd’hui, c’est que je suis en congé.<br><br>
+
+                </div>
+
+            </p>
+
+    </div> 
+
+    <div class="gram-regles-content" >
+        
+            <p class="gram-regles-p">
+
+                <div class="sous-titre">                      
+                    <span class="vocab_span_bold">9 Résumé</span> : <br><br>
+                    La particule の sert principalement à :
+                </div>
+                <br>
+
+                    exprimer la possession : 私の本 — mon livre ;<br><br>
+
+                    relier deux noms : 日本語の先生 — professeur de japonais ;<br><br>
+
+                    remplacer un nom : 私の — le mien ;<br><br>
+
+                    nominaliser une action : 読むのが好きです — j’aime lire ;<br><br>
+
+                    donner une explication avec のです／んです : 忙しいんです — c’est que je suis occupé.<br><br>
+
+                    La structure essentielle à retenir est :<br><br>
+
+                    A の B : Elle signifie généralement « B de A », « B appartenant à A » ou « B en relation avec A ».
+
+            </p>
+        
+    </div> 
+
+</div>
+
+
+<style>
+
+    .japongeoh2 { background-color: #074107; color: white; padding: 10px; margin:auto; margin-top: 30px; width: 80%; align-items: center; border-radius: 10px; }
+    .gram-regles-content {  padding: 5px; margin-left: 20px; margin-top: 10px; width: 90%; align-items: center; }
+    .gram-regles-p {  padding: 5px; margin: 10px 0; }
+    .gram-regles-exemple {  padding-left: 20px; margin: 10px 0; }
+    .sous-titre {  background-color: #345a93; color: white;   align-items: center; border-radius: 10px; padding-left: 10px;}
+
+</style>
+
+<%- include('../../../../partials/footer') %>

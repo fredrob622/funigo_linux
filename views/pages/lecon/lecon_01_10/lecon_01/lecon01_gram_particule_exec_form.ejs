@@ -1,0 +1,60 @@
+<%- include('../../../../partials/header_lecon') %> 
+
+<div  class="content content-black">
+    <div class="vocab_titre" >  
+        <h2 ><%= title  %></h2>
+        <a href="/vocab_dico" class="vocab_href">Dictionnaire</a>
+        <button type="button" id="btn-back" class="vocab_href"> ← Page précédente </button>
+
+    </div>
+
+<p style="animation: blink 2s infinite;"><br>Cliquer la ligne pour avoir la réponse<br></p>
+<% if ( results && results.length > 0) { %> 
+    
+    <% results.forEach((article, index) => { %> 
+    
+        <div class="blog_article"> 
+            
+            <!-- Déterminer la classe à ajouter en fonction de l'index -->
+            <%  const alternateClass = (index % 2 === 0) ? 'blog_article_entete_even' : 'blog_article_entete_odd';     %>
+            <div class="blog_article_entete article-tech-toggle <%= alternateClass %>" data-target-id="content-<%= index %>"> 
+
+                <h3 class="blog_h3" data-target-id="content-<%= index %>" >
+                    <p> <%= article.kanji %> </p> 
+                    <p> <%= article.hiragana %> </p>     
+
+                </h3>
+                
+            </div>
+            
+            <div class="blog_contenus_container bloc_tech_hidden" id="content-<%= index %>"> 
+ 
+                <div class="blog_contenu_2">
+                    <p> <%= article.reponse %>
+                        <button class="btn-speak" data-text="<%= article.reponse %>">Listen 🔊</button>                    
+                    </p>  
+                    <p> <%= article.romanji %> </p>  
+                    <p> <%= article.francais %> </p>     
+                    <% if (article.option1) { %>
+                        <p> <%= article.option1 %> </p>  
+                    <% } %>
+                    <% if (article.option2) { %>
+                        <p> <%= article.option2 %> </p>  
+                    <% } %>                        
+                </div>
+                      
+            </div>
+
+        </div> 
+    <% }); %>
+    
+</div>
+<% } else { %>
+    <p>Aucun article trouvé.</p>
+<% } %>
+
+
+<%- include('../../../../partials/footer') %>
+
+
+

@@ -1,0 +1,175 @@
+<%- include('../../../../../partials/honshu/kanto/header_tokyo') %>
+
+<div class="content content-black"> 
+<div id=japon-ile-titre>
+    <h2>Les quartiers de Tokyo</h2>
+    <br>
+    <<button type="button" id="btn-back" class="vocab_href"> ← Page précédente </button>
+</div>
+
+<body>
+    
+        <div id="japongeo-contenaire1">
+
+                <a href="/images/en-traveaux.jpg" target="_blank">
+                    <img src="/images/en-traveaux.jpg" alt="Carte Tokyo">
+                </a>
+
+        </div>
+
+       <!-- *******************************************************  -->
+
+  <style>
+    * { margin: 0; padding: 0;    }
+
+    body {  height: 100vh;  display: flex;   }
+	
+    .japongeoh2 { background-color: #074107; color: white; padding: 10px; margin:auto; width: 80%; align-items: center; }
+    .geo_href { color: white; text-decoration: underline;  padding: 5px 10px ; border-radius: 5px; margin-right: 10px;  
+        font-size: 1.0em; font-weight: 300px; width: 60px; display: inline-block; text-align: center;  }
+    .geo_nu { color: white; padding: 5px 5px ; border-radius: 5px; margin-right: 5px;  
+        font-size: 1.0em; font-weight: 300px; width: 50px; display: inline-block; text-align: center;  }  
+
+            /*******************************/
+
+	#japongeo-contenaire1 {  display: flex; margin-top: 30px; }
+
+    #japongeo-contenaire1 > a > img { cursor: pointer; width: 98%; margin: auto; height: auto; object-fit: cover;  display: block;  }
+
+    #japongeo-contenaire1 >  a:hover { background-color:#0056b3; transition: background-color 0.3s, color 0.3s;font-weight: bold;}
+
+            /*******************************/
+            
+    #japongeo-contenaire2 {  display: flex; margin-top: 20px; width: 100%; margin: auto}
+
+    #japongeo3 { width: 30%; height: auto; padding: 0; overflow: hidden; }
+
+    #japongeo3 img { width: 100%;  height: auto;  object-fit: cover;  display: block; }
+
+    #japongeo4 { width: 70%; height: auto;   padding: 0; overflow: hidden; margin: auto}
+
+    #japongeo4 >  a:hover { background-color:#0056b3; transition: background-color 0.3s, color 0.3s;font-weight: bold;}
+
+    #japongeo2-bis >  a:hover { background-color:#0056b3; transition: background-color 0.3s, color 0.3s;font-weight: bold;}
+
+    #japongeo2-bis { width: 100%; display: flex; flex-direction: row; flex-wrap: wrap; gap: 15px; justify-content: center; margin: auto; align-items: center; margin-top: 20px; }
+
+    #japongeo2-bis > div { display: flex; flex-direction: column; align-items: center; }
+
+    #japongeo2-bis > div img { width: 150px; height: auto; object-fit: cover; }
+
+    #japongeo2-bis > div p { margin: 5px 0 0 0; text-align: center; }
+
+
+  
+            /*******************************/       
+
+    #japongeo-contenaire3 {  display: flex; margin-top: 10px; }
+
+    #japongeo5 { width: 60%; height: auto; padding: 0; overflow: hidden; margin: auto; margin-top: 0 }
+
+    #japongeo5 img { width: 100%;  height: auto;  object-fit: cover;  display: block; background-color: #a2ccf7;}
+
+    #japongeo5 > a img { cursor: pointer; }
+
+    #japongeo6 { width: 40%; height: auto;  margin-left: 35px;}
+
+
+
+               /*******************************/       
+
+    #japongeo-contenaire4 {  display: flex; margin-top: 10px; }
+
+    #japongeo7 { width: 55%; height: auto;  }
+
+    #japongeo7 img { width: 98%;  height: auto;  object-fit: cover;  display: block; }
+
+    #japongeo7 > a img { cursor: pointer; }
+
+    #japongeo8 { width: 45%; height: auto; padding: 0; overflow: hidden; margin: auto; margin-top: 0px; }
+
+    #japongeo8 img { width: 100%;  height: auto;  object-fit: cover;  display: block; }
+
+    #japongeo8 > a img { cursor: pointer; }
+
+    .volcan-table {
+        border-collapse: collapse; border: 2px solid rgb(140 140 140); font-family: sans-serif;
+        font-size: 0.9rem; letter-spacing: 1px; width: 100%; /* Optionnel : pour qu'il prenne toute la largeur */white-space: normal; 
+        color: white; /* Pour que le texte soit lisible sur le fond sombre */ background-color: #1a1a1a; }
+
+    .volcan-thead { background-color: rgb(15, 15, 15);}
+
+    .volcan-table th,
+    .volcan-table td {border: 1px solid rgb(160 160 160);  text-align: center; padding-left:3px; padding-top: 3px; padding-bottom: 3px; }
+
+    /* Centre le texte de la dernière colonne (Hiragana) */
+    .volcan-table td:last-of-type {  padding-left:3px; text-align: center;white-space: normal; }
+
+    /* Effet zébré pour les lignes paires */
+    .volcan-tbody > tr:nth-of-type(even) {  background-color: rgb(15, 15, 15);  }
+
+    /* Style pour mettre en avant les kanjis */
+    .japanese-text { font-weight: bold; color: white; /* Un petit rouge discret pour le rappel du Japon */}
+            
+
+
+    @media screen and (max-width: 900px) {
+
+        	
+            /*******************************/
+
+
+        	
+            /*******************************/
+            
+        
+        #japongeo-contenaire2 { display: flex; flex-direction: column; }
+
+
+        #japongeo3 { width: 100%; margin: auto; }           /* ← ajouté */
+
+        #japongeo3 video { width: 120%; height: auto; object-fit: cover;margin: auto;} 
+
+        #japongeo4 { width: 90%; height: auto; margin-left: 15px; margin: auto;  margin-top: 10px; }
+
+        #japongeo2-bis >  a:hover { background-color:#0056b3; transition: background-color 0.3s, color 0.3s;font-weight: bold;}
+
+        #japongeo2-bis { width: 100%; display: flex; flex-direction: row; flex-wrap: wrap; gap: 15px; justify-content: center; margin: auto; align-items: center; }
+
+        #japongeo2-bis > div { display: flex; flex-direction: column; align-items: center; }
+
+        #japongeo2-bis > div img { width: 70px; height: auto; object-fit: cover; }
+
+        #japongeo2-bis > div p { margin: 5px 0 0 0; text-align: center; }
+
+        	
+            /*******************************/
+            
+        #japongeo-contenaire3 { display: flex; flex-direction: column; }
+
+
+        #japongeo5 { width: 90%; margin: auto; }           /* ← ajouté */
+
+        #japongeo5 video { width: 100%; height: auto; object-fit: cover; margin: 0; } 
+
+        #japongeo6 { width: 90%; height: auto; margin: auto;  margin-top: 10px; }
+
+        /*******************************/
+            
+        #japongeo-contenaire4 { display: flex; flex-direction: column; }
+
+        #japongeo7 { width: 90%; margin: auto; }   
+
+        #japongeo8 { width: 90%; margin: auto; margin-top: 20px;  }  
+
+        /*******************************/
+
+        #japongeo-contenaire5 { display: block; margin:auto; }
+
+        #japongeo-contenaire5 > p { margin-left: 30px; margin-right: 30px;}
+        
+    }
+
+
+  </style>
+<%- include('../../../../../partials/footer') %>

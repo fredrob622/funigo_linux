@@ -1,0 +1,30 @@
+Oui, le plus simple est d'utiliser un service qui retourne directement l'IP et la géolocalisation :
+
+curl -s https://ipinfo.io/json
+
+Tu obtiendras quelque chose comme :
+
+{
+  "ip": "185.x.x.x",
+  "city": "Paris",
+  "region": "Île-de-France",
+  "country": "FR",
+  "org": "ASxxxx ..."
+}
+
+Si tu veux uniquement l'IP publique + le pays, avec jq :
+
+curl -s https://ipinfo.io/json | jq -r '"IP: \(.ip)\nPays: \(.country)"'
+
+Résultat :
+
+IP: 185.x.x.x
+Pays: FR
+
+Et si jq n'est pas installé :
+
+curl -s https://ipinfo.io/json | grep -E '"ip"|"country"'
+
+Pour vérifier rapidement que ton VPN fonctionne, je te conseille :
+
+curl -s https://ipinfo.io/json | jq -r '"IP: \(.ip) | Pays: \(.country) | Ville: \(.city)"'

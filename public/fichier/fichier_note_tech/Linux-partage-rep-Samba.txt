@@ -66,6 +66,17 @@ Ajouter à la fin du fichier
    writeable = yes
    browseable = yes
    public = no
+   
+ [funigo]
+   comment = Funigo 
+   path = /var/www/funigo
+   browseable = yes
+   read only = no
+   writable = yes
+   create mask = 0775
+   directory mask = 0775
+   valid users = fred
+   force user = fred
 
 [funigo-public]
    comment = Funigo Public Web

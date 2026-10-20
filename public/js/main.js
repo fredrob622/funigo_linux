@@ -24,10 +24,15 @@ document.addEventListener('DOMContentLoaded', () => {
     dropdownToggles.forEach(clickedToggle => {
         clickedToggle.addEventListener('click', (event) => {
             if (window.getComputedStyle(hamburger).display !== 'none') {
-                event.preventDefault();
                 const currentSubmenu = clickedToggle.nextElementSibling;
+
+                // Si ce lien n'a pas de sous-menu, on le laisse naviguer normalement
+                if (!currentSubmenu) return;
+
+                event.preventDefault();
+
                 dropdownToggles.forEach(otherToggle => {
-                    if (otherToggle !== clickedToggle) {
+                    if (otherToggle !== clickedToggle && otherToggle.nextElementSibling) {
                         otherToggle.nextElementSibling.classList.remove('open');
                     }
                 });
@@ -322,6 +327,18 @@ if (onoDetailForm) {
         });
     }
 
+
+});
+
+// Bouton pour revenir à la page précédente 
+
+document.addEventListener('DOMContentLoaded', function () {
+  const btn = document.getElementById('btn-back');
+  if (btn) {
+    btn.addEventListener('click', function () {
+      history.back();
+    });
+  }
 });
 
 

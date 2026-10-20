@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Démo lecture vocale</title>
+<style>
+    body {
+        background-color: #111;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        max-width: 800px;
+        margin: 40px auto;
+        padding: 0 20px;
+        line-height: 1.6;
+    }
+
+    h1 {
+        color: #4caf50;
+        font-size: 1.4rem;
+        border-bottom: 2px solid #4caf50;
+        padding-bottom: 10px;
+    }
+
+    #controls {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        margin: 20px 0;
+        padding: 15px;
+        background-color: #1a1a1a;
+        border: 1px solid #444;
+        border-radius: 6px;
+    }
+
+    button {
+        background-color: #2e7d32;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 0.9rem;
+    }
+
+    button:hover {
+        background-color: #388e3c;
+    }
+
+    button:disabled {
+        background-color: #555;
+        cursor: not-allowed;
+    }
+
+    select {
+        background-color: #222;
+        color: white;
+        border: 1px solid #555;
+        padding: 6px;
+        border-radius: 4px;
+    }
+
+    label {
+        font-size: 0.85rem;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    #texte-lecture {
+        background-color: #1a1a1a;
+        border: 1px solid #444;
+        border-radius: 6px;
+        padding: 20px;
+    }
+
+    #texte-lecture p {
+        margin: 0 0 12px 0;
+    }
+
+    .mot-actif {
+        background-color: #4caf50;
+        color: black;
+        border-radius: 3px;
+        padding: 0 2px;
+    }
+
+    #statut {
+        font-size: 0.85rem;
+        color: #aaa;
+        margin-top: 10px;
+    }
+</style>
+</head>
+<body>
+
+<h1>Démo : lecture vocale d'un texte (Web Speech API)</h1>
+
+<div id="controls">
+    <button id="btn-lire">🔊 Lire</button>
+    <button id="btn-pause">⏸️ Pause</button>
+    <button id="btn-reprendre">▶️ Reprendre</button>
+    <button id="btn-stop">⏹️ Arrêter</button>
+
+    <label>
+        Voix :
+        <select id="select-voix"></select>
+    </label>
+
+    <label>
+        Vitesse :
+        <input type="range" id="vitesse" min="0.5" max="2" step="0.1" value="1">
+        <span id="vitesse-valeur">1</span>
+    </label>
+</div>
+
+<div id="texte-lecture">
+    <p><strong>Chiyoda</strong> : Centre politique (Palais impérial, Diète nationale, quartier d'Akihabara).</p>
+    <p><strong>Chuo</strong> : Centre commercial historique (quartier de luxe de Ginza, Nihonbashi).</p>
+    <p><strong>Minato</strong> : Quartier des affaires et des ambassades (Tour de Tokyo, Roppongi).</p>
+    <p><strong>Shinjuku</strong> : Siège du gouvernement métropolitain, gratte-ciels et vie nocturne (Kabukicho).</p>
+</div>
+
+<div id="statut">Prêt.</div>
+
+<script>
+    const btnLire = document.getElementById('btn-lire');
+    const btnPause = document.getElementById('btn-pause');
+    const btnReprendre = document.getElementById('btn-reprendre');
+    const btnStop = document.getElementById('btn-stop');
+    const selectVoix = document.getElementById('select-voix');
+    const inputVitesse = document.getElementById('vitesse');
+    const vitesseValeur = document.getElementById('vitesse-valeur');
+    const statut = document.getElementById('statut');
+    const conteneurTexte = document.getElementById('texte-lecture');
+
+    let voixDisponibles = [];
+
+    // Charge la liste des voix (asynchrone selon les navigateurs)
+    function chargerVoix() {
+        voixDisponibles = window.speechSynthesis.getVoices();
+        selectVoix.innerHTML = '';
+
+        // On met en avant les voix françaises
+        const voixTriees = [...voixDisponibles].sort((a, b) => {
+            const aFr = a.lang.startsWith('fr') ? 0 : 1;
+            const bFr = b.lang.startsWith('fr') ? 0 : 1;
+            return aFr - bFr;
+        });
+
+        voixTriees.forEach((voix, index) => {
+            const option = document.createElement('option');
+            option.value = voixDisponibles.indexOf(voix);
+            option.textContent = `${voix.name} (${voix.lang})`;
+            selectVoix.appendChild(option);
+        });
+    }
+
+    chargerVoix();
+    if (speechSynthesis.onvoiceschanged !== undefined) {
+        speechSynthesis.onvoiceschanged = chargerVoix;
+    }
+
+    inputVitesse.addEventListener('input', () => {
+        vitesseValeur.textContent = inputVitesse.value;
+    });
+
+    // Découpe le texte en phrases pour un enchaînement fiable
+    function decouperEnPhrases(texte) {
+        return texte.match(/[^.!?]+[.!?]*/g) || [texte];
+    }
+
+    function lireTexte() {
+        window.speechSynthesis.cancel();
+
+        const paragraphes = conteneurTexte.querySelectorAll('p');
+        const texteComplet = Array.from(paragraphes).map(p => p.innerText).join(' ');
+        const phrases = decouperEnPhrases(texteComplet);
+
+        phrases.forEach((phrase, index) => {
+            const utterance = new SpeechSynthesisUtterance(phrase.trim());
+            utterance.lang = 'fr-FR';
+            utterance.rate = parseFloat(inputVitesse.value);
+
+            const voixChoisie = voixDisponibles[selectVoix.value];
+            if (voixChoisie) utterance.voice = voixChoisie;
+
+            if (index === 0) {
+                utterance.onstart = () => {
+                    statut.textContent = 'Lecture en cours...';
+                    btnLire.disabled = true;
+                };
+            }
+            if (index === phrases.length - 1) {
+                utterance.onend = () => {
+                    statut.textContent = 'Lecture terminée.';
+                    btnLire.disabled = false;
+                };
+            }
+
+            window.speechSynthesis.speak(utterance);
+        });
+    }
+
+    btnLire.addEventListener('click', lireTexte);
+
+    btnPause.addEventListener('click', () => {
+        if (window.speechSynthesis.speaking) {
+            window.speechSynthesis.pause();
+            statut.textContent = 'En pause.';
+        }
+    });
+
+    btnReprendre.addEventListener('click', () => {
+        if (window.speechSynthesis.paused) {
+            window.speechSynthesis.resume();
+            statut.textContent = 'Lecture en cours...';
+        }
+    });
+
+    btnStop.addEventListener('click', () => {
+        window.speechSynthesis.cancel();
+        statut.textContent = 'Arrêté.';
+        btnLire.disabled = false;
+    });
+
+    // Lecture au clic sur un paragraphe individuel
+    conteneurTexte.querySelectorAll('p').forEach(p => {
+        p.style.cursor = 'pointer';
+        p.title = 'Cliquer pour lire ce paragraphe';
+        p.addEventListener('click', () => {
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(p.innerText);
+            utterance.lang = 'fr-FR';
+            utterance.rate = parseFloat(inputVitesse.value);
+            const voixChoisie = voixDisponibles[selectVoix.value];
+            if (voixChoisie) utterance.voice = voixChoisie;
+            window.speechSynthesis.speak(utterance);
+        });
+    });
+</script>
+
+</body>
+</html>

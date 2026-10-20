@@ -1,7 +1,12 @@
 <%- include('../../partials/header', { title: title }) %>
 
 <div class="content content-black">
-    <h2><%= title %></h2>
+
+    <div class="vocab_titre" >
+        <h2><%= title %></h2>
+        <button type="button" id="btn-back" class="vocab_href"> ← Page précédente </button>
+    </div> 
+
     
     <!-- Le formulaire reste identique -->
     <form method="get" action="/quiz_orale">

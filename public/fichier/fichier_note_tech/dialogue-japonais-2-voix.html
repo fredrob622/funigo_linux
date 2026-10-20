@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dialogue japonais parlé</title>
+<style>
+:root{--bg:#faf8f5;--fg:#222;--card:#fff;--line:#ddd;--accent:#c0392b;--f:#fde8ef;--m:#e6f0fd;--hl:#fff3b0;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1c1b1a;--fg:#eee;--card:#2a2928;--line:#444;--accent:#e8695a;--f:#4a2a36;--m:#26364d;--hl:#6b5d1a}}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--fg);font-family:system-ui,sans-serif;padding:16px;max-width:760px;margin:0 auto}
+h1{font-size:1.3rem}
+textarea{width:100%;min-height:170px;font-size:1.05rem;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--fg)}
+.row{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0;align-items:center}
+button{background:var(--accent);color:#fff;border:0;border-radius:8px;padding:10px 16px;font-size:1rem;cursor:pointer}
+button.sec{background:var(--card);color:var(--fg);border:1px solid var(--line)}
+select{padding:8px;border-radius:8px;border:1px solid var(--line);background:var(--card);color:var(--fg);max-width:100%}
+label{font-size:.9rem;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+#out .line{padding:10px 12px;margin:6px 0;border-radius:8px;font-size:1.2rem;cursor:pointer;border-left:6px solid transparent}
+#out .Aiko{background:var(--f);border-color:#e0608a}
+#out .Kenji{background:var(--m);border-color:#3b82f6}
+#out .line.on{outline:3px solid var(--hl);background:var(--hl)}
+#out small{display:block;font-size:.75rem;opacity:.7}
+#msg{font-size:.85rem;opacity:.8}
+</style>
+</head>
+<body>
+<h1>🗣️ Dialogue japonais parlé</h1>
+<textarea id="src">Aiko : 昨日、友達 と 公園に 行きました。
+Kenji : いい です ね。 公園 で 何を しました か。
+Aiko : 犬 と 遊びました。 犬 は とても 面白い です。
+Kenji : 犬 は 鳴きました か。
+Aiko : はい、たくさん 鳴きました。でも、猫 は 鳴きませんでした。
+Kenji : 誰 の 猫 です か。
+Aiko : 私 の 友達 の 猫 です。</textarea>
+
+<div class="row">
+  <button id="play">▶ Lire le dialogue</button>
+  <button id="stop" class="sec">■ Arrêter</button>
+  <label>Vitesse <input type="range" id="rate" min="0.5" max="1.5" step="0.1" value="0.9"></label>
+</div>
+<div class="row">
+  <label>Voix Aiko (femme) <select id="vf"></select></label>
+  <label>Voix Kenji (homme) <select id="vm"></select></label>
+</div>
+<div id="msg"></div>
+<div id="out"></div>
+
+<script>
+const $ = id => document.getElementById(id);
+const synth = window.speechSynthesis;
+let voices = [], token = 0;
+
+const FEM = /kyoko|haruka|ayumi|nanami|mizuki|sayaka|o-ren|female|女|google 日本語|hina|shiori/i;
+const MAL = /ichiro|otoya|keita|takumi|hattori|male|男|daichi|naoki/i;
+
+function loadVoices(){
+  voices = synth.getVoices().filter(v => /^ja/i.test(v.lang));
+  const fill = (sel, pick) => {
+    sel.innerHTML = '';
+    if(!voices.length){ sel.innerHTML = '<option value="-1">(voix par défaut)</option>'; return; }
+    voices.forEach((v,i) => sel.add(new Option(v.name + ' (' + v.lang + ')', i)));
+    sel.value = pick;
+  };
+  let f = voices.findIndex(v => FEM.test(v.name) && !MAL.test(v.name));
+  let m = voices.findIndex(v => MAL.test(v.name));
+  if(f < 0) f = 0;
+  if(m < 0) m = voices.length > 1 ? (f === 0 ? 1 : 0) : 0;
+  fill($('vf'), f); fill($('vm'), m);
+  $('msg').textContent = !voices.length
+    ? "Aucune voix japonaise détectée : installez-en une dans votre système (voix par défaut utilisée, hauteur modifiée pour distinguer les personnages)."
+    : (voices.length === 1 ? "Une seule voix japonaise : la hauteur du son est modifiée pour distinguer femme et homme." : "");
+}
+loadVoices();
+synth.onvoiceschanged = loadVoices;
+
+function parse(){
+  return $('src').value.split(/\r?\n/).map(l => {
+    const mt = l.match(/^\s*(Aiko|Kenji)\s*[:：]\s*(.+)$/i);
+    if(!mt) return null;
+    const who = /^aiko$/i.test(mt[1]) ? 'Aiko' : 'Kenji';
+    return { who, text: mt[2].trim() };
+  }).filter(Boolean);
+}
+
+function render(lines){
+  const out = $('out'); out.innerHTML = '';
+  lines.forEach((l,i) => {
+    const d = document.createElement('div');
+    d.className = 'line ' + l.who; d.id = 'l' + i;
+    d.innerHTML = '<small>' + l.who + '</small>';
+    d.append(l.text);
+    d.onclick = () => start(lines, i);
+    out.appendChild(d);
+  });
+}
+
+function speak(line){
+  return new Promise(res => {
+    const u = new SpeechSynthesisUtterance(line.text.replace(/\s+/g, ''));
+    u.lang = 'ja-JP';
+    u.rate = parseFloat($('rate').value);
+    const sel = line.who === 'Aiko' ? $('vf') : $('vm');
+    const v = voices[parseInt(sel.value)];
+    if(v){ u.voice = v; u.lang = v.lang; }
+    const same = voices.length < 2 || $('vf').value === $('vm').value;
+    if(same){ u.pitch = line.who === 'Aiko' ? 1.6 : 0.5; }
+    else { u.pitch = line.who === 'Aiko' ? 1.2 : 0.8; }
+    u.onend = u.onerror = () => res();
+    synth.speak(u);
+  });
+}
+
+async function start(lines, from = 0){
+  synth.cancel();
+  const my = ++token;
+  for(let i = from; i < lines.length; i++){
+    if(my !== token) return;
+    document.querySelectorAll('.line.on').forEach(e => e.classList.remove('on'));
+    $('l' + i).classList.add('on');
+    await speak(lines[i]);
+    await new Promise(r => setTimeout(r, 350));
+  }
+  if(my === token) document.querySelectorAll('.line.on').forEach(e => e.classList.remove('on'));
+}
+
+$('play').onclick = () => { const l = parse(); render(l); start(l); };
+$('stop').onclick = () => { token++; synth.cancel(); document.querySelectorAll('.line.on').forEach(e => e.classList.remove('on')); };
+$('src').oninput = () => render(parse());
+render(parse());
+</script>
+</body>
+</html>

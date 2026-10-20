@@ -1,0 +1,53 @@
+<%- include('../../../../partials/header_lecon') %> 
+<div  class="content content-black">
+    <div class="vocab_titre" >  
+        <h2 ><%= row.section %></h2>
+        <button type="button" id="btn-back" class="vocab_href"> ← Page précédente </button>
+        <h2 class="blog_h2_execercice"><%= row.section %></h2>
+    </div>
+
+
+    <% if ( results && results.length > 0) { %> 
+    
+        <div class="results-table-container">
+
+                
+                <!-- NOUVEAU : On ajoute la classe "results-table" au tableau -->
+                <table class="results-table">
+                    <thead>
+                        <tr>
+                            <th>Kanji</th>
+                            <th>Hiragana</th>
+                            <th>Romanji</th>
+                            <th>type</th>
+                            <th>Français</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% results.forEach(row => { %>
+                            <tr>
+                                <td>
+                                    <div>
+                               
+                                        <span class="jp-char">&nbsp; <br><%= row.kanji %></span>
+                                        <button class="btn-speak btn-standard" data-text="<%= row.hiragana %>">🔊</button>   
+                                    </div>
+                                </td>
+                                <td><span class="jp-char"><%= row.hiragana %></span></td>
+                                <td><%= row.romanji %></td>
+                                <td><%= row.type %></td>
+                                <td><%= row.francais %></td>
+                            </tr>
+                        <% }); %>
+                    </tbody>
+                </table>    
+        
+        </div>
+    <% } else { %>
+        <p>Aucun article trouvé.</p>
+    <% } %>
+
+
+</div>
+
+<%- include('../../../../partials/footer') %>

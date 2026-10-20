@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Tracé de hiragana (KanjiVG)</title>
+<style>
+  body { font-family: sans-serif; text-align: center; padding: 40px; }
+  input { font-size: 24px; width: 60px; text-align: center; }
+  button { font-size: 16px; padding: 6px 14px; margin-left: 8px; }
+  #zone { margin-top: 30px; }
+  svg path {
+    stroke: #222;
+    stroke-width: 3;
+    fill: none;
+  }
+  #tableau { margin-top: 30px; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; max-width: 600px; margin-left: auto; margin-right: auto; }
+  #tableau button { font-size: 20px; width: 44px; height: 44px; cursor: pointer; }
+  .switch { margin-top: 15px; }
+  .switch button { padding: 8px 20px; margin: 0 5px; }
+  .switch button.active { background: #333; color: white; }
+</style>
+</head>
+<body>
+
+<h2>Entrez un caractère (hiragana, katakana, kanji, ou 2 caractères pour un son combiné)</h2>
+<input id="char" maxlength="2" value="あ" style="width:90px;">
+<button onclick="tracer()">Tracer</button>
+
+<h3>Ou entrez en romaji</h3>
+<input id="romaji" maxlength="4" placeholder="ex: ka, shi, kyo..." style="width:120px; font-size:18px;" onkeydown="if(event.key==='Enter') tracerRomaji()">
+<button onclick="tracerRomaji()">Convertir et tracer</button>
+<div id="erreur-romaji" style="color:red; margin-top:6px;"></div>
+
+<div class="switch">
+  <button id="btn-hira" class="active" onclick="afficherTableau('hiragana')">Hiragana</button>
+  <button id="btn-kata" onclick="afficherTableau('katakana')">Katakana</button>
+  <button id="btn-combo" onclick="afficherTableau('combo')">Sons combinés</button>
+</div>
+
+<div id="tableau"></div>
+
+<div id="zone"></div>
+
+<script>
+// Listes des caractères de base (gojūon), rangées par colonnes a-i-u-e-o
+const HIRAGANA = "あいうえお かきくけこ さしすせそ たちつてと なにぬねの はひふへほ まみむめも やゆよ らりるれろ わをん".replace(/ /g, '').split('');
+const KATAKANA = "アイウエオ カキクケコ サシスセソ タチツテト ナニヌネノ ハヒフヘホ マミムメモ ヤユヨ ラリルレロ ワヲン".replace(/ /g, '').split('');
+
+// Sons combinés (yōon) : romaji -> hiragana à 2 caractères
+const COMBOS = {
+  kya:'きゃ', kyu:'きゅ', kyo:'きょ',
+  gya:'ぎゃ', gyu:'ぎゅ', gyo:'ぎょ',
+  sha:'しゃ', shu:'しゅ', sho:'しょ',
+  ja:'じゃ', ju:'じゅ', jo:'じょ',
+  cha:'ちゃ', chu:'ちゅ', cho:'ちょ',
+  nya:'にゃ', nyu:'にゅ', nyo:'にょ',
+  hya:'ひゃ', hyu:'ひゅ', hyo:'ひょ',
+  bya:'びゃ', byu:'びゅ', byo:'びょ',
+  pya:'ぴゃ', pyu:'ぴゅ', pyo:'ぴょ',
+  mya:'みゃ', myu:'みゅ', myo:'みょ',
+  rya:'りゃ', ryu:'りゅ', ryo:'りょ'
+};
+
+// true = mode katakana actif, false = mode hiragana (affecte aussi les sons combinés)
+let modeKatakanaActif = false;
+
+function afficherTableau(type) {
+  const tableau = document.getElementById('tableau');
+  document.getElementById('btn-hira').classList.toggle('active', type === 'hiragana');
+  document.getElementById('btn-kata').classList.toggle('active', type === 'katakana');
+  document.getElementById('btn-combo').classList.toggle('active', type === 'combo');
+
+  if (type === 'hiragana') modeKatakanaActif = false;
+  if (type === 'katakana') modeKatakanaActif = true;
+
+  tableau.innerHTML = '';
+
+  if (type === 'combo') {
+    Object.values(COMBOS).forEach(hira => {
+      const affichage = modeKatakanaActif ? hiraganaVersKatakana(hira) : hira;
+      const b = document.createElement('button');
+      b.style.width = '60px';
+      b.textContent = affichage;
+      b.onclick = () => {
+        document.getElementById('char').value = affichage;
+        tracer();
+      };
+      tableau.appendChild(b);
+    });
+    return;
+  }
+
+  const liste = type === 'hiragana' ? HIRAGANA : KATAKANA;
+  liste.forEach(c => {
+    const b = document.createElement('button');
+    b.textContent = c;
+    b.onclick = () => {
+      document.getElementById('char').value = c;
+      tracer();
+    };
+    tableau.appendChild(b);
+  });
+}
+
+// Table de correspondance romaji -> hiragana (un seul caractère par entrée)
+const ROMAJI_TO_HIRAGANA = {
+  a:'あ', i:'い', u:'う', e:'え', o:'お',
+  ka:'か', ki:'き', ku:'く', ke:'け', ko:'こ',
+  ga:'が', gi:'ぎ', gu:'ぐ', ge:'げ', go:'ご',
+  sa:'さ', shi:'し', si:'し', su:'す', se:'せ', so:'そ',
+  za:'ざ', ji:'じ', zi:'じ', zu:'ず', ze:'ぜ', zo:'ぞ',
+  ta:'た', chi:'ち', ti:'ち', tsu:'つ', tu:'つ', te:'て', to:'と',
+  da:'だ', di:'ぢ', du:'づ', de:'で', do:'ど',
+  na:'な', ni:'に', nu:'ぬ', ne:'ね', no:'の',
+  ha:'は', hi:'ひ', fu:'ふ', hu:'ふ', he:'へ', ho:'ほ',
+  ba:'ば', bi:'び', bu:'ぶ', be:'べ', bo:'ぼ',
+  pa:'ぱ', pi:'ぴ', pu:'ぷ', pe:'ぺ', po:'ぽ',
+  ma:'ま', mi:'み', mu:'む', me:'め', mo:'も',
+  ya:'や', yu:'ゆ', yo:'よ',
+  ra:'ら', ri:'り', ru:'る', re:'れ', ro:'ろ',
+  wa:'わ', wo:'を', n:'ん'
+};
+
+// Convertit un hiragana (1 ou 2 caractères) en katakana (décalage Unicode fixe de +0x60)
+function hiraganaVersKatakana(h) {
+  return Array.from(h).map(c => String.fromCodePoint(c.codePointAt(0) + 0x60)).join('');
+}
+
+function tracerRomaji() {
+  const saisie = document.getElementById('romaji').value.trim().toLowerCase();
+  const erreur = document.getElementById('erreur-romaji');
+
+  // On cherche d'abord dans les sons simples, puis dans les sons combinés
+  const hira = ROMAJI_TO_HIRAGANA[saisie] || COMBOS[saisie];
+  if (!hira) {
+    erreur.textContent = `"${saisie}" n'est pas reconnu (essayez : ka, shi, tsu, kyo, sha, cho...).`;
+    return;
+  }
+  erreur.textContent = '';
+
+  const kana = modeKatakanaActif ? hiraganaVersKatakana(hira) : hira;
+  document.getElementById('char').value = kana;
+  tracer();
+}
+
+async function tracer() {
+  const saisie = document.getElementById('char').value;
+  if (!saisie) return;
+
+  // Découpe en caractères individuels (1 pour un kana simple, 2 pour un son combiné comme きゃ)
+  const caracteres = Array.from(saisie);
+
+  const zone = document.getElementById('zone');
+  zone.innerHTML = 'Chargement...';
+  zone.style.display = 'flex';
+  zone.style.justifyContent = 'center';
+  zone.style.gap = '15px';
+
+  // On récupère d'abord TOUS les SVG (un par caractère)
+  const svgTexts = [];
+  try {
+    for (const c of caracteres) {
+      const code = c.codePointAt(0).toString(16).padStart(5, '0');
+      const url = `https://raw.githubusercontent.com/KanjiVG/kanjivg/master/kanji/${code}.svg`;
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(`Caractère "${c}" introuvable dans KanjiVG`);
+      svgTexts.push(await res.text());
+    }
+  } catch (e) {
+    zone.innerHTML = `<p style="color:red">${e.message}</p>`;
+    return;
+  }
+
+  zone.innerHTML = '';
+
+  // Délai cumulé : le 2e caractère commence à se tracer une fois le 1er terminé
+  let delai = 0;
+
+  svgTexts.forEach(svgText => {
+    const conteneur = document.createElement('div');
+    conteneur.innerHTML = svgText;
+    const svg = conteneur.querySelector('svg');
+    svg.setAttribute('width', caracteres.length > 1 ? '180' : '250');
+    svg.setAttribute('height', caracteres.length > 1 ? '180' : '250');
+    zone.appendChild(svg);
+
+    const paths = svg.querySelectorAll('path');
+    paths.forEach(path => {
+      const length = path.getTotalLength();
+      path.style.strokeDasharray = length;
+      path.style.strokeDashoffset = length;
+      path.style.transition = 'none';
+      path.getBoundingClientRect(); // force le recalcul
+      path.style.transition = `stroke-dashoffset 0.6s ease ${delai}s`;
+      path.style.strokeDashoffset = '0';
+      delai += 0.7;
+    });
+  });
+}
+
+// Au chargement : afficher le tableau hiragana et tracer "あ"
+afficherTableau('hiragana');
+tracer();
+</script>
+
+</body>
+</html>

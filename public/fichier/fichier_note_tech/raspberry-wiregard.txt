@@ -1,0 +1,137 @@
+#########################################################################################################################################################################
+Installation de wireguarde
+#########################################################################################################################################################################
+
+
+fred@sashimi:~ $ sudo apt update
+fred@sashimi:~ $ sudo apt install wireguard
+
+fred@sashimi:~ $ wg --version
+wireguard-tools v1.0.20210914 - https://git.zx2c4.com/wireguard-tools/
+
+#########################################################################################################################################################################
+Installation d'un serveur WireGuarde
+#########################################################################################################################################################################
+
+Voici une configuration complète pour faire de ton Raspberry Pi 3 (192.168.1.10) un serveur WireGuard, afin de pouvoir te connecter depuis l'extérieur et accéder à 
+ton réseau maison et à Internet via la Freebox.
+
+                    INTERNET
+                       │
+                       │ UDP 51820
+                       ▼
+              ┌─────────────────┐
+              │     FREEBOX     │
+              │ 192.168.1.254   │
+              └────────┬────────┘
+                       │
+                LAN 192.168.1.0/24
+                       │
+                       ▼
+              ┌─────────────────┐
+              │   RASPBERRY Pi  │
+              │ 192.168.1.10    │
+              │                 │
+              │ WireGuard wg0   │
+              │ 10.8.0.1/24     │
+              └────────┬────────┘
+                       │
+                VPN WireGuard
+                       │
+              ┌────────▼────────┐
+              │ PC / Téléphone  │
+              │ 10.8.0.2/24     │
+              └─────────────────┘
+			  
+L'idée est :
+
+Raspberry : 192.168.1.10
+Freebox : 192.168.1.254
+WireGuard serveur : 10.8.0.1
+Client WireGuard : 10.8.0.2
+Port WireGuard : UDP 51820
+
+#########################################################################################################################################################################
+Activer IP forwarding => routeur 
+#########################################################################################################################################################################
+
+Le IP Forwarding (ou transfert IP) est une fonctionnalité réseau qui permet à un routeur, un serveur ou un appareil (comme un Raspberry Pi, un PC, ou un routeur dédié) 
+de transmettre des paquets IP entre différents réseaux ou interfaces.
+
+En d'autres termes, cela permet à un appareil de faire office de routeur en redirigeant le trafic d'un réseau vers un autre.
+
+Le IP Forwarding est essentiel pour :Exemple : Un Raspberry Pi peut agir comme un routeur entre ton réseau local (LAN) et Internet (WAN).
+Partager une connexion Internet :	Exemple : Utiliser un Raspberry Pi comme point d’accès Wi-Fi pour partager une connexion 4G.
+Isoler des réseaux :	Exemple : Séparer un réseau pour les invités d’un réseau interne sécurisé.
+Configurer des règles de pare-feu avancées :	Permet de filtrer ou rediriger le trafic entre des interfaces spécifiques.
+
+sudo nano /etc/sysctl.conf
+
+net.ipv4.ip_forward=1
+
+La commande sudo sysctl -p (ou sudo sysctl --load) est utilisée sous Linux pour recharger et appliquer immédiatement les paramètres du noyau (kernel) 
+définis dans les fichiers de configuration.  
+
+Après modification d'un fichier de configuration : Si vous avez ajouté ou modifié des règles dans /etc/sysctl.conf
+
+fred@sashimi:~ $ sudo sysctl -p
+net.ipv4.ip_forward = 1
+
+fred@sashimi:~ $ cat /proc/sys/net/ipv4/ip_forward
+1
+
+#########################################################################################################################################################################
+Créer les clés du serveur 
+#########################################################################################################################################################################
+
+sudo mkdir -p /etc/wireguard
+sudo chmod 700 /etc/wireguard
+
+cd /etc/wireguard
+sudo sh -c 'umask 077; wg genkey > server_private.key'
+sudo sh -c 'wg pubkey < server_private.key > server_public.key'
+
+fred@sashimi:~ $ sudo ls -l /etc/wireguard/
+total 8
+-rw------- 1 root root 45 Aug 19 15:27 server_private.key
+-rw-r--r-- 1 root root 45 Aug 19 15:27 server_public.key
+
+fred@sashimi:~ $ sudo cat /etc/wireguard/server_public.key
+RIV4VcId9iXtp7jVuosmeMFJTu8iCv2i7MKPgnzXQh0=
+
+#########################################################################################################################################################################
+Ajouter le client au serveur
+#########################################################################################################################################################################
+
+sudo nano /etc/wireguard/wg0.conf
+
+[Peer]
+PublicKey = RIV4VcId9iXtp7jVuosmeMFJTu8iCv2i7MKPgnzXQh0=
+AllowedIPs = 10.8.0.2/32
+
+
+#########################################################################################################################################################################
+Démarrer WireGuard
+#########################################################################################################################################################################
+
+fred@sashimi:~ $ sudo systemctl enable --now wg-quick@wg0
+Created symlink '/etc/systemd/system/multi-user.target.wants/wg-quick@wg0.service' → '/usr/lib/systemd/system/wg-quick@.service'.
+
+fred@sashimi:~ $ sudo wg
+interface: wg0
+  listening port: 41716
+
+peer: RIV4VcId9iXtp7jVuosmeMFJTu8iCv2i7MKPgnzXQh0=
+  allowed ips: 10.8.0.2/32
+  
+
+#########################################################################################################################################################################
+fichier de configuration pour le client android
+#########################################################################################################################################################################
+
+
+
+fred@sashimi:~ $ cat client.conf
+[Peer]
+PublicKey = RIV4VcId9iXtp7jVuosmeMFJTu8iCv2i7MKPgnzXQh0=
+AllowedIPs = 10.8.0.2/32

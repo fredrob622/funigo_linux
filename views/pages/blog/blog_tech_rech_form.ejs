@@ -1,0 +1,66 @@
+<%- include('../../partials/header_blog_tech') %>
+
+<div class="content content-black">
+
+	<div class="vocab_titre" >   
+        <h2 class="gram-regles-h2">Recherche d\'un article Tech</h2>
+        <a href="/blog_tech_liste" class="vocab_href">Retour</a>
+    </div>
+    				
+    <form action="/blog_tech_rech/search" method="POST" class="search-form">
+        <input type="text" name="searchTerm" value="<%= searchTerm %>" placeholder="Entrer une mots à rechercher">
+        <button type="submit">Rechercher</button>
+    </form>
+
+	
+	   <p class="texte-clignotant">
+      <br>Cliquer sur une ligne pour avoir des détails<br>
+    </p>
+    <br>
+
+<% if ( listeArticles && listeArticles.length > 0) { %> 
+    
+    <% listeArticles.forEach((article, index) => { %> 
+    
+        <div class="blog_article"> 
+            
+            <!-- Déterminer la classe à ajouter en fonction de l'index -->
+            <%  const alternateClass = (index % 2 === 0) ? 'blog_article_entete_even' : 'blog_article_entete_odd';     %>
+            <div class="blog_article_entete article-tech-toggle <%= alternateClass %>" data-target-id="content-<%= index %>"> 
+
+                <h3 class="blog_h3" data-target-id="content-<%= index %>" >
+                    <%= article.type %>         <%= article.titre %>
+                </h3>
+            </div>
+            
+            <div class="blog_contenus_container bloc_tech_hidden" id="content-<%= index %>"> 
+            
+                <div class="blog_contenu">
+                    <p> <%= article.contenu %> </p>
+                    <br>
+                    <% if (article.image) { %>
+                        <img class="zoom-image-blog-tech" 
+                            src="/images/note_tech/<%= article.image %>" 
+                            alt="Image pour l'article" 
+                            >
+                    <% } %>
+                    <br>
+                    <% if (article.fichier) { %>
+                        <button class="btn-open-file" data-fichier="<%= article.fichier %>">
+                            Ouvrir le fichier: <%= article.fichier %>
+                        </button>
+                    <% } %>
+                                        
+                </div>      
+            </div>
+
+        </div> 
+    <% }); %>
+    
+</div>
+<% } else { %>
+    <p>Aucun article trouvé.</p>
+<% } %>
+
+
+<%- include('../../partials/footer') %>

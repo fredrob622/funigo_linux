@@ -52,9 +52,11 @@
                 <p> <%= article.contenu %> </p>
             </div>
 
-            <div class="blog_url">
-                <a href="<%= article.blog_url %>">Cliquer ici pour voir l'article </a>
-            </div>
+            <% if (article.blog_url) { %>
+                <div class="blog_url">
+                    <a href="<%= article.blog_url %>" class=vocab_href>Cliquer ici pour voir l'article </a>
+                </div>
+            <% } %>
         </div>
         <% }); %>
     </div>    

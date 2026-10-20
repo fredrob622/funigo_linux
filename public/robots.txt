@@ -1,4 +1,6 @@
-
+# Autorise tous les robots à accéder à toutes les pages
 User-agent: *
-Disallow:
+Allow: /
+
+# Indique l'emplacement du sitemap
 Sitemap: https://www.funigo.fr/sitemap.xml
