@@ -44,15 +44,8 @@
 
                 <div class="dialogue_article_entete article-dialogue-toggle article-tech-toggle <%= alternateClass %>" data-target-id="content-<%= index %>"> 
                    
-                    <!-- <p><%= article.kanji %>  </p>
-                    <% if (article.kanji.includes('Aiko')) { %>
-                        <button class="btn-speak-w btn-standard" data-text="<%= article.kanji %>">🔊</button>
-                    <% } else if (article.kanji.includes('Kenji')) { %>
-                        <button class="btn-speak-f btn-standard" data-text="<%= article.kanji %>">🔊</button>
-                    <% } %> -->
-                                                            <span class="jp-char">&nbsp; <br><%= article.kanji %></span>
-                                        <button class="btn-speak btn-standard" data-text="<%= article.kanji %>">🔊</button>   
-
+                    <span class="jp-char">&nbsp; <br><%= article.kanji %></span>
+                    <button class="btn-speak btn-standard class="da-ligne-btn" data-text="<%= article.kanji %>">🔊</button>   
 
                 </div>
                 
