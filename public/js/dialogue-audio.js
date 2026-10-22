@@ -2,6 +2,23 @@
 // Lecture du dialogue complet : Aiko = voix de femme, Kenji = voix d'homme (le nom n'est pas lu)
 (function () {
 
+    // Évite un double chargement du script (ex. si la balise <script> est aussi dans le footer)
+    if (window.__dialogueAudioInit) return;
+    window.__dialogueAudioInit = true;
+
+    // ===== MENU ACCORDÉON (explications) =====
+    // Ce code était auparavant dans un script intégré à la page, bloqué par la politique de sécurité (CSP).
+    // Écouteur en phase de capture : un seul clic = un seul basculement, même si un autre script existe encore.
+    document.addEventListener('click', function (e) {
+        // Le bouton 🔊 d'une ligne ne doit pas ouvrir l'explication (géré plus bas)
+        if (e.target.closest && e.target.closest('.da-ligne-btn')) return;
+        const entete = e.target.closest && e.target.closest('.article-dialogue-toggle');
+        if (!entete) return;
+        e.stopPropagation();
+        const bloc = document.getElementById(entete.dataset.targetId);
+        if (bloc) bloc.classList.toggle('bloc_dialogue_hidden');
+    }, true);
+
     // const $ : déclare une constante nommée $ — un choix d'écriture emprunté à jQuery, 
     // mais ici sans aucune bibliothèque : c'est simplement un nom de variable.
     // const $ = id => document.getElementById(id);
@@ -46,6 +63,55 @@
     // textContent: " \n                   \n                    Aiko : 昨日、友達 と 公園に 行きました。   \n\n\n                "
 
 
+    // ===== PERSONNAGES : qui a une voix de femme, qui a une voix d'homme =====
+    // Pour ajouter un personnage, il suffit d'ajouter son nom dans l'un des deux tableaux
+    // (majuscules, accents, « -san / -kun / -chan / -sama » sont ignorés).
+    const PRENOMS_FEMMES = [
+        // prénoms japonais
+        'Aiko', 'Hanako', 'Sakura', 'Yoko', 'Yumi', 'Emi', 'Mari', 'Keiko', 'Mika', 'Naoko', 'Rin', 'Yui',
+        'Haruka', 'Misaki', 'Akiko', 'Michiko', 'Sachiko', 'Tomoko', 'Kyoko', 'Ayumi', 'Mio', 'Nana', 'Saki', 'Hina',
+        // rôles en français
+        'Maman', 'Mère', 'Tante', 'Grand-mère', 'Mamie', 'Soeur', 'Sœur', 'Fille', 'Femme', 'Madame', 'Mme', 'Professeure',
+        // rôles en rōmaji
+        'Okaasan', 'Haha', 'Obasan', 'Obaasan', 'Oneesan', 'Ane', 'Musume',
+        // rôles en japonais
+        '母', 'お母さん', 'おかあさん', '叔母', '伯母', 'おばさん', '祖母', 'おばあさん', '姉', 'お姉さん', 'おねえさん', '妹', '娘', '女'
+    ];
+    const PRENOMS_HOMMES = [
+        // prénoms japonais
+        'Kenji', 'Taro', 'Ichiro', 'Takeshi', 'Hiroshi', 'Kazuo', 'Daiki', 'Ken', 'Ryo', 'Sota', 'Yuto', 'Haruto',
+        'Kenta', 'Takumi', 'Shota', 'Masashi', 'Naoki', 'Daichi', 'Keita', 'Otoya', 'Satoshi', 'Kenichi',
+        // rôles en français
+        'Papa', 'Père', 'Oncle', 'Grand-père', 'Papi', 'Frère', 'Fils', 'Homme', 'Monsieur', 'M.', 'Professeur',
+        // rôles en rōmaji
+        'Otousan', 'Chichi', 'Ojisan', 'Ojiisan', 'Oniisan', 'Ani', 'Musuko',
+        // rôles en japonais
+        '父', 'お父さん', 'おとうさん', '叔父', '伯父', 'おじさん', '祖父', 'おじいさん', '兄', 'お兄さん', 'おにいさん', '弟', '息子', '男'
+    ];
+
+    // norm : minuscules, sans accents, sans « -san », « -kun », « -chan », « -sama » placés après un espace ou un tiret
+    const norm = s => String(s).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+        .replace(/[\s\-]+(san|kun|chan|sama)$/, '').replace(/\s+/g, ' ').trim();
+    const SET_F = new Set(PRENOMS_FEMMES.map(norm));
+    const SET_H = new Set(PRENOMS_HOMMES.map(norm));
+
+    // Prénom absent des deux tableaux : on lui donne la voix opposée à celle de la réplique précédente
+    // (pratique pour un dialogue à deux personnes) et on s'en souvient pour ses répliques suivantes.
+    const memoire = new Map();
+    let precedentFemme = null;
+
+    function estFemme(nom) {
+        const n = norm(nom);
+        if (SET_F.has(n)) return true;
+        if (SET_H.has(n)) return false;
+        if (!memoire.has(n)) {
+            memoire.set(n, precedentFemme === null ? true : !precedentFemme);
+            console.warn('Prénom inconnu « ' + nom + ' » : ajoutez-le dans PRENOMS_FEMMES ou PRENOMS_HOMMES (voix choisie : '
+                + (memoire.get(n) ? 'femme' : 'homme') + ')');
+        }
+        return memoire.get(n);
+    }
+
     const lines = entetes.map((el, i) => {
 
         // .trim() : supprime les espaces/sauts de ligne en début et fin.
@@ -57,7 +123,7 @@
         // $ fin de la chaîne
         // i : insensible à la casse (Aiko, aiko, AIKO…)
 
-        const m = el.textContent.trim().match(/^(Aiko|Kenji)\s*[:：]\s*([\s\S]+)$/i);
+        const m = texteLigne(el).match(/^([^:：。\n]{1,30}?)\s*[:：]\s*([\s\S]+)$/);
 
         //console.log('m', m); //m est tableau qui contient le nom du locuteur et la phrase en kanji
 
@@ -69,7 +135,11 @@
         // who:  … ? 'Aiko' : 'Kenji', // le locuteur, normalisé
         // text: m[2].trim()           // la réplique, nettoyée des espaces parasites
         // }
-        return m ? { idx: i, who: /^aiko$/i.test(m[1]) ? 'Aiko' : 'Kenji', text: m[2].trim() } : null;
+        if (!m) return null;
+        const nom = m[1].trim();
+        const femme = estFemme(nom);
+        precedentFemme = femme;
+        return { idx: i, who: nom, femme: femme, text: m[2].trim() };
 
         //  .filter(Boolean)
         // map a produit un tableau contenant des objets et des null (lignes non reconnues, divs vides, en-têtes sans « Nom : »…).
@@ -205,7 +275,7 @@
             // line.who === 'Aiko' ? $('da-vf') : $('da-vm') : si c'est Aiko qui parle → menu da-vf (voix féminine) ; sinon (Kenji) → menu da-vm (voix masculine). 
             // Ce sont les <select> remplis par fill() dans loadVoices.
             // .value : l'index choisi dans le menu (souvenez-vous : la valeur de chaque option est l'index dans voices) — c'est une chaîne, d'où parseInt.
-            const v = voices[parseInt((line.who === 'Aiko' ? $('da-vf') : $('da-vm')).value)];
+            const v = voices[parseInt((line.femme ? $('da-vf') : $('da-vm')).value)];
 
             if (v) { u.voice = v; u.lang = v.lang; }
 
@@ -213,7 +283,7 @@
             const same = voices.length < 2 || $('da-vf').value === $('da-vm').value;
 
             // Même voix → écart fort pour marquer la différence : Aiko 1.6 (très aiguë), Kenji 0.5 (très grave)
-            u.pitch = same ? (line.who === 'Aiko' ? 1.6 : 0.5) : (line.who === 'Aiko' ? 1.2 : 0.8);
+            u.pitch = same ? (line.femme ? 1.6 : 0.5) : (line.femme ? 1.2 : 0.8);
 
             // u.onend = u.onerror = … : la même fonction assignée aux deux événements — fin normale ou erreur (voix indisponible, interruption…). 
             // Dans les deux cas, on appelle res() : la Promesse est résolue, le await du code appelant se débloque, la réplique suivante peut commencer.

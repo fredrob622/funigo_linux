@@ -15,8 +15,8 @@
             <button type="button" id="da-play" class="vocab_href">🔊 Écouter le dialogue</button>
             <button type="button" id="da-stop" class="vocab_href">■ Arrêter</button>
             <label>Vitesse <input type="range" id="da-rate" min="0.5" max="1.5" step="0.1" value="0.9"></label>
-            <label>Aiko <select id="da-vf"></select></label>
-            <label>Kenji <select id="da-vm"></select></label>
+            <label>Voix de femme <select id="da-vf"></select></label>
+            <label>Voix d'homme <select id="da-vm"></select></label>
             <span id="da-msg"></span>
         </div>
 
@@ -42,17 +42,17 @@
                 article-dialogue-toggle classe « technique » marqueur pour le JavaScript -->
 
 
-                <div class="dialogue_article_entete article-dialogue-toggle article-tech-toggle <%= alternateClass %>" data-target-id="content-<%= index %>"> 
-                   
-                    <span class="jp-char">&nbsp; <br><%= article.kanji %></span>
-                    <button class="btn-speak btn-standard class="da-ligne-btn" data-text="<%= article.kanji %>">🔊</button>   
+                <div class="dialogue_article_entete article-dialogue-toggle <%= alternateClass %>" data-target-id="content-<%= index %>"> 
 
+
+                    <p><%= article.kanji %> <button type="button" class="da-ligne-btn" title="Écouter cette phrase">🔊</button></p>
+                  
                 </div>
                 
             </div>
 
 
-            <div class="blog_contenus_container bloc_tech_hidden" id="content-<%= index %>"> 
+            <div class="blog_contenus_container bloc_dialogue_hidden" id="content-<%= index %>"> 
             
                 <div class="blog_contenu">
                     <p> 
@@ -77,6 +77,7 @@
 <style>
 
     .dialogue_article { margin-top: 10px }
+    .article-dialogue-toggle p { display: flex; align-items: center; }
     .dialogue_article_entete { display: flex;  justify-content: space-between; flex-direction: row; 
         background-color:  white; color: black; font-size: 0.9em;  border-radius: 5px; margin-left: 5px; 
         margin-right: 5px; cursor: pointer;  }
@@ -95,8 +96,11 @@
     #da-msg { opacity: .8; }
     /* Ligne en cours de lecture */
     .da-en-cours { outline: 3px solid #f1c40f; }
+    .da-ligne-btn { margin-left: auto; flex-shrink: 0; padding: 0 8px; border: 0; border-radius: 6px; cursor: pointer; background-color: #345a93; font-size: 0.9em; }
     
 </style>
+
+<script src="/js/dialogue-audio.js" defer></script>
 
 
 

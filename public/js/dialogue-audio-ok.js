@@ -27,6 +27,13 @@
     const FEM = /kyoko|haruka|ayumi|nanami|mizuki|sayaka|o-ren|female|女|google 日本語|hina|shiori/i;
     const MAL = /ichiro|otoya|keita|takumi|hattori|male|男|daichi|naoki/i;
 
+    // Texte d'une ligne, sans le texte du petit bouton 🔊
+    function texteLigne(el) {
+        const c = el.cloneNode(true);
+        c.querySelectorAll('.da-ligne-btn').forEach(b => b.remove());
+        return c.textContent.trim();
+    }
+
     // Les répliques sont lues directement dans la page (colonne kanji affichée)    <p><%= article.kanji %>   </p>
     // querySelectorAll('.article-dialogue-toggle') retrouve toutes les divs en-têtes générées par la boucle EJS 
     // (la classe sert de point de rendez-vous entre le template et le script). 
@@ -185,7 +192,8 @@
             // pitch: 1.2000000476837158, 
             // onstart: null, 
             // onend: onerror(), 
-            // onerror: onerror(), onpause: null }
+            // onerror: onerror(), 
+            // onpause: null }
 
             // u.lang = 'ja-JP' : langue japonaise — guide le navigateur pour la prononciation
             u.lang = 'ja-JP';
@@ -263,6 +271,24 @@
     $('da-play').addEventListener('click', lireTout);
     
     $('da-stop').addEventListener('click', () => { token++; synth.cancel(); clearHl(); });
+
+    // Bouton 🔊 de chaque ligne : lit uniquement cette réplique.
+    // Écouteur en phase de capture : le clic ne déclenche pas l'ouverture des explications.
+    document.addEventListener('click', async function (e) {
+        const btn = e.target.closest && e.target.closest('.da-ligne-btn');
+        if (!btn) return;
+        e.stopPropagation();
+        e.preventDefault();
+        const entete = btn.closest('.article-dialogue-toggle');
+        const line = lines.find(l => entetes[l.idx] === entete);
+        if (!line) return;
+        synth.cancel();
+        const my = ++token;
+        clearHl();
+        entete.classList.add('da-en-cours');
+        await speak(line);
+        if (my === token) clearHl();
+    }, true);    
     
     window.addEventListener('beforeunload', () => synth.cancel());
 })();
