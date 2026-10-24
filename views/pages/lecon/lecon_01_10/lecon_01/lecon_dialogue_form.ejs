@@ -45,7 +45,11 @@
                 <div class="dialogue_article_entete article-dialogue-toggle <%= alternateClass %>" data-target-id="content-<%= index %>"> 
 
 
-                    <p><%= article.kanji %> <button type="button" class="da-ligne-btn" title="Écouter cette phrase">🔊</button></p>
+                    <!-- <p><%= article.kanji %> <button type="button" class="da-ligne-btn" title="Écouter cette phrase">🔊</button></p> -->
+                    <p>
+                        <span><%= article.kanji %></span> 
+                        <button type="button" class="da-ligne-btn" title="Écouter cette phrase">🔊</button>
+                    </p>
                   
                 </div>
                 
@@ -77,7 +81,12 @@
 <style>
 
     .dialogue_article { margin-top: 10px }
-    .article-dialogue-toggle p { display: flex; align-items: center; }
+    .article-dialogue-toggle p { 
+        display: flex; 
+        align-items: center; 
+        justify-content: space-between; /* Pousse le texte à gauche et le bouton à droite */
+        width: 100%;                     /* Occupe toute la largeur du conteneur */
+    }
     .dialogue_article_entete { display: flex;  justify-content: space-between; flex-direction: row; 
         background-color:  white; color: black; font-size: 0.9em;  border-radius: 5px; margin-left: 5px; 
         margin-right: 5px; cursor: pointer;  }
