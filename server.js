@@ -3067,7 +3067,7 @@ app.get('/lecon_dialogue', async (req, res) => {
     }
 
     try {
-        const query = `SELECT dialogue_num, kanji, hiragana, romanji, francais, explication 
+        const query = `SELECT lecon_num, dialogue_num, kanji, hiragana, romanji, francais, explication, fichier
                        FROM dialogue 
                        WHERE lecon_num = ? AND dialogue_num = ?;`;
         const [results] = await dbPool.query(query, [paramName1, paramName2]);

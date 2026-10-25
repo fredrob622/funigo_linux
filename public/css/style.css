@@ -532,6 +532,8 @@ label[for="ono-romanji-select"] {display: block; margin-top: 10px; margin-bottom
         position: relative;             /* Permet de s'assurer qu'elle passe au-dessus du reste */
         z-index: 10;                    /* Place l'image au premier plan pendant le zoom */
     }
+
+
 }
 
 /************************************************************************************************************************/

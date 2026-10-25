@@ -41,13 +41,16 @@
                 il doit afficher ou masquer lorsqu'on clique sur cet en-tête. 
                 article-dialogue-toggle classe « technique » marqueur pour le JavaScript -->
 
+                <img style="width:100%;height:auto;"
+                            src="/images/dialogue/<%= article.fichier %>" 
+                            alt="Image pour le dialogue" > 
 
                 <div class="dialogue_article_entete article-dialogue-toggle <%= alternateClass %>" data-target-id="content-<%= index %>"> 
 
 
-                    <!-- <p><%= article.kanji %> <button type="button" class="da-ligne-btn" title="Écouter cette phrase">🔊</button></p> -->
                     <p>
-                        <span><%= article.kanji %></span> 
+                           
+                        <span><%= article.kanji %></span>                   
                         <button type="button" class="da-ligne-btn" title="Écouter cette phrase">🔊</button>
                     </p>
                   
@@ -105,7 +108,16 @@
     #da-msg { opacity: .8; }
     /* Ligne en cours de lecture */
     .da-en-cours { outline: 3px solid #f1c40f; }
-    .da-ligne-btn { margin-left: auto; flex-shrink: 0; padding: 0 8px; border: 0; border-radius: 6px; cursor: pointer; background-color: #345a93; font-size: 0.9em; }
+    .da-ligne-btn { margin-left: auto; flex-shrink: 0; padding: 0 8px; border: 0; border-radius: 6px; cursor: pointer; background-color: #345a93; font-size: 0.9em;
+    
+    .image-dialogue {
+    width: 80px;
+    /* max-width: 300px; margin-bottom: 15px; transition: transform 0.3s ease; Rend l'agrandissement fluide */
+    /* cursor: zoom-in;                Change le curseur pour indiquer l'action */
+    /* display: block;                 Évite les décalages de ligne */
+    }
+    
+    }
     
 </style>
 
